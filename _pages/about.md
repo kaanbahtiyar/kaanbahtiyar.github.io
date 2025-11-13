@@ -21,7 +21,7 @@ My research focuses on advanced manufacturing systems, particularly in precision
 
 Current Position
 ======
-PhD Researcher, Manufacturing Process Control Laboratory, Oregon State University<br>
+PhD Researcher, Manufacturing Process Control Laboratory, [Oregon State University](https://oregonstate.edu)<br>
 Advisor: [Dr. Burak Sencer](https://engineering.oregonstate.edu/people/burak-sencer)
 
 Highlights
