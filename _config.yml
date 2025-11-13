@@ -23,7 +23,7 @@ repository               : # URL
 #               Additional customization can be done by editing /_includes/author-profile.html
 author:
   # Biographic information
-  avatar           : images/IMG_0031.JPG
+  avatar           : "images/IMG_0031.JPG"
   name             : "Kaan Bahtiyar"
   pronouns         : # example: "he/him"  
   bio              : "PhD researcher in advanced manufacturing, focusing on precision motion control and real-time vibration mitigation for high-performance manufacturing equipment."
