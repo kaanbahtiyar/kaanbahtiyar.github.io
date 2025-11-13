@@ -11,10 +11,10 @@ redirect_from:
 
 Education
 ======
-* Ph.D in Robotics, Oregon State University, 2027 (expected)
-* M.S. in Robotics, Oregon State University, 2023
-* B.S. in Control and Automation Engineering, Istanbul Tehcnical University, 2020
-* B.S. in Mechanical Engineering, Istanbul Tehcnical University, 2019
+* Ph.D. in [Robotics](https://engineering.oregonstate.edu/academics/programs/robotics), [Oregon State University](https://oregonstate.edu), 2027 (expected)
+* M.S. in [Robotics](https://engineering.oregonstate.edu/academics/programs/robotics), [Oregon State University](https://oregonstate.edu), 2023
+* B.S. in [Control and Automation Engineering](https://kontrol.itu.edu.tr/en), [Istanbul Technical University](https://www.itu.edu.tr/en), 2020
+* B.S. in [Mechanical Engineering](https://mkn.itu.edu.tr/en), [Istanbul Technical University](https://www.itu.edu.tr/en), 2019
 
 Work experience
 ======
