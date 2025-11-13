@@ -13,11 +13,11 @@ Research Interests
 ======
 My research focuses on advanced manufacturing systems, particularly in precision motion control, machining process control, and real-time vibration suppression. My MS work concentrated on vibration mitigation in milling, while my PhD research centers on precision motion control and active damping of high-performance motion delivery systems.
 
-•	Machining process control
-•	Real-time vibration mitigation
-•	Precision motion control for high-performance stages
-•	Active damping of undesired vibrations
-•	System identification for manufacturing and mechatronic systems
+1. Machining process control
+1. Real-time vibration mitigation
+1. Precision motion control for high-performance stages
+1. Active damping of undesired vibrations
+1. System identification for manufacturing and mechatronic systems
 
 Current Position
 ======
