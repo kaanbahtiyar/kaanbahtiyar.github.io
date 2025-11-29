@@ -7,5 +7,5 @@ excerpt: "Two chatter detection algorithms for milling are developed and evaluat
 date: 2022-09-16
 venue: 'Manufacturing Letters, 33, 388–394'
 paperurl: 'https://www.sciencedirect.com/science/article/pii/S2213846322000803'
-citation: 'K. Bahtiyar and B. Sencer, \"Lightweight and robust chatter detection algorithms for milling,\" Manufacturing Letters, vol. 33, pp. 388–394, 2022.'
+citation: 'Bahtiyar, K., & Sencer, B. (2022). Lightweight and robust chatter detection algorithms for milling. Manufacturing Letters, 33, 388-394.'
 ---
