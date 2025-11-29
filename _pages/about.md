@@ -26,8 +26,8 @@ Advisor: [Dr. Burak Sencer](https://engineering.oregonstate.edu/people/burak-sen
 
 Highlights
 ------
-* First place, ASPE Student Challenge (2025)
-* Thomas A. Dow Scholarship (American Society for Precision Engineering, 2024)
+* [First place, ASPE Student Challenge (2025)](https://aspe.net/2025-student-challenge/)
+* [Thomas A. Dow Scholarship (American Society for Precision Engineering, 2024)](https://aspe.net/awards-2/thomas-a-dow-student-scholarship/)
 * Young Researcher Award (20th International Conference on Precision Engineering, Japan, 2024)
 * Publications in CIRP JMST, Manufacturing Letters, ASME JMSE, CIRP Annals
-* Presented at ASPE, MSEC/NAMRC, ICPE, HSM, LEM21
+* Presentations at ASPE Annual Meetings, MSEC/NAMRC, ICPE, HSM, LEM21
