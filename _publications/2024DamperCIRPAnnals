@@ -3,9 +3,9 @@ title: "Data-driven feedforward control of inertial dampers for accuracy improve
 collection: publications
 category: manuscripts
 permalink: /publication/data-driven-feedforward-control-inertial-dampers/
-excerpt: 'A novel data-driven feedforward strategy for an active inertial damper used to suppress vibrations of industrial robots used in repetitive motion tasks, experimentally validated on a feed drive setup.'
+excerpt: "A novel data-driven feedforward control strategy for an active inertial damper, designed to suppress structural vibrations in repetitive motion tasks and experimentally validated on a feed drive setup."
 date: 2024-05-22
-venue: 'CIRP Annals, 73(1), 317-320'
+venue: 'CIRP Annals'
 paperurl: 'https://www.sciencedirect.com/science/article/abs/pii/S0007850624000210?casa_token=ty6RcAI6PvkAAAAA:REM4lYm7coBx5zqY5J3PM86mAlFQyUpCjHe6qUJf9wj_N0WesiaaRsAO8isgbWPG6J_UGt1T-PM'
 citation: 'Bahtiyar, K., Sencer, B., & Beudaert, X. (2024). Data-driven feedforward control of inertial dampers for accuracy improvement. CIRP Annals, 73(1), 317-320.
 '
