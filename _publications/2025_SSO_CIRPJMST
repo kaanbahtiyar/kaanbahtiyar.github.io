@@ -1,0 +1,11 @@
+---
+title: "Model-free optimal spindle speed control for real-time vibration mitigation in milling"
+collection: publications
+category: manuscripts
+permalink: /publication/SSO_CIRPJMST
+excerpt: "A model-free extremum seeking–based spindle speed control strategy for milling that adaptively minimizes both forced and chatter vibrations using in-process vibration data."
+date: 2025-08-06
+venue: 'CIRP Journal of Manufacturing Science and Technology'
+paperurl: 'https://www.sciencedirect.com/science/article/abs/pii/S1755581725001270'
+citation: "K. Bahtiyar and B. Sencer, \"Model-free optimal spindle speed control for real-time vibration mitigation in milling,\" CIRP Journal of Manufacturing Science and Technology, vol. 61, pp. 554–571, 2025."
+---
