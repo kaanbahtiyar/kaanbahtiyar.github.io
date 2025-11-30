@@ -14,18 +14,18 @@ author_profile: true
 
 {% include base_path %}
 
-{%- assign all_pubs         = site.publications -%}
-{%- assign journal_pubs     = all_pubs | where: "pubtype", "journal" -%}
-{%- assign conf_proc        = all_pubs | where: "pubtype", "conf-proc" -%}
-{%- assign conf_peer_noproc = all_pubs | where: "pubtype", "conf-peer-noproc" -%}
-{%- assign conf_abstract    = all_pubs | where: "pubtype", "conf-abstract" -%}
+{%- assign all_pubs = site.publications -%}
+
+{%- assign journal_pubs      = all_pubs | where: "pubtype", "journal" -%}
+{%- assign conf_proc         = all_pubs | where: "pubtype", "conf-proc" -%}
+{%- assign conf_peer_noproc  = all_pubs | where: "pubtype", "conf-peer-noproc" -%}
+{%- assign conf_abstract     = all_pubs | where: "pubtype", "conf-abstract" -%}
 
 {%- comment -%}
-  Journal articles
+Journal articles
 {%- endcomment -%}
 {% if journal_pubs.size > 0 %}
-## Journal Articles
-
+<h2>Journal Articles</h2>
 <ul>
   {% assign pubs = journal_pubs | sort: "date" | reverse %}
   {% for post in pubs %}
@@ -41,11 +41,10 @@ author_profile: true
 {% endif %}
 
 {%- comment -%}
-  Peer-reviewed conference papers in proceedings
+Conference – peer-reviewed, in proceedings
 {%- endcomment -%}
 {% if conf_proc.size > 0 %}
-## Conference Papers – Peer-reviewed (proceedings)
-
+<h2>Conference Papers – Peer-reviewed (proceedings)</h2>
 <ul>
   {% assign pubs = conf_proc | sort: "date" | reverse %}
   {% for post in pubs %}
@@ -58,11 +57,10 @@ author_profile: true
 {% endif %}
 
 {%- comment -%}
-  Peer-reviewed, not in proceedings
+Conference – peer-reviewed, not in proceedings
 {%- endcomment -%}
 {% if conf_peer_noproc.size > 0 %}
-## Conference Papers – Peer-reviewed (not in proceedings)
-
+<h2>Conference Papers – Peer-reviewed (not in proceedings)</h2>
 <ul>
   {% assign pubs = conf_peer_noproc | sort: "date" | reverse %}
   {% for post in pubs %}
@@ -75,11 +73,10 @@ author_profile: true
 {% endif %}
 
 {%- comment -%}
-  Abstract-reviewed
+Conference – abstract-reviewed
 {%- endcomment -%}
 {% if conf_abstract.size > 0 %}
-## Conference Presentations – Abstract-reviewed
-
+<h2>Conference Papers – Abstract-reviewed</h2>
 <ul>
   {% assign pubs = conf_abstract | sort: "date" | reverse %}
   {% for post in pubs %}
