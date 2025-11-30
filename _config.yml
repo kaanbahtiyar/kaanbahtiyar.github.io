@@ -224,6 +224,9 @@ collections:
   publications:
     output: true
     permalink: /:collection/:path/
+  projects:
+    output: true
+    permalink: /projects/:name/
   portfolio:
     output: true
     permalink: /:collection/:path/
@@ -287,6 +290,14 @@ defaults:
       layout: talk
       author_profile: true
       share: true
+  # projects
+   - scope:
+      path: ""
+      type: projects
+    values:
+      layout: single            # uses your single.html
+      author_profile: true
+      sidebar: false            # often nicer for project pages
 
 
 # Sass/SCSS
