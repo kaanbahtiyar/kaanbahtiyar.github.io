@@ -11,4 +11,4 @@ citation: 'Bahtiyar, K., & Sencer, B. (2025). Model-free optimal spindle speed c
 '
 ---
 
-Novel strategy.
+Novel strategy 1.
