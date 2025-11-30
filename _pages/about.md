@@ -12,13 +12,15 @@ I am a detail-oriented control systems engineer specializing in precision motion
 
 Research Interests
 ======
-My research focuses on advanced manufacturing systems, particularly in precision motion control, machining process control, and real-time vibration suppression. My MS work concentrated on vibration mitigation in milling, while my PhD research centers on precision motion control and active damping of high-performance motion delivery systems.
 
-* Machining process control
-* Real-time vibration mitigation
-* Precision motion control for high-performance stages
-* Active damping of undesired vibrations
-* System identification for manufacturing and mechatronic systems
+My research focuses on advanced manufacturing systems and intelligent manufacturing automation, with an emphasis on precision motion control, machining process control, and real-time vibration suppression. 
+
+* Machining process monitoring and control
+* Real-time vibration mitigation in precision machining
+* Precision motion control for high-performance stages and machine tools
+* Active damping / active vibration control 
+* System identification and data-driven modeling for mechatronic and manufacturing systems
+* Intelligent manufacturing automation and equipment-level control
 
 Current Position
 ======
@@ -32,4 +34,4 @@ Highlights
 * Young Researcher Award (20th International Conference on Precision Engineering, Japan, 2024)
 * Publications in [CIRP Annals](https://www.sciencedirect.com/journal/cirp-annals), [CIRP JMST](https://www.sciencedirect.com/journal/cirp-journal-of-manufacturing-science-and-technology), [ASME JMSE (Submitted)](https://asmedigitalcollection.asme.org/manufacturingscience), [Manufacturing Letters](https://www.sciencedirect.com/journal/manufacturing-letters)
 <!-- * Co-inventor on a pending patent application, jointly filed by Oregon State University and an industrial partner. -->
-* Presentations at [ASPE](https://aspe.net) Annual Meetings, [ASME](https://www.asme.org) MSEC/SME NAMRC, [JSPE](https://www.jspe.or.jp) ICPE, [JSME](https://www.jsme.or.jp) LEM21
+* Presentations at [ASPE](https://aspe.net) Annual Meetings, [ASME](https://www.asme.org) MSEC, [SME](https://www.sme.org) NAMRC, [JSPE](https://www.jspe.or.jp) ICPE, [JSME](https://www.jsme.or.jp) LEM21
