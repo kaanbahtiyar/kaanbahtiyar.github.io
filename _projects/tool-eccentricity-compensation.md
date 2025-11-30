@@ -71,8 +71,8 @@ sidebar: false
 
 ## Collaborators
 
-- Burak Sencer (advisor)
+- [Dr. Burak Sencer (advisor)](https://scholar.google.com/citations?user=SGQqZeUAAAAJ&hl=en)
 - Levent Bozcu
-- Seyed Mahmood Shantiaeezade
+- [Seyed Mahmood Shantiaeezade](https://scholar.google.com/citations?user=dtYC4jUAAAAJ&hl=en&oi=sra)
 - Ryosuke Ikeda
-- Norikazu Suzuki
+- [Dr. Norikazu Suzuki](https://scholar.google.com/citations?user=7N_i9RQAAAAJ&hl=en&oi=ao)
