@@ -68,7 +68,23 @@ Work experience
     * MATLAB reads the updated results, evaluates the cost function, and iterates PSO.
   * Achieved a fully automated parametric exploration workflow that links CAD, FEA, and optimization, enabling systematic improvement of the washing machine body design in terms of both weight and structural performance.
 
+Honors & Awards
+======
 
+* **2025 – ASPE Student Challenge, 1st Place Winner**  
+  * Awarded at the 40th Annual Meeting of the American Society for Precision Engineering.
+* **2024 – [Thomas A. Dow Student Scholarship](/images/honors/dow2024.jpg)**  
+  * Awarded by the American Society for Precision Engineering for the paper presented at the 39th Annual Meeting.
+* **2024 – [Young Researcher Award, ICPE 2024]((/images/honors/ICPE2024.jpg))**  
+  * Awarded by the Japan Society for Precision Engineering for the paper presented at the 20th International Conference on Precision Engineering.
+* **2024 – NSF Travel Award, MSEC 2024**  
+  * Received from the National Science Foundation to support attendance at MSEC 2024.
+* **2022 – NSF Travel Award, NAMRC 2022**  
+  * Awarded by the National Science Foundation to support attendance at NAMRC 2022.
+* **2020 – Undergraduate Academic Honors, Istanbul Technical University**  
+  * High Honor List.  
+  * [Ranked 3rd in the Control and Automation Engineering Department](/images/honors/Rank3rd.jpg)).
+    
 Publications
 ======
   <ul>{% for post in site.publications reversed %}
