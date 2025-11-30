@@ -7,7 +7,7 @@ redirect_from:
   - /about.html
 ---
 
-I am a PhD researcher specializing in control systems and mechatronics for manufacturing equipment. My work integrates first-principles modeling with data-driven methods to design, analyze, and control high-performance mechatronic systems and advanced manufacturing processes. I have hands-on experience developing real-time control and optimization strategies, system identification methods, and vibration mitigation techniques to enhance the accuracy and dynamic performance of machine tools and motion delivery systems. My research aims to apply modern control and optimization approaches and translate rigorous theory into practical, experimentally validated solutions.
+I am a detail-oriented control systems engineer specializing in precision motion control, mechatronics, machining dynamics, and real-time vibration mitigation for advanced manufacturing equipment. My work integrates first-principles modeling with data-driven methods to design and control high-performance mechatronic systems. I have hands-on experience in real-time control and optimization, system identification, and vibration mitigation to improve the accuracy and dynamic performance of machine tools and motion delivery systems. My goal is to translate rigorous modern control and optimization theory into practical, experimentally validated solutions for industrial manufacturing.
 
 Research Interests
 ======
@@ -29,5 +29,5 @@ Highlights
 * [First place, ASPE Student Challenge (2025)](https://aspe.net/2025-student-challenge/)
 * [Thomas A. Dow Scholarship (American Society for Precision Engineering, 2024)](https://aspe.net/awards-2/thomas-a-dow-student-scholarship/)
 * Young Researcher Award (20th International Conference on Precision Engineering, Japan, 2024)
-* Publications in CIRP JMST, Manufacturing Letters, ASME JMSE, CIRP Annals
-* Presentations at ASPE Annual Meetings, MSEC/NAMRC, ICPE, HSM, LEM21
+* Publications in [CIRP Annals](https://www.sciencedirect.com/journal/cirp-annals), [CIRP JMST](https://www.sciencedirect.com/journal/cirp-journal-of-manufacturing-science-and-technology), [ASME JMSE](https://asmedigitalcollection.asme.org/manufacturingscience), [Manufacturing Letters](https://www.sciencedirect.com/journal/manufacturing-letters)
+* Presentations at [ASPE](https://aspe.net) Annual Meetings, ASME MSEC/SME NAMRC, ICPE, HSM, LEM21
