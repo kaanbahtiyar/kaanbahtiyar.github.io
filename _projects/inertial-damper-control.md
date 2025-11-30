@@ -71,5 +71,5 @@ sidebar: false
 
 ## Collaborators
 
-- Burak Sencer (advisor)
-- Xavier Beudaert
+- [Dr. Burak Sencer (advisor)](https://scholar.google.com/citations?user=SGQqZeUAAAAJ&hl=en)
+- [Dr. Xavier Beudaert](https://scholar.google.com/citations?hl=en&user=9HPn3U8AAAAJ)
