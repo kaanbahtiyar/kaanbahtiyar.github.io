@@ -89,8 +89,8 @@ Honors & Awards
     <li>Awarded by the American Society for Precision Engineering for the paper presented at the 39th Annual Meeting.</li>
   </ul>
   <img src="/images/ASPE2024award.png"
-       alt="Thomas A. Dow Student Scholarship 2024 award"
-       style="max-width: 100%; margin-top: 0.5rem;">
+     alt="Thomas A. Dow Student Scholarship 2024 award"
+     style="max-width: 400px; width: 100%; height: auto; margin-top: 0.5rem;">
 </details>
 
 <details>
@@ -99,8 +99,8 @@ Honors & Awards
     <li>Awarded by the Japan Society for Precision Engineering for the paper presented at the 20th International Conference on Precision Engineering.</li>
   </ul>
   <img src="/images/ICPE2024award.png"
-       alt="Young Researcher Award, ICPE 2024"
-       style="max-width: 100%; margin-top: 0.5rem;">
+     alt="Young Researcher Award, ICPE 2024"
+     style="max-width: 400px; width: 100%; height: auto; margin-top: 0.5rem;">
 </details>
 
 <details>
@@ -117,17 +117,18 @@ Honors & Awards
   </ul>
 </details>
 
-<details>
+<details style="margin-bottom: 0.75rem;">
   <summary><strong>2020 – Undergraduate Academic Honors, Istanbul Technical University</strong></summary>
   <ul>
     <li>High Honor List.</li>
     <li>Ranked 3rd in the Control and Automation Engineering Department.</li>
   </ul>
   <img src="/images/Rank3rd.png"
-       alt="Ranked 3rd in Control and Automation Engineering Department"
-       style="max-width: 100%; margin-top: 0.5rem;">
+     alt="Ranked 3rd in Control and Automation Engineering Department"
+     style="max-width: 400px; width: 100%; height: auto; margin-top: 0.5rem;">
 </details>
-    
+<div style="margin-bottom: 1.5rem;"></div>
+
 Publications
 ======
   <ul>{% for post in site.publications reversed %}
@@ -151,14 +152,18 @@ Service and leadership
 * Currently signed in to 43 different slack teams
 
 <script>
-document.addEventListener('toggle', function (event) {
-  // Only care about <details> elements being closed
-  if (event.target.tagName.toLowerCase() === 'details' && !event.target.open) {
-    const videos = event.target.querySelectorAll('video');
-    videos.forEach(function (video) {
-      video.pause();
-      video.currentTime = 0;
+document.addEventListener('DOMContentLoaded', function () {
+  document.querySelectorAll('details').forEach(function (detailsEl) {
+    detailsEl.addEventListener('toggle', function () {
+      // when a <details> is closed
+      if (!detailsEl.open) {
+        const videos = detailsEl.querySelectorAll('video');
+        videos.forEach(function (video) {
+          video.pause();
+          video.currentTime = 0;
+        });
+      }
     });
-  }
-}, true);
+  });
+});
 </script>
