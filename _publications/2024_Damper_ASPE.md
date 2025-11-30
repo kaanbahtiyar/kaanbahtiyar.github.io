@@ -14,10 +14,10 @@ confurl: "https://aspe.net/programs/39th-aspe-annual-meeting/"
 sitemap_include: true
 ---
 
-Abstract-reviewed extended abstract and oral presentation based on the [inertial damper control for vibration mitigation project](/projects/inertial-damper-control/).
+Abstract-reviewed oral presentation based on the [active inertial damper control for vibration mitigation in precision machine tools project](/projects/inertial-damper-control/).
 
-Conference program: [39th Annual Meeting of the American Society for Precision Engineering](https://aspe.net/programs/39th-annual-meeting/).  
-Extended-abstract volume: [ASPE 2024 Conference Proceedings](https://www.proceedings.com/79023.html).
+[Conference program](https://aspe.net/programs/39th-annual-meeting/).  
+[Extended-abstract volume](https://www.proceedings.com/79023.html).
 
 **Extended abstract (summary).**  
 This work presents a data-driven feedforward control strategy for active inertial dampers in ultra-precision machine tools. Iterative Learning Control (ILC) is used to generate an optimal, pre-scheduled feedforward signal for the inertial actuator so that the damper can counteract transient vibrations of the structure. By exploiting vibration data collected over repeated motions, the method refines the feedforward command over successive iterations while respecting actuator stroke and force limits. Numerical and experimental results show that the proposed approach can reduce peak vibration by up to ~87% compared with conventional feedback-only damper control, without increasing the required actuator effort.

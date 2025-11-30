@@ -13,7 +13,7 @@ project: inertial-damper-control
 sitemap_include: true
 ---
 
-Journal article based on the [inertial damper control for vibration mitigation project](/projects/inertial-damper-control/).
+Journal article based on the [active inertial damper control for vibration mitigation in precision machine tools project](/projects/inertial-damper-control/).
 
 **Abstract.**  
 This paper presents a novel control strategy to minimize residual vibrations and overshoot using inertial dampers in repetitive tasks. In this work, vibration data collected during a repeating task is utilized to generate a fully pre-scheduled feedforward compensation signal that assists the inertial damper's original feedback controller to further enhance its vibration mitigation capability. The optimal feedforward signal is determined iteratively over successive operations, considering the actuator stroke and force limits. Numerical and experimental results validate the approach, demonstrating significant (up to 87%) reduction in peak vibration while using equal or less actuator force as compared to the conventional control.
