@@ -5,10 +5,11 @@ category: manuscripts
 permalink: /publication/tool-eccentricity-compensation-feed-drives/
 excerpt: "A data-driven adaptive strategy that uses machine tool feed drives to compensate milling tool eccentricity in real time using force/vibration feedback."
 date: 2026-01-01
-venue: "ASME Journal of Manufacturing Science and Engineering (Submitted)"
-citation: "Bahtiyar, K., & Sencer, B. (2025). Data-driven adaptive compensation of tool eccentricity in milling via machine tool feed drives. ASME Journal of Manufacturing Science and Engineering, submitted."
+venue: "ASME Journal of Manufacturing Science and Engineering"
+citation: "Bahtiyar, K., & Sencer, B. (2026). Data-driven adaptive compensation of tool eccentricity in milling via machine tool feed drives. ASME Journal of Manufacturing Science and Engineering, submitted."
 pubtype: journal
 project: tool-eccentricity-compensation
+status: submitted      
 ---
 
-Journal publication based on the tool eccentricity compensation in milling project (project page is available [here](/projects/tool-eccentricity-compensation/)).
+Journal submission based on the tool eccentricity compensation in milling project (project page is available [here](/projects/tool-eccentricity-compensation/)).
