@@ -11,26 +11,118 @@ author_profile: true
 
 {% include base_path %}
 
-<!-- New style rendering if publication categories are defined -->
 {% if site.publication_category %}
-  {% for category in site.publication_category  %}
-    {% assign title_shown = false %}
-    {% for post in site.publications reversed %}
-      {% if post.category != category[0] %}
-        {% continue %}
-      {% endif %}
-      {% unless title_shown %}
-        <h2>{{ category[1].title }}</h2><hr />
-        {% assign title_shown = true %}
-      {% endunless %}
-      {% include archive-single.html %}
-    {% endfor %}
+  {%- comment -%}
+  Loop over categories defined in _config.yml: site.publication_category
+  Each entry is like: category_key: { title: "Journal Articles" }
+  {%- endcomment -%}
+  {% for category in site.publication_category %}
+    {% assign cat_key  = category[0] %}
+    {% assign cat_meta = category[1] %}
+    {% assign cat_posts = site.publications | where: "category", cat_key | sort: "date" %}
+
+    {% if cat_posts.size > 0 %}
+      <h2>{{ cat_meta.title }}</h2><hr />
+
+      <ul class="pub-list">
+        {% for post in cat_posts reversed %}
+          {% assign clean_title = post.title | markdownify | strip_html | strip_newlines %}
+          <li>
+            <!-- Title -->
+            <a href="{{ base_path }}{{ post.url }}">
+              <strong>{{ clean_title }}</strong>
+            </a><br>
+
+            <!-- Status line -->
+            {% if post.status == "submitted" %}
+              <em>Submitted to {{ post.venue }}, {{ post.date | default: "1900-01-01" | date: "%Y" }}</em>
+            {% else %}
+              <em>Published in {{ post.venue }}, {{ post.date | default: "1900-01-01" | date: "%Y" }}</em>
+            {% endif %}
+
+            <!-- Excerpt -->
+            {% if post.excerpt %}
+              <p class="pub-excerpt">
+                {{ post.excerpt | markdownify | strip_html | strip_newlines }}
+              </p>
+            {% endif %}
+
+            <!-- Citation -->
+            {% if post.citation %}
+              <p class="pub-citation">
+                Recommended citation: {{ post.citation }}
+              </p>
+            {% endif %}
+
+            <!-- Journal link -->
+            {% if post.paperurl %}
+              <p class="pub-links">
+                <a href="{{ post.paperurl }}">View on Journal Website</a>
+              </p>
+            {% endif %}
+          </li>
+        {% endfor %}
+      </ul>
+    {% endif %}
   {% endfor %}
 {% else %}
-  {% for post in site.publications reversed %}
-    {% include archive-single.html %}
-  {% endfor %}
+  {%- comment -%}
+  Fallback: no categories defined, show a single bulleted list of all publications
+  {%- endcomment -%}
+  <ul class="pub-list">
+    {% assign pubs = site.publications | sort: "date" %}
+    {% for post in pubs reversed %}
+      {% assign clean_title = post.title | markdownify | strip_html | strip_newlines %}
+      <li>
+        <a href="{{ base_path }}{{ post.url }}">
+          <strong>{{ clean_title }}</strong>
+        </a><br>
+
+        {% if post.status == "submitted" %}
+          <em>Submitted to {{ post.venue }}, {{ post.date | default: "1900-01-01" | date: "%Y" }}</em>
+        {% else %}
+          <em>Published in {{ post.venue }}, {{ post.date | default: "1900-01-01" | date: "%Y" }}</em>
+        {% endif %}
+
+        {% if post.excerpt %}
+          <p class="pub-excerpt">
+            {{ post.excerpt | markdownify | strip_html | strip_newlines }}
+          </p>
+        {% endif %}
+
+        {% if post.citation %}
+          <p class="pub-citation">
+            Recommended citation: {{ post.citation }}
+          </p>
+        {% endif %}
+
+        {% if post.paperurl %}
+          <p class="pub-links">
+            <a href="{{ post.paperurl }}">View on Journal Website</a>
+          </p>
+        {% endif %}
+      </li>
+    {% endfor %}
+  </ul>
 {% endif %}
 
+<style>
+  .pub-list {
+    list-style-type: disc;
+    padding-left: 1.5rem;
+  }
 
+  .pub-list li {
+    margin-bottom: 1.5rem;
+  }
 
+  .pub-excerpt {
+    margin: 0.35rem 0 0.35rem 0;
+  }
+
+  .pub-citation,
+  .pub-links {
+    margin: 0.15rem 0 0 0;
+    font-size: 0.9em;
+  }
+</style>
