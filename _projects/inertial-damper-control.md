@@ -6,6 +6,7 @@ project_id: inertial-damper-control
 excerpt: "Data-driven feedforward and feedback strategies for active inertial dampers that suppress transient and residual vibrations in precision motion systems."
 date: 2024-05-22
 sidebar: false
+sitemap_include: true
 ---
 
 ## Overview
