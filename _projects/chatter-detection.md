@@ -4,7 +4,7 @@ collection: projects
 permalink: /projects/chatter-detection/
 project_id: chatter-detection
 excerpt: "Time- and frequency-domain chatter detection algorithms for milling, including spectral-power and PCA/Kalman-based methods for early and robust chatter detection."
-date: 2021-01-01
+date: 2021-11-01
 sidebar: false
 ---
 
