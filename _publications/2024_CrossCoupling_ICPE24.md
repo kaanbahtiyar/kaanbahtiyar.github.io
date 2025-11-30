@@ -5,7 +5,7 @@ category: conference
 pubtype: conf-peer-noproc
 permalink: /publication/axis-coupled-inertial-vibrations-compensation/
 excerpt: "A trajectory pre-filtering and data-driven tuning strategy that uses the machine tool’s Z-axis feed drive to cancel axis-coupled inertial forced vibrations in a vertical machining center while maintaining aggressive X/Y-axis accelerations."
-date: 2024-09-01
+date: 2024-10-24
 venue: "20th International Conference on Precision Engineering (ICPE2024)"
 project: cross-coupling-vibrations
 ---
