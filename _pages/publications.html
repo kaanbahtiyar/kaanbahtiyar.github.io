@@ -14,57 +14,79 @@ author_profile: true
 
 {% include base_path %}
 
-{%- assign all_pubs = site.publications -%}
-
-{%- assign journal_pubs      = all_pubs | where: "pubtype", "journal" -%}
+{%- assign all_pubs         = site.publications -%}
+{%- assign journal_pubs     = all_pubs | where: "pubtype", "journal" -%}
 {%- assign conf_proc        = all_pubs | where: "pubtype", "conf-proc" -%}
 {%- assign conf_peer_noproc = all_pubs | where: "pubtype", "conf-peer-noproc" -%}
 {%- assign conf_abstract    = all_pubs | where: "pubtype", "conf-abstract" -%}
 
 {%- comment -%}
-Journal articles
+  Journal articles
 {%- endcomment -%}
 {% if journal_pubs.size > 0 %}
-  <h2>Journal Articles</h2>
-  <hr />
+## Journal Articles
+
+<ul>
   {% assign pubs = journal_pubs | sort: "date" | reverse %}
   {% for post in pubs %}
-    {% include archive-single.html %}
+    {% assign clean_title = post.title | markdownify | strip_html | strip_newlines %}
+    <li>
+      <a href="{{ base_path }}{{ post.url }}">{{ clean_title }}</a>
+      {% if post.status == "submitted" %}
+        <span style="font-size: 0.9em;">(submitted)</span>
+      {% endif %}
+    </li>
   {% endfor %}
+</ul>
 {% endif %}
 
 {%- comment -%}
-Peer-reviewed conference proceedings
+  Peer-reviewed conference papers in proceedings
 {%- endcomment -%}
 {% if conf_proc.size > 0 %}
-  <h2>Conference Papers – Peer-reviewed (proceedings)</h2>
-  <hr />
+## Conference Papers – Peer-reviewed (proceedings)
+
+<ul>
   {% assign pubs = conf_proc | sort: "date" | reverse %}
   {% for post in pubs %}
-    {% include archive-single.html %}
+    {% assign clean_title = post.title | markdownify | strip_html | strip_newlines %}
+    <li>
+      <a href="{{ base_path }}{{ post.url }}">{{ clean_title }}</a>
+    </li>
   {% endfor %}
+</ul>
 {% endif %}
 
 {%- comment -%}
-Peer-reviewed conferences, not in proceedings
+  Peer-reviewed, not in proceedings
 {%- endcomment -%}
 {% if conf_peer_noproc.size > 0 %}
-  <h2>Conference Papers – Peer-reviewed (not in proceedings)</h2>
-  <hr />
+## Conference Papers – Peer-reviewed (not in proceedings)
+
+<ul>
   {% assign pubs = conf_peer_noproc | sort: "date" | reverse %}
   {% for post in pubs %}
-    {% include archive-single.html %}
+    {% assign clean_title = post.title | markdownify | strip_html | strip_newlines %}
+    <li>
+      <a href="{{ base_path }}{{ post.url }}">{{ clean_title }}</a>
+    </li>
   {% endfor %}
+</ul>
 {% endif %}
 
 {%- comment -%}
-Abstract-reviewed conference presentations
+  Abstract-reviewed
 {%- endcomment -%}
 {% if conf_abstract.size > 0 %}
-  <h2>Conference Presentations – Abstract-reviewed</h2>
-  <hr />
+## Conference Presentations – Abstract-reviewed
+
+<ul>
   {% assign pubs = conf_abstract | sort: "date" | reverse %}
   {% for post in pubs %}
-    {% include archive-single.html %}
+    {% assign clean_title = post.title | markdownify | strip_html | strip_newlines %}
+    <li>
+      <a href="{{ base_path }}{{ post.url }}">{{ clean_title }}</a>
+    </li>
   {% endfor %}
+</ul>
 {% endif %}
