@@ -1,5 +1,5 @@
 ---
-title: "Tool eccentricity compensation in milling via machine tool feed drives"
+title: "Tool eccentricity compensation in milling using machine tool feed drives"
 collection: projects
 permalink: /projects/tool-eccentricity-compensation/
 project_id: tool-eccentricity-compensation

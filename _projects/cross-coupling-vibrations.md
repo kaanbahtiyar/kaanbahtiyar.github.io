@@ -1,5 +1,5 @@
 ---
-title: "Machine tool trajectory pre-filtering and axis-coupled inertial vibrations"
+title: "Axis-coupled inertial vibration compensation using machine tool feed drives"
 collection: projects
 permalink: /projects/cross-coupling-vibrations/
 project_id: cross-coupling-vibrations

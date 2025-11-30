@@ -1,5 +1,5 @@
 ---
-title: "Chatter detection in milling"
+title: "Chatter detection and monitoring in milling using vibration measurements"
 collection: projects
 permalink: /projects/chatter-detection/
 project_id: chatter-detection
