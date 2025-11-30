@@ -1,71 +1,214 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
-<html>
-<head>
-  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-  <meta http-equiv="Content-Style-Type" content="text/css">
-  <title></title>
-  <meta name="Generator" content="Cocoa HTML Writer">
-  <meta name="CocoaVersion" content="2685.2">
-  <style type="text/css">
-    p.p1 {margin: 0.0px 0.0px 0.0px 0.0px; font: 14.0px '.SF NS'; color: #0e0e0e}
-  </style>
-</head>
-<body>
-<p class="p1">--- layout: default --- {% include base_path %} {% if page.header.overlay_color or page.header.overlay_image or page.header.image %} {% include page__hero.html %} {% endif %} {% if page.url != "/" and site.breadcrumbs %} {% unless paginator %} {% include breadcrumbs.html %} {% endunless %} {% endif %}</p>
-<p class="p1">{% include sidebar.html %}</p>
-<p class="p1">{% if page.title %} {% endif %} {% if page.excerpt %} {% endif %} {% if page.date %} {% endif %} {% if page.modified %} {% endif %}</p>
-<p class="p1">{% unless page.header.overlay_color or page.header.overlay_image %}</p>
-<p class="p1">{% if page.title %}</p>
-<p class="p1">{{ page.title | markdownify | remove: "</p>
-<p class="p1">" | remove: "</p>
-<p class="p1">" }}</p>
-<p class="p1">{% endif %} {% if page.read_time %}</p>
-<p class="p1">{% include read-time.html %}</p>
-<p class="p1">{% endif %} {% if page.modified %}</p>
-<p class="p1">{{ site.data.ui-text[site.locale].date_label | default: "Published:" }} {{ page.modified | date: "%B %d, %Y" }}</p>
-<p class="p1">{% endif %} {% if page.collection == 'teaching' %}</p>
-<p class="p1">{{ page.type }}, {{ page.venue }}, {{ page.date | default: "1900-01-01" | date: "%Y" }}</p>
-<p class="p1">{% elsif page.venue and page.date %} {% assign year = page.date | default: "1900-01-01" | date: "%Y" %} {% if page.collection == 'publications' and page.paperurl %} {% comment %}Linked venue variants{% endcomment %} {% if page.status == "submitted" %}</p>
-<p class="p1">Submitted to {{ page.venue }}, {{ year }}</p>
-<p class="p1">{% elsif page.pubtype == "conf-proc" %}</p>
-<p class="p1">In Proceedings of {{ page.venue }} , {{ year }}</p>
-<p class="p1">{% elsif page.pubtype == "conf-peer-noproc" %}</p>
-<p class="p1">Presented at {{ page.venue }}, {{ year }}</p>
-<p class="p1">{% elsif page.pubtype == "conf-abstract" %}</p>
-<p class="p1">Abstract accepted for presentation at {{ page.venue }}, {{ year }}</p>
-<p class="p1">{% else %}</p>
-<p class="p1">Published in {{ page.venue }}, {{ year }}</p>
-<p class="p1">{% endif %} {% else %} {% comment %}Unlinked venue variants{% endcomment %} {% if page.status == "submitted" %}</p>
-<p class="p1">Submitted to {{ page.venue }}, {{ year }}</p>
-<p class="p1">{% elsif page.pubtype == "conf-proc" %}</p>
-<p class="p1">In Proceedings of {{ page.venue }}, {{ year }}</p>
-<p class="p1">{% elsif page.pubtype == "conf-peer-noproc" %}</p>
-<p class="p1">Presented at {{ page.venue }}, {{ year }}</p>
-<p class="p1">{% elsif page.pubtype == "conf-abstract" %}</p>
-<p class="p1">Abstract accepted for presentation at {{ page.venue }}, {{ year }}</p>
-<p class="p1">{% else %}</p>
-<p class="p1">Published in {{ page.venue }}, {{ year }}</p>
-<p class="p1">{% endif %} {% endif %} {% elsif page.date and page.collection != 'projects' %}</p>
-<p class="p1">{{ site.data.ui-text[site.locale].date_label | default: "Published:" }} {{ page.date | default: "1900-01-01" | date: "%B %d, %Y" }}</p>
-<p class="p1">{% endif %}</p>
-<p class="p1">{% endunless %}</p>
-<p class="p1">{{ content }} {% if page.citation %}</p>
-<p class="p1">Recommended citation: {{ page.citation }}</p>
-<p class="p1">{% endif %} {% if page.slidesurl or page.bibtexurl %}</p>
-<p class="p1">{% if page.slidesurl %} Download Slides {% endif %} {% if page.slidesurl and page.bibtexurl %}  |  {% endif %} {% if page.bibtexurl %} Download Bibtex {% endif %}</p>
-<p class="p1">{% endif %} {% if page.link %}</p>
-<p class="p1">{{ site.data.ui-text[site.locale].ext_link_label | default: "Direct Link" }}</p>
-<p class="p1">{% endif %}</p>
-<p class="p1">{% if site.data.ui-text[site.locale].meta_label %}</p>
-<p class="p1">{{ site.data.ui-text[site.locale].meta_label }}</p>
-<p class="p1">{% endif %} {% include page__taxonomy.html %}</p>
-<p class="p1">{% if page.share %} {% include social-share.html %} {% endif %} {% include post_pagination.html %}</p>
-<p class="p1">{% if site.comments.provider and page.comments %} {% include comments.html %} {% endif %}</p>
-<p class="p1">{% comment %}only show related on a post page when not disabled{% endcomment %} {% if page.id and page.related and site.related_posts.size &gt; 0 %}</p>
-<p class="p1">{% if site.data.ui-text[site.locale].related_label %}</p>
-<p class="p1">{{ site.data.ui-text[site.locale].related_label | default: "You May Also Enjoy" }}</p>
-<p class="p1">{% endif %}</p>
-<p class="p1">{% for post in site.related_posts limit:4 %} {% include archive-single.html type="grid" %} {% endfor %}</p>
-<p class="p1">{% endif %}</p>
-</body>
-</html>
+---
+layout: default
+---
+
+{% include base_path %}
+
+{% if page.header.overlay_color or page.header.overlay_image or page.header.image %}
+  {% include page__hero.html %}
+{% endif %}
+
+{% if page.url != "/" and site.breadcrumbs %}
+  {% unless paginator %}
+    {% include breadcrumbs.html %}
+  {% endunless %}
+{% endif %}
+
+<div id="main" role="main">
+  {% include sidebar.html %}
+
+  <article class="page" itemscope itemtype="http://schema.org/CreativeWork">
+    {% if page.title %}
+      <meta itemprop="headline" content="{{ page.title | markdownify | strip_html | strip_newlines | escape_once }}">
+    {% endif %}
+    {% if page.excerpt %}
+      <meta itemprop="description" content="{{ page.excerpt | markdownify | strip_html | strip_newlines | escape_once }}">
+    {% endif %}
+    {% if page.date %}
+      <meta itemprop="datePublished" content="{{ page.date | date: "%B %d, %Y" }}">
+    {% endif %}
+    {% if page.modified %}
+      <meta itemprop="dateModified" content="{{ page.modified | date: "%B %d, %Y" }}">
+    {% endif %}
+
+    <div class="page__inner-wrap">
+      {% unless page.header.overlay_color or page.header.overlay_image %}
+        <header>
+          {% if page.title %}
+            <h1 class="page__title" itemprop="headline">
+              {{ page.title | markdownify | remove: "<p>" | remove: "</p>" }}
+            </h1>
+          {% endif %}
+
+          {% if page.read_time %}
+            <p class="page__meta">
+              <i class="fa fa-clock" aria-hidden="true"></i>
+              {% include read-time.html %}
+            </p>
+          {% endif %}
+
+          {% if page.modified %}
+            <p class="page__date">
+              <strong>
+                <i class="fa fa-fw fa-calendar" aria-hidden="true"></i>
+                {{ site.data.ui-text[site.locale].date_label | default: "Published:" }}
+              </strong>
+              <time datetime="{{ page.modified | date: "%Y-%m-%d" }}">
+                {{ page.modified | date: "%B %d, %Y" }}
+              </time>
+            </p>
+          {% endif %}
+
+          {% if page.collection == 'teaching' %}
+
+            <p>
+              {{ page.type }},
+              <i>{{ page.venue }}</i>,
+              {{ page.date | default: "1900-01-01" | date: "%Y" }}
+            </p>
+
+          {% elsif page.venue and page.date %}
+
+            {% assign year = page.date | default: "1900-01-01" | date: "%Y" %}
+
+            {% if page.collection == 'publications' and page.paperurl %}
+              {%- comment -%} Linked venue variants {%- endcomment -%}
+              {% if page.status == "submitted" %}
+                <p>
+                  Submitted to
+                  <i><a href="{{ page.paperurl }}" target="_blank" rel="noopener">{{ page.venue }}</a></i>,
+                  {{ year }}
+                </p>
+              {% elsif page.pubtype == "conf-proc" %}
+                <p>
+                  In
+                  <i><a href="{{ page.paperurl }}" target="_blank" rel="noopener">
+                    Proceedings of {{ page.venue }}
+                  </a></i>, {{ year }}
+                </p>
+              {% elsif page.pubtype == "conf-peer-noproc" %}
+                <p>
+                  Presented at
+                  <i><a href="{{ page.paperurl }}" target="_blank" rel="noopener">{{ page.venue }}</a></i>,
+                  {{ year }}
+                </p>
+              {% elsif page.pubtype == "conf-abstract" %}
+                <p>
+                  Presented at
+                  <i>{{ page.venue }}</i>, {{ year }}
+                </p>
+              {% else %}
+                <p>
+                  Published in
+                  <i><a href="{{ page.paperurl }}" target="_blank" rel="noopener">{{ page.venue }}</a></i>,
+                  {{ year }}
+                </p>
+              {% endif %}
+
+            {% else %}
+              {%- comment -%} Unlinked venue variants {%- endcomment -%}
+              {% if page.status == "submitted" %}
+                <p>
+                  Submitted to
+                  <i>{{ page.venue }}</i>, {{ year }}
+                </p>
+              {% elsif page.pubtype == "conf-proc" %}
+                <p>
+                  In <i>Proceedings of {{ page.venue }}</i>, {{ year }}
+                </p>
+              {% elsif page.pubtype == "conf-peer-noproc" %}
+                <p>
+                  Presented at <i>{{ page.venue }}</i>, {{ year }}
+                </p>
+              {% elsif page.pubtype == "conf-abstract" %}
+                <p>
+                  Presented at <i>{{ page.venue }}</i>, {{ year }}
+                </p>
+              {% else %}
+                <p>
+                  Published in <i>{{ page.venue }}</i>, {{ year }}
+                </p>
+              {% endif %}
+            {% endif %}
+
+          {% elsif page.date and page.collection != 'projects' %}
+            <p class="page__date">
+              <strong>
+                <i class="fa fa-fw fa-calendar" aria-hidden="true"></i>
+                {{ site.data.ui-text[site.locale].date_label | default: "Published:" }}
+              </strong>
+              <time datetime="{{ page.date | date_to_xmlschema }}">
+                {{ page.date | default: "1900-01-01" | date: "%B %d, %Y" }}
+              </time>
+            </p>
+          {% endif %}
+        </header>
+      {% endunless %}
+
+      <section class="page__content" itemprop="text">
+        {{ content }}
+
+        {% if page.citation %}
+          <p style="font-size: smaller">
+            Recommended citation: {{ page.citation }}
+          </p>
+        {% endif %}
+
+        {% if page.slidesurl or page.bibtexurl %}
+          <p style="font-size: smaller">
+            {% if page.slidesurl %}
+              <a href="{{ page.slidesurl }}">Download Slides</a>
+            {% endif %}
+            {% if page.slidesurl and page.bibtexurl %}
+              &nbsp;|&nbsp;
+            {% endif %}
+            {% if page.bibtexurl %}
+              <a href="{{ page.bibtexurl }}">Download Bibtex</a>
+            {% endif %}
+          </p>
+        {% endif %}
+
+        {% if page.link %}
+          <div>
+            <a href="{{ page.link }}" class="btn">
+              {{ site.data.ui-text[site.locale].ext_link_label | default: "Direct Link" }}
+            </a>
+          </div>
+        {% endif %}
+      </section>
+
+      <footer class="page__meta">
+        {% if site.data.ui-text[site.locale].meta_label %}
+          <h4 class="page__meta-title">{{ site.data.ui-text[site.locale].meta_label }}</h4>
+        {% endif %}
+        {% include page__taxonomy.html %}
+      </footer>
+
+      {% if page.share %}
+        {% include social-share.html %}
+      {% endif %}
+
+      {% include post_pagination.html %}
+    </div>
+
+    {% if site.comments.provider and page.comments %}
+      {% include comments.html %}
+    {% endif %}
+  </article>
+
+  {%- comment -%} only show related on a post page when not disabled {%- endcomment -%}
+  {% if page.id and page.related and site.related_posts.size > 0 %}
+    <div class="page__related">
+      {% if site.data.ui-text[site.locale].related_label %}
+        <h4 class="page__related-title">
+          {{ site.data.ui-text[site.locale].related_label | default: "You May Also Enjoy" }}
+        </h4>
+      {% endif %}
+      <div class="grid__wrapper">
+        {% for post in site.related_posts limit:4 %}
+          {% include archive-single.html type="grid" %}
+        {% endfor %}
+      </div>
+    </div>
+  {% endif %}
+</div>
