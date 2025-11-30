@@ -109,7 +109,7 @@ Work experience
 </details>
 
 <details style="margin-bottom: 0.75rem;">
-  <summary><strong>R&amp;D Senior Design Project, <a href="https://www.arcelikglobal.com/en/">Arçelik</a></strong></summary>
+  <summary><strong>R&amp;D Undergraduate Senior Design Project, <a href="https://www.arcelikglobal.com/en/">Arçelik</a></strong></summary>
   <ul>
     <li>Examined the design and manufacturing processes of a washing machine platform.</li>
     <li>Built fully parametric 3D CAD models and assemblies of washing machine body parts in Siemens NX (surface and sheet-metal modeling), so that any dimensional change in a component automatically propagated through the entire assembly.</li>
@@ -175,7 +175,7 @@ Honors & Awards
 <details style="margin-bottom: 0.75rem;">
   <summary><strong>2024 – NSF Travel Award, MSEC 2024</strong></summary>
   <ul>
-    <li>Received from the National Science Foundation to support attendance at MSEC 2024.</li>
+    <li>Awarded by the National Science Foundation to support attendance at MSEC 2024.</li>
   </ul>
 </details>
 
@@ -205,9 +205,11 @@ Honors & Awards
 
 Publications
 ======
-  <ul>{% for post in site.publications reversed %}
+<ul class="cv-publications">
+  {% for post in site.publications reversed %}
     {% include archive-single-cv.html %}
-  {% endfor %}</ul>
+  {% endfor %}
+</ul>
   
 Talks
 ======
@@ -225,19 +227,15 @@ Service and leadership
 ======
 * Currently signed in to 43 different slack teams
 
-<script>
-document.addEventListener('DOMContentLoaded', function () {
-  document.querySelectorAll('details').forEach(function (detailsEl) {
-    detailsEl.addEventListener('toggle', function () {
-      // when a <details> is closed
-      if (!detailsEl.open) {
-        const videos = detailsEl.querySelectorAll('video');
-        videos.forEach(function (video) {
-          video.pause();
-          video.currentTime = 0;
-        });
-      }
-    });
-  });
-});
-</script>
+<style>
+.cv-publications li {
+  margin-bottom: 0.4rem; 
+}
+.cv-publications li:last-child {
+  margin-bottom: 0;
+}
+.cv-publications p {
+  margin-top: 0.1rem;
+  margin-bottom: 0.1rem;
+}
+</style>
