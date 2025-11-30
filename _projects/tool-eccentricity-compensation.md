@@ -6,6 +6,7 @@ project_id: tool-eccentricity-compensation
 excerpt: "On-machine tool eccentricity compensation strategies that use feed-drive micro-motions and force/vibration feedback to restore balanced cutting."
 date: 2025-10-15
 sidebar: false
+sitemap_include: true
 ---
 
 ## Overview
