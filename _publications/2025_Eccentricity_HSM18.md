@@ -5,7 +5,7 @@ category: conference
 pubtype: conf-proc
 permalink: /publication/adaptive-tool-eccentricity-compensation-hsm2025/
 excerpt: "Adaptive tool eccentricity compensation strategies that use machine tool feed drives and feedback data to cancel milling tool eccentricity in real time."
-date: 2025-03-01   # update to actual conference/publication date
+date: 2025-10-15   
 venue: "18th International Conference on High Speed Machining (HSM2025)"
 status: accepted
 project: eccentricity-compensation
