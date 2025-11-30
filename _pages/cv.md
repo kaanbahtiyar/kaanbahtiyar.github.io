@@ -218,10 +218,14 @@ Publications
 <ul>
   {% assign pubs = site.publications | sort: 'date' %}
   {% for post in pubs reversed %}
+    {% assign clean_title = post.title | markdownify | strip_html | strip_newlines %}
     <li>
       <a href="{{ base_path }}{{ post.url }}">
-        {{ post.title | markdownify | strip_html | strip_newlines }}
+        {{ clean_title }}
       </a>
+      {% if post.status == "submitted" %}
+        <span style="font-size: 0.9em; font-weight: normal;">(Submitted)</span>
+      {% endif %}
     </li>
   {% endfor %}
 </ul>
