@@ -9,7 +9,7 @@ venue: "ASME Journal of Manufacturing Science and Engineering"
 citation: "Bahtiyar, K., & Sencer, B. (2026). Data-driven adaptive compensation of tool eccentricity in milling via machine tool feed drives. ASME Journal of Manufacturing Science and Engineering, submitted."
 pubtype: journal
 project: tool-eccentricity-compensation
-status: submitted      
+status: submitted
 ---
 
-Journal submission based on the tool eccentricity compensation in milling project (project page is available [here](/projects/tool-eccentricity-compensation/)).
+Journal article submitted to the *ASME Journal of Manufacturing Science and Engineering*, based on the [tool eccentricity compensation in milling](/projects/tool-eccentricity-compensation/) project.
