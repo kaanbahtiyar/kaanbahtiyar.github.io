@@ -219,12 +219,33 @@ Publications
   {% assign pubs = site.publications | sort: 'date' %}
   {% for post in pubs reversed %}
     {% assign clean_title = post.title | markdownify | strip_html | strip_newlines %}
+
     <li>
       <a href="{{ base_path }}{{ post.url }}">
         {{ clean_title }}
       </a>
-      {% if post.status == "submitted" %}
-        <span style="font-size: 0.9em; font-weight: normal;">(Submitted)</span>
+
+      {%- comment -%}
+      Determine type label based on pubtype + status
+      {%- endcomment -%}
+      {% assign type_label = "" %}
+
+      {% if post.pubtype == "journal" %}
+        {% if post.status == "submitted" %}
+          {% assign type_label = "Journal article, submitted" %}
+        {% else %}
+          {% assign type_label = "Journal article" %}
+        {% endif %}
+      {% elsif post.pubtype == "conf-proc" %}
+        {% assign type_label = "Peer-reviewed conference proceedings" %}
+      {% elsif post.pubtype == "conf-abstract" %}
+        {% assign type_label = "Abstract-reviewed conference" %}
+      {% elsif post.pubtype == "conf-peer-noproc" %}
+        {% assign type_label = "Peer-reviewed conference (not in proceedings)" %}
+      {% endif %}
+
+      {% if type_label != "" %}
+        <span style="font-size: 0.9em; font-weight: normal;"> ({{ type_label }})</span>
       {% endif %}
     </li>
   {% endfor %}
