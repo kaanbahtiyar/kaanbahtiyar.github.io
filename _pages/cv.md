@@ -73,9 +73,9 @@ Honors & Awards
 
 * **2025 – ASPE Student Challenge, 1st Place Winner**  
   * Awarded at the 40th Annual Meeting of the American Society for Precision Engineering.
-* **2024 – [Thomas A. Dow Student Scholarship](/images/honors/dow2024.jpg)**  
+* **2024 – [Thomas A. Dow Student Scholarship](/images/ASPE2024award.jpeg)**  
   * Awarded by the American Society for Precision Engineering for the paper presented at the 39th Annual Meeting.
-* **2024 – [Young Researcher Award, ICPE 2024]((/images/honors/ICPE2024.jpg))**  
+* **2024 – [Young Researcher Award, ICPE 2024]((/images/ICPE2024award.jpeg))**  
   * Awarded by the Japan Society for Precision Engineering for the paper presented at the 20th International Conference on Precision Engineering.
 * **2024 – NSF Travel Award, MSEC 2024**  
   * Received from the National Science Foundation to support attendance at MSEC 2024.
@@ -83,7 +83,7 @@ Honors & Awards
   * Awarded by the National Science Foundation to support attendance at NAMRC 2022.
 * **2020 – Undergraduate Academic Honors, Istanbul Technical University**  
   * High Honor List.  
-  * [Ranked 3rd in the Control and Automation Engineering Department](/images/honors/Rank3rd.jpg)).
+  * [Ranked 3rd in the Control and Automation Engineering Department](/images/Rank3rd.png)).
     
 Publications
 ======
