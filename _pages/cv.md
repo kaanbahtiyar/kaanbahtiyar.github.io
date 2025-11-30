@@ -226,18 +226,11 @@ Publications
 {%- assign conf_peer_noproc = all_pubs | where: "pubtype", "conf-peer-noproc" -%}
 {%- assign conf_abstract    = all_pubs | where: "pubtype", "conf-abstract" -%}
 
-**Summary.**  
-Journal publications: {{ journal_published.size }}{% if journal_submitted.size > 0 %} (+{{ journal_submitted.size }} submitted){% endif %}  
-Peer-reviewed conference publications (proceedings): {{ conf_proc.size }}  
-Peer-reviewed conference publications (not in proceedings): {{ conf_peer_noproc.size }}  
-Abstract-reviewed conference presentations: {{ conf_abstract.size }}
-
-{% comment %}
+{%- comment -%}
 JOURNAL ARTICLES
-{% endcomment %}
+{%- endcomment -%}
 {% if journal_pubs.size > 0 %}
-<br>
-**Journal articles**
+**Journal articles ({{ journal_published.size }} published{% if journal_submitted.size > 0 %}, {{ journal_submitted.size }} submitted{% endif %})**
 
 <ul>
   {% assign pubs = journal_pubs | sort: "date" | reverse %}
@@ -246,20 +239,18 @@ JOURNAL ARTICLES
     <li>
       <a href="{{ base_path }}{{ post.url }}">{{ clean_title }}</a>
       {% if post.status == "submitted" %}
-        <span style="font-size: 0.9em; font-weight: normal;"> (Journal article, submitted)</span>
-      {% else %}
-        <span style="font-size: 0.9em; font-weight: normal;"> (Journal article)</span>
+        <span style="font-size: 0.9em; font-weight: normal;"> (submitted)</span>
       {% endif %}
     </li>
   {% endfor %}
 </ul>
 {% endif %}
 
-{% comment %}
+{%- comment -%}
 PEER-REVIEWED CONFERENCE PROCEEDINGS
-{% endcomment %}
+{%- endcomment -%}
 {% if conf_proc.size > 0 %}
-**Peer-reviewed conference proceedings**
+**Peer-reviewed conference proceedings ({{ conf_proc.size }} publication{% if conf_proc.size != 1 %}s{% endif %})**
 
 <ul>
   {% assign pubs = conf_proc | sort: "date" | reverse %}
@@ -267,17 +258,16 @@ PEER-REVIEWED CONFERENCE PROCEEDINGS
     {% assign clean_title = post.title | markdownify | strip_html | strip_newlines %}
     <li>
       <a href="{{ base_path }}{{ post.url }}">{{ clean_title }}</a>
-      <span style="font-size: 0.9em; font-weight: normal;"> (Peer-reviewed conference proceedings)</span>
     </li>
   {% endfor %}
 </ul>
 {% endif %}
 
-{% comment %}
+{%- comment -%}
 PEER-REVIEWED, NOT IN PROCEEDINGS
-{% endcomment %}
+{%- endcomment -%}
 {% if conf_peer_noproc.size > 0 %}
-**Peer-reviewed conferences (not in proceedings)**
+**Peer-reviewed conferences (not in proceedings) ({{ conf_peer_noproc.size }} publication{% if conf_peer_noproc.size != 1 %}s{% endif %})**
 
 <ul>
   {% assign pubs = conf_peer_noproc | sort: "date" | reverse %}
@@ -285,17 +275,16 @@ PEER-REVIEWED, NOT IN PROCEEDINGS
     {% assign clean_title = post.title | markdownify | strip_html | strip_newlines %}
     <li>
       <a href="{{ base_path }}{{ post.url }}">{{ clean_title }}</a>
-      <span style="font-size: 0.9em; font-weight: normal;"> (Peer-reviewed conference, not in proceedings)</span>
     </li>
   {% endfor %}
 </ul>
 {% endif %}
 
-{% comment %}
+{%- comment -%}
 ABSTRACT-REVIEWED
-{% endcomment %}
+{%- endcomment -%}
 {% if conf_abstract.size > 0 %}
-**Abstract-reviewed conferences**
+**Abstract-reviewed conferences ({{ conf_abstract.size }} presentation{% if conf_abstract.size != 1 %}s{% endif %})**
 
 <ul>
   {% assign pubs = conf_abstract | sort: "date" | reverse %}
@@ -303,7 +292,6 @@ ABSTRACT-REVIEWED
     {% assign clean_title = post.title | markdownify | strip_html | strip_newlines %}
     <li>
       <a href="{{ base_path }}{{ post.url }}">{{ clean_title }}</a>
-      <span style="font-size: 0.9em; font-weight: normal;"> (Abstract-reviewed conference)</span>
     </li>
   {% endfor %}
 </ul>
