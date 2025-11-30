@@ -73,9 +73,9 @@ Honors & Awards
 
 * **2025 – ASPE Student Challenge, 1st Place Winner**  
   * Awarded at the 40th Annual Meeting of the American Society for Precision Engineering.
-* **2024 – [Thomas A. Dow Student Scholarship](/images/ASPE2024award.jpeg)**  
+* **2024 – [Thomas A. Dow Student Scholarship](/images/ASPE2024award.png)**  
   * Awarded by the American Society for Precision Engineering for the paper presented at the 39th Annual Meeting.
-* **2024 – [Young Researcher Award, ICPE 2024]((/images/ICPE2024award.jpeg))**  
+* **2024 – [Young Researcher Award, ICPE 2024]((/images/ICPE2024award.png))**  
   * Awarded by the Japan Society for Precision Engineering for the paper presented at the 20th International Conference on Precision Engineering.
 * **2024 – NSF Travel Award, MSEC 2024**  
   * Received from the National Science Foundation to support attendance at MSEC 2024.
