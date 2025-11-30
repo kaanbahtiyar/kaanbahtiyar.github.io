@@ -5,6 +5,7 @@ author_profile: true
 redirect_from: 
   - /about/
   - /about.html
+sitemap_include: true
 ---
 
 I am a detail-oriented control systems engineer specializing in precision motion control, mechatronics, machining dynamics, and real-time vibration mitigation for advanced manufacturing equipment. My work integrates first-principles modeling with data-driven methods to design and control high-performance mechatronic systems. I have hands-on experience in real-time control and optimization, system identification, and vibration mitigation to improve the accuracy and dynamic performance of machine tools and motion delivery systems. My goal is to translate rigorous modern control and optimization theory into practical, experimentally validated solutions for industrial manufacturing.
