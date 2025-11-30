@@ -213,11 +213,20 @@ Honors & Awards
 
 Publications
 ======
-<ul class="cv-publications">
-  {% for post in site.publications reversed %}
-    {% include archive-single-cv.html %}
-  {% endfor %}
-</ul>
+
+<details style="margin-bottom: 0.75rem;">
+  <summary><strong>Show publications</strong></summary>
+  <ul>
+    {% assign pubs = site.publications | sort: 'date' %}
+    {% for post in pubs reversed %}
+      <li>
+        <a href="{{ base_path }}{{ post.url }}">
+          {{ post.title | markdownify | strip_html | strip_newlines }}
+        </a>
+      </li>
+    {% endfor %}
+  </ul>
+</details>
   
 Talks
 ======
@@ -235,15 +244,3 @@ Service and leadership
 ======
 * Currently signed in to 43 different slack teams
 
-<style>
-.cv-publications li {
-  margin-bottom: 0.75rem; 
-}
-.cv-publications li:last-child {
-  margin-bottom: 0;
-}
-.cv-publications p {
-  margin-top: 0.1rem;
-  margin-bottom: 0.1rem;
-}
-</style>
