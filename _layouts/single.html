@@ -25,11 +25,10 @@ layout: default
       <meta itemprop="description" content="{{ page.excerpt | markdownify | strip_html | strip_newlines | escape_once }}">
     {% endif %}
     {% if page.date %}
-      {# meta date in MM/DD/YYYY #}
-      <meta itemprop="datePublished" content="{{ page.date | date: "%m/%d/%Y" }}">
+      <meta itemprop="datePublished" content="{{ page.date | date: "%B %d, %Y" }}">
     {% endif %}
     {% if page.modified %}
-      <meta itemprop="dateModified" content="{{ page.modified | date: "%m/%d/%Y" }}">
+      <meta itemprop="dateModified" content="{{ page.modified | date: "%B %d, %Y" }}">
     {% endif %}
 
     <div class="page__inner-wrap">
@@ -55,7 +54,7 @@ layout: default
                 {{ site.data.ui-text[site.locale].date_label | default: "Published:" }}
               </strong>
               <time datetime="{{ page.modified | date: "%Y-%m-%d" }}">
-                {{ page.modified | date: "%m/%d/%Y" }}
+                {{ page.modified | date: "%B %d, %Y" }}
               </time>
             </p>
           {% endif %}
@@ -133,15 +132,14 @@ layout: default
               {% endif %}
             {% endif %}
 
-          {% elsif page.date and page.collection != 'projects' %}
-            {# show a generic Published date for everything except project pages #}
+          {% elsif page.date %}
             <p class="page__date">
               <strong>
                 <i class="fa fa-fw fa-calendar" aria-hidden="true"></i>
                 {{ site.data.ui-text[site.locale].date_label | default: "Published:" }}
               </strong>
               <time datetime="{{ page.date | date_to_xmlschema }}">
-                {{ page.date | default: "1900-01-01" | date: "%m/%d/%Y" }}
+                {{ page.date | default: "1900-01-01" | date: "%B %d, %Y" }}
               </time>
             </p>
           {% endif %}
