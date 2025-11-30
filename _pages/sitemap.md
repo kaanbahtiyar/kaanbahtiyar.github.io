@@ -3,6 +3,7 @@ layout: single
 title: "Sitemap"
 permalink: /sitemap/
 author_profile: true
+sitemap_include: true
 ---
 
 {% include base_path %}
@@ -11,7 +12,7 @@ author_profile: true
 
 <ul>
   {% assign pages = site.pages
-     | where_exp: "p", "p.sitemap_exclude != true"
+     | where_exp: "p", "p.sitemap_include == true"
      | sort: "title" %}
   {% for page in pages %}
     {%- unless page.url == "/sitemap/" -%}
@@ -24,7 +25,7 @@ author_profile: true
 
 <ul>
   {% assign pubs = site.publications
-     | where_exp: "p", "p.sitemap_exclude != true"
+     | where_exp: "p", "p.sitemap_include == true"
      | sort: "date" | reverse %}
   {% for pub in pubs %}
     <li><a href="{{ pub.url | relative_url }}">{{ pub.title }}</a></li>
@@ -35,7 +36,7 @@ author_profile: true
 
 <ul>
   {% assign projs = site.projects
-     | where_exp: "p", "p.sitemap_exclude != true"
+     | where_exp: "p", "p.sitemap_include == true"
      | sort: "date" | reverse %}
   {% for proj in projs %}
     <li><a href="{{ proj.url | relative_url }}">{{ proj.title }}</a></li>
