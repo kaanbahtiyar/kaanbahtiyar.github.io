@@ -31,4 +31,4 @@ Highlights
 * Young Researcher Award (20th International Conference on Precision Engineering, Japan, 2024)
 * Publications in [CIRP Annals](https://www.sciencedirect.com/journal/cirp-annals), [CIRP JMST](https://www.sciencedirect.com/journal/cirp-journal-of-manufacturing-science-and-technology), [ASME JMSE (Submitted))](https://asmedigitalcollection.asme.org/manufacturingscience), [Manufacturing Letters](https://www.sciencedirect.com/journal/manufacturing-letters)
 <!-- * Co-inventor on a pending patent application, jointly filed by Oregon State University and an industrial partner. -->
-* Presentations at [ASPE](https://aspe.net) Annual Meetings, [ASME](https://www.asme.org) MSEC/SME NAMRC, [JSPE](https://www.jspe.or.jp) ICPE, HSM, [JSME](https://www.jsme.or.jp) LEM21
+* Presentations at [ASPE](https://aspe.net) Annual Meetings, [ASME](https://www.asme.org) MSEC/SME NAMRC, [JSPE](https://www.jspe.or.jp) ICPE, [JSME](https://www.jsme.or.jp) LEM21
