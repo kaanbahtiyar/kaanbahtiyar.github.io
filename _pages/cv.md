@@ -195,7 +195,7 @@ Honors & Awards
 </details>
 
 <details style="margin-bottom: 0.75rem;">
-  <summary><strong>2020 – Undergraduate Academic Honors, Istanbul Technical University</strong></summary>
+  <summary><strong>2020 – Undergraduate Academic Honors, ITU</strong></summary>
   <ul>
     <li>High Honor List.</li>
     <li>
