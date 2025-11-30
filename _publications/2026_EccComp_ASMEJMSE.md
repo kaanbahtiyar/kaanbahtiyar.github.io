@@ -12,4 +12,4 @@ project: tool-eccentricity-compensation
 status: submitted
 ---
 
-Journal article submitted to the *ASME Journal of Manufacturing Science and Engineering*, based on the [tool eccentricity compensation in milling](/projects/tool-eccentricity-compensation/) project.
+Journal article based on the [tool eccentricity compensation in milling project](/projects/tool-eccentricity-compensation/); currently under review at the ASME Journal of Manufacturing Science and Engineering.
