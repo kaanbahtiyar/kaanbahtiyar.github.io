@@ -215,41 +215,95 @@ Honors & Awards
 
 Publications
 ======
-<ul>
-  {% assign pubs = site.publications | sort: 'date' %}
-  {% for post in pubs reversed %}
-    {% assign clean_title = post.title | markdownify | strip_html | strip_newlines %}
 
-    <li>
-      <a href="{{ base_path }}{{ post.url }}">
-        {{ clean_title }}
-      </a>
+{%- assign all_pubs = site.publications -%}
 
-      {%- comment -%}
-      Determine type label based on pubtype + status
-      {%- endcomment -%}
-      {% assign type_label = "" %}
+{%- assign journal_pubs      = all_pubs | where: "pubtype", "journal" -%}
+{%- assign journal_published = journal_pubs | where_exp: "p", "p.status != 'submitted'" -%}
+{%- assign journal_submitted = journal_pubs | where: "status", "submitted" -%}
 
-      {% if post.pubtype == "journal" %}
+{%- assign conf_proc        = all_pubs | where: "pubtype", "conf-proc" -%}
+{%- assign conf_peer_noproc = all_pubs | where: "pubtype", "conf-peer-noproc" -%}
+{%- assign conf_abstract    = all_pubs | where: "pubtype", "conf-abstract" -%}
+
+<p>
+  <strong>Summary.</strong><br>
+  Journal publications: {{ journal_published.size }}
+  {%- if journal_submitted.size > 0 -%}
+    (+{{ journal_submitted.size }} submitted)
+  {%- endif -%}<br>
+  Peer-reviewed conference publications (proceedings): {{ conf_proc.size }}<br>
+  Peer-reviewed conference publications (not in proceedings): {{ conf_peer_noproc.size }}<br>
+  Abstract-reviewed conference presentations: {{ conf_abstract.size }}
+</p>
+
+{%- comment -%}
+Helper to render a list with a type label.
+{%- endcomment -%}
+
+{%- assign groups = "" -%}
+{%- comment -%}
+Journals
+{%- endcomment -%}
+{% if journal_pubs.size > 0 %}
+  <h4>Journal articles</h4>
+  <ul>
+    {% assign pubs = journal_pubs | sort: "date" | reverse %}
+    {% for post in pubs %}
+      {% assign clean_title = post.title | markdownify | strip_html | strip_newlines %}
+      <li>
+        <a href="{{ base_path }}{{ post.url }}">{{ clean_title }}</a>
         {% if post.status == "submitted" %}
-          {% assign type_label = "Journal article, submitted" %}
+          <span style="font-size: 0.9em; font-weight: normal;"> (Journal article, submitted)</span>
         {% else %}
-          {% assign type_label = "Journal article" %}
+          <span style="font-size: 0.9em; font-weight: normal;"> (Journal article)</span>
         {% endif %}
-      {% elsif post.pubtype == "conf-proc" %}
-        {% assign type_label = "Peer-reviewed conference proceedings" %}
-      {% elsif post.pubtype == "conf-abstract" %}
-        {% assign type_label = "Abstract-reviewed conference" %}
-      {% elsif post.pubtype == "conf-peer-noproc" %}
-        {% assign type_label = "Peer-reviewed conference (not in proceedings)" %}
-      {% endif %}
+      </li>
+    {% endfor %}
+  </ul>
+{% endif %}
 
-      {% if type_label != "" %}
-        <span style="font-size: 0.9em; font-weight: normal;"> ({{ type_label }})</span>
-      {% endif %}
-    </li>
-  {% endfor %}
-</ul>
+{% if conf_proc.size > 0 %}
+  <h4>Peer-reviewed conference proceedings</h4>
+  <ul>
+    {% assign pubs = conf_proc | sort: "date" | reverse %}
+    {% for post in pubs %}
+      {% assign clean_title = post.title | markdownify | strip_html | strip_newlines %}
+      <li>
+        <a href="{{ base_path }}{{ post.url }}">{{ clean_title }}</a>
+        <span style="font-size: 0.9em; font-weight: normal;"> (Peer-reviewed conference proceedings)</span>
+      </li>
+    {% endfor %}
+  </ul>
+{% endif %}
+
+{% if conf_peer_noproc.size > 0 %}
+  <h4>Peer-reviewed conferences (not in proceedings)</h4>
+  <ul>
+    {% assign pubs = conf_peer_noproc | sort: "date" | reverse %}
+    {% for post in pubs %}
+      {% assign clean_title = post.title | markdownify | strip_html | strip_newlines %}
+      <li>
+        <a href="{{ base_path }}{{ post.url }}">{{ clean_title }}</a>
+        <span style="font-size: 0.9em; font-weight: normal;"> (Peer-reviewed conference, not in proceedings)</span>
+      </li>
+    {% endfor %}
+  </ul>
+{% endif %}
+
+{% if conf_abstract.size > 0 %}
+  <h4>Abstract-reviewed conferences</h4>
+  <ul>
+    {% assign pubs = conf_abstract | sort: "date" | reverse %}
+    {% for post in pubs %}
+      {% assign clean_title = post.title | markdownify | strip_html | strip_newlines %}
+      <li>
+        <a href="{{ base_path }}{{ post.url }}">{{ clean_title }}</a>
+        <span style="font-size: 0.9em; font-weight: normal;"> (Abstract-reviewed conference)</span>
+      </li>
+    {% endfor %}
+  </ul>
+{% endif %}
   
 External Service & Professional Activities
 ======
