@@ -71,4 +71,4 @@ sidebar: false
 
 ## Collaborators
 
-- Burak Sencer (advisor)
+- [Burak Sencer (advisor)](https://scholar.google.com/citations?user=SGQqZeUAAAAJ&hl=en)
