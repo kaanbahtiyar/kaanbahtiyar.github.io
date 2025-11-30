@@ -71,8 +71,17 @@ Work experience
 Honors & Awards
 ======
 
-* **2025 – ASPE Student Challenge, 1st Place Winner**  
-  * Awarded at the 40th Annual Meeting of the American Society for Precision Engineering.
+<details>
+  <summary><strong>2025 – ASPE Student Challenge, 1st Place Winner</strong></summary>
+  <ul>
+    <li>Awarded at the 40th Annual Meeting of the American Society for Precision Engineering.</li>
+  </ul>
+  <video controls style="max-width: 100%; margin-top: 0.5rem;">
+    <source src="/videos/ASPE2025StudentChallenge_1080.mov" type="video/quicktime">
+    Your browser does not support the video tag.
+  </video>
+</details>
+
 * **2024 – [Thomas A. Dow Student Scholarship](/images/ASPE2024award.png)**  
   * Awarded by the American Society for Precision Engineering for the paper presented at the 39th Annual Meeting.
 * **2024 – [Young Researcher Award, ICPE 2024]((/images/ICPE2024award.png))**  
