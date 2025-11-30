@@ -295,10 +295,9 @@ defaults:
       path: ""
       type: projects
     values:
-      layout: single
+      layout: single      # uses your single.html
       author_profile: true
-      share: true
-      comments: true      
+      sidebar: false 
 
 
 # Sass/SCSS
