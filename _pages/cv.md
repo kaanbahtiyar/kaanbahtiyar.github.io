@@ -229,7 +229,7 @@ Service and leadership
 
 <style>
 .cv-publications li {
-  margin-bottom: 0.4rem; 
+  margin-bottom: 0.25rem; 
 }
 .cv-publications li:last-child {
   margin-bottom: 0;
