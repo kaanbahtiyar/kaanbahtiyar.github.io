@@ -9,6 +9,14 @@ redirect_from:
 
 {% include base_path %}
 
+<style>
+.page__title {
+  display: none;
+}
+</style>
+
+You can download my CV [here](/CV/CV.pdf).
+
 Education
 ======
 * Ph.D. in [Robotics](https://engineering.oregonstate.edu/academics/programs/robotics), [Oregon State University](https://oregonstate.edu), 2027 (expected)
