@@ -9,6 +9,7 @@ date: 2025-10-15
 venue: "18th International Conference on High Speed Machining (HSM2025)"
 status: accepted
 project: tool-eccentricity-compensation
+sitemap_include: true
 ---
 
 Peer-reviewed conference paper based on the [tool eccentricity compensation in milling project](/projects/eccentricity-compensation/).  

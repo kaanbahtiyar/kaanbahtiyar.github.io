@@ -10,6 +10,7 @@ paperurl: "https://asmedigitalcollection.asme.org/MSEC/proceedings-abstract/MSEC
 citation: "Bahtiyar, K., & Sencer, B. (2024). Brief paper: Model-free adaptive spindle speed regulation for mitigation of machining vibrations. In Proceedings of the ASME International Manufacturing Science and Engineering Conference (MSEC 2024)."
 pubtype: conf-proc
 project: spindle-speed-optimization
+sitemap_include: true
 ---
 
 Peer-reviewed conference proceeding based on the [spindle speed control for real-time vibration mitigation in machining processes project](/projects/spindle-speed-optimization/).

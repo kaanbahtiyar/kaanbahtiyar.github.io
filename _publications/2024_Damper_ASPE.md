@@ -11,6 +11,7 @@ status: published
 project: inertial-damper-control
 paperurl: "https://www.proceedings.com/79023.html"
 confurl: "https://aspe.net/programs/39th-aspe-annual-meeting/"
+sitemap_include: true
 ---
 
 Abstract-reviewed extended abstract and oral presentation based on the [inertial damper control for vibration mitigation project](/projects/inertial-damper-control/).

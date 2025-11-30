@@ -10,6 +10,7 @@ paperurl: "https://www.sciencedirect.com/science/article/abs/pii/S00078506240002
 citation: "Bahtiyar, K., Sencer, B., & Beudaert, X. (2024). Data-driven feedforward control of inertial dampers for accuracy improvement. CIRP Annals, 73(1), 317–320."
 pubtype: journal
 project: inertial-damper-control
+sitemap_include: true
 ---
 
 Journal article based on the [inertial damper control for vibration mitigation project](/projects/inertial-damper-control/).

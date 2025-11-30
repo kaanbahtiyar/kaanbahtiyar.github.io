@@ -10,6 +10,7 @@ paperurl: "https://www.sciencedirect.com/science/article/abs/pii/S17555817250012
 citation: "Bahtiyar, K., & Sencer, B. (2025). Model-free optimal spindle speed control for real-time vibration mitigation in milling. CIRP Journal of Manufacturing Science and Technology, 61, 554–571."
 pubtype: journal
 project: spindle-speed-optimization
+sitemap_include: true
 ---
 
 Journal article based on the [spindle speed control for real-time vibration mitigation in machining processes project](/projects/spindle-speed-optimization/).

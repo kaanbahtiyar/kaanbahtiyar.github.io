@@ -11,6 +11,7 @@ status: published
 project: chatter-detection
 paperurl: "https://www.proceedings.com/62376.html"
 confurl: "https://aspe.net/36th-annual-meeting/"
+sitemap_include: true
 ---
 
 Abstract-reviewed extended abstract and poster presentation based on the [chatter detection in milling project](/projects/chatter-detection/).

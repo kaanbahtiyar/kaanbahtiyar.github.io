@@ -10,6 +10,7 @@ paperurl: "https://www.sciencedirect.com/science/article/pii/S2213846322000803"
 citation: "Bahtiyar, K., & Sencer, B. (2022). Lightweight and robust chatter detection algorithms for milling. Manufacturing Letters, 33, 388–394."
 pubtype: journal
 project: chatter-detection
+sitemap_include: true
 ---
 
 Journal article based on the [chatter detection in milling project](/projects/chatter-detection/).

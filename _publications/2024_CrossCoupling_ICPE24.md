@@ -8,6 +8,7 @@ excerpt: "A trajectory pre-filtering and data-driven tuning strategy that uses t
 date: 2024-10-24
 venue: "20th International Conference on Precision Engineering (ICPE2024)"
 project: cross-coupling-vibrations
+sitemap_include: true
 ---
 
 Peer-reviewed conference paper based on the [machine tool trajectory pre-filtering and axis-coupled vibrations project](/projects/cross-coupling-vibrations/).

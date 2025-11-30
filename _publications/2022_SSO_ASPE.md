@@ -11,6 +11,7 @@ status: published
 project: spindle-speed-optimization
 paperurl: "https://www.proceedings.com/66902.html"
 confurl: "https://aspe.net/programs/37th-annual-meeting/"
+sitemap_include: true
 ---
 
 Abstract-reviewed extended abstract and poster presentation based on the [spindle speed control for real-time vibration mitigation in machining processes project](/projects/spindle-speed-optimization/).

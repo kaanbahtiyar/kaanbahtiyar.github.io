@@ -10,6 +10,7 @@ citation: "Bahtiyar, K., & Sencer, B. (2026). Data-driven adaptive compensation 
 pubtype: journal
 project: tool-eccentricity-compensation
 status: submitted
+sitemap_include: true
 ---
 
 Journal article based on the [tool eccentricity compensation in milling project](/projects/tool-eccentricity-compensation/); currently under review at the ASME Journal of Manufacturing Science and Engineering.
