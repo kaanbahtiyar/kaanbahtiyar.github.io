@@ -5,13 +5,14 @@ category: conference
 pubtype: conf-abstract
 permalink: /publication/esc-spindle-speed-aspe2022/
 excerpt: "Model-free extremum seeking–based spindle speed optimization in milling that uses vibration measurements to minimize a total vibration cost combining forced and chatter components, without process models or stability lobes."
-date: 2022-10-14
+date: 2022-10-14   
 venue: "37th Annual Meeting of the American Society for Precision Engineering (ASPE)"
 status: published
 project: spindle-speed-optimization
 paperurl: "https://www.proceedings.com/66902.html"              
-confurl: "https://aspe.net/programs/37th-annual-meeting/"      
+confurl: "https://aspe.net/programs/37th-annual-meeting/"     
 ---
+
 
 Abstract-reviewed extended abstract and poster presentation based on the spindle speed control for real-time vibration mitigation in machining processes project (project page is available [here](/projects/spindle-speed-optimization/)).
 
