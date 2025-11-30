@@ -12,15 +12,15 @@ redirect_from:
 Education
 ======
 * Ph.D. in [Robotics](https://engineering.oregonstate.edu/academics/programs/robotics), [Oregon State University](https://oregonstate.edu), 2027 (expected)
-* M.S. in [Robotics](https://engineering.oregonstate.edu/academics/programs/robotics), [Oregon State University](https://oregonstate.edu), 2023
-* B.S. in [Control and Automation Engineering](https://kontrol.itu.edu.tr/en), [Istanbul Technical University](https://www.itu.edu.tr/en), 2020
-* B.S. in [Mechanical Engineering](https://mkn.itu.edu.tr/en), [Istanbul Technical University](https://www.itu.edu.tr/en), 2019
+* M.Sc. in [Robotics](https://engineering.oregonstate.edu/academics/programs/robotics), [Oregon State University](https://oregonstate.edu), 2023
+* B.Sc. in [Control and Automation Engineering](https://kontrol.itu.edu.tr/en), [Istanbul Technical University](https://www.itu.edu.tr/en), 2020
+* B.Sc. in [Mechanical Engineering](https://mkn.itu.edu.tr/en), [Istanbul Technical University](https://www.itu.edu.tr/en), 2019
 
 Work experience
 ======
 * Graduate Research Assistant, [Oregon State University](https://oregonstate.edu)
   * **Dynamics identification and control**
-    * Characterized feed drive and VCA stage dynamics on lab testbeds.
+    * Characterized feed drive and VCA stage dynamics on lab testbeds and industrial machine tool.
     * Performed time-domain system identification to capture transient behavior.
     * Performed frequency-domain system identification to obtain frequency response functions and assess bandwidth and resonances.
     * Designed and implemented collocated and non-collocated controllers in dSPACE/Simulink.
