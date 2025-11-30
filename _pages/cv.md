@@ -22,7 +22,7 @@ Work experience
   * **Dynamics identification and control**
     * Characterized feed drive and VCA stage dynamics on lab testbeds.
     * Performed time-domain system identification to capture transient behavior.
-    * Performed frequency-domain system identification to obtain FRFs and assess bandwidth and resonances.
+    * Performed frequency-domain system identification to obtain frequency response functions and assess bandwidth and resonances.
     * Designed and implemented collocated and non-collocated controllers in dSPACE/Simulink.
     * Evaluated controller performance using transient and robustness metrics (overshoot, settling time, gain and phase margins, etc.).
 
@@ -32,19 +32,20 @@ Work experience
 
   * **Active inertial damper control**
     * Developed a data-driven feedforward and iterative learning control strategy for an active inertial damper to suppress structural vibrations of industrial robots and machine tools in repetitive motion tasks.
-    * Experimentally achieved up to 87% reduction in peak vibration on a feed drive testbed under stroke and force constraints.
+    * Experimentally achieved up to ~87% reduction in peak vibration on a feed drive testbed under stroke and force constraints.
 
   * **Machining dynamics, chatter detection, and spindle speed control**
-    * Performed tap testing, modal analysis, and cutting tests to identify structural and process dynamics for milling; developed time- and frequency-domain milling simulation tools in MATLAB.
-    * Developed and validated chatter detection algorithms for milling based on spectral power analysis, principal component analysis (PCA), and Kalman filter concepts.
+    * Performed tap testing, modal analysis, and cutting tests to identify structural and process dynamics for milling.
+    * Developed time-, frequency-, and semi-discrete–domain milling simulation and stability analysis tools in MATLAB.
+    * Developed and validated chatter detection algorithms for milling based on spectral power analysis, principal component analysis (PCA), and Kalman filters.
     * Designed model-free adaptive spindle speed control strategies to minimize both forced and chatter vibrations, demonstrating large reductions in RMS vibration and surface location error (SLE) and improved surface finish compared to conventional chatter mitigation methods used in industry.
 
   * **Tool eccentricity compensation**
-    * Designed real-time extremum-seeking control strategies that use cutting-force feedback to cancel milling tool eccentricity via feed drive modulation.
-    * Implemented and experimentally validated a data-driven, iteration-based eccentricity compensation method in the frequency domain using force and vibration feedback on a vertical machine tool.
+    * Designed and validated a model-free extremum-seeking control strategy that uses cutting force feedback to cancel milling tool eccentricity via feed drive modulation.
+    * Developed and experimentally validated a model-informed, data-driven, iteration-based compensation method in the frequency domain using force and vibration feedback on a vertical machine tool, achieving faster convergence than the purely model-free extremum-seeking approach.
 
   * **Mentoring and lab leadership**
-    * Trained and supervised graduate and undergraduate students in system identification, controller design and implementation, machining experiments, and data analysis; provided technical guidance on mechatronics and control throughout their projects.
+    * Trained and supervised graduate and undergraduate students in system identification, controller design and implementation, machining process models, and data analysis; provided technical guidance on mechatronics and control throughout their projects.
     * Mentored two MS students on thesis projects related to milling tool eccentricity compensation and chatter mitigation via feed modulation in milling using machine tool feed drives.
 
 * Graduate Teaching Assistant, [Oregon State University](https://oregonstate.edu)
