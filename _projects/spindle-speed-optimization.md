@@ -10,16 +10,11 @@ sidebar: false
 
 ## Overview
 
-Brief high-level description of the project:
-- What problem you’re solving (vibration mitigation, chatter, surface quality).
-- Core idea (extremum-seeking spindle-speed control, data-driven adaptation, etc.).
-- Experimental platform (vertical machining center, accelerometers, etc.).
+
 
 ## Key methods
 
-- Extremum-seeking control (ESC) for online spindle speed adaptation.
-- Vibration-variance–based cost function combining forced and chatter components.
-- Real-time implementation details (sampling, filtering, actuator constraints, etc.).
+
 
 ## Related publications
 
@@ -44,8 +39,4 @@ Brief high-level description of the project:
 ## Collaborators
 
 - Burak Sencer (advisor)
-- Others if relevant
 
-## Support / funding
-
-- e.g., NSF, Mitsubishi Electric, etc. (if you want to show it)
