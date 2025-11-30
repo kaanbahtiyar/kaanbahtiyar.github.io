@@ -291,13 +291,14 @@ defaults:
       author_profile: true
       share: true
   # projects
-   - scope:
+  - scope:
       path: ""
       type: projects
     values:
-      layout: single            # uses your single.html
+      layout: single
       author_profile: true
-      sidebar: false            # often nicer for project pages
+      share: true
+      comments: true      
 
 
 # Sass/SCSS
