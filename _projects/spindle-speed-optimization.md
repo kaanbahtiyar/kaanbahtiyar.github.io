@@ -6,6 +6,7 @@ project_id: spindle-speed-optimization
 excerpt: "Model-free spindle speed control strategies for milling that adaptively minimize both forced and chatter vibrations using in-process vibration data."
 date: 2022-10-14
 sidebar: false
+sitemap_include: true
 ---
 
 ## Overview
