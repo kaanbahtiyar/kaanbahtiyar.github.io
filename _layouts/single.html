@@ -7,225 +7,65 @@
   <meta name="Generator" content="Cocoa HTML Writer">
   <meta name="CocoaVersion" content="2685.2">
   <style type="text/css">
-    p.p1 {margin: 0.0px 0.0px 0.0px 0.0px; font: 12.0px Times; -webkit-text-stroke: #000000}
-    p.p2 {margin: 0.0px 0.0px 0.0px 0.0px; font: 12.0px Times; -webkit-text-stroke: #000000; min-height: 14.0px}
-    span.s1 {font-kerning: none}
+    p.p1 {margin: 0.0px 0.0px 0.0px 0.0px; font: 14.0px '.SF NS'; color: #0e0e0e}
   </style>
 </head>
 <body>
-<p class="p1"><span class="s1">---</span></p>
-<p class="p1"><span class="s1">layout: default</span></p>
-<p class="p1"><span class="s1">---</span></p>
-<p class="p2"><span class="s1"></span><br></p>
-<p class="p1"><span class="s1">{% include base_path %}</span></p>
-<p class="p2"><span class="s1"></span><br></p>
-<p class="p1"><span class="s1">{% if page.header.overlay_color or page.header.overlay_image or page.header.image %}</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>{% include page__hero.html %}</span></p>
-<p class="p1"><span class="s1">{% endif %}</span></p>
-<p class="p2"><span class="s1"></span><br></p>
-<p class="p1"><span class="s1">{% if page.url != "/" and site.breadcrumbs %}</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>{% unless paginator %}</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>{% include breadcrumbs.html %}</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>{% endunless %}</span></p>
-<p class="p1"><span class="s1">{% endif %}</span></p>
-<p class="p2"><span class="s1"></span><br></p>
-<p class="p1"><span class="s1">&lt;div id="main" role="main"&gt;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>{% include sidebar.html %}</span></p>
-<p class="p2"><span class="s1"></span><br></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>&lt;article class="page" itemscope itemtype="http://schema.org/CreativeWork"&gt;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>{% if page.title %}</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>&lt;meta itemprop="headline" content="{{ page.title | markdownify | strip_html | strip_newlines | escape_once }}"&gt;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>{% endif %}</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>{% if page.excerpt %}</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>&lt;meta itemprop="description" content="{{ page.excerpt | markdownify | strip_html | strip_newlines | escape_once }}"&gt;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>{% endif %}</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>{% if page.date %}</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>&lt;meta itemprop="datePublished" content="{{ page.date | date: "%B %d, %Y" }}"&gt;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>{% endif %}</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>{% if page.modified %}</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>&lt;meta itemprop="dateModified" content="{{ page.modified | date: "%B %d, %Y" }}"&gt;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>{% endif %}</span></p>
-<p class="p2"><span class="s1"></span><br></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>&lt;div class="page__inner-wrap"&gt;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>{% unless page.header.overlay_color or page.header.overlay_image %}</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>&lt;header&gt;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">          </span>{% if page.title %}</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>&lt;h1 class="page__title" itemprop="headline"&gt;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">              </span>{{ page.title | markdownify | remove: "&lt;p&gt;" | remove: "&lt;/p&gt;" }}</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>&lt;/h1&gt;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">          </span>{% endif %}</span></p>
-<p class="p2"><span class="s1"></span><br></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">          </span>{% if page.read_time %}</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>&lt;p class="page__meta"&gt;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">              </span>&lt;i class="fa fa-clock" aria-hidden="true"&gt;&lt;/i&gt;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">              </span>{% include read-time.html %}</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>&lt;/p&gt;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">          </span>{% endif %}</span></p>
-<p class="p2"><span class="s1"></span><br></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">          </span>{% if page.modified %}</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>&lt;p class="page__date"&gt;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">              </span>&lt;strong&gt;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">                </span>&lt;i class="fa fa-fw fa-calendar" aria-hidden="true"&gt;&lt;/i&gt;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">                </span>{{ site.data.ui-text[site.locale].date_label | default: "Published:" }}</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">              </span>&lt;/strong&gt;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">              </span>&lt;time datetime="{{ page.modified | date: "%Y-%m-%d" }}"&gt;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">                </span>{{ page.modified | date: "%B %d, %Y" }}</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">              </span>&lt;/time&gt;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>&lt;/p&gt;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">          </span>{% endif %}</span></p>
-<p class="p2"><span class="s1"></span><br></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">          </span>{% if page.collection == 'teaching' %}</span></p>
-<p class="p2"><span class="s1"></span><br></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>&lt;p&gt;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">              </span>{{ page.type }},</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">              </span>&lt;i&gt;{{ page.venue }}&lt;/i&gt;,</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">              </span>{{ page.date | default: "1900-01-01" | date: "%Y" }}</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>&lt;/p&gt;</span></p>
-<p class="p2"><span class="s1"></span><br></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">          </span>{% elsif page.venue and page.date %}</span></p>
-<p class="p2"><span class="s1"></span><br></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>{% assign year = page.date | default: "1900-01-01" | date: "%Y" %}</span></p>
-<p class="p2"><span class="s1"></span><br></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>{% if page.collection == 'publications' and page.paperurl %}</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">              </span>{%- comment -%} Linked venue variants {%- endcomment -%}</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">              </span>{% if page.status == "submitted" %}</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">                </span>&lt;p&gt;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">                  </span>Submitted to</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">                  </span>&lt;i&gt;&lt;a href="{{ page.paperurl }}" target="_blank" rel="noopener"&gt;{{ page.venue }}&lt;/a&gt;&lt;/i&gt;,</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">                  </span>{{ year }}</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">                </span>&lt;/p&gt;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">              </span>{% elsif page.pubtype == "conf-proc" %}</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">                </span>&lt;p&gt;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">                  </span>In</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">                  </span>&lt;i&gt;&lt;a href="{{ page.paperurl }}" target="_blank" rel="noopener"&gt;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">                    </span>Proceedings of {{ page.venue }}</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">                  </span>&lt;/a&gt;&lt;/i&gt;, {{ year }}</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">                </span>&lt;/p&gt;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">              </span>{% elsif page.pubtype == "conf-peer-noproc" %}</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">                </span>&lt;p&gt;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">                  </span>Presented at</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">                  </span>&lt;i&gt;&lt;a href="{{ page.paperurl }}" target="_blank" rel="noopener"&gt;{{ page.venue }}&lt;/a&gt;&lt;/i&gt;,</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">                  </span>{{ year }}</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">                </span>&lt;/p&gt;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">              </span>{% elsif page.pubtype == "conf-abstract" %}</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">                </span>&lt;p&gt;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">                  </span>Presented at</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">                  </span>&lt;i&gt;{{ page.venue }}&lt;/i&gt;, {{ year }}</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">                </span>&lt;/p&gt;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">              </span>{% else %}</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">                </span>&lt;p&gt;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">                  </span>Published in</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">                  </span>&lt;i&gt;&lt;a href="{{ page.paperurl }}" target="_blank" rel="noopener"&gt;{{ page.venue }}&lt;/a&gt;&lt;/i&gt;,</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">                  </span>{{ year }}</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">                </span>&lt;/p&gt;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">              </span>{% endif %}</span></p>
-<p class="p2"><span class="s1"></span><br></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>{% else %}</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">              </span>{%- comment -%} Unlinked venue variants {%- endcomment -%}</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">              </span>{% if page.status == "submitted" %}</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">                </span>&lt;p&gt;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">                  </span>Submitted to</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">                  </span>&lt;i&gt;{{ page.venue }}&lt;/i&gt;, {{ year }}</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">                </span>&lt;/p&gt;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">              </span>{% elsif page.pubtype == "conf-proc" %}</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">                </span>&lt;p&gt;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">                  </span>In &lt;i&gt;Proceedings of {{ page.venue }}&lt;/i&gt;, {{ year }}</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">                </span>&lt;/p&gt;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">              </span>{% elsif page.pubtype == "conf-peer-noproc" %}</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">                </span>&lt;p&gt;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">                  </span>Presented at &lt;i&gt;{{ page.venue }}&lt;/i&gt;, {{ year }}</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">                </span>&lt;/p&gt;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">              </span>{% elsif page.pubtype == "conf-abstract" %}</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">                </span>&lt;p&gt;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">                  </span>Presented at &lt;i&gt;{{ page.venue }}&lt;/i&gt;, {{ year }}</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">                </span>&lt;/p&gt;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">              </span>{% else %}</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">                </span>&lt;p&gt;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">                  </span>Published in &lt;i&gt;{{ page.venue }}&lt;/i&gt;, {{ year }}</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">                </span>&lt;/p&gt;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">              </span>{% endif %}</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>{% endif %}</span></p>
-<p class="p2"><span class="s1"></span><br></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">          </span>{% elsif page.date and page.collection != 'projects' %}</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>&lt;p class="page__date"&gt;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">              </span>&lt;strong&gt;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">                </span>&lt;i class="fa fa-fw fa-calendar" aria-hidden="true"&gt;&lt;/i&gt;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">                </span>{{ site.data.ui-text[site.locale].date_label | default: "Published:" }}</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">              </span>&lt;/strong&gt;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">              </span>&lt;time datetime="{{ page.date | date_to_xmlschema }}"&gt;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">                </span>{{ page.date | default: "1900-01-01" | date: "%B %d, %Y" }}</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">              </span>&lt;/time&gt;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>&lt;/p&gt;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">          </span>{% endif %}</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>&lt;/header&gt;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>{% endunless %}</span></p>
-<p class="p2"><span class="s1"></span><br></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>&lt;section class="page__content" itemprop="text"&gt;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>{{ content }}</span></p>
-<p class="p2"><span class="s1"></span><br></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>{% if page.citation %}</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">          </span>&lt;p style="font-size: smaller"&gt;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>Recommended citation: {{ page.citation }}</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">          </span>&lt;/p&gt;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>{% endif %}</span></p>
-<p class="p2"><span class="s1"></span><br></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>{% if page.slidesurl or page.bibtexurl %}</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">          </span>&lt;p style="font-size: smaller"&gt;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>{% if page.slidesurl %}</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">              </span>&lt;a href="{{ page.slidesurl }}"&gt;Download Slides&lt;/a&gt;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>{% endif %}</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>{% if page.slidesurl and page.bibtexurl %}</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">              </span>&amp;nbsp;|&amp;nbsp;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>{% endif %}</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>{% if page.bibtexurl %}</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">              </span>&lt;a href="{{ page.bibtexurl }}"&gt;Download Bibtex&lt;/a&gt;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>{% endif %}</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">          </span>&lt;/p&gt;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>{% endif %}</span></p>
-<p class="p2"><span class="s1"></span><br></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>{% if page.link %}</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">          </span>&lt;div&gt;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>&lt;a href="{{ page.link }}" class="btn"&gt;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">              </span>{{ site.data.ui-text[site.locale].ext_link_label | default: "Direct Link" }}</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>&lt;/a&gt;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">          </span>&lt;/div&gt;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>{% endif %}</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>&lt;/section&gt;</span></p>
-<p class="p2"><span class="s1"></span><br></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>&lt;footer class="page__meta"&gt;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>{% if site.data.ui-text[site.locale].meta_label %}</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">          </span>&lt;h4 class="page__meta-title"&gt;{{ site.data.ui-text[site.locale].meta_label }}&lt;/h4&gt;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>{% endif %}</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>{% include page__taxonomy.html %}</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>&lt;/footer&gt;</span></p>
-<p class="p2"><span class="s1"></span><br></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>{% if page.share %}</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>{% include social-share.html %}</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>{% endif %}</span></p>
-<p class="p2"><span class="s1"></span><br></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>{% include post_pagination.html %}</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>&lt;/div&gt;</span></p>
-<p class="p2"><span class="s1"></span><br></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>{% if site.comments.provider and page.comments %}</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>{% include comments.html %}</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>{% endif %}</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>&lt;/article&gt;</span></p>
-<p class="p2"><span class="s1"></span><br></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>{%- comment -%} only show related on a post page when not disabled {%- endcomment -%}</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>{% if page.id and page.related and site.related_posts.size &gt; 0 %}</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>&lt;div class="page__related"&gt;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>{% if site.data.ui-text[site.locale].related_label %}</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>&lt;h4 class="page__related-title"&gt;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">          </span>{{ site.data.ui-text[site.locale].related_label | default: "You May Also Enjoy" }}</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>&lt;/h4&gt;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>{% endif %}</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>&lt;div class="grid__wrapper"&gt;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>{% for post in site.related_posts limit:4 %}</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">          </span>{% include archive-single.html type="grid" %}</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>{% endfor %}</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>&lt;/div&gt;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>&lt;/div&gt;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>{% endif %}</span></p>
-<p class="p1"><span class="s1">&lt;/div&gt;</span></p>
+<p class="p1">--- layout: default --- {% include base_path %} {% if page.header.overlay_color or page.header.overlay_image or page.header.image %} {% include page__hero.html %} {% endif %} {% if page.url != "/" and site.breadcrumbs %} {% unless paginator %} {% include breadcrumbs.html %} {% endunless %} {% endif %}</p>
+<p class="p1">{% include sidebar.html %}</p>
+<p class="p1">{% if page.title %} {% endif %} {% if page.excerpt %} {% endif %} {% if page.date %} {% endif %} {% if page.modified %} {% endif %}</p>
+<p class="p1">{% unless page.header.overlay_color or page.header.overlay_image %}</p>
+<p class="p1">{% if page.title %}</p>
+<p class="p1">{{ page.title | markdownify | remove: "</p>
+<p class="p1">" | remove: "</p>
+<p class="p1">" }}</p>
+<p class="p1">{% endif %} {% if page.read_time %}</p>
+<p class="p1">{% include read-time.html %}</p>
+<p class="p1">{% endif %} {% if page.modified %}</p>
+<p class="p1">{{ site.data.ui-text[site.locale].date_label | default: "Published:" }} {{ page.modified | date: "%B %d, %Y" }}</p>
+<p class="p1">{% endif %} {% if page.collection == 'teaching' %}</p>
+<p class="p1">{{ page.type }}, {{ page.venue }}, {{ page.date | default: "1900-01-01" | date: "%Y" }}</p>
+<p class="p1">{% elsif page.venue and page.date %} {% assign year = page.date | default: "1900-01-01" | date: "%Y" %} {% if page.collection == 'publications' and page.paperurl %} {% comment %}Linked venue variants{% endcomment %} {% if page.status == "submitted" %}</p>
+<p class="p1">Submitted to {{ page.venue }}, {{ year }}</p>
+<p class="p1">{% elsif page.pubtype == "conf-proc" %}</p>
+<p class="p1">In Proceedings of {{ page.venue }} , {{ year }}</p>
+<p class="p1">{% elsif page.pubtype == "conf-peer-noproc" %}</p>
+<p class="p1">Presented at {{ page.venue }}, {{ year }}</p>
+<p class="p1">{% elsif page.pubtype == "conf-abstract" %}</p>
+<p class="p1">Abstract accepted for presentation at {{ page.venue }}, {{ year }}</p>
+<p class="p1">{% else %}</p>
+<p class="p1">Published in {{ page.venue }}, {{ year }}</p>
+<p class="p1">{% endif %} {% else %} {% comment %}Unlinked venue variants{% endcomment %} {% if page.status == "submitted" %}</p>
+<p class="p1">Submitted to {{ page.venue }}, {{ year }}</p>
+<p class="p1">{% elsif page.pubtype == "conf-proc" %}</p>
+<p class="p1">In Proceedings of {{ page.venue }}, {{ year }}</p>
+<p class="p1">{% elsif page.pubtype == "conf-peer-noproc" %}</p>
+<p class="p1">Presented at {{ page.venue }}, {{ year }}</p>
+<p class="p1">{% elsif page.pubtype == "conf-abstract" %}</p>
+<p class="p1">Abstract accepted for presentation at {{ page.venue }}, {{ year }}</p>
+<p class="p1">{% else %}</p>
+<p class="p1">Published in {{ page.venue }}, {{ year }}</p>
+<p class="p1">{% endif %} {% endif %} {% elsif page.date and page.collection != 'projects' %}</p>
+<p class="p1">{{ site.data.ui-text[site.locale].date_label | default: "Published:" }} {{ page.date | default: "1900-01-01" | date: "%B %d, %Y" }}</p>
+<p class="p1">{% endif %}</p>
+<p class="p1">{% endunless %}</p>
+<p class="p1">{{ content }} {% if page.citation %}</p>
+<p class="p1">Recommended citation: {{ page.citation }}</p>
+<p class="p1">{% endif %} {% if page.slidesurl or page.bibtexurl %}</p>
+<p class="p1">{% if page.slidesurl %} Download Slides {% endif %} {% if page.slidesurl and page.bibtexurl %}  |  {% endif %} {% if page.bibtexurl %} Download Bibtex {% endif %}</p>
+<p class="p1">{% endif %} {% if page.link %}</p>
+<p class="p1">{{ site.data.ui-text[site.locale].ext_link_label | default: "Direct Link" }}</p>
+<p class="p1">{% endif %}</p>
+<p class="p1">{% if site.data.ui-text[site.locale].meta_label %}</p>
+<p class="p1">{{ site.data.ui-text[site.locale].meta_label }}</p>
+<p class="p1">{% endif %} {% include page__taxonomy.html %}</p>
+<p class="p1">{% if page.share %} {% include social-share.html %} {% endif %} {% include post_pagination.html %}</p>
+<p class="p1">{% if site.comments.provider and page.comments %} {% include comments.html %} {% endif %}</p>
+<p class="p1">{% comment %}only show related on a post page when not disabled{% endcomment %} {% if page.id and page.related and site.related_posts.size &gt; 0 %}</p>
+<p class="p1">{% if site.data.ui-text[site.locale].related_label %}</p>
+<p class="p1">{{ site.data.ui-text[site.locale].related_label | default: "You May Also Enjoy" }}</p>
+<p class="p1">{% endif %}</p>
+<p class="p1">{% for post in site.related_posts limit:4 %} {% include archive-single.html type="grid" %} {% endfor %}</p>
+<p class="p1">{% endif %}</p>
 </body>
 </html>
