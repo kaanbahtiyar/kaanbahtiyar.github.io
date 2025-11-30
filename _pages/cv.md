@@ -213,20 +213,16 @@ Honors & Awards
 
 Publications
 ======
-
-<details style="margin-bottom: 0.75rem;">
-  <summary><strong>Show publications</strong></summary>
-  <ul>
-    {% assign pubs = site.publications | sort: 'date' %}
-    {% for post in pubs reversed %}
-      <li>
-        <a href="{{ base_path }}{{ post.url }}">
-          {{ post.title | markdownify | strip_html | strip_newlines }}
-        </a>
-      </li>
-    {% endfor %}
-  </ul>
-</details>
+<ul>
+  {% assign pubs = site.publications | sort: 'date' %}
+  {% for post in pubs reversed %}
+    <li>
+      <a href="{{ base_path }}{{ post.url }}">
+        {{ post.title | markdownify | strip_html | strip_newlines }}
+      </a>
+    </li>
+  {% endfor %}
+</ul>
   
 Talks
 ======
