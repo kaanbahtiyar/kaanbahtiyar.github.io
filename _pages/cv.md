@@ -141,7 +141,7 @@ Honors & Awards
   <summary><strong>2025 – ASPE Student Challenge, 1st Place Winner</strong></summary>
   <ul>
     <li>
-      Awarded at the 40th Annual Meeting of the American Society for Precision Engineering.
+      Awarded at the 40th Annual Meeting of the American Society for Precision Engineering; challenge details are available [here](https://aspe.net/2025-student-challenge/).
       <div style="text-align: center; margin-top: 0.5rem;">
         <video controls style="max-width: 400px; width: 100%; height: auto;">
           <source src="/videos/ASPE2025StudentChallenge_1080.mov" type="video/quicktime">
@@ -153,10 +153,10 @@ Honors & Awards
 </details>
 
 <details style="margin-bottom: 0.75rem;">
-  <summary><strong>2024 – Thomas A. Dow Student Scholarship</strong></summary>
+  <summary><strong>2024 – Thomas A. Dow Student Scholarship, ASPE</strong></summary>
   <ul>
     <li>
-      Awarded by the American Society for Precision Engineering for the paper presented at the 39th Annual Meeting.
+      Awarded by the American Society for Precision Engineering for the paper presented at the 39th Annual Meeting; more details are available [here](https://aspe.net/awards-2/thomas-a-dow-student-scholarship/).
       <div style="text-align: center; margin-top: 0.5rem;">
         <img src="/images/ASPE2024award.png"
              alt="Thomas A. Dow Student Scholarship 2024 award"
@@ -237,7 +237,7 @@ Service and leadership
 
 <style>
 .cv-publications li {
-  margin-bottom: 0.25rem; 
+  margin-bottom: 0.75rem; 
 }
 .cv-publications li:last-child {
   margin-bottom: 0;
