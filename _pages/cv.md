@@ -13,6 +13,28 @@ redirect_from:
 .page__title {
   display: none;
 }
+
+/* indent inner content of big sections (Work experience, Honors, etc.) */
+.cv-section-inner {
+  margin-left: 1.5rem;
+}
+
+/* subtitles inside Publications (e.g., "Journal articles (...)") */
+.cv-pub-section-title {
+  font-weight: 600;
+  margin-top: 0.75rem;   /* space above subtitle */
+  margin-bottom: 0.2rem; /* smaller gap before list */
+}
+
+/* lists under each publication subtitle */
+.cv-publication-list {
+  margin-top: 0.2rem;
+  margin-bottom: 0.6rem;
+}
+
+.cv-publication-list li {
+  margin-bottom: 0.1rem;
+}
 </style>
 
 You can download my CV [here](/CV/CV.pdf).
@@ -26,6 +48,8 @@ Education
 
 Work experience
 ======
+
+<div class="cv-section-inner">
 
 <details style="margin-bottom: 0.75rem;">
   <summary><strong>Graduate Research Assistant, <a href="https://oregonstate.edu">Oregon State University</a></strong></summary>
@@ -134,8 +158,12 @@ Work experience
   </ul>
 </details>
 
+</div>
+
 Honors & Awards
 ======
+
+<div class="cv-section-inner">
 
 <details style="margin-bottom: 0.75rem;">
   <summary><strong>2025 – ASPE Student Challenge, 1st Place Winner</strong></summary>
@@ -211,6 +239,8 @@ Honors & Awards
   </ul>
 </details>
 
+</div>
+
 <div style="margin-bottom: 1.5rem;"></div>
 
 Publications
@@ -226,13 +256,12 @@ Publications
 {%- assign conf_peer_noproc = all_pubs | where: "pubtype", "conf-peer-noproc" -%}
 {%- assign conf_abstract    = all_pubs | where: "pubtype", "conf-abstract" -%}
 
-{%- comment -%}
-JOURNAL ARTICLES
-{%- endcomment -%}
 {% if journal_pubs.size > 0 %}
-**Journal articles ({{ journal_published.size }} published{% if journal_submitted.size > 0 %}, {{ journal_submitted.size }} submitted{% endif %})**
+<p class="cv-pub-section-title">
+  Journal articles ({{ journal_published.size }} published{% if journal_submitted.size > 0 %}, {{ journal_submitted.size }} submitted{% endif %})
+</p>
 
-<ul>
+<ul class="cv-publication-list">
   {% assign pubs = journal_pubs | sort: "date" | reverse %}
   {% for post in pubs %}
     {% assign clean_title = post.title | markdownify | strip_html | strip_newlines %}
@@ -246,13 +275,12 @@ JOURNAL ARTICLES
 </ul>
 {% endif %}
 
-{%- comment -%}
-PEER-REVIEWED CONFERENCE PROCEEDINGS
-{%- endcomment -%}
 {% if conf_proc.size > 0 %}
-**Peer-reviewed conference proceedings ({{ conf_proc.size }} publication{% if conf_proc.size != 1 %}s{% endif %})**
+<p class="cv-pub-section-title">
+  Peer-reviewed conference proceedings ({{ conf_proc.size }} publication{% if conf_proc.size != 1 %}s{% endif %})
+</p>
 
-<ul>
+<ul class="cv-publication-list">
   {% assign pubs = conf_proc | sort: "date" | reverse %}
   {% for post in pubs %}
     {% assign clean_title = post.title | markdownify | strip_html | strip_newlines %}
@@ -263,13 +291,12 @@ PEER-REVIEWED CONFERENCE PROCEEDINGS
 </ul>
 {% endif %}
 
-{%- comment -%}
-PEER-REVIEWED, NOT IN PROCEEDINGS
-{%- endcomment -%}
 {% if conf_peer_noproc.size > 0 %}
-**Peer-reviewed conferences (not in proceedings) ({{ conf_peer_noproc.size }} publication{% if conf_peer_noproc.size != 1 %}s{% endif %})**
+<p class="cv-pub-section-title">
+  Peer-reviewed conferences (not in proceedings) ({{ conf_peer_noproc.size }} publication{% if conf_peer_noproc.size != 1 %}s{% endif %})
+</p>
 
-<ul>
+<ul class="cv-publication-list">
   {% assign pubs = conf_peer_noproc | sort: "date" | reverse %}
   {% for post in pubs %}
     {% assign clean_title = post.title | markdownify | strip_html | strip_newlines %}
@@ -280,13 +307,12 @@ PEER-REVIEWED, NOT IN PROCEEDINGS
 </ul>
 {% endif %}
 
-{%- comment -%}
-ABSTRACT-REVIEWED
-{%- endcomment -%}
 {% if conf_abstract.size > 0 %}
-**Abstract-reviewed conferences ({{ conf_abstract.size }} presentation{% if conf_abstract.size != 1 %}s{% endif %})**
+<p class="cv-pub-section-title">
+  Abstract-reviewed conferences ({{ conf_abstract.size }} presentation{% if conf_abstract.size != 1 %}s{% endif %})
+</p>
 
-<ul>
+<ul class="cv-publication-list">
   {% assign pubs = conf_abstract | sort: "date" | reverse %}
   {% for post in pubs %}
     {% assign clean_title = post.title | markdownify | strip_html | strip_newlines %}
@@ -296,7 +322,7 @@ ABSTRACT-REVIEWED
   {% endfor %}
 </ul>
 {% endif %}
-  
+
 External Service & Professional Activities
 ======
 * Journal reviewing
