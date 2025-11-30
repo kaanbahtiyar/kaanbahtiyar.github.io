@@ -11,6 +11,7 @@ status: accepted
 project: eccentricity-compensation
 ---
 
-Peer-reviewed conference paper based on the tool eccentricity compensation in milling project (project page is available [here](/projects/eccentricity-compensation/)).
+Peer-reviewed conference paper presented at the 18th International Conference on High Speed Machining (HSM2025), based on the [tool eccentricity compensation in milling](/projects/eccentricity-compensation/) project. The paper was presented at HSM2025; the peer-reviewed proceedings will be published in the associated journal special issue.
 
-The paper was presented at HSM2025; the peer-reviewed proceedings will be published in the associated journal special issue.
+**Abstract.**  
+Eliminating tool eccentricity is critical for longer tool life and high-quality surface finish. This paper presents an on-machine eccentricity cancellation strategy using machine tool feed drives. Circular motion at the spindle frequency is commanded to the feed axes to introduce an artificial eccentricity vector in tool coordinates. Cutting forces are monitored to extract the components induced by eccentricity in the frequency domain, and an extremum seeking controller (ESC) is designed to cancel the eccentricity component by automatically adjusting the magnitude and orientation of the circular motion. Effectiveness of the proposed strategy is demonstrated in numerical simulations and machining experiments.
