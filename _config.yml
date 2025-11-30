@@ -235,7 +235,6 @@ collections:
     permalink: /:collection/:path/
 
 
-# These settings control how pages and collections are included in the site
 defaults:
   # _posts
   - scope:
@@ -295,9 +294,9 @@ defaults:
       path: ""
       type: projects
     values:
-      layout: single      # uses your single.html
+      layout: single
       author_profile: true
-      sidebar: false 
+      sidebar: false
 
 
 # Sass/SCSS
