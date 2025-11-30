@@ -6,6 +6,7 @@ project_id: cross-coupling-vibrations
 excerpt: "Trajectory pre-filtering and feed-drive compensation methods to cancel axis-coupled inertial vibrations in vertical machining centers."
 date: 2024-10-23
 sidebar: false
+sitemap_include: true
 ---
 
 ## Overview
