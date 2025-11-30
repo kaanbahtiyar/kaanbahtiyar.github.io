@@ -5,7 +5,7 @@ category: conference
 pubtype: conf-abstract
 permalink: /publication/time-domain-chatter-detection-aspe2021/
 excerpt: "Time-domain chatter detection method that separates cutting and chatter components using Kalman filtering and autoregressive modeling, enabling earlier and more reliable detection of chatter onset than frequency-domain approaches."
-date: 2021-10-01   # adjust to actual conference date
+date: 2021-11-01   # adjust to actual conference date
 venue: "36th Annual Meeting of the American Society for Precision Engineering (ASPE)"
 status: published
 project: chatter-detection
