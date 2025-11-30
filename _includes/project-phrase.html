@@ -1,0 +1,6 @@
+{% if page.project %}
+  {% assign proj = site.projects | where: "project_id", page.project | first %}
+  {% if proj %}
+    based on the <a href="{{ proj.url | relative_url }}">{{ proj.title }}</a> project
+  {% endif %}
+{% endif %}
