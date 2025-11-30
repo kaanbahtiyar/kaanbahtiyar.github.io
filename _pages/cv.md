@@ -83,7 +83,7 @@ Honors & Awards
   * Awarded by the National Science Foundation to support attendance at NAMRC 2022.
 * **2020 – Undergraduate Academic Honors, Istanbul Technical University**  
   * High Honor List.  
-  * [Ranked 3rd in the Control and Automation Engineering Department](/images/Rank3rd.png)).
+  * [Ranked 3rd in the Control and Automation Engineering Department](/images/Rank3rd.png).
     
 Publications
 ======
