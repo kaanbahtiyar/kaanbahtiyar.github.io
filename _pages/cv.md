@@ -327,4 +327,4 @@ Publications
 External Service & Professional Activities
 ======
 * Journal reviewing
-  * ASME Journal of Manufacturing Science and Engineering (1 review)
+  * [ASME Journal of Manufacturing Science and Engineering (1 review)](https://asmedigitalcollection.asme.org/manufacturingscience)
