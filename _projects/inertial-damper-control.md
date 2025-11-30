@@ -4,7 +4,7 @@ collection: projects
 permalink: /projects/inertial-damper-control/
 project_id: inertial-damper-control
 excerpt: "Data-driven feedforward and feedback strategies for active inertial dampers that suppress transient and residual vibrations in precision motion systems."
-date: 2021-01-01
+date: 2024-05-22
 sidebar: false
 ---
 
