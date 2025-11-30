@@ -13,9 +13,6 @@ author_profile: true
   {% assign clean_title = proj.title | markdownify | strip_html | strip_newlines %}
   <li>
     <a href="{{ proj.url | relative_url }}">{{ clean_title }}</a>
-    {% if proj.excerpt %}
-      – {{ proj.excerpt | markdownify | strip_html | strip_newlines }}
-    {% endif %}
   </li>
 {% endfor %}
 </ul>
