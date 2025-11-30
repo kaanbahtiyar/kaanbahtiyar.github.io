@@ -1,13 +1,14 @@
 ---
-title: "Paper Title Number 5, with math $$E=mc^2$$"
+title: "Data-driven adaptive compensation of tool eccentricity in milling via machine tool feed drives"
 collection: publications
-category: conferences
-permalink: /publication/2024-02-17-paper-title-number-4
-excerpt: 'This paper is about a famous math equation, $$E=mc^2$$'
-date: 2024-02-17
-venue: 'GitHub Journal of Bugs'
-paperurl: 'https://academicpages.github.io/files/paper3.pdf'
-citation: 'Your Name, You. (2024). &quot;Paper Title Number 3.&quot; <i>GitHub Journal of Bugs</i>. 1(3).'
+category: manuscripts
+permalink: /publication/tool-eccentricity-compensation-feed-drives/
+excerpt: "A data-driven adaptive strategy that uses machine tool feed drives to compensate milling tool eccentricity in real time using force/vibration feedback."
+date: 2026-01-01
+venue: "ASME Journal of Manufacturing Science and Engineering (Submitted)"
+citation: "Bahtiyar, K., & Sencer, B. (2025). Data-driven adaptive compensation of tool eccentricity in milling via machine tool feed drives. ASME Journal of Manufacturing Science and Engineering, submitted."
+pubtype: journal
+project: tool-eccentricity-compensation
 ---
 
-Using [MathJax](https://www.mathjax.org/) in the description is supported - $$E=mc^2$$ - however, the use must be mindful that the default delimiters are `$$...$$` and `\\[...\\]` which differs from the `$...$` that is typically expected.
+Journal publication based on the tool eccentricity compensation in milling project (project page is available [here](/projects/tool-eccentricity-compensation/)).
