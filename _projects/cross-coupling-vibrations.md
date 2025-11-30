@@ -71,5 +71,6 @@ sidebar: false
 
 ## Collaborators
 
-- Eiji Shamoto
-- Burak Sencer (advisor)
+- [Dr. Burak Sencer (advisor)](https://scholar.google.com/citations?user=SGQqZeUAAAAJ&hl=en)
+- [Dr. Eiji Shamoto](https://scholar.google.com/citations?user=gY8Zrt4AAAAJ&hl=en&oi=ao)
+
