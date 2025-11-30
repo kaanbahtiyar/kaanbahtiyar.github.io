@@ -1,5 +1,5 @@
 ---
-layout: archive
+layout: single
 title: "Sitemap"
 permalink: /sitemap/
 author_profile: true
@@ -7,31 +7,37 @@ author_profile: true
 
 {% include base_path %}
 
-A list of all the posts and pages found on the site. For you robots out there, there is an [XML version]({{ base_path }}/sitemap.xml) available for digesting as well.
+## Pages
 
-<h2>Pages</h2>
-{% for post in site.pages %}
-  {% include archive-single.html %}
-{% endfor %}
+<ul>
+  {% assign pages = site.pages
+     | where_exp: "p", "p.sitemap_exclude != true"
+     | sort: "title" %}
+  {% for page in pages %}
+    {%- unless page.url == "/sitemap/" -%}
+      <li><a href="{{ page.url | relative_url }}">{{ page.title }}</a></li>
+    {%- endunless -%}
+  {% endfor %}
+</ul>
 
-<h2>Posts</h2>
-{% for post in site.posts %}
-  {% include archive-single.html %}
-{% endfor %}
+## Publications
 
-{% capture written_label %}'None'{% endcapture %}
+<ul>
+  {% assign pubs = site.publications
+     | where_exp: "p", "p.sitemap_exclude != true"
+     | sort: "date" | reverse %}
+  {% for pub in pubs %}
+    <li><a href="{{ pub.url | relative_url }}">{{ pub.title }}</a></li>
+  {% endfor %}
+</ul>
 
-{% for collection in site.collections %}
-{% unless collection.output == false or collection.label == "posts" %}
-  {% capture label %}{{ collection.label }}{% endcapture %}
-  {% if label != written_label %}
-  <h2>{{ label }}</h2>
-  {% capture written_label %}{{ label }}{% endcapture %}
-  {% endif %}
-{% endunless %}
-{% for post in collection.docs %}
-  {% unless collection.output == false or collection.label == "posts" %}
-  {% include archive-single.html %}
-  {% endunless %}
-{% endfor %}
-{% endfor %}
+## Projects
+
+<ul>
+  {% assign projs = site.projects
+     | where_exp: "p", "p.sitemap_exclude != true"
+     | sort: "date" | reverse %}
+  {% for proj in projs %}
+    <li><a href="{{ proj.url | relative_url }}">{{ proj.title }}</a></li>
+  {% endfor %}
+</ul>
