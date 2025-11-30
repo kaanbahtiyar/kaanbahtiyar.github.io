@@ -226,86 +226,90 @@ Publications
 {%- assign conf_peer_noproc = all_pubs | where: "pubtype", "conf-peer-noproc" -%}
 {%- assign conf_abstract    = all_pubs | where: "pubtype", "conf-abstract" -%}
 
-<p>
-  <strong>Summary.</strong><br>
-  Journal publications: {{ journal_published.size }}
-  {%- if journal_submitted.size > 0 -%}
-    (+{{ journal_submitted.size }} submitted)
-  {%- endif -%}<br>
-  Peer-reviewed conference publications (proceedings): {{ conf_proc.size }}<br>
-  Peer-reviewed conference publications (not in proceedings): {{ conf_peer_noproc.size }}<br>
-  Abstract-reviewed conference presentations: {{ conf_abstract.size }}
-</p>
+**Summary.**  
+Journal publications: {{ journal_published.size }}{% if journal_submitted.size > 0 %} (+{{ journal_submitted.size }} submitted){% endif %}  
+Peer-reviewed conference publications (proceedings): {{ conf_proc.size }}  
+Peer-reviewed conference publications (not in proceedings): {{ conf_peer_noproc.size }}  
+Abstract-reviewed conference presentations: {{ conf_abstract.size }}
 
-{%- comment -%}
-Helper to render a list with a type label.
-{%- endcomment -%}
-
-{%- assign groups = "" -%}
-{%- comment -%}
-Journals
-{%- endcomment -%}
+{% comment %}
+JOURNAL ARTICLES
+{% endcomment %}
 {% if journal_pubs.size > 0 %}
-  <h4>Journal articles</h4>
-  <ul>
-    {% assign pubs = journal_pubs | sort: "date" | reverse %}
-    {% for post in pubs %}
-      {% assign clean_title = post.title | markdownify | strip_html | strip_newlines %}
-      <li>
-        <a href="{{ base_path }}{{ post.url }}">{{ clean_title }}</a>
-        {% if post.status == "submitted" %}
-          <span style="font-size: 0.9em; font-weight: normal;"> (Journal article, submitted)</span>
-        {% else %}
-          <span style="font-size: 0.9em; font-weight: normal;"> (Journal article)</span>
-        {% endif %}
-      </li>
-    {% endfor %}
-  </ul>
+<br>
+**Journal articles**
+
+<ul>
+  {% assign pubs = journal_pubs | sort: "date" | reverse %}
+  {% for post in pubs %}
+    {% assign clean_title = post.title | markdownify | strip_html | strip_newlines %}
+    <li>
+      <a href="{{ base_path }}{{ post.url }}">{{ clean_title }}</a>
+      {% if post.status == "submitted" %}
+        <span style="font-size: 0.9em; font-weight: normal;"> (Journal article, submitted)</span>
+      {% else %}
+        <span style="font-size: 0.9em; font-weight: normal;"> (Journal article)</span>
+      {% endif %}
+    </li>
+  {% endfor %}
+</ul>
 {% endif %}
 
+{% comment %}
+PEER-REVIEWED CONFERENCE PROCEEDINGS
+{% endcomment %}
 {% if conf_proc.size > 0 %}
-  <h4>Peer-reviewed conference proceedings</h4>
-  <ul>
-    {% assign pubs = conf_proc | sort: "date" | reverse %}
-    {% for post in pubs %}
-      {% assign clean_title = post.title | markdownify | strip_html | strip_newlines %}
-      <li>
-        <a href="{{ base_path }}{{ post.url }}">{{ clean_title }}</a>
-        <span style="font-size: 0.9em; font-weight: normal;"> (Peer-reviewed conference proceedings)</span>
-      </li>
-    {% endfor %}
-  </ul>
+**Peer-reviewed conference proceedings**
+
+<ul>
+  {% assign pubs = conf_proc | sort: "date" | reverse %}
+  {% for post in pubs %}
+    {% assign clean_title = post.title | markdownify | strip_html | strip_newlines %}
+    <li>
+      <a href="{{ base_path }}{{ post.url }}">{{ clean_title }}</a>
+      <span style="font-size: 0.9em; font-weight: normal;"> (Peer-reviewed conference proceedings)</span>
+    </li>
+  {% endfor %}
+</ul>
 {% endif %}
 
+{% comment %}
+PEER-REVIEWED, NOT IN PROCEEDINGS
+{% endcomment %}
 {% if conf_peer_noproc.size > 0 %}
-  <h4>Peer-reviewed conferences (not in proceedings)</h4>
-  <ul>
-    {% assign pubs = conf_peer_noproc | sort: "date" | reverse %}
-    {% for post in pubs %}
-      {% assign clean_title = post.title | markdownify | strip_html | strip_newlines %}
-      <li>
-        <a href="{{ base_path }}{{ post.url }}">{{ clean_title }}</a>
-        <span style="font-size: 0.9em; font-weight: normal;"> (Peer-reviewed conference, not in proceedings)</span>
-      </li>
-    {% endfor %}
-  </ul>
+**Peer-reviewed conferences (not in proceedings)**
+
+<ul>
+  {% assign pubs = conf_peer_noproc | sort: "date" | reverse %}
+  {% for post in pubs %}
+    {% assign clean_title = post.title | markdownify | strip_html | strip_newlines %}
+    <li>
+      <a href="{{ base_path }}{{ post.url }}">{{ clean_title }}</a>
+      <span style="font-size: 0.9em; font-weight: normal;"> (Peer-reviewed conference, not in proceedings)</span>
+    </li>
+  {% endfor %}
+</ul>
 {% endif %}
 
+{% comment %}
+ABSTRACT-REVIEWED
+{% endcomment %}
 {% if conf_abstract.size > 0 %}
-  <h4>Abstract-reviewed conferences</h4>
-  <ul>
-    {% assign pubs = conf_abstract | sort: "date" | reverse %}
-    {% for post in pubs %}
-      {% assign clean_title = post.title | markdownify | strip_html | strip_newlines %}
-      <li>
-        <a href="{{ base_path }}{{ post.url }}">{{ clean_title }}</a>
-        <span style="font-size: 0.9em; font-weight: normal;"> (Abstract-reviewed conference)</span>
-      </li>
-    {% endfor %}
-  </ul>
+**Abstract-reviewed conferences**
+
+<ul>
+  {% assign pubs = conf_abstract | sort: "date" | reverse %}
+  {% for post in pubs %}
+    {% assign clean_title = post.title | markdownify | strip_html | strip_newlines %}
+    <li>
+      <a href="{{ base_path }}{{ post.url }}">{{ clean_title }}</a>
+      <span style="font-size: 0.9em; font-weight: normal;"> (Abstract-reviewed conference)</span>
+    </li>
+  {% endfor %}
+</ul>
 {% endif %}
   
 External Service & Professional Activities
 ======
 * Journal reviewing
-  * ASME Journal of Manufacturing Science and Engineering (1 manuscript review)
+  * ASME Journal of Manufacturing Science and Engineering (1 review)
