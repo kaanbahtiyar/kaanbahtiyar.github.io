@@ -11,4 +11,4 @@ citation: 'Bahtiyar, K., Sencer, B., & Beudaert, X. (2024). Data-driven feedforw
 '
 ---
 
-Novel strategy.
+Novel strategy 2.
