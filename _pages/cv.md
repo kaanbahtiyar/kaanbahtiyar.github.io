@@ -71,46 +71,57 @@ Work experience
 Honors & Awards
 ======
 
-
-<details>
+<details style="margin-bottom: 0.75rem;">
   <summary><strong>2025 – ASPE Student Challenge, 1st Place Winner</strong></summary>
   <ul>
-    <li>Awarded at the 40th Annual Meeting of the American Society for Precision Engineering.</li>
+    <li>
+      Awarded at the 40th Annual Meeting of the American Society for Precision Engineering.
+      <div style="text-align: center; margin-top: 0.5rem;">
+        <video controls style="max-width: 400px; width: 100%; height: auto;">
+          <source src="/videos/ASPE2025StudentChallenge_1080.mov" type="video/quicktime">
+          Your browser does not support the video tag.
+        </video>
+      </div>
+    </li>
   </ul>
-  <video controls style="max-width: 100%; margin-top: 0.5rem;">
-    <source src="/videos/ASPE2025StudentChallenge_1080.mov" type="video/quicktime">
-    Your browser does not support the video tag.
-  </video>
 </details>
 
-<details>
+<details style="margin-bottom: 0.75rem;">
   <summary><strong>2024 – Thomas A. Dow Student Scholarship</strong></summary>
   <ul>
-    <li>Awarded by the American Society for Precision Engineering for the paper presented at the 39th Annual Meeting.</li>
+    <li>
+      Awarded by the American Society for Precision Engineering for the paper presented at the 39th Annual Meeting.
+      <div style="text-align: center; margin-top: 0.5rem;">
+        <img src="/images/ASPE2024award.png"
+             alt="Thomas A. Dow Student Scholarship 2024 award"
+             style="max-width: 400px; width: 100%; height: auto;">
+      </div>
+    </li>
   </ul>
-  <img src="/images/ASPE2024award.png"
-     alt="Thomas A. Dow Student Scholarship 2024 award"
-     style="max-width: 400px; width: 100%; height: auto; margin-top: 0.5rem;">
 </details>
 
-<details>
+<details style="margin-bottom: 0.75rem;">
   <summary><strong>2024 – Young Researcher Award, ICPE 2024</strong></summary>
   <ul>
-    <li>Awarded by the Japan Society for Precision Engineering for the paper presented at the 20th International Conference on Precision Engineering.</li>
+    <li>
+      Awarded by the Japan Society for Precision Engineering for the paper presented at the 20th International Conference on Precision Engineering.
+      <div style="text-align: center; margin-top: 0.5rem;">
+        <img src="/images/ICPE2024award.png"
+             alt="Young Researcher Award, ICPE 2024"
+             style="max-width: 400px; width: 100%; height: auto;">
+      </div>
+    </li>
   </ul>
-  <img src="/images/ICPE2024award.png"
-     alt="Young Researcher Award, ICPE 2024"
-     style="max-width: 400px; width: 100%; height: auto; margin-top: 0.5rem;">
 </details>
 
-<details>
+<details style="margin-bottom: 0.75rem;">
   <summary><strong>2024 – NSF Travel Award, MSEC 2024</strong></summary>
   <ul>
     <li>Received from the National Science Foundation to support attendance at MSEC 2024.</li>
   </ul>
 </details>
 
-<details>
+<details style="margin-bottom: 0.75rem;">
   <summary><strong>2022 – NSF Travel Award, NAMRC 2022</strong></summary>
   <ul>
     <li>Awarded by the National Science Foundation to support attendance at NAMRC 2022.</li>
@@ -121,12 +132,17 @@ Honors & Awards
   <summary><strong>2020 – Undergraduate Academic Honors, Istanbul Technical University</strong></summary>
   <ul>
     <li>High Honor List.</li>
-    <li>Ranked 3rd in the Control and Automation Engineering Department.</li>
+    <li>
+      Ranked 3rd in the Control and Automation Engineering Department.
+      <div style="text-align: center; margin-top: 0.5rem;">
+        <img src="/images/Rank3rd.png"
+             alt="Ranked 3rd in Control and Automation Engineering Department"
+             style="max-width: 400px; width: 100%; height: auto;">
+      </div>
+    </li>
   </ul>
-  <img src="/images/Rank3rd.png"
-     alt="Ranked 3rd in Control and Automation Engineering Department"
-     style="max-width: 400px; width: 100%; height: auto; margin-top: 0.5rem;">
 </details>
+
 <div style="margin-bottom: 1.5rem;"></div>
 
 Publications
