@@ -1,5 +1,5 @@
 ---
-title: "Spindle speed control for real-time vibration mitigation in milling"
+title: "Spindle speed control for vibration mitigation in milling"
 collection: projects
 permalink: /projects/spindle-speed-optimization/
 project_id: spindle-speed-optimization

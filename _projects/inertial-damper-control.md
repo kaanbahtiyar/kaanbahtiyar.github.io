@@ -1,5 +1,5 @@
 ---
-title: "Active inertial damper control for vibration mitigation in precision machine tools"
+title: "Active inertial damper control for precision machine tools"
 collection: projects
 permalink: /projects/inertial-damper-control/
 project_id: inertial-damper-control

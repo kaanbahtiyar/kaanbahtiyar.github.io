@@ -1,5 +1,5 @@
 ---
-title: "Axis-coupled inertial vibration compensation using machine tool feed drives"
+title: "Axis-coupled inertial vibration compensation"
 collection: projects
 permalink: /projects/cross-coupling-vibrations/
 project_id: cross-coupling-vibrations
