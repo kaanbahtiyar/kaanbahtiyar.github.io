@@ -1,26 +1,30 @@
 {%- comment -%}
   _includes/project-phrase.html
+  Usage: {% include project-phrase.html %} 
+         or   {% include project-phrase.html project_id="..." %}
 {%- endcomment -%}
 
-{% assign pid = include.project_id | default: page.project %}
+{%- assign pid = include.project_id | default: page.project | default: "" -%}
 
-{% case pid %}
-  {% when "spindle-speed-optimization" %}
+{%- case pid -%}
+  {%- when "spindle-speed-optimization" -%}
     based on the
     [spindle speed control for real-time vibration mitigation in milling project](/projects/spindle-speed-optimization/)
-  {% when "chatter-detection" %}
+  {%- when "chatter-detection" -%}
     based on the
     [chatter detection and monitoring in milling using vibration measurements project](/projects/chatter-detection/)
-  {% when "eccentricity-compensation" %}
+  {%- when "eccentricity-compensation" -%}
     based on the
     [tool eccentricity compensation in milling using machine tool feed drives project](/projects/eccentricity-compensation/)
-  {% when "cross-coupling-vibrations" %}
+  {%- when "cross-coupling-vibrations" -%}
     based on the
     [axis-coupled inertial vibration compensation using machine tool feed drives project](/projects/cross-coupling-vibrations/)
-  {% when "inertial-damper-control" %}
+  {%- when "inertial-damper-control" -%}
     based on the
     [active inertial damper control for vibration mitigation in precision machine tools project](/projects/inertial-damper-control/)
-  {% when "tool-eccentricity-compensation" %}
+  {%- when "tool-eccentricity-compensation" -%}
     based on the
     [tool eccentricity compensation in milling using machine tool feed drives project](/projects/tool-eccentricity-compensation/)
-{% endcase %}
+  {%- else -%}
+    {# nothing if project id is unknown #}
+{%- endcase -%}
