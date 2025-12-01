@@ -14,7 +14,7 @@ confurl: "https://aspe.net/programs/37th-annual-meeting/"
 sitemap_include: true
 ---
 
-Abstract-reviewed poster presentation based on the [spindle speed control for real-time vibration mitigation in milling project](/projects/spindle-speed-optimization/).
+Abstract-reviewed poster presentation {% include project-phrase.html project_id="spindle-speed-optimization" %}.
 
 
 **Extended abstract (summary).**  

@@ -12,7 +12,7 @@ project: tool-eccentricity-compensation
 sitemap_include: true
 ---
 
-Peer-reviewed conference paper based on the [tool eccentricity compensation in milling using machine tool feed drives project](/projects/eccentricity-compensation/).  
+Peer-reviewed conference paper {% include project-phrase.html project_id="eccentricity-compensation" %}.  
 The paper was presented at HSM2025; the peer-reviewed proceedings will be published in the [MM Science Journal](https://www.mmscience.eu/en) special issue.
 
 **Abstract.**  

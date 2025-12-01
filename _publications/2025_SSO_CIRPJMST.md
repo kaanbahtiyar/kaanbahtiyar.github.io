@@ -13,7 +13,7 @@ project: spindle-speed-optimization
 sitemap_include: true
 ---
 
-Journal article based on the [spindle speed control for real-time vibration mitigation in milling project](/projects/spindle-speed-optimization/).
+Journal article {% include project-phrase.html %}.
 
 **Abstract.**  
 Thanks to its high productivity, milling is a key subtractive process in modern metals manufacturing. Nevertheless, like other machining processes, it suffers from vibrations appearing in the form of forced and self-excited chatter. These vibrations deteriorate the surface finish quality, shorten tool life, and damage the machine components, limiting the attainable productivity. This paper presents a model-free adaptive spindle speed regulation strategy that aims to minimize overall machining vibrations in milling. The presented spindle-speed adaptation strategy is based on the model-free extremum seeking control (ESC) framework that searches the parameter space to minimize a desired cost function. The cost function is designed to penalize overall machining vibrations in the time-domain, and its gradient (search direction) is determined data-based by making use of the vibratory data collected during the machining operation. The stability of the proposed algorithm and its tuning guidance is provided to the end-users. The effectiveness of the proposed controller on minimizing overall machining vibrations is demonstrated in simulations and validated in machining tests. Results demonstrate significant reduction in RMS vibration level and lowered surface location errors (SLE) as compared to the conventional approach.

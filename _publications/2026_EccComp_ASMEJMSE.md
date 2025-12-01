@@ -13,4 +13,4 @@ status: submitted
 sitemap_include: true
 ---
 
-Journal article based on the [tool eccentricity compensation in milling using machine tool feed drives project](/projects/tool-eccentricity-compensation/); currently under review at the ASME Journal of Manufacturing Science and Engineering.
+Journal article {% include project-phrase.html project_id="tool-eccentricity-compensation" %}; currently under review at the *ASME Journal of Manufacturing Science and Engineering*.
