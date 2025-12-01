@@ -1,12 +1,19 @@
 {%- comment -%}
   _includes/project-phrase.html
   Dynamically link to the matching project using its project_id.
+  Renders a sentence fragment like:
+  "based on the [active inertial damper control for precision machine tools project](/projects/...)"
 {%- endcomment -%}
 
 {%- assign pid = include.project_id | default: page.project -%}
 {%- assign proj = site.projects | where: "project_id", pid | first -%}
 
 {%- if proj -%}
+  {%- assign raw_title = proj.title -%}
+  {%- assign first_char = raw_title | slice: 0, 1 | downcase -%}
+  {%- assign rest_chars = raw_title | slice: 1, raw_title.size -%}
+  {%- assign inline_title = first_char | append: rest_chars -%}
+
   based on the
-  [{{ proj.title }}]({{ proj.url | relative_url }})
+  [{{ inline_title }} project]({{ proj.url | relative_url }})
 {%- endif -%}
