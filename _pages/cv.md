@@ -129,7 +129,7 @@ Work experience
   <ul>
     <li>Assisted the senior-level undergraduate course <strong>Computer Control of Manufacturing Processes (MFGE 437)</strong> by organizing and leading lab sessions, explaining core concepts in control systems and manufacturing processes, and providing guidance to students throughout the term.</li>
     <li>Assisted the graduate-level course <strong>Precision Motion Generation (ME 597)</strong>, conducting hands-on lab sessions and explaining key concepts in precision motion control and real-time implementation during experiments.</li>
-    <li>Contributed to the development of the course <strong>Digital Control of Mechatronic Systems (MFGE 441)</strong> by helping design the course structure, preparing lecture slides, and assisting in the creation of assignments on digital control.</li>
+    <li>Contributed to the development of the course <strong>Digital Control of Mechatronic Systems (MFGE 441)</strong> by helping design the course structure and preparing lecture slides.</li>
   </ul>
 </details>
 
