@@ -116,7 +116,7 @@ Work experience
         <summary><strong>Mentoring and lab leadership</strong></summary>
         <ul>
           <li>Trained and supervised graduate and undergraduate students in system identification, controller design and implementation, machining process models, and data analysis; provided technical guidance on mechatronics and control throughout their projects.</li>
-          <li>Mentored two MS students on thesis projects related to milling tool eccentricity compensation and chatter mitigation via feed modulation in milling using machine tool feed drives.</li>
+          <li>Helped mentoring two MS students on thesis projects related to milling tool eccentricity compensation and chatter mitigation via feed modulation in milling using machine tool feed drives.</li>
         </ul>
       </details>
     </li>
