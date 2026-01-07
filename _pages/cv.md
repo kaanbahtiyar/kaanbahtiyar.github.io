@@ -60,7 +60,7 @@ Work experience
       <details>
         <summary><strong>Dynamics identification and control</strong></summary>
         <ul>
-          <li>Characterized feed drive and VCA stage dynamics on lab testbeds and industrial machine tool.</li>
+          <li>Characterized feed drive and voice-coil actuated stage dynamics on lab testbeds and industrial machine tool.</li>
           <li>Performed time-domain system identification to capture transient behavior.</li>
           <li>Performed frequency-domain system identification to obtain frequency response functions and assess bandwidth and resonances.</li>
           <li>Designed and implemented collocated and non-collocated controllers in dSPACE/Simulink.</li>
