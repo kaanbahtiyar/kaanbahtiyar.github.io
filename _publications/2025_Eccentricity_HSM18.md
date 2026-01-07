@@ -1,16 +1,16 @@
 ---
+
 title: "Adaptive tool eccentricity compensation using machine tool feed drives"
 collection: publications
-category: journal
-pubtype: journal-article
+category: manuscripts
 permalink: /publication/adaptive-tool-eccentricity-compensation-hsm2025/
 excerpt: "Adaptive tool eccentricity compensation strategies that use machine tool feed drives and feedback data to cancel milling tool eccentricity in real time."
 date: 2025-12-01
-venue: "MM Science Journal (Special Issue: HSM 2025)"
-status: published
+venue: "MM Science Journal (HSM2025 Special Issue)"
+paperurl: "https://www.mmscience.eu/journal/issues/december-2025/articles/hsm2025-44832-adaptive-tool-eccentricity-compensation-using-machine-tool-feed-drives"
+citation: "Bahtiyar, K., Bozcu, L., Shantiaeezade, S.M., Sencer, B., Ikeda, R., and Suzuki, N. (2025). Adaptive tool eccentricity compensation using machine tool feed drives. MM Science Journal."
+pubtype: journal
 project: tool-eccentricity-compensation
-doi: 10.17973/MMSJ.2025_12_2025157
-paperurl: https://www.mmscience.eu/journal/issues/december-2025/articles/hsm2025-44832-adaptive-tool-eccentricity-compensation-using-machine-tool-feed-drives
 sitemap_include: true
 ---
 
