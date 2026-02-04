@@ -25,7 +25,7 @@ sitemap_include: true
        alt="Vertical machining center structure and axis-coupled vibration mechanism"
        style="width: 100%; height: auto; max-width: 600px; display: block; margin: 0 auto;">
   <figcaption style="font-size: 0.95em; color: #555; margin-top: 0.4rem;">
-    <strong>Figure 1:</strong> Vertical machining center layout and illustration of axis-coupled (cross-talk) vibration mechanism (e.g., table motion exciting Z-direction tool-tip vibration).
+    <strong>Figure 1:</strong> Vertical machining center layout and illustration of axis-coupled (cross-talk) vibration mechanism (e.g., table motion exciting Z-direction tool-tip vibration). (a) Experimental setup. (b) Cross-coupling vibrations.
   </figcaption>
 </figure>
 
@@ -95,7 +95,7 @@ We implemented the method on a **3-axis machine tool** with dominant cross-talk 
        alt="Experimental comparison showing cross-talk reduction using CTDC"
        style="width: 100%; height: auto; max-width: 600px; display: block; margin: 0 auto;">
   <figcaption style="font-size: 0.95em; color: #555; margin-top: 0.4rem;">
-    <strong>Figure 3:</strong> Representative experimental comparison showing reduced cross-talk response with CTDC (time- and frequency-domain improvement).
+    <strong>Figure 3:</strong> Experimental validation of the tuned CTDC (a) Objective function over iterations, (b) Accelerometer-based iterative tuning performance of CTDC (accelerometer data), (c) FRF, (d) CTDC performance on acceleration phase (laser encoder data), (e) CTDC performance on the deceleration phase (laser encoder data).
   </figcaption>
 </figure>
 
