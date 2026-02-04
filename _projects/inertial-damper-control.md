@@ -16,6 +16,8 @@ sitemap_include: true
 - **Limitation of standard damping (feedback-only):** Feedback (e.g., direct velocity feedback) can reduce vibration but may have practical stability/actuator limits and can not fully eliminate the initial overshoot due to feedback nature.
 - **Our approach:** Generate a **task-specific, fully pre-scheduled feedforward (FF) compensation** signal for the inertial damper, and **tune it from measured vibration data** over repeated tasks.
 
+**Recognition:** This work received the **Thomas A. Dow Student Scholarship from American Society for Precision Engineering**.
+
 ---
 
 ## Key methods
