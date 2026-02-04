@@ -17,7 +17,7 @@ sitemap_include: true
   - **Video A:** regenerative chatter mechanism / simulation.
   - **Video B:** real chatter with the characteristic high-pitch sound and surface damage.
 - **Limitations of common detectors:** Simple amplitude/threshold rules and fixed-band spectral checks can be **condition-dependent** and may trigger false alarms in flexible setups.
-- **Our approach:** Chatter monitoring based on **relative power metrics** that separate **forced (spindle-synchronous)** content from **chatter-related** content in real time.
+- **Our approach:** Chatter monitoring based on **relative power metric, i.e., power ratio (PR)** that separate **forced (spindle-synchronous)** content from **chatter-related** content in real time.
 
 <figure style="margin: 1.2rem 0; text-align: center;">
   <iframe width="780" height="439"
@@ -86,7 +86,7 @@ sitemap_include: true
        alt="PCA-based chatter detection and power ratio diagram"
        style="width: 100%; height: auto; max-width: 900px; display: block; margin: 0 auto;">
   <figcaption style="font-size: 0.95em; color: #555; margin-top: 0.4rem;">
-    <strong>Figure 2:</strong> PCA-based chatter monitoring: dominant components are selected from the signal subspace and an ER metric is computed to detect chatter robustly.
+    <strong>Figure 2:</strong> PCA-based chatter monitoring: dominant components are selected from the signal subspace and an PR metric is computed to detect chatter robustly.
   </figcaption>
 </figure>
 
@@ -97,7 +97,7 @@ sitemap_include: true
 - **Power-ratio framing:** Detects chatter using **relative power dominance** instead of absolute thresholds (more transferable across setups).
 - **Two complementary detectors:**
   - **MV+MFT:** lightweight and easy to deploy online.
-  - **PCA/ER:** more robust by filtering weak/noisy components and separating forced vs chatter-related content.
+  - **PCA:** more robust by filtering weak/noisy components and separating forced vs chatter-related content.
 - **Early + robust monitoring:** Designed to detect chatter onset while reducing false alarms in flexible structures.
 
 ---
@@ -106,7 +106,7 @@ sitemap_include: true
 
 - **Sensing:** In-process vibration acquired using **accelerometers** (single-sensor monitoring).
 - **Computation:** Sliding-window time/frequency updates suitable for real-time implementation.
-- **Deployment concept:** The detector output (PR/ER) can be used for **alarm/stop**, or as an input to **adaptive mitigation** (e.g., spindle speed change).
+- **Deployment concept:** The detector output (PR) can be used for **alarm/stop**, or as an input to **adaptive mitigation** (e.g., spindle speed change).
 
 ---
 
