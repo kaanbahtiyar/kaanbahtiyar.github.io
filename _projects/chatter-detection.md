@@ -104,7 +104,7 @@ We implemented the chatter monitoring algorithms on a **3-axis CNC machine tool*
 - **Real-time data acquisition & computation:**
   - **dSPACE/DAQ** for synchronized data acquisition and real-time I/O
   - **MATLAB/Simulink (RTI interface)** for online feature computation (e.g., moving variance / moving FFT, PCA-based indicators) and logging
-- **Post-processing:** MATLAB scripts for offline comparison across trials and parameter sweeps (threshold selection, window length sensitivity, and repeatability checks). 
+- **Post-processing:** MATLAB scripts for data analysis.
 
 ---
 
