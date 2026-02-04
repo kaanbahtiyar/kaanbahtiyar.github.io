@@ -38,8 +38,6 @@ sitemap_include: true
 }
 </style>
 
-You can download my CV [here](/CV/CV.pdf).
-
 Education
 ======
 * Ph.D. in [Robotics](https://engineering.oregonstate.edu/academics/programs/robotics), [Oregon State University](https://oregonstate.edu), 2027 (expected)
