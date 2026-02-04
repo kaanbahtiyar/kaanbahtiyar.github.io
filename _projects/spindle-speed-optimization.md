@@ -34,14 +34,16 @@ sitemap_include: true
   - Chatter can create large-amplitude vibration and audible high-pitch noise, producing severe surface degradation.
   
 <figure style="margin: 1.2rem 0; text-align: center;">
-  <iframe
-    src="https://www.youtube.com/embed/X2p1CaedEf8"
-    title="Milling chatter sound and surface impact"
-    frameborder="0"
-    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-    allowfullscreen
-    style="width: 100%; max-width: 360px; aspect-ratio: 9 / 16; display: block; margin: 0 auto;">
-  </iframe>
+  <div style="width: 100%; max-width: 360px; max-height: 260px; overflow: hidden; margin: 0 auto; border-radius: 10px;">
+    <iframe
+      src="https://www.youtube.com/embed/X2p1CaedEf8"
+      title="Milling chatter sound and surface impact"
+      frameborder="0"
+      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+      allowfullscreen
+      style="width: 100%; height: 640px; border: 0; transform: translateY(-190px);">
+    </iframe>
+  </div>
   <figcaption style="font-size: 0.95em; color: #555; margin-top: 0.4rem;">
     <strong>Video B:</strong> Real milling example showing the high-pitch chatter sound and surface degradation.
   </figcaption>
@@ -71,7 +73,7 @@ sitemap_include: true
 <figure style="margin: 1.4rem 0; text-align: center;">
   <img src="/images/projects/spindle-speed-optimization/fig2_block_diagram.png"
        alt="Adaptive spindle speed regulation block diagram: cost evaluation, gradient estimation, optimizer, and speed command"
-       style="width: 100%; height: auto; max-width: 500px; display: block; margin: 0 auto;">
+       style="width: 100%; height: auto; max-width: 420px; display: block; margin: 0 auto;">
   <figcaption style="font-size: 0.95em; color: #555; margin-top: 0.4rem;">
     <strong>Figure 2:</strong> Adaptive spindle speed regulation loop (vibration feedback → cost evaluation → gradient estimation → optimizer → speed command update).
   </figcaption>
@@ -88,7 +90,7 @@ sitemap_include: true
 <figure style="margin: 1.4rem 0; text-align: center;">
   <img src="/images/projects/spindle-speed-optimization/fig3_experimental_setup.png"
        alt="Experimental setup configuration used for validation"
-       style="width: 100%; height: auto; max-width: 500px; display: block; margin: 0 auto;">
+       style="width: 100%; height: auto; max-width: 450px; display: block; margin: 0 auto;">
   <figcaption style="font-size: 0.95em; color: #555; margin-top: 0.4rem;">
     <strong>Figure 3:</strong> Experimental setup configuration used for validation.
   </figcaption>
@@ -97,7 +99,7 @@ sitemap_include: true
 <figure style="margin: 1.4rem 0; text-align: center;">
   <img src="/images/projects/spindle-speed-optimization/fig4_data_communication.png"
        alt="Real-time implementation architecture: CNC/PLC, DAQ, and PC"
-       style="width: 100%; height: auto; max-width: 650px; display: block; margin: 0 auto;">
+       style="width: 100%; height: auto; max-width: 500px; display: block; margin: 0 auto;">
   <figcaption style="font-size: 0.95em; color: #555; margin-top: 0.4rem;">
     <strong>Figure 4:</strong> Real-time implementation architecture: measurements to DAQ/PC and spindle speed override command applied via the CNC/PLC interface.
   </figcaption>
@@ -113,7 +115,7 @@ sitemap_include: true
 <figure style="margin: 1.4rem 0; text-align: center;">
   <img src="/images/projects/spindle-speed-optimization/fig5_alg_conv.png"
        alt="Experimental data showing real-time spindle speed adaptation and vibration mitigation"
-       style="width: 100%; height: auto; max-width: 700px; display: block; margin: 0 auto;">
+       style="width: 100%; height: auto; max-width: 600px; display: block; margin: 0 auto;">
   <figcaption style="font-size: 0.95em; color: #555; margin-top: 0.4rem;">
     <strong>Figure 5:</strong> Example showing real-time spindle speed adaptation and vibration mitigation starting from an initial chatter condition (time- and frequency-domain views).
   </figcaption>
@@ -122,7 +124,7 @@ sitemap_include: true
 <figure style="margin: 1.4rem 0; text-align: center;">
   <img src="/images/projects/spindle-speed-optimization/fig6_alg_comp.png"
        alt="Benchmark against conventional chatter mitigation strategy"
-       style="width: 100%; height: auto; max-width: 700px; display: block; margin: 0 auto;">
+       style="width: 100%; height: auto; max-width: 600px; display: block; margin: 0 auto;">
   <figcaption style="font-size: 0.95em; color: #555; margin-top: 0.4rem;">
     <strong>Figure 6:</strong> Benchmark comparison against a conventional chatter mitigation strategy (time- and frequency-domain).
   </figcaption>
