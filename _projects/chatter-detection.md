@@ -60,7 +60,7 @@ sitemap_include: true
 - Compute a **power ratio** that increases when broadband / non-harmonic chatter grows.
 
 <figure style="margin: 1.4rem 0; text-align: center;">
-  <img src="/images/projects/chatter-detection/fig1_mvmft.png"
+  <img src="/images/projects/chatter-detection/fig1_mvmft_pr.png"
        alt="Moving variance + moving FFT chatter power ratio concept"
        style="width: 100%; height: auto; max-width: 560px; display: block; margin: 0 auto;">
   <figcaption style="font-size: 0.95em; color: #555; margin-top: 0.4rem;">
@@ -75,7 +75,7 @@ sitemap_include: true
 - Optionally smooth / track features over time (e.g., Kalman-style filtering) for stable detection.
 
 <figure style="margin: 1.4rem 0; text-align: center;">
-  <img src="/images/projects/chatter-detection/fig2_pca_pipeline.png"
+  <img src="/images/projects/chatter-detection/fig2_pca_er.png"
        alt="PCA-based chatter indicator pipeline"
        style="width: 100%; height: auto; max-width: 720px; display: block; margin: 0 auto;">
   <figcaption style="font-size: 0.95em; color: #555; margin-top: 0.4rem;">
