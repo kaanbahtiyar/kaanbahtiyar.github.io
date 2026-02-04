@@ -32,9 +32,10 @@ sitemap_include: true
 
 - **What you see in practice:**
   - Chatter can create large-amplitude vibration and audible high-pitch noise, producing severe surface degradation.
-  
-<figure style="margin: 1.2rem 0; text-align: center;">
-  <div style="width: 100%; max-width: 360px; max-height: 260px; overflow: hidden; margin: 0 auto; border-radius: 10px;">
+  - Even when cutting is stable (no chatter), **forced vibrations** still deteriorate surface quality and cause **surface location errors (SLE)**.
+
+  <figure style="margin: 1.2rem 0; text-align: center;">
+  <div style="width: 100%; max-width: 640px; max-height: 640px; overflow: hidden; margin: 0 auto; border-radius: 10px;">
     <iframe
       src="https://www.youtube.com/embed/X2p1CaedEf8"
       title="Milling chatter sound and surface impact"
@@ -49,8 +50,6 @@ sitemap_include: true
   </figcaption>
 </figure>
 
-  - Even when cutting is stable (no chatter), **forced vibrations** still deteriorate surface quality and cause **surface location errors (SLE)**.
-  
 - **Limitations of current practice:**
   - Model-based planning (e.g., stability lobes, SLE maps) requires extensive identification and may not transfer across machines/tools/setups.
   - Chatter-only online speed regulation can suppress chatter but unintentionally increase forced vibrations near structural resonances.
@@ -131,11 +130,12 @@ sitemap_include: true
 </figure>
 
 <figure style="margin: 1.4rem 0; text-align: center;">
-  <video controls playsinline preload="metadata" style="width: 100%; max-width: 600px;">
+  <video controls playsinline preload="metadata"
+         style="width: 100%; max-width: 600px; height: auto; display: block; margin: 0 auto;">
     <source src="/images/projects/spindle-speed-optimization/sso_demo.mov" type="video/mp4">
     Your browser does not support the video tag.
   </video>
-  <figcaption style="font-size: 0.95em; color: #555; margin-top: 0.4rem;">
+  <figcaption style="font-size: 0.92em; color: #555; margin-top: 0.4rem;">
     <strong>Video 1:</strong> Real-time spindle speed adaptation during machining (controller is activated after chatter develops).
   </figcaption>
 </figure>
