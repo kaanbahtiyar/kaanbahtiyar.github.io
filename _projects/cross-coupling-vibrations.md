@@ -23,7 +23,7 @@ sitemap_include: true
 <figure style="margin: 1.5rem 0; text-align: center;">
   <img src="/images/projects/cross-coupling-vibrations/fig1_setup.png"
        alt="Vertical machining center structure and axis-coupled vibration mechanism"
-       style="width: 100%; height: auto; max-width: 600px; display: block; margin: 0 auto;">
+       style="width: 100%; height: auto; max-width: 6000px; display: block; margin: 0 auto;">
   <figcaption style="font-size: 0.95em; color: #555; margin-top: 0.4rem;">
     <strong>Figure 1:</strong> Vertical machining center layout and illustration of axis-coupled (cross-talk) vibration mechanism (e.g., table motion exciting Z-direction tool-tip vibration). (a) Experimental setup. (b) Cross-coupling vibrations.
   </figcaption>
@@ -74,21 +74,26 @@ sitemap_include: true
 
 ## Tools & implementation
 
-We implemented the method on a **3-axis machine tool** with dominant cross-talk mode (e.g., table-to-column rocking / coupling) using **dSPACE/DAQ** and **MATLAB/Simulink** with the **RTI interface** for real-time execution. The sensing and instrumentation includes:
+We implemented the method on a **3-axis machine tool** with a dominant cross-talk mode (e.g., table-to-column rocking / axis coupling) and validated it in motion tests. The experiment and real-time implementation includes:
 
-- **Accelerometers** mounted near the head/tool side to measure vibration related to tool-tip motion
-- **Laser encoder** to validate accelerometer-based tuning approach
-- **Sensor amplifiers / signal conditioning** 
-- **dSPACE/DAQ** for data acquisition and real-time I/O
-- **MATLAB** for quadratic programming
-- **Machine tool existing servo settings** for filter implementation
+- **Test execution:** Custom fast motion trajectories exciting the cross-talk mode (e.g., Y-axis motion inducing Z-direction response) and evaluate compensation performance.
+- **Sensing (in-process):**
+  - **Accelerometers** mounted near the head/tool side to measure vibration related to tool-tip motion  
+  - **Laser encoder** for validation / ground-truth comparison of the accelerometer-based tuning approach  
+  - **Sensor amplifiers / signal conditioning** 
+- **Real-time data acquisition & computation:**
+  - **dSPACE/DAQ** for synchronized data acquisition and real-time I/O  
+  - **MATLAB/Simulink (RTI interface)** for real-time monitoring
+  - **MATLAB** for quadratic programming–based parameter computation (offline)
+  - **Machine tool existing servo settings** for filter implementation
+- **Post-processing:** MATLAB scripts for performance evaluation (time-domain peak error, frequency-domain resonance peak reduction, and repeatability across trials).
 
 ---
 
 ## Results
 
 - **Cross-talk reduction:** Peak coupled Z-direction error decreased from **6 µm** to **1.2 µm** (≈**80% reduction**, **5× lower**) under the tested Y-axis motion.
-- **Outcome:** Reduced tool-tip vibration enables more aggressive motion profiles while maintaining positioning and surface quality.
+- Reduced tool-tip vibration **enables more aggressive motion profiles** while maintaining positioning and surface quality.
   
 <figure style="margin: 1.5rem 0; text-align: center;">
   <img src="/images/projects/cross-coupling-vibrations/fig3_results.png"
