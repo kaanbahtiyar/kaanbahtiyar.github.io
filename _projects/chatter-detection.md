@@ -11,13 +11,8 @@ sitemap_include: true
 
 ## Overview
 
-- **Problem:** Milling chatter is a **self-excited (regenerative) instability** that can grow rapidly during cutting.
-- **Why it matters:** Chatter causes **severe surface degradation**, shortens tool life, and can damage machine components.
-- **What you see in practice:**
-  - **Video A:** regenerative chatter mechanism / simulation.
-  - **Video B:** real chatter with the characteristic high-pitch sound and surface damage.
-- **Limitations of common detectors:** Simple amplitude/threshold rules and fixed-band spectral checks can be **condition-dependent** and may trigger false alarms in flexible setups.
-- **Our approach:** Chatter monitoring based on **relative power metric, i.e., power ratio (PR)** that separate **forced (spindle-synchronous)** content from **chatter-related** content in real time.
+- **Problem:** **Chatter** is a self-excited (regenerative) instability that can quickly grow in amplitude during milling.
+- **Why it matters:** Chatter causes loud high-pitch vibration, severe surface degradation, tool wear, damage to machine equipment, and scrap of material. Therefore, **early and reliable detection** is critical.
 
 <figure style="margin: 1.2rem 0; text-align: center;">
   <iframe width="780" height="439"
@@ -26,67 +21,65 @@ sitemap_include: true
           frameborder="0"
           allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
           allowfullscreen
-          style="width: 100%; max-width: 780px;">
+          style="width: 100%; max-width: 650px; aspect-ratio: 16 / 9; border-radius: 10px;">
   </iframe>
   <figcaption style="font-size: 0.95em; color: #555; margin-top: 0.4rem;">
-    <strong>Video A:</strong> Example of regenerative chatter mechanism in milling.
+    <strong>Video A:</strong> Chatter mechanism / simulation example.
   </figcaption>
 </figure>
 
 <figure style="margin: 1.2rem 0; text-align: center;">
-  <div style="width: 100%; max-width: 600px; height: 450px; overflow: hidden; margin: 0 auto; border-radius: 10px;">
+  <div style="width: 100%; max-width: 600px; height: 420px; overflow: hidden; margin: 0 auto; border-radius: 10px;">
     <iframe
       src="https://www.youtube.com/embed/X2p1CaedEf8"
       title="Milling chatter sound and surface impact"
       frameborder="0"
       allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
       allowfullscreen
-      style="width: 100%; height: 650px; border: 0; transform: translateY(-130px); display:block;">
+      style="width: 100%; height: 650px; border: 0; transform: translateY(-140px); display:block;">
     </iframe>
   </div>
   <figcaption style="font-size: 0.95em; color: #555; margin-top: 0.4rem;">
-    <strong>Video B:</strong> Real milling example showing the high-pitch chatter sound and surface degradation.
+    <strong>Video B:</strong> Real milling example showing chatter sound and surface damage.
   </figcaption>
 </figure>
+
+- **Limitation of simple thresholds:** Forced vibration (tooth passing harmonics) can mask chatter, and threshold tuning is not robust across tools/machines.
+- **Our approach:** Two complementary detection pipelines that use time/frequency features to isolate chatter growth more reliably.
 
 ---
 
 ## Key methods
 
-### Method 1 — Lightweight real-time detector (MV + MFT)
+### Method 1 — Moving-variance + moving-FFT (spectral power separation)
 
-- **Goal:** Fast online detection using a single vibration signal.
-- **Forced-power estimate:** Compute moving Fourier components at **spindle-synchronous harmonics** (ω, 2ω, …, Pω).
-- **Total-power estimate:** Use **moving variance** over the same window.
-- **Chatter indicator:** **Power Ratio (PR)** = (total power − forced power) / total power.  
-  - **Chatter is flagged when PR exceeds a threshold** (e.g., PR > 0.5).
+- Use a moving window on the vibration signal.
+- Track:
+  - **Total power** via moving variance.
+  - **Forced vibration power** around tooth-passing harmonics via moving FFT bins.
+- Compute a **power ratio** that increases when broadband / non-harmonic chatter grows.
 
-<figure style="margin: 1.5rem 0; text-align: center;">
-  <img src="/images/projects/chatter-detection/fig1_mvmft_pr.png"
-       alt="MV+MFT power-ratio chatter detection diagram"
-       style="width: 100%; height: auto; max-width: 650px; display: block; margin: 0 auto;">
+<figure style="margin: 1.4rem 0; text-align: center;">
+  <img src="/images/projects/chatter-detection/fig1_mvmft.png"
+       alt="Moving variance + moving FFT chatter power ratio concept"
+       style="width: 100%; height: auto; max-width: 560px; display: block; margin: 0 auto;">
   <figcaption style="font-size: 0.95em; color: #555; margin-top: 0.4rem;">
-    <strong>Figure 1:</strong> MV+MFT real-time detector: moving variance estimates total power, moving FT at spindle harmonics estimates forced power, and PR quantifies chatter-dominant power
+    <strong>Figure 1:</strong> Power-ratio feature using moving variance and moving FFT at spindle harmonics.
   </figcaption>
 </figure>
 
-### Method 2 — Robust detector using principal component analysis (PCA)-based harmonic separation 
+### Method 2 — Principal component analysis (PCA) / subspace-based features (robust to operating changes)
 
-- **Goal:** Improve robustness (reduce false alarms) in **flexible / noisy** conditions.
-- **Core idea:** Use PCA to extract dominant vibration components and compute how much of the dominant power is **non-forced / chatter-related**.
-- **Pipeline:**
-  - Build a **Hankel matrix** from the vibration signal (windowed data embedding).
-  - Form the covariance matrix and perform **eigen-decomposition (PCA)**.
-  - Select dominant components (via contribution / eigenvalue selection).
-  - Pair selected components with their dominant frequencies (DFT-based pairing).
-  - Compute **Power Ratio (PR)** as a chatter indicator.
+- Build a windowed data matrix (e.g., Hankel-style embedding) from the vibration signal.
+- Use **PCA** to extract dominant components and track a compact **power ratio** indicator.
+- Optionally smooth / track features over time (e.g., Kalman-style filtering) for stable detection.
 
-<figure style="margin: 1.5rem 0; text-align: center;">
-  <img src="/images/projects/chatter-detection/fig2_pca_er.png"
-       alt="PCA-based chatter detection and power ratio diagram"
-       style="width: 100%; height: auto; max-width: 900px; display: block; margin: 0 auto;">
+<figure style="margin: 1.4rem 0; text-align: center;">
+  <img src="/images/projects/chatter-detection/fig2_pca_pipeline.png"
+       alt="PCA-based chatter indicator pipeline"
+       style="width: 100%; height: auto; max-width: 720px; display: block; margin: 0 auto;">
   <figcaption style="font-size: 0.95em; color: #555; margin-top: 0.4rem;">
-    <strong>Figure 2:</strong> PCA-based chatter monitoring: dominant components are selected from the signal subspace and an PR metric is computed to detect chatter robustly.
+    <strong>Figure 2:</strong> PCA pipeline to build an energy-ratio chatter indicator from windowed data.
   </figcaption>
 </figure>
 
@@ -94,33 +87,37 @@ sitemap_include: true
 
 ## Novelty / contributions
 
-- **Power-ratio framing:** Detects chatter using **relative power dominance** instead of absolute thresholds (more transferable across setups).
-- **Two complementary detectors:**
-  - **MV+MFT:** lightweight and easy to deploy online.
-  - **PCA:** more robust by filtering weak/noisy components and separating forced vs chatter-related content.
-- **Early + robust monitoring:** Designed to detect chatter onset while reducing false alarms in flexible structures.
+- **Separates chatter growth from forced harmonics:** Features are designed to reduce sensitivity to tooth-passing content (forced vibration) while remaining sensitive to chatter emergence.
+- **Early and robust detection:** Subspace/PCA features reduce dependence on a single hand-tuned threshold and help maintain robustness across changing conditions.
 
 ---
 
 ## Tools & implementation
 
-- **Sensing:** In-process vibration acquired using **accelerometers** (single-sensor monitoring).
-- **Computation:** Sliding-window time/frequency updates suitable for real-time implementation.
-- **Deployment concept:** The detector output (PR) can be used for **alarm/stop**, or as an input to **adaptive mitigation** (e.g., spindle speed change).
+We implemented the chatter monitoring algorithms on a **3-axis CNC machine tool** and validated them in milling tests. The experiment and real-time monitoring stack includes:
+
+- **Test execution:** Custom **G-code** programs to generate stable and unstable cutting conditions (step changes in cutting parameters for controlled chatter onset).
+- **Sensing (in-process):**
+  - **Accelerometers** for vibration measurements (primary signal for detection)
+  - **Dynamometer** for cutting force measurements (used when force-based verification/comparison was needed)
+  - **Signal conditioning / amplifiers** 
+- **Real-time data acquisition & computation:**
+  - **dSPACE/DAQ** for synchronized data acquisition and real-time I/O
+  - **MATLAB/Simulink (RTI interface)** for online feature computation (e.g., moving variance / moving FFT, PCA-based indicators) and logging
+- **Post-processing:** MATLAB scripts for offline comparison across trials and parameter sweeps (threshold selection, window length sensitivity, and repeatability checks). 
 
 ---
 
 ## Results
 
-- **Stable cut (low depth):** MV+MFT can show intermittent false alarms in flexible conditions, while the PCA-based method remains stable.
-- **Unstable cut (higher depth):** Both methods detect chatter quickly; the PCA-based method provides a cleaner indicator (fewer spurious triggers).
+- Experimental cutting data shows the indicators remain low in stable cutting and rise clearly once unstable chatter develops.
 
-<figure style="margin: 1.5rem 0; text-align: center;">
+<figure style="margin: 1.4rem 0; text-align: center;">
   <img src="/images/projects/chatter-detection/fig3_experiment.png"
-       alt="Experimental comparison of MV+MFT and PCA chatter indicators during stable and unstable cutting"
-       style="width: 100%; height: auto; max-width: 850px; display: block; margin: 0 auto;">
+       alt="Experimental example showing stable vs unstable cutting and indicator response"
+       style="width: 100%; height: auto; max-width: 720px; display: block; margin: 0 auto;">
   <figcaption style="font-size: 0.95em; color: #555; margin-top: 0.4rem;">
-    <strong>Figure 3:</strong> Representative experiment showing vibration signal and chatter indicators: stable region (0.05 mm) vs unstable region (0.2 mm). PCA provides a cleaner indicator than MV+MFT in the stable segment.
+    <strong>Figure 3:</strong> Representative experiment showing stable → unstable transition and detection indicators.
   </figcaption>
 </figure>
 
