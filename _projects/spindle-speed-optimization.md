@@ -131,9 +131,9 @@ sitemap_include: true
 
 <figure style="margin: 1.4rem 0; text-align: center;">
   <video controls playsinline preload="metadata"
-         style="width: 100%; max-width: 600px; height: auto; display: block; margin: 0 auto;">
-    <source src="/images/projects/spindle-speed-optimization/sso_demo.mov" type="video/mp4">
-    Your browser does not support the video tag.
+         poster="/images/projects/spindle-speed-optimization/sso_demo_poster.jpg"
+         style="width: 100%; max-width: 420px; height: auto; display: block; margin: 0 auto; border-radius: 10px;">
+    <source src="/images/projects/spindle-speed-optimization/sso_demo.mov" type="video/quicktime">
   </video>
   <figcaption style="font-size: 0.92em; color: #555; margin-top: 0.4rem;">
     <strong>Video 1:</strong> Real-time spindle speed adaptation during machining (controller is activated after chatter develops).
