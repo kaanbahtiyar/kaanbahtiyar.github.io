@@ -38,7 +38,7 @@ During development, we investigated two real-time variants:
 - **Dither-free ESC**: the gradient direction is estimated from buffered (speed, cost) data via least-squares fitting (see: [JMST journal article](/publication/SSO_CIRPJMST)).
 
 <figure style="margin: 1.5rem 0;">
-  <img src="/images/projects/spindle-speed-optimization/fig2_block_diagram.png" alt="Adaptive spindle speed regulation block diagram: cost evaluation, gradient estimation, optimizer, and speed command" style="width: 100%; max-width: 900px;">
+  <img src="/images/projects/spindle-speed-optimization/fig2_block_diagram.png" alt="Adaptive spindle speed regulation block diagram: cost evaluation, gradient estimation, optimizer, and speed command" style="width: 80%; max-width: 700px;">
   <figcaption style="font-size: 0.95em; color: #555;">
     <strong>Figure 2:</strong> Adaptive spindle speed regulation loop (vibration feedback → cost evaluation → data-driven gradient estimation → optimizer → spindle speed command update).
   </figcaption>
@@ -56,7 +56,7 @@ We implemented the controller on a **3-axis machine tool** using **dSPACE/DAQ** 
 - **MATLAB/Simulink (RTI)** for real-time cost computation and spindle override updates  
 
 <figure style="margin: 1.5rem 0;">
-  <img src="/images/projects/spindle-speed-optimization/fig3_experimental_setup.png" alt="Experimental setup: tool, workpiece, fixture, accelerometer, dynamometer, and synchronization sensor" style="width: 100%; max-width: 1100px;">
+  <img src="/images/projects/spindle-speed-optimization/fig3_experimental_setup.png" alt="Experimental setup: tool, workpiece, fixture, accelerometer, dynamometer, and synchronization sensor" style="width: 80%; max-width: 700px;">
   <figcaption style="font-size: 0.95em; color: #555;">
     <strong>Figure 3:</strong> Experimental setup configuration used for validation.
   </figcaption>
@@ -91,7 +91,7 @@ Machining tests demonstrate that the adaptive strategy updates spindle speed onl
 </figure>
 
 <figure style="margin: 1.5rem 0;">
-  <video controls playsinline preload="metadata" style="width: 100%; max-width: 1100px;">
+  <video controls playsinline preload="metadata" style="width: 70%; max-width: 700px;">
     <source src="/images/projects/spindle-speed-optimization/sso_demo.mov" type="video/mp4">
     Your browser does not support the video tag.
   </video>
