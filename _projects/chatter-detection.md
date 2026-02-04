@@ -94,7 +94,7 @@ sitemap_include: true
 
 ## Tools & implementation
 
-We implemented the chatter monitoring algorithms on a **3-axis CNC machine tool** and validated them in milling tests. The experiment and real-time monitoring stack includes:
+We implemented the chatter monitoring algorithms on a **3-axis CNC machine tool** and validated them in milling tests. The experiment and real-time monitoring includes:
 
 - **Test execution:** Custom **G-code** programs to generate stable and unstable cutting conditions (step changes in cutting parameters for controlled chatter onset).
 - **Sensing (in-process):**
@@ -115,7 +115,7 @@ We implemented the chatter monitoring algorithms on a **3-axis CNC machine tool*
 <figure style="margin: 1.4rem 0; text-align: center;">
   <img src="/images/projects/chatter-detection/fig3_experiment.png"
        alt="Experimental example showing stable vs unstable cutting and indicator response"
-       style="width: 100%; height: auto; max-width: 720px; display: block; margin: 0 auto;">
+       style="width: 100%; height: auto; max-width: 600px; display: block; margin: 0 auto;">
   <figcaption style="font-size: 0.95em; color: #555; margin-top: 0.4rem;">
     <strong>Figure 3:</strong> Representative experiment showing stable → unstable transition and detection indicators.
   </figcaption>
