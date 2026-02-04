@@ -42,7 +42,7 @@ sitemap_include: true
       frameborder="0"
       allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
       allowfullscreen
-      style="width: 100%; height: 500px; border: 0; transform: translateY(-130px);">
+      style="width: 100%; height: 650px; border: 0; transform: translateY(-130px); display:block;">
     </iframe>
   </div>
   <figcaption style="font-size: 0.95em; color: #555; margin-top: 0.4rem;">
@@ -133,7 +133,7 @@ sitemap_include: true
   <video controls playsinline preload="metadata"
          poster="/images/projects/spindle-speed-optimization/sso_demo_poster.jpg"
          style="width: 100%; max-width: 420px; height: auto; display: block; margin: 0 auto; border-radius: 10px;">
-    <source src="/images/projects/spindle-speed-optimization/sso_demo.mov" type="video/quicktime">
+    <source src="/images/projects/spindle-speed-optimization/sso_demo.mp4" type="video/mp4">
   </video>
   <figcaption style="font-size: 0.92em; color: #555; margin-top: 0.4rem;">
     <strong>Video 1:</strong> Real-time spindle speed adaptation during machining (controller is activated after chatter develops).
