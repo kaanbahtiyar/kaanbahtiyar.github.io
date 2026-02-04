@@ -23,7 +23,7 @@ sitemap_include: true
 <figure style="margin: 1.5rem 0; text-align: center;">
   <img src="/images/projects/cross-coupling-vibrations/fig1_setup.png"
        alt="Vertical machining center structure and axis-coupled vibration mechanism"
-       style="width: 100%; height: auto; max-width: 6000px; display: block; margin: 0 auto;">
+       style="width: 100%; height: auto; max-width: 550px; display: block; margin: 0 auto;">
   <figcaption style="font-size: 0.95em; color: #555; margin-top: 0.4rem;">
     <strong>Figure 1:</strong> Vertical machining center layout and illustration of axis-coupled (cross-talk) vibration mechanism (e.g., table motion exciting Z-direction tool-tip vibration). (a) Experimental setup. (b) Cross-coupling vibrations.
   </figcaption>
@@ -86,7 +86,7 @@ We implemented the method on a **3-axis machine tool** with a dominant cross-tal
   - **MATLAB/Simulink (RTI interface)** for real-time monitoring
   - **MATLAB** for quadratic programming–based parameter computation (offline)
   - **Machine tool existing servo settings** for filter implementation
-- **Post-processing:** MATLAB scripts for performance evaluation (time-domain peak error, frequency-domain resonance peak reduction, and repeatability across trials).
+- **Post-processing:** MATLAB scripts for data analysis.
 
 ---
 
