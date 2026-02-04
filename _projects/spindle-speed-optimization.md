@@ -61,7 +61,7 @@ sitemap_include: true
 - **Formulation:** Treat spindle speed regulation as an **online optimization** problem:
   - Compute a vibration-based **cost** from accelerometer data.
   - Update spindle speed to reduce the cost.
-- **Model-free search:** Use an **extremum seeking control (ESC)** viewpoint where the search direction is obtained from measured data rather than a detailed process model.
+- **Model-free search:** Use an **extremum seeking control (ESC)** framework where the search direction (gradient) is obtained from measured data rather than a detailed process model.
 - **Real-time variants:**
   - **Dither-guided ESC:** inject a small sinusoidal perturbation on spindle speed and infer the gradient from the vibration response  
     (see: [MSEC conference paper](/publication/brief-spindle-speed-msec2024/)).
@@ -71,7 +71,7 @@ sitemap_include: true
 <figure style="margin: 1.4rem 0; text-align: center;">
   <img src="/images/projects/spindle-speed-optimization/fig2_block_diagram.png"
        alt="Adaptive spindle speed regulation block diagram: cost evaluation, gradient estimation, optimizer, and speed command"
-       style="width: 100%; height: auto; max-width: 720px; display: block; margin: 0 auto;">
+       style="width: 100%; height: auto; max-width: 500px; display: block; margin: 0 auto;">
   <figcaption style="font-size: 0.95em; color: #555; margin-top: 0.4rem;">
     <strong>Figure 2:</strong> Adaptive spindle speed regulation loop (vibration feedback → cost evaluation → gradient estimation → optimizer → speed command update).
   </figcaption>
@@ -88,7 +88,7 @@ sitemap_include: true
 <figure style="margin: 1.4rem 0; text-align: center;">
   <img src="/images/projects/spindle-speed-optimization/fig3_experimental_setup.png"
        alt="Experimental setup configuration used for validation"
-       style="width: 100%; height: auto; max-width: 760px; display: block; margin: 0 auto;">
+       style="width: 100%; height: auto; max-width: 500px; display: block; margin: 0 auto;">
   <figcaption style="font-size: 0.95em; color: #555; margin-top: 0.4rem;">
     <strong>Figure 3:</strong> Experimental setup configuration used for validation.
   </figcaption>
@@ -97,7 +97,7 @@ sitemap_include: true
 <figure style="margin: 1.4rem 0; text-align: center;">
   <img src="/images/projects/spindle-speed-optimization/fig4_data_communication.png"
        alt="Real-time implementation architecture: CNC/PLC, DAQ, and PC"
-       style="width: 100%; height: auto; max-width: 860px; display: block; margin: 0 auto;">
+       style="width: 100%; height: auto; max-width: 650px; display: block; margin: 0 auto;">
   <figcaption style="font-size: 0.95em; color: #555; margin-top: 0.4rem;">
     <strong>Figure 4:</strong> Real-time implementation architecture: measurements to DAQ/PC and spindle speed override command applied via the CNC/PLC interface.
   </figcaption>
@@ -113,7 +113,7 @@ sitemap_include: true
 <figure style="margin: 1.4rem 0; text-align: center;">
   <img src="/images/projects/spindle-speed-optimization/fig5_alg_conv.png"
        alt="Experimental data showing real-time spindle speed adaptation and vibration mitigation"
-       style="width: 100%; height: auto; max-width: 880px; display: block; margin: 0 auto;">
+       style="width: 100%; height: auto; max-width: 700px; display: block; margin: 0 auto;">
   <figcaption style="font-size: 0.95em; color: #555; margin-top: 0.4rem;">
     <strong>Figure 5:</strong> Example showing real-time spindle speed adaptation and vibration mitigation starting from an initial chatter condition (time- and frequency-domain views).
   </figcaption>
@@ -122,14 +122,14 @@ sitemap_include: true
 <figure style="margin: 1.4rem 0; text-align: center;">
   <img src="/images/projects/spindle-speed-optimization/fig6_alg_comp.png"
        alt="Benchmark against conventional chatter mitigation strategy"
-       style="width: 100%; height: auto; max-width: 880px; display: block; margin: 0 auto;">
+       style="width: 100%; height: auto; max-width: 700px; display: block; margin: 0 auto;">
   <figcaption style="font-size: 0.95em; color: #555; margin-top: 0.4rem;">
     <strong>Figure 6:</strong> Benchmark comparison against a conventional chatter mitigation strategy (time- and frequency-domain).
   </figcaption>
 </figure>
 
 <figure style="margin: 1.4rem 0; text-align: center;">
-  <video controls playsinline preload="metadata" style="width: 100%; max-width: 720px;">
+  <video controls playsinline preload="metadata" style="width: 100%; max-width: 600px;">
     <source src="/images/projects/spindle-speed-optimization/sso_demo.mov" type="video/mp4">
     Your browser does not support the video tag.
   </video>
