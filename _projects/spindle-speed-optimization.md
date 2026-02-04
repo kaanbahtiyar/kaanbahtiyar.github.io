@@ -13,7 +13,7 @@ sitemap_include: true
 
 - **Problem:** Milling vibrations appear in two main forms:
   - **Self-excited chatter** (unstable) caused by regenerative effects.
-  - **Forced vibrations** (stable but periodic) driven by tooth passing and structural dynamics.
+  - **Periodic forced vibrations** (stable) driven by tooth passing and structural dynamics.
 - **Why it matters:** Both vibration types degrade surface finish, shorten tool life, and may damage machine components.
 
 <figure style="margin: 1.2rem 0; text-align: center;">
