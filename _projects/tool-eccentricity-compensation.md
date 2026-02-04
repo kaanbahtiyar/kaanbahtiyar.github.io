@@ -44,7 +44,7 @@ Instead, we tune the compensation signal **directly from measured signals**:
 In early development, we evaluated real-time adaptive controllers (e.g., **extremum seeking control, ESC**) for **fully model-free** tuning based only on measured force/vibration feedback. Building on these insights, we developed a **data-driven convex optimization framework** that leverages a **simple eccentricity model** (i.e., focusing the cost on the relevant spindle harmonics), which enables reliable tuning and convergence in as fast as **2–3 iterations** in the force-feedback case.
 
 <figure style="margin: 1.5rem 0;">
-  <img src="/images/projects/tool-eccentricity-compensation/fig2_block_diagram.png" alt="Proposed strategy block diagram for eccentricity compensation" style="width: 100%; max-width: 1000px;">
+  <img src="/images/projects/tool-eccentricity-compensation/fig2_block_diagram.png" alt="Proposed strategy block diagram for eccentricity compensation" style="width: 60%; max-width: 500px;">
   <figcaption style="font-size: 0.95em; color: #555;">
     <strong>Figure 2:</strong> Proposed strategy block diagram.
   </figcaption>
