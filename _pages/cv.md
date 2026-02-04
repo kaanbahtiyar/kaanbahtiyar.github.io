@@ -185,7 +185,7 @@ Honors & Awards
   <ul>
     <li>
       Awarded by the American Society for Precision Engineering for the paper presented at the 39th Annual Meeting; more details are available
-      <a href="https://aspe.net/awards-2/thomas-a-dow-student-scholarship/" target="_blank" rel="noopener">here</a>.
+      <a href="https://aspe.net/student-scholarships/" target="_blank" rel="noopener">here</a>.
       <div style="text-align: center; margin-top: 0.5rem;">
         <img src="/images/ASPE2024award.png"
              alt="Thomas A. Dow Student Scholarship 2024 award"
