@@ -11,10 +11,73 @@ sitemap_include: true
 
 ## Overview
 
+- **Problem:** Fast point-to-point motion excites structural modes of machine tools and industrial robots, causing **transient / residual vibrations** and overshoot that degrade positioning accuracy and throughput.
+- **Why it matters:** These inertial vibrations limit how aggressively you can move while still meeting precision requirements.
+- **Limitation of standard damping (feedback-only):** Feedback (e.g., direct velocity feedback) can reduce vibration but may have practical stability/actuator limits and can not fully eliminate the initial overshoot due to feedback nature.
+- **Our approach:** Generate a **task-specific, fully pre-scheduled feedforward (FF) compensation** signal for the inertial damper, and **tune it from measured vibration data** over repeated tasks.
 
+---
 
 ## Key methods
 
+- **Iteration-domain learning of FF compensation:**
+  - Repeat the same motion task.
+  - Measure vibration/position error around the critical region (e.g., reversal).
+  - Update the damper FF signal to reduce a vibration/error cost over iterations.
+
+- **Structured FF signal (implementation-friendly):**
+  - Parameterize the FF compensation using **filtered B-spline basis functions** (control points).
+  - Enforce **actuator stroke and force constraints** during optimization.
+
+<figure style="margin: 1.4rem 0; text-align: center;">
+  <img src="/images/projects/inertial-damper-control/fig1_overview.png"
+       alt="Inertial vibration problem and iteration-domain compensation concept"
+       style="width: 100%; height: auto; max-width: 650px; display: block; margin: 0 auto;">
+  <figcaption style="font-size: 0.95em; color: #555; margin-top: 0.4rem;">
+    <strong>Figure 1:</strong> Inertial vibration problem and iteration-domain feedforward compensation concept.
+  </figcaption>
+</figure>
+
+<figure style="margin: 1.4rem 0; text-align: center;">
+  <img src="/images/projects/inertial-damper-control/fig2_model_bspline.png"
+       alt="Dynamics with inertial damper, block diagram, and B-spline signal representation"
+       style="width: 100%; height: auto; max-width: 650px; display: block; margin: 0 auto;">
+  <figcaption style="font-size: 0.95em; color: #555; margin-top: 0.4rem;">
+    <strong>Figure 2:</strong> Damper dynamics / block diagram and B-spline-based FF signal representation.
+  </figcaption>
+</figure>
+
+---
+
+## Novelty / contributions
+
+- **Task-specific pre-scheduled FF for inertial dampers:** Rather than relying only on feedback, the damper applies a **timed FF action** tailored to the task to suppress overshoot and residual vibration. 
+- **Data-driven tuning from measured vibration:** The FF signal is tuned iteratively using recorded vibration/position error during repeated tasks.
+- **Constraint-aware optimization:** Stroke/force constraints are enforced while learning the FF signal.
+- **Practical integration:** The approach can be implemented without requiring tight integration/communication with the host NC (system-level practicality).
+
+---
+
+## Tools & implementation
+
+- **Hardware:** Feed-drive axis with a **voice-coil actuated inertial damper** and position/vibration sensing.
+- **Sensing:** Table position (encoder or displacement sensor) + damper encoder for relative mass displacement.
+- **Learning loop:** Run the same point-to-point task repeatedly and update FF control points each iteration.
+
+---
+
+## Results
+
+- The learned FF signal converges in ~**10 iterations** and reduces peak positioning error by **87%** (from **12 µm** down to **1.6 µm**) while respecting force/stroke constraints. 
+
+<figure style="margin: 1.4rem 0; text-align: center;">
+  <img src="/images/projects/inertial-damper-control/fig3_experimental_results.png"
+       alt="Experimental setup and feedforward compensation performance over iterations"
+       style="width: 100%; height: auto; max-width: 720px; display: block; margin: 0 auto;">
+  <figcaption style="font-size: 0.95em; color: #555; margin-top: 0.4rem;">
+    <strong>Figure 3:</strong> Experimental setup, identified dynamics, and FF compensation performance.
+  </figcaption>
+</figure>
 
 
 ## Related publications
