@@ -70,7 +70,7 @@ sitemap_include: true
   </figcaption>
 </figure>
 
-### Method 2 — Robust detector using PCA-based harmonic separation (Energy Ratio)
+### Method 2 — Robust detector using principal component analysis (PCA)-based harmonic separation (Energy Ratio)
 
 - **Goal:** Improve robustness (reduce false alarms) in **flexible / noisy** conditions.
 - **Core idea:** Use PCA to extract dominant vibration components and compute how much of the dominant energy is **non-forced / chatter-related**.
