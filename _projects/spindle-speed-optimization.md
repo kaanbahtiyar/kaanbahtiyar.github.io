@@ -35,14 +35,14 @@ sitemap_include: true
   - Even when cutting is stable (no chatter), **forced vibrations** still deteriorate surface quality and cause **surface location errors (SLE)**.
 
 <figure style="margin: 1.2rem 0; text-align: center;">
-  <div style="width: 100%; max-width: 640px; max-height: 640px; overflow: hidden; margin: 0 auto; border-radius: 10px;">
+  <div style="width: 100%; max-width: 520px; height: 350px; overflow: hidden; margin: 0 auto; border-radius: 10px;">
     <iframe
       src="https://www.youtube.com/embed/X2p1CaedEf8"
       title="Milling chatter sound and surface impact"
       frameborder="0"
       allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
       allowfullscreen
-      style="width: 100%; height: 640px; border: 0; transform: translateY(-190px);">
+      style="width: 100%; height: 560px; border: 0; transform: translateY(-130px);">
     </iframe>
   </div>
   <figcaption style="font-size: 0.95em; color: #555; margin-top: 0.4rem;">
