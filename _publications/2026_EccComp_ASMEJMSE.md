@@ -9,8 +9,8 @@ venue: "ASME Journal of Manufacturing Science and Engineering"
 citation: "Bahtiyar, K., Sencer, B., and Ikeda, R. (2026). Data-driven adaptive compensation of tool runout in milling via machine tool feed drives. ASME Journal of Manufacturing Science and Engineering, Accepted."
 pubtype: journal
 project: tool-eccentricity-compensation
-status: accepted
+status: submitted
 sitemap_include: true
 ---
 
-Journal article {% include project-phrase.html project_id="tool-eccentricity-compensation" %}; currently under review at the *ASME Journal of Manufacturing Science and Engineering*.
+Journal article {% include project-phrase.html project_id="tool-eccentricity-compensation" %}; accepted at the *ASME Journal of Manufacturing Science and Engineering*.
