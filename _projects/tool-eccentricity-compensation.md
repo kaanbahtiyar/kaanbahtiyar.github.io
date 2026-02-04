@@ -19,7 +19,7 @@ Eccentricity appears as a **periodic tool-center motion** in the workpiece frame
 <figure style="margin: 1.5rem 0; text-align: center;">
   <img src="/images/projects/tool-eccentricity-compensation/fig1_problem_overview.png"
        alt="Milling process with an eccentric tool: eccentricity definition, kinematics, and tool-center trajectories"
-       style="width: 100%; height: auto; max-width: 950px; display: block; margin: 0 auto;">
+       style="width: 100%; height: auto; max-width: 780px; display: block; margin: 0 auto;">
   <figcaption style="font-size: 0.95em; color: #555; margin-top: 0.4rem;">
     <strong>Figure 1:</strong> Milling process with an eccentric tool. (a) Tool eccentricity in milling process. (b) Tool eccentricity kinematics. (c) Trajectories of the tool center points in workpiece coordinate frame.
   </figcaption>
@@ -89,12 +89,12 @@ Figure 3 shows the experimental implementation used for validation.
 
 ## Results
 
-Using force-feedback, the spindle-synchronized compensation converges in as fast as **2–3 iterations** (10-15 spindle revolutions) in experiments. Figure 4 shows a representative experimental result demonstrating the reduction of eccentricity-related components and the rapid convergence behavior.
+Using force-feedback, the spindle-synchronized compensation converges in as fast as **2–3 iterations** (10-15 spindle revolutions) in experiments. Figure 4 shows a representative experimental result demonstrating the reduction of eccentricity-related components and the rapid convergence behavior. Using the proposed compensation, the **peak-to-peak normal-direction cutting force decreased from 101 N to 14 N, corresponding to an ~86% reduction (≈7.2× lower)**.
 
 <figure style="margin: 1.5rem 0; text-align: center;">
   <img src="/images/projects/tool-eccentricity-compensation/fig4_experimental_result.png"
        alt="Experimental result showing eccentricity compensation and convergence"
-       style="width: 100%; height: auto; max-width: 780px; display: block; margin: 0 auto;">
+       style="width: 100%; height: auto; max-width: 600px; display: block; margin: 0 auto;">
   <figcaption style="font-size: 0.95em; color: #555; margin-top: 0.4rem;">
     <strong>Figure 4:</strong> Experimental results of cutting a steel alloy using a 4-tooth, 30° helix tool at a spindle speed of 1200 rpm.
   </figcaption>
