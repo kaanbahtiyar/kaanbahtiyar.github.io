@@ -60,7 +60,9 @@ We implemented the method on a **3-axis machine tool** using **dSPACE/DAQ** and 
 - **Dynamometer** for cutting force feedback
 - **Fiber-optic edge detection sensor** used for synchronization (can be replaced by spindle encoder)
 - **Sensor amplifiers / signal conditioning** to improve measurement quality and ensure synchronization  
-
+- **dSPACE/DAQ** for data acquisition and real-time I/O  
+- **MATLAB/Simulink (RTI)** for real-time cost computation and spindle override updates
+  
 Figure 3 shows the experimental implementation used for validation.
 
 <figure style="margin: 1.5rem 0;">
