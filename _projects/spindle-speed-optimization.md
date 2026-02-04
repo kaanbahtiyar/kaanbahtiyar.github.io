@@ -14,14 +14,7 @@ sitemap_include: true
 - **Problem:** Milling vibrations appear in two main forms:
   - **Self-excited chatter** (unstable) caused by regenerative effects.
   - **Forced vibrations** (stable but periodic) driven by tooth passing and structural dynamics.
-- **Why it matters:** Both vibration types degrade surface finish, shorten tool life, and can damage machine components.
-- **What you see in practice:**
-  - Chatter can create large-amplitude vibration and audible high-pitch noise, producing severe surface degradation.
-  - Even when cutting is stable (no chatter), **forced vibrations** still deteriorate surface quality and cause **surface location errors (SLE)**.
-- **Limitations of current practice:**
-  - Model-based planning (e.g., stability lobes, SLE maps) requires extensive identification and may not transfer across machines/tools/setups.
-  - Chatter-only online speed regulation can suppress chatter but unintentionally increase forced vibrations near structural resonances.
-- **Our approach:** A **model-free adaptive spindle speed regulation** strategy that uses **in-process vibration feedback** to automatically update spindle speed and minimize **overall vibration** (forced + chatter) in real time.
+- **Why it matters:** Both vibration types degrade surface finish, shorten tool life, and may damage machine components.
 
 <figure style="margin: 1.2rem 0; text-align: center;">
   <iframe width="780" height="439"
@@ -33,24 +26,34 @@ sitemap_include: true
           style="width: 100%; max-width: 780px;">
   </iframe>
   <figcaption style="font-size: 0.95em; color: #555; margin-top: 0.4rem;">
-    <strong>Video A:</strong> Example chatter simulation (regenerative instability).
+    <strong>Video A:</strong> Example of vibration types in milling.
   </figcaption>
 </figure>
 
+- **What you see in practice:**
+  - Chatter can create large-amplitude vibration and audible high-pitch noise, producing severe surface degradation.
+  
 <figure style="margin: 1.2rem 0; text-align: center;">
-  <iframe width="520" height="925"
-          src="https://www.youtube.com/embed/X2p1CaedEf8"
-          title="Milling chatter sound and surface impact"
-          frameborder="0"
-          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-          allowfullscreen
-          style="width: 100%; max-width: 520px; aspect-ratio: 9 / 16;">
+  <iframe
+    src="https://www.youtube.com/embed/X2p1CaedEf8"
+    title="Milling chatter sound and surface impact"
+    frameborder="0"
+    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+    allowfullscreen
+    style="width: 100%; max-width: 360px; aspect-ratio: 9 / 16; display: block; margin: 0 auto;">
   </iframe>
   <figcaption style="font-size: 0.95em; color: #555; margin-top: 0.4rem;">
     <strong>Video B:</strong> Real milling example showing the high-pitch chatter sound and surface degradation.
   </figcaption>
 </figure>
 
+  - Even when cutting is stable (no chatter), **forced vibrations** still deteriorate surface quality and cause **surface location errors (SLE)**.
+  
+- **Limitations of current practice:**
+  - Model-based planning (e.g., stability lobes, SLE maps) requires extensive identification and may not transfer across machines/tools/setups.
+  - Chatter-only online speed regulation can suppress chatter but unintentionally increase forced vibrations near structural resonances.
+- **Our approach:** A **model-free adaptive spindle speed regulation** strategy that uses **in-process vibration feedback** to automatically update spindle speed and minimize **overall vibration** (forced + chatter) in real time.
+- 
 ---
 
 ## Key methods
