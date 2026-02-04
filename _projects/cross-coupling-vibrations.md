@@ -1,5 +1,5 @@
 ---
-title: "Axis-coupled inertial vibration compensation"
+title: "Cross-coupled inertial vibration compensation"
 collection: projects
 permalink: /projects/cross-coupling-vibrations/
 project_id: cross-coupling-vibrations
@@ -23,7 +23,7 @@ sitemap_include: true
 <figure style="margin: 1.5rem 0; text-align: center;">
   <img src="/images/projects/cross-coupling-vibrations/fig1_setup.png"
        alt="Vertical machining center structure and axis-coupled vibration mechanism"
-       style="width: 100%; height: auto; max-width: 750px; display: block; margin: 0 auto;">
+       style="width: 100%; height: auto; max-width: 600px; display: block; margin: 0 auto;">
   <figcaption style="font-size: 0.95em; color: #555; margin-top: 0.4rem;">
     <strong>Figure 1:</strong> Vertical machining center layout and illustration of axis-coupled (cross-talk) vibration mechanism (e.g., table motion exciting Z-direction tool-tip vibration).
   </figcaption>
@@ -46,7 +46,7 @@ sitemap_include: true
 <figure style="margin: 1.5rem 0; text-align: center;">
   <img src="/images/projects/cross-coupling-vibrations/fig2_ctdc_block_diagram.png"
        alt="Cross-talk dynamics compensator (CTDC) block diagram"
-       style="width: 100%; height: auto; max-width: 820px; display: block; margin: 0 auto;">
+       style="width: 100%; height: auto; max-width: 600px; display: block; margin: 0 auto;">
   <figcaption style="font-size: 0.95em; color: #555; margin-top: 0.4rem;">
     <strong>Figure 2:</strong> Cross-talk dynamics compensator (CTDC): generating a Z compensation command from the reference trajectory and coupling dynamics.
   </figcaption>
@@ -93,7 +93,7 @@ We implemented the method on a **3-axis machine tool** with dominant cross-talk 
 <figure style="margin: 1.5rem 0; text-align: center;">
   <img src="/images/projects/cross-coupling-vibrations/fig3_results.png"
        alt="Experimental comparison showing cross-talk reduction using CTDC"
-       style="width: 100%; height: auto; max-width: 900px; display: block; margin: 0 auto;">
+       style="width: 100%; height: auto; max-width: 600px; display: block; margin: 0 auto;">
   <figcaption style="font-size: 0.95em; color: #555; margin-top: 0.4rem;">
     <strong>Figure 3:</strong> Representative experimental comparison showing reduced cross-talk response with CTDC (time- and frequency-domain improvement).
   </figcaption>
