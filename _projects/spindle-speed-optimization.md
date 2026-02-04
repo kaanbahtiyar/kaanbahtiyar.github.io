@@ -92,7 +92,7 @@ Machining tests demonstrate that the adaptive strategy updates spindle speed onl
 
 <figure style="margin: 1.5rem 0;">
   <video controls playsinline preload="metadata" style="width: 100%; max-width: 1100px;">
-    <source src="/videos/projects/spindle-speed-optimization/sso_demo.mp4" type="video/mp4">
+    <source src="/images/projects/spindle-speed-optimization/sso_demo.mov" type="video/mp4">
     Your browser does not support the video tag.
   </video>
   <figcaption style="font-size: 0.95em; color: #555;">
