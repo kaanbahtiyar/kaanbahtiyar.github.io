@@ -16,9 +16,11 @@ Tool eccentricity (radial runout) shifts the cutter’s geometric center away fr
 Eccentricity appears as a **periodic tool-center motion** in the workpiece frame at the spindle frequency. We mitigate this disturbance by commanding a **micro-circular motion** through the machine tool’s existing feed drives and tuning its parameters (amplitude and phase) using force/vibration feedback from the cutting process. Figure 1 summarizes the eccentricity mechanism and the resulting tool-center trajectories that motivate the compensation strategy.
 
 
-<figure style="margin: 1.5rem 0;">
-  <img src="/images/projects/tool-eccentricity-compensation/fig1_problem_overview.png" alt="Milling process with an eccentric tool: eccentricity definition, kinematics, and tool-center trajectories" style="width: 100%; max-width: 1000px;">
-  <figcaption style="font-size: 0.95em; color: #555;">
+<figure style="margin: 1.5rem 0; text-align: center;">
+  <img src="/images/projects/tool-eccentricity-compensation/fig1_problem_overview.png"
+       alt="Milling process with an eccentric tool: eccentricity definition, kinematics, and tool-center trajectories"
+       style="width: 100%; height: auto; max-width: 950px; display: block; margin: 0 auto;">
+  <figcaption style="font-size: 0.95em; color: #555; margin-top: 0.4rem;">
     <strong>Figure 1:</strong> Milling process with an eccentric tool. (a) Tool eccentricity in milling process. (b) Tool eccentricity kinematics. (c) Trajectories of the tool center points in workpiece coordinate frame.
   </figcaption>
 </figure>
@@ -43,14 +45,23 @@ Instead, we tune the compensation signal **directly from measured signals**:
 
 In early development, we evaluated real-time adaptive controllers (e.g., **extremum seeking control, ESC**) for **fully model-free** tuning based only on measured force/vibration feedback. Building on these insights, we developed a **data-driven convex optimization framework** that leverages a **simple eccentricity model** (i.e., focusing the cost on the relevant spindle harmonics), which enables reliable tuning and convergence in as fast as **2–3 iterations** in the force-feedback case.
 
-<figure style="margin: 1.5rem 0;">
-  <img src="/images/projects/tool-eccentricity-compensation/fig2_block_diagram.png" alt="Proposed strategy block diagram for eccentricity compensation" style="width: 100%; max-width: 1000px;">
-  <figcaption style="font-size: 0.95em; color: #555;">
+<figure style="margin: 1.5rem 0; text-align: center;">
+  <img src="/images/projects/tool-eccentricity-compensation/fig2_block_diagram.png"
+       alt="Proposed strategy block diagram for eccentricity compensation"
+       style="width: 100%; height: auto; max-width: 950px; display: block; margin: 0 auto;">
+  <figcaption style="font-size: 0.95em; color: #555; margin-top: 0.4rem;">
     <strong>Figure 2:</strong> Proposed strategy block diagram.
   </figcaption>
 </figure>
 
 ---
+
+## Novelty / contributions
+
+- **Uses existing feed drives as the actuator:** Instead of dedicated hardware or offline tramming, eccentricity is mitigated by injecting a micro-motion through the machine’s built-in X–Y axes.
+- **On-machine, sensor-based tuning:** The method does not require direct runout measurement; it infers eccentricity-related errors from force/vibration feedback and tunes the compensation online.
+- **Fast data-driven optimization with minimal modeling:** A convex optimization framework leverages a simple eccentricity insight (relevant spindle-synchronous harmonics) to achieve reliable tuning and convergence in as fast as **2–3 iterations** (force-feedback case).
+- **Practical integration:** Works with either force or vibration sensing and does not rely on a fixed reference-tooth phase calibration (robust to setup/condition changes).
 
 ## Tools & implementation
 
@@ -61,13 +72,15 @@ We implemented the method on a **3-axis machine tool** using **dSPACE/DAQ** and 
 - **Fiber-optic edge detection sensor** used for synchronization (can be replaced by spindle encoder)
 - **Sensor amplifiers / signal conditioning** to improve measurement quality and ensure synchronization  
 - **dSPACE/DAQ** for data acquisition and real-time I/O  
-- **MATLAB/Simulink (RTI)** for real-time cost computation and spindle override updates
+- **MATLAB/Simulink (RTI)** for real-time cost computation and compensation parameter updates
   
 Figure 3 shows the experimental implementation used for validation.
 
-<figure style="margin: 1.5rem 0;">
-  <img src="/images/projects/tool-eccentricity-compensation/fig3_experimental_implementation.png" alt="Experimental implementation for eccentricity compensation validation" style="width: 100%; max-width: 1000px;">
-  <figcaption style="font-size: 0.95em; color: #555;">
+<figure style="margin: 1.5rem 0; text-align: center;">
+  <img src="/images/projects/tool-eccentricity-compensation/fig3_experimental_implementation.png"
+       alt="Experimental implementation for eccentricity compensation validation"
+       style="width: 100%; height: auto; max-width: 950px; display: block; margin: 0 auto;">
+  <figcaption style="font-size: 0.95em; color: #555; margin-top: 0.4rem;">
     <strong>Figure 3:</strong> Experimental implementation.
   </figcaption>
 </figure>
@@ -78,10 +91,12 @@ Figure 3 shows the experimental implementation used for validation.
 
 Using force-feedback, the spindle-synchronized compensation converges in as fast as **2–3 iterations** (10-15 spindle revolutions) in experiments. Figure 4 shows a representative experimental result demonstrating the reduction of eccentricity-related components and the rapid convergence behavior.
 
-<figure style="margin: 1.5rem 0;">
-  <img src="/images/projects/tool-eccentricity-compensation/fig4_experimental_result.png" alt="Experimental result showing eccentricity compensation and convergence" style="width: 80%; max-width: 700px;">
-  <figcaption style="font-size: 0.95em; color: #555;">
-    <strong>Figure 4:</strong> Experimental results of cutting a steel alloy using a tool with a 4-tooth, 30-degree helix at a spindle speed of 1200 rpm.
+<figure style="margin: 1.5rem 0; text-align: center;">
+  <img src="/images/projects/tool-eccentricity-compensation/fig4_experimental_result.png"
+       alt="Experimental result showing eccentricity compensation and convergence"
+       style="width: 100%; height: auto; max-width: 780px; display: block; margin: 0 auto;">
+  <figcaption style="font-size: 0.95em; color: #555; margin-top: 0.4rem;">
+    <strong>Figure 4:</strong> Experimental results of cutting a steel alloy using a 4-tooth, 30° helix tool at a spindle speed of 1200 rpm.
   </figcaption>
 </figure>
 
