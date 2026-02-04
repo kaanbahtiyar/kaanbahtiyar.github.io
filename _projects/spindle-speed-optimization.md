@@ -79,7 +79,14 @@ sitemap_include: true
 </figure>
 
 ---
+## Novelty / contributions
 
+- **Optimizes spindle speed for *total* vibration, not just chatter:** The controller targets a vibration-based cost that captures both **forced vibrations** and **self-excited chatter**, avoiding the common tradeoff where chatter suppression can amplify forced vibration near resonances in the conventional approach.
+- **Model-free, on-machine adaptation:** Spindle speed is updated online using only **in-process accelerometer measurements**, without requiring stability lobe identification or detailed cutting-force/dynamics models.
+- **Data-driven gradient estimation in real time:** The search direction is obtained directly from measured data, which enables implementation without model identification.
+
+---
+  
 ## Tools & implementation
 
 - **Machine/actuation:** 3-axis machine tool; spindle speed updates applied via **spindle override digital input** and **PLC functions**.
@@ -108,8 +115,8 @@ sitemap_include: true
 
 ## Results
 
-- The adaptive strategy updates spindle speed online using in-process vibration feedback, lowering the vibration level by **82%** (RMS from **152** to **27 m/s²**).
-- Compared to a conventional chatter-focused regulation approach, it converges to a spindle speed that yields **66%** lower vibration level.
+- The adaptive strategy updates spindle speed online using in-process acceleration feedback and **reduces the vibration level by 82% (RMS from 152 to 27 m/s²**).
+- It converges to a spindle speed that yields **66% lower vibration level compared to a conventional chatter-focused regulation approach**.
 
 <figure style="margin: 1.4rem 0; text-align: center;">
   <img src="/images/projects/spindle-speed-optimization/fig5_alg_conv.png"
