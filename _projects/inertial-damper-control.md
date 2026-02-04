@@ -45,7 +45,7 @@ sitemap_include: true
          alt="Dynamics with inertial damper, block diagram, and B-spline signal representation"
          style="width: 100%; height: auto; max-width: 450px; display: block; margin: 0 auto;">
     <figcaption style="font-size: 0.95em; color: #555; margin-top: 0.4rem;">
-      <strong>Figure 2:</strong> Damper dynamics / block diagram and B-spline-based FF signal representation.
+      <strong>Figure 2:</strong> (a) Damper dynamics. (b) Block diagram. (c) B-spline-based FF signal representation.
     </figcaption>
   </figure>
 
@@ -85,9 +85,9 @@ We implemented the active inertial damper control on a precision feed-drive setu
 <figure style="margin: 1.4rem 0; text-align: center;">
   <img src="/images/projects/inertial-damper-control/fig3_experimental_results.png"
        alt="Experimental setup and feedforward compensation performance over iterations"
-       style="width: 100%; height: auto; max-width: 720px; display: block; margin: 0 auto;">
+       style="width: 100%; height: auto; max-width: 550px; display: block; margin: 0 auto;">
   <figcaption style="font-size: 0.95em; color: #555; margin-top: 0.4rem;">
-    <strong>Figure 3:</strong> Experimental setup, identified dynamics, and FF compensation performance.
+    <strong>Figure 3:</strong> (a) Experimental setup, and (b) its FRF. (c)-(g) FF compensation performance results.
   </figcaption>
 </figure>
 
