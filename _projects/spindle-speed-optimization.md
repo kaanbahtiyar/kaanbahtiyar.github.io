@@ -34,7 +34,7 @@ sitemap_include: true
   - Chatter can create large-amplitude vibration and audible high-pitch noise, producing severe surface degradation.
   - Even when cutting is stable (no chatter), **forced vibrations** still deteriorate surface quality and cause **surface location errors (SLE)**.
 
-  <figure style="margin: 1.2rem 0; text-align: center;">
+<figure style="margin: 1.2rem 0; text-align: center;">
   <div style="width: 100%; max-width: 640px; max-height: 640px; overflow: hidden; margin: 0 auto; border-radius: 10px;">
     <iframe
       src="https://www.youtube.com/embed/X2p1CaedEf8"
