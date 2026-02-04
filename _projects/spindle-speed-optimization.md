@@ -89,10 +89,18 @@ sitemap_include: true
   
 ## Tools & implementation
 
-- **Machine/actuation:** 3-axis machine tool; spindle speed updates applied via **spindle override digital input** and **PLC functions**.
-- **Real-time stack:** **dSPACE/DAQ** + **MATLAB/Simulink (RTI)** for acquisition, cost evaluation, and online command updates.
-- **Sensing:** accelerometers with **signal conditioning/amplifiers** for in-process vibration feedback.
+We implemented the adaptive spindle speed controller on a **3-axis CNC machine tool** and validated it in milling tests. The experiment and real-time implementation includes:
 
+- **Test execution:** CNC milling trials (via G-code running) with controlled transitions into vibration/chatter conditions (spindle speed adaptation activated online during cutting).
+- **Actuation interface:** spindle speed updates applied using **spindle override digital input** channel and **PLC functions** of the machine tool.
+- **Sensing (in-process):**
+  - **Accelerometers** for vibration feedback (primary signal for the cost)
+  - **Signal conditioning / amplifiers** 
+- **Real-time data acquisition & computation:**
+  - **dSPACE/DAQ** for synchronized data acquisition and real-time I/O
+  - **MATLAB/Simulink (RTI interface)** for real-time cost evaluation, data-driven update, and logging
+- **Post-processing:** MATLAB scripts for data analysis.
+  
 <figure style="margin: 1.4rem 0; text-align: center;">
   <img src="/images/projects/spindle-speed-optimization/fig3_experimental_setup.png"
        alt="Experimental setup configuration used for validation"
