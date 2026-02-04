@@ -17,7 +17,7 @@ sitemap_include: true
   - **Video A:** regenerative chatter mechanism / simulation.
   - **Video B:** real chatter with the characteristic high-pitch sound and surface damage.
 - **Limitations of common detectors:** Simple amplitude/threshold rules and fixed-band spectral checks can be **condition-dependent** and may trigger false alarms in flexible setups.
-- **Our approach:** Chatter monitoring based on **relative energy/power metrics** that separate **forced (spindle-synchronous)** content from **chatter-related** content in real time.
+- **Our approach:** Chatter monitoring based on **relative power metrics** that separate **forced (spindle-synchronous)** content from **chatter-related** content in real time.
 
 <figure style="margin: 1.2rem 0; text-align: center;">
   <iframe width="780" height="439"
@@ -66,24 +66,24 @@ sitemap_include: true
        alt="MV+MFT power-ratio chatter detection diagram"
        style="width: 100%; height: auto; max-width: 650px; display: block; margin: 0 auto;">
   <figcaption style="font-size: 0.95em; color: #555; margin-top: 0.4rem;">
-    <strong>Figure 1:</strong> MV+MFT real-time detector: moving variance estimates total power, moving FT at spindle harmonics estimates forced power, and PR quantifies chatter-dominant energy.
+    <strong>Figure 1:</strong> MV+MFT real-time detector: moving variance estimates total power, moving FT at spindle harmonics estimates forced power, and PR quantifies chatter-dominant power
   </figcaption>
 </figure>
 
-### Method 2 — Robust detector using principal component analysis (PCA)-based harmonic separation (Energy Ratio)
+### Method 2 — Robust detector using principal component analysis (PCA)-based harmonic separation 
 
 - **Goal:** Improve robustness (reduce false alarms) in **flexible / noisy** conditions.
-- **Core idea:** Use PCA to extract dominant vibration components and compute how much of the dominant energy is **non-forced / chatter-related**.
+- **Core idea:** Use PCA to extract dominant vibration components and compute how much of the dominant power is **non-forced / chatter-related**.
 - **Pipeline:**
   - Build a **Hankel matrix** from the vibration signal (windowed data embedding).
   - Form the covariance matrix and perform **eigen-decomposition (PCA)**.
   - Select dominant components (via contribution / eigenvalue selection).
   - Pair selected components with their dominant frequencies (DFT-based pairing).
-  - Compute **Energy Ratio (ER)** as a chatter indicator.
+  - Compute **Power Ratio (PR)** as a chatter indicator.
 
 <figure style="margin: 1.5rem 0; text-align: center;">
   <img src="/images/projects/chatter-detection/fig2_pca_er.png"
-       alt="PCA-based chatter detection and energy ratio diagram"
+       alt="PCA-based chatter detection and power ratio diagram"
        style="width: 100%; height: auto; max-width: 900px; display: block; margin: 0 auto;">
   <figcaption style="font-size: 0.95em; color: #555; margin-top: 0.4rem;">
     <strong>Figure 2:</strong> PCA-based chatter monitoring: dominant components are selected from the signal subspace and an ER metric is computed to detect chatter robustly.
@@ -94,7 +94,7 @@ sitemap_include: true
 
 ## Novelty / contributions
 
-- **Power-ratio framing:** Detects chatter using **relative power/energy dominance** instead of absolute thresholds (more transferable across setups).
+- **Power-ratio framing:** Detects chatter using **relative power dominance** instead of absolute thresholds (more transferable across setups).
 - **Two complementary detectors:**
   - **MV+MFT:** lightweight and easy to deploy online.
   - **PCA/ER:** more robust by filtering weak/noisy components and separating forced vs chatter-related content.
