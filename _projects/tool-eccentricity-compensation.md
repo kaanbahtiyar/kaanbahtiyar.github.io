@@ -11,11 +11,11 @@ sitemap_include: true
 
 ## Overview
 
-•	**Problem:** Tool eccentricity (radial runout) offsets the cutter geometric center from the spindle rotational axis, causing **tooth-to-tooth chip load imbalance**.
-•	**Why it matters:** Chip load imbalance causes variation in cutting force, degrading surface finish, accelerating tool wear, and reducing process consistency, especially **critical in finishing applications**.
-•	**Limitations of current practice**: Manual setup/tramming can reduce runout, but it is time-consuming and cannot adapt to in-process changes.
-•	**Our approach: An on-machine scheme where the machine tool **uses force/vibration feedback to monitor eccentricity-related errors** and **automatically tunes a compensation motion** to mitigate them.**
-•	**Key idea:** Eccentricity appears as a periodic tool-center motion in the workpiece frame at the spindle frequency. Figure 1 summarizes the eccentricity mechanism and tool-center trajectories motivating the strategy.
+-	**Problem:** Tool eccentricity (radial runout) offsets the cutter geometric center from the spindle rotational axis, causing **tooth-to-tooth chip load imbalance**.
+-	**Why it matters:** Chip load imbalance causes variation in cutting force, degrading surface finish, accelerating tool wear, and reducing process consistency, especially **critical in finishing applications**.
+-	**Limitations of current practice**: Manual setup/tramming can reduce runout, but it is time-consuming and cannot adapt to in-process changes.
+-	**Our approach: An on-machine scheme where the machine tool **uses force/vibration feedback to monitor eccentricity-related errors** and **automatically tunes a compensation motion** to mitigate them.**
+-	**Key idea:** Eccentricity appears as a periodic tool-center motion in the workpiece frame at the spindle frequency. Figure 1 summarizes the eccentricity mechanism and tool-center trajectories motivating the strategy.
   
 <figure style="margin: 1.5rem 0; text-align: center;">
   <img src="/images/projects/tool-eccentricity-compensation/fig1_problem_overview.png"
