@@ -79,7 +79,7 @@ Using force-feedback, the spindle-synchronized compensation converges in as fast
 <figure style="margin: 1.5rem 0;">
   <img src="/images/projects/tool-eccentricity-compensation/fig4_experimental_result.png" alt="Experimental result showing eccentricity compensation and convergence" style="width: 100%; max-width: 1000px;">
   <figcaption style="font-size: 0.95em; color: #555;">
-    <strong>Figure 4:</strong> One of the experimental results.
+    <strong>Figure 4:</strong> Experimental results of cutting a steel alloy using a tool with a 4-tooth, 30-degree helix at a spindle speed of 1200 rpm.
   </figcaption>
 </figure>
 
