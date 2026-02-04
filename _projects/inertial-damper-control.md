@@ -27,27 +27,27 @@ sitemap_include: true
   - Measure vibration/position error around the critical region (e.g., reversal).
   - Update the damper FF signal to reduce a vibration/error cost over iterations.
 
+  <figure style="margin: 1.4rem 0; text-align: center;">
+    <img src="/images/projects/inertial-damper-control/fig1_overview.png"
+         alt="Inertial vibration problem and iteration-domain compensation concept"
+         style="width: 100%; height: auto; max-width: 450px; display: block; margin: 0 auto;">
+    <figcaption style="font-size: 0.95em; color: #555; margin-top: 0.4rem;">
+      <strong>Figure 1:</strong> Inertial vibration problem and iteration-domain feedforward compensation concept.
+    </figcaption>
+  </figure>
+
 - **Structured FF signal (implementation-friendly):**
   - Parameterize the FF compensation using **filtered B-spline basis functions** (control points).
   - Enforce **actuator stroke and force constraints** during optimization.
 
-<figure style="margin: 1.4rem 0; text-align: center;">
-  <img src="/images/projects/inertial-damper-control/fig1_overview.png"
-       alt="Inertial vibration problem and iteration-domain compensation concept"
-       style="width: 100%; height: auto; max-width: 650px; display: block; margin: 0 auto;">
-  <figcaption style="font-size: 0.95em; color: #555; margin-top: 0.4rem;">
-    <strong>Figure 1:</strong> Inertial vibration problem and iteration-domain feedforward compensation concept.
-  </figcaption>
-</figure>
-
-<figure style="margin: 1.4rem 0; text-align: center;">
-  <img src="/images/projects/inertial-damper-control/fig2_model_bspline.png"
-       alt="Dynamics with inertial damper, block diagram, and B-spline signal representation"
-       style="width: 100%; height: auto; max-width: 650px; display: block; margin: 0 auto;">
-  <figcaption style="font-size: 0.95em; color: #555; margin-top: 0.4rem;">
-    <strong>Figure 2:</strong> Damper dynamics / block diagram and B-spline-based FF signal representation.
-  </figcaption>
-</figure>
+  <figure style="margin: 1.4rem 0; text-align: center;">
+    <img src="/images/projects/inertial-damper-control/fig2_model_bspline.png"
+         alt="Dynamics with inertial damper, block diagram, and B-spline signal representation"
+         style="width: 100%; height: auto; max-width: 450px; display: block; margin: 0 auto;">
+    <figcaption style="font-size: 0.95em; color: #555; margin-top: 0.4rem;">
+      <strong>Figure 2:</strong> Damper dynamics / block diagram and B-spline-based FF signal representation.
+    </figcaption>
+  </figure>
 
 ---
 
@@ -55,6 +55,7 @@ sitemap_include: true
 
 - **Task-specific pre-scheduled FF for inertial dampers:** Rather than relying only on feedback, the damper applies a **timed FF action** tailored to the task to suppress overshoot and residual vibration. 
 - **Data-driven tuning from measured vibration:** The FF signal is tuned iteratively using recorded vibration/position error during repeated tasks.
+- **Efficient low-dimensional parameterization:** The feedforward signal is represented with **filtered B-spline basis functions**, reducing the number of decision variables (control points) and enabling fast, repeatable optimization with smooth signals.
 - **Constraint-aware optimization:** Stroke/force constraints are enforced while learning the FF signal.
 - **Practical integration:** The approach can be implemented without requiring tight integration/communication with the host NC (system-level practicality).
 
@@ -62,9 +63,18 @@ sitemap_include: true
 
 ## Tools & implementation
 
-- **Hardware:** Feed-drive axis with a **voice-coil actuated inertial damper** and position/vibration sensing.
-- **Sensing:** Table position (encoder or displacement sensor) + damper encoder for relative mass displacement.
-- **Learning loop:** Run the same point-to-point task repeatedly and update FF control points each iteration.
+We implemented the active inertial damper control on a precision feed-drive setup with a **voice-coil actuated inertial damper** and a **linear motor actuated inertial damper**. We validated the method in repeated point-to-point motion tests. The experiment and learning stack includes:
+
+- **Test execution:** Repeated **point-to-point reference motions** (same task repeated across iterations) to evaluate residual vibration and convergence of the learned feedforward signal.
+- **Sensing (in-process):**
+  - **Linear/rotary encoders** for position feedbacks (stage and damper)
+  - **Displacement pickup sensor** for additional validation/measurement
+  - **Signal conditioning / amplifiers**
+- **Real-time data acquisition & computation:**
+  - **MATLAB/Simulink (RTI interface)** for real-time damper motion execution (applying feedback + pre-scheduled feedforward)
+  - Real-time logging of vibration/position signals during each iteration
+  - **MATLAB** for for offline optimization and feedforward generation and performance evaluation across iterations
+- **Post-processing:** MATLAB scripts for data analysis.
 
 ---
 
