@@ -29,8 +29,7 @@ sitemap_include: true
   </figcaption>
 </figure>
 
-**Recognition:** This work received the **ICPE 2024 Young Investigator Award**.
-
+<span style="color:#c62828;"><strong>Recognition:</strong> This work received the <strong>ICPE 2024 Young Investigator Award</strong>.</span>
 ---
 
 ## Key methods
