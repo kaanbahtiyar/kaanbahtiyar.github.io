@@ -71,14 +71,18 @@ To cancel eccentricity, we generate a small **circular micro-trajectory** synchr
 
 ## Tools & implementation
 
-We implemented the method on a **3-axis machine tool** using **dSPACE/DAQ** and **MATLAB/Simulink** with the **RTI interface** for real-time execution. The sensing and instrumentation includes:
+We implemented the eccentricity compensation method on a **3-axis CNC machine tool** and validated it in milling tests. The experiment and real-time implementation includes:
 
-- **Accelerometers** for vibration feedback  
-- **Dynamometer** for cutting force feedback
-- **Fiber-optic edge detection sensor** used for synchronization (can be replaced by spindle encoder)
-- **Sensor amplifiers / signal conditioning** to improve measurement quality and ensure synchronization  
-- **dSPACE/DAQ** for data acquisition and real-time I/O  
-- **MATLAB/Simulink (RTI)** for real-time cost computation and compensation parameter updates
+- **Test execution:** CNC milling trials with an eccentric tool to induce repeatable tooth-to-tooth force imbalance and evaluate convergence of the compensation across iterations.
+- **Sensing (in-process):**
+  - **Dynamometer** for cutting force feedback 
+  - **Accelerometers** for vibration feedback 
+  - **Fiber-optic edge detection sensor** for synchronization (can be replaced by a spindle encoder)
+  - **Signal conditioning / amplifiers** 
+- **Real-time data acquisition & computation:**
+  - **dSPACE/DAQ** for synchronized data acquisition and real-time I/O
+  - **MATLAB/Simulink (RTI interface)** for real-time cost computation and online compensation parameter updates (amplitude/phase)
+- **Post-processing:** MATLAB scripts for data analysis.
   
 Figure 3 shows the experimental implementation used for validation.
 
