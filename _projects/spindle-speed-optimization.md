@@ -105,7 +105,7 @@ We implemented the adaptive spindle speed controller on a **3-axis CNC machine t
 <figure style="margin: 1.4rem 0; text-align: center;">
   <img src="/images/projects/spindle-speed-optimization/fig4_data_communication.png"
        alt="Real-time implementation architecture: CNC/PLC, DAQ, and PC"
-       style="width: 100%; height: auto; max-width: 500px; display: block; margin: 0 auto;">
+       style="width: 100%; height: auto; max-width: 650px; display: block; margin: 0 auto;">
   <figcaption style="font-size: 0.95em; color: #555; margin-top: 0.4rem;">
     <strong>Figure 4:</strong> Real-time implementation architecture: measurements to DAQ/PC and spindle speed override command applied via the CNC/PLC interface.
   </figcaption>
