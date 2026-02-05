@@ -101,14 +101,6 @@ We implemented the adaptive spindle speed controller on a **3-axis CNC machine t
   - **MATLAB/Simulink (RTI interface)** for real-time cost evaluation, data-driven update, and logging
 - **Post-processing:** MATLAB scripts for data analysis.
   
-<figure style="margin: 1.4rem 0; text-align: center;">
-  <img src="/images/projects/spindle-speed-optimization/fig3_experimental_setup.png"
-       alt="Experimental setup configuration used for validation"
-       style="width: 100%; height: auto; max-width: 450px; display: block; margin: 0 auto;">
-  <figcaption style="font-size: 0.95em; color: #555; margin-top: 0.4rem;">
-    <strong>Figure 3:</strong> Experimental setup configuration used for validation.
-  </figcaption>
-</figure>
 
 <figure style="margin: 1.4rem 0; text-align: center;">
   <img src="/images/projects/spindle-speed-optimization/fig4_data_communication.png"
