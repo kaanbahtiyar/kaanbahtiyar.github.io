@@ -94,17 +94,28 @@ We implemented the chatter monitoring algorithms on a **3-axis CNC machine tool*
 
 ## Results
 
-- Experimental cutting data shows the indicators remain low in stable cutting and rise clearly once unstable chatter develops.
+- The tapered workpiece produces a controlled transition: the cut starts stable and becomes unstable as the depth of cut increases linearly along the taper. **Both detection methods** remain low during stable cutting and rise clearly once the cut becomes unstable, and **detects chatter**.
+
+<figure style="margin: 1.4rem 0; text-align: center;">
+  <video controls playsinline preload="metadata"
+         poster="/images/projects/chatter-detection/video_chatter_poster.jpg"
+         style="width: 100%; max-width: 600px; height: auto; display: block; margin: 0 auto; border-radius: 10px;">
+    <source src="/images/projects/chatter-detection/video_chatter.mp4" type="video/mp4">
+    Your browser does not support the video tag.
+  </video>
+  <figcaption style="font-size: 0.92em; color: #555; margin-top: 0.4rem;">
+    <strong>Video 1:</strong> Milling test on a tapered workpiece: depth of cut increases along the path, leading to chatter onset and grow.
+  </figcaption>
+</figure>
 
 <figure style="margin: 1.4rem 0; text-align: center;">
   <img src="/images/projects/chatter-detection/fig3_experiment.png"
        alt="Experimental example showing stable vs unstable cutting and indicator response"
        style="width: 100%; height: auto; max-width: 600px; display: block; margin: 0 auto;">
   <figcaption style="font-size: 0.95em; color: #555; margin-top: 0.4rem;">
-    <strong>Figure 3:</strong> Representative experiment showing stable → unstable transition and detection indicators.
+    <strong>Figure 3:</strong> The experimental results with both chatter detection methods.
   </figcaption>
 </figure>
-
 ---
 
 ## Related publications
