@@ -16,6 +16,15 @@ sitemap_include: true
 - **Limitation of standard damping (feedback-only):** Feedback (e.g., direct velocity feedback) can reduce vibration but may have practical stability/actuator limits and can not fully eliminate the initial overshoot due to feedback nature.
 - **Our approach:** Generate a **task-specific, fully pre-scheduled feedforward (FF) compensation** signal for the inertial damper, and **tune it from measured vibration data** over repeated tasks.
 
+  <figure style="margin: 1.4rem 0; text-align: center;">
+    <img src="/images/projects/inertial-damper-control/fig1_overview.png"
+         alt="Dynamics with inertial damper, block diagram, and B-spline signal representation"
+         style="width: 100%; height: auto; max-width: 350px; display: block; margin: 0 auto;">
+    <figcaption style="font-size: 0.95em; color: #555; margin-top: 0.4rem;">
+      <strong>Figure 2:</strong> Active inertial damper architecture with feedback + pre-scheduled feedforward.
+    </figcaption>
+  </figure>
+  
 **Recognition:** This work received the **Thomas A. Dow Student Scholarship from American Society for Precision Engineering**.
 
 ---
@@ -30,7 +39,7 @@ sitemap_include: true
   <figure style="margin: 1.4rem 0; text-align: center;">
     <img src="/images/projects/inertial-damper-control/fig2_model_bspline.png"
          alt="Dynamics with inertial damper, block diagram, and B-spline signal representation"
-         style="width: 100%; height: auto; max-width: 350px; display: block; margin: 0 auto;">
+         style="width: 100%; height: auto; max-width: 450px; display: block; margin: 0 auto;">
     <figcaption style="font-size: 0.95em; color: #555; margin-top: 0.4rem;">
       <strong>Figure 2:</strong> Inertial vibration problem and iteration-domain feedforward compensation concept.
     </figcaption>
@@ -39,7 +48,6 @@ sitemap_include: true
 - **Structured FF signal (implementation-friendly):**
   - Parameterize the FF compensation using **filtered B-spline basis functions** (control points).
   - Enforce **actuator stroke and force constraints** during optimization.
-
 
 
 ---
@@ -75,14 +83,6 @@ We implemented the active inertial damper control on a precision feed-drive setu
 
 - The learned FF signal converges in ~**10 iterations** and reduces peak positioning error by **87%** (from **12 µm** down to **1.6 µm**) while respecting force/stroke constraints. 
 
-<figure style="margin: 1.4rem 0; text-align: center;">
-  <img src="/images/projects/inertial-damper-control/fig3_experimental_results.png"
-       alt="Experimental setup and feedforward compensation performance over iterations"
-       style="width: 100%; height: auto; max-width: 550px; display: block; margin: 0 auto;">
-  <figcaption style="font-size: 0.95em; color: #555; margin-top: 0.4rem;">
-    <strong>Figure 3:</strong> (a) Experimental setup, and (b) its FRF. (c)-(g) FF compensation performance results.
-  </figcaption>
-</figure>
 
 <figure style="margin: 1.4rem 0; text-align: center;">
   <video controls playsinline preload="metadata"
@@ -93,7 +93,17 @@ We implemented the active inertial damper control on a precision feed-drive setu
     Your browser does not support the video tag.
   </video>
   <figcaption style="font-size: 0.92em; color: #555; margin-top: 0.4rem;">
-    <strong>Video 1:</strong> Experimental demonstration of the active inertial damper during repeated point-to-point motion.
+    <strong>Video 1:</strong> Experimental demonstration of the active inertial damper using pre-scheduled feedforward during deceleration into the setpoint (point-to-point motion).
+  </figcaption>
+</figure>
+
+
+<figure style="margin: 1.4rem 0; text-align: center;">
+  <img src="/images/projects/inertial-damper-control/fig3_experimental_results.png"
+       alt="Experimental setup and feedforward compensation performance over iterations"
+       style="width: 100%; height: auto; max-width: 650px; display: block; margin: 0 auto;">
+  <figcaption style="font-size: 0.95em; color: #555; margin-top: 0.4rem;">
+    <strong>Figure 3:</strong> Experimental results. (a) Feed drive table vibration. (b) Damper displacement (c) Damper force.
   </figcaption>
 </figure>
 
