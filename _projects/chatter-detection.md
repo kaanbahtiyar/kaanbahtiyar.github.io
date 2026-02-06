@@ -98,7 +98,7 @@ We implemented the chatter monitoring algorithms on a **3-axis CNC machine tool*
 
 <figure style="margin: 1.4rem 0; text-align: center;">
   <video controls playsinline preload="metadata"
-         poster="/images/projects/chatter-detection/video_chatter_poster.jpg"
+         poster="/images/projects/chatter-detection/vide_chatter.mp4"
          style="width: 100%; max-width: 600px; height: auto; display: block; margin: 0 auto; border-radius: 10px;">
     <source src="/images/projects/chatter-detection/video_chatter.mp4" type="video/mp4">
     Your browser does not support the video tag.
