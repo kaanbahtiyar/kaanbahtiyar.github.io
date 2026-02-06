@@ -22,7 +22,7 @@ sitemap_include: true
        alt="Milling process with an eccentric tool: eccentricity definition, kinematics, and tool-center trajectories"
        style="width: 100%; height: auto; max-width: 550px; display: block; margin: 0 auto;">
   <figcaption style="font-size: 0.95em; color: #555; margin-top: 0.4rem;">
-    <strong>Figure 1:</strong> Milling process with an eccentric tool. (a) Tool eccentricity in milling process. (b) Tool eccentricity kinematics. (c) Trajectories of the tool center points in workpiece coordinate frame.
+    <strong>Figure 1:</strong> Trajectories of the tool center points in workpiece coordinate frame in the milling process with an eccentric tool.
   </figcaption>
 </figure>
 
