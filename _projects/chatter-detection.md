@@ -59,14 +59,6 @@ sitemap_include: true
   - **Forced vibration power** around tooth-passing harmonics via moving FFT bins.
 - Compute a **power ratio** that increases when broadband / non-harmonic chatter grows.
 
-<figure style="margin: 1.4rem 0; text-align: center;">
-  <img src="/images/projects/chatter-detection/fig1_mvmft_pr.png"
-       alt="Moving variance + moving FFT chatter power ratio concept"
-       style="width: 100%; height: auto; max-width: 560px; display: block; margin: 0 auto;">
-  <figcaption style="font-size: 0.95em; color: #555; margin-top: 0.4rem;">
-    <strong>Figure 1:</strong> Power-ratio feature using moving variance and moving FFT at spindle harmonics.
-  </figcaption>
-</figure>
 
 ### Method 2 — Principal component analysis (PCA) / subspace-based features (robust to operating changes)
 
@@ -74,14 +66,6 @@ sitemap_include: true
 - Use **PCA** to extract dominant components and track a compact **power ratio** indicator.
 - Optionally smooth / track features over time (e.g., Kalman-style filtering) for stable detection.
 
-<figure style="margin: 1.4rem 0; text-align: center;">
-  <img src="/images/projects/chatter-detection/fig2_pca_er.png"
-       alt="PCA-based chatter indicator pipeline"
-       style="width: 100%; height: auto; max-width: 720px; display: block; margin: 0 auto;">
-  <figcaption style="font-size: 0.95em; color: #555; margin-top: 0.4rem;">
-    <strong>Figure 2:</strong> PCA pipeline to build an energy-ratio chatter indicator from windowed data.
-  </figcaption>
-</figure>
 
 ---
 
