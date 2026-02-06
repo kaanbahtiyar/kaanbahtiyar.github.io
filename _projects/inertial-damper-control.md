@@ -102,7 +102,7 @@ We implemented the active inertial damper control on a precision feed-drive setu
 <figure style="margin: 1.4rem 0; text-align: center;">
   <img src="/images/projects/inertial-damper-control/r1.png"
        alt="Feed drive table vibration: conventional vs proposed feedforward"
-       style="width: 100%; height: auto; max-width: 550px; display: block; margin: 0 auto;">
+       style="width: 100%; height: auto; max-width: 450px; display: block; margin: 0 auto;">
   <figcaption style="font-size: 0.95em; color: #555; margin-top: 0.4rem;">
     <strong>Figure 3:</strong> Feed-drive table vibration response (conventional feedback-only vs proposed pre-scheduled feedforward).
   </figcaption>
