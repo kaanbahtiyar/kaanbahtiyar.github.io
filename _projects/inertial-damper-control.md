@@ -79,11 +79,6 @@ We implemented the active inertial damper control on a precision feed-drive setu
 
 ---
 
-## Results
-
-- The learned FF signal converges in ~**10 iterations** and reduces peak positioning error by **87%** (from **12 µm** down to **1.6 µm**) while respecting force/stroke constraints. 
-
-
 <figure style="margin: 1.4rem 0; text-align: center;">
   <video controls playsinline preload="metadata"
          poster="/images/projects/inertial-damper-control/DamperExperiment2_poster.jpg"
@@ -98,14 +93,32 @@ We implemented the active inertial damper control on a precision feed-drive setu
 </figure>
 
 
+  
+## Results
+
+- The learned FF signal converges in ~**10 iterations** and reduces peak positioning error by **87%** (from **12 µm** down to **1.6 µm**) while respecting force/stroke constraints. 
+-	Conventional feedback-based active damper strategy cannot eliminate the initial overshoot of the structures, whereas the proposed pre-scheduled FF suppresses it and reaches the ±1.6 µm range immediately, which reduces the settle/wait time.
+
 <figure style="margin: 1.4rem 0; text-align: center;">
-  <img src="/images/projects/inertial-damper-control/fig3_experimental_results.png"
-       alt="Experimental setup and feedforward compensation performance over iterations"
-       style="width: 100%; height: auto; max-width: 750px; display: block; margin: 0 auto;">
+  <img src="/images/projects/inertial-damper-control/r1.png"
+       alt="Feed drive table vibration: conventional vs proposed feedforward"
+       style="width: 100%; height: auto; max-width: 720px; display: block; margin: 0 auto;">
   <figcaption style="font-size: 0.95em; color: #555; margin-top: 0.4rem;">
-    <strong>Figure 3:</strong> Experimental results. (a) Feed drive table vibration. (b) Damper displacement (c) Damper force.
+    <strong>Figure 3:</strong> Feed-drive table vibration response (conventional feedback-only vs proposed pre-scheduled feedforward).
   </figcaption>
 </figure>
+
+- Better performance is achieved while obeying stricter damper displacement and force limits than the conventional method, which **enables more compact damper hardware designs**.
+
+<figure style="margin: 1.4rem 0; text-align: center;">
+  <img src="/images/projects/inertial-damper-control/r2.png"
+       alt="Damper displacement and force: conventional vs proposed under constraints"
+       style="width: 100%; height: auto; max-width: 720px; display: block; margin: 0 auto;">
+  <figcaption style="font-size: 0.95em; color: #555; margin-top: 0.4rem;">
+    <strong>Figure 4:</strong> Actuator constraints during compensation: (a) damper displacement and (b) damper force.
+  </figcaption>
+</figure>
+
 
 ## Related publications
 
