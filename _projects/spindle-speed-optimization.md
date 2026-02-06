@@ -115,8 +115,8 @@ We implemented the adaptive spindle speed controller on a **3-axis CNC machine t
 
 ## Results
 
-- The adaptive strategy updates spindle speed online using in-process acceleration feedback and **reduces the vibration level by 82% (RMS from 152 to 27 m/s²**).
-- It converges to a spindle speed that yields **66% lower vibration level compared to a conventional chatter-focused regulation approach**.
+- The adaptive strategy updates spindle speed online using in-process acceleration feedback and **reduces the vibration level by 87% (RMS from 72 to 9 m/s²**).
+- It converges to a spindle speed that yields **90% lower vibration level compared to a conventional chatter-focused regulation approach** since conventinoal strategy sets the spindle speed near structural resonance and yields high forced vibrations.
 
 <figure style="margin: 1.4rem 0; text-align: center;">
   <img src="/images/projects/spindle-speed-optimization/fig5_alg_conv.png"
