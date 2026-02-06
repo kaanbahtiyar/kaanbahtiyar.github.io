@@ -25,7 +25,7 @@ sitemap_include: true
        alt="Vertical machining center structure and axis-coupled vibration mechanism"
        style="width: 100%; height: auto; max-width: 550px; display: block; margin: 0 auto;">
   <figcaption style="font-size: 0.95em; color: #555; margin-top: 0.4rem;">
-    <strong>Figure 1:</strong> Vertical machining center layout and illustration of axis-coupled (cross-talk) vibration mechanism (e.g., table motion exciting Z-direction tool-tip vibration). (a) Experimental setup. (b) Cross-coupling vibrations.
+    <strong>Figure 1:</strong> Vertical machining center layout and illustration of axis-coupled (cross-talk) vibration mechanism (e.g., table motion exciting Z-direction tool-tip vibration).
   </figcaption>
 </figure>
 
