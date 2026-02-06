@@ -97,12 +97,12 @@ We implemented the active inertial damper control on a precision feed-drive setu
 ## Results
 
 - The learned FF signal converges in ~**10 iterations** and reduces peak positioning error by **87%** (from **12 µm** down to **1.6 µm**) while respecting force/stroke constraints. 
--	Conventional feedback-based active damper strategy cannot eliminate the initial overshoot of the structures, whereas the proposed pre-scheduled FF suppresses it and reaches the ±1.6 µm range immediately, which reduces the settle/wait time.
+-	Conventional feedback-based active damper strategy cannot eliminate the initial overshoot of the structures, whereas the proposed pre-scheduled FF suppresses it and reaches the ±2 µm range immediately, which reduces the settle/wait time.
 
 <figure style="margin: 1.4rem 0; text-align: center;">
   <img src="/images/projects/inertial-damper-control/r1.png"
        alt="Feed drive table vibration: conventional vs proposed feedforward"
-       style="width: 100%; height: auto; max-width: 620px; display: block; margin: 0 auto;">
+       style="width: 100%; height: auto; max-width: 550px; display: block; margin: 0 auto;">
   <figcaption style="font-size: 0.95em; color: #555; margin-top: 0.4rem;">
     <strong>Figure 3:</strong> Feed-drive table vibration response (conventional feedback-only vs proposed pre-scheduled feedforward).
   </figcaption>
