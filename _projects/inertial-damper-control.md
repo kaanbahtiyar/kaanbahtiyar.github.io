@@ -43,7 +43,7 @@ sitemap_include: true
   <figure style="margin: 1.4rem 0; text-align: center;">
     <img src="/images/projects/inertial-damper-control/fig2_model_bspline.png"
          alt="Dynamics with inertial damper, block diagram, and B-spline signal representation"
-         style="width: 100%; height: auto; max-width: 450px; display: block; margin: 0 auto;">
+         style="width: 100%; height: auto; max-width: 350px; display: block; margin: 0 auto;">
     <figcaption style="font-size: 0.95em; color: #555; margin-top: 0.4rem;">
       <strong>Figure 2:</strong> (a) Damper dynamics. (b) Block diagram. (c) B-spline-based FF signal representation.
     </figcaption>
