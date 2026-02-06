@@ -20,7 +20,7 @@ sitemap_include: true
 <figure style="margin: 1.5rem 0; text-align: center;">
   <img src="/images/projects/tool-eccentricity-compensation/fig1_problem_overview.png"
        alt="Milling process with an eccentric tool: eccentricity definition, kinematics, and tool-center trajectories"
-       style="width: 100%; height: auto; max-width: 450px; display: block; margin: 0 auto;">
+       style="width: 100%; height: auto; max-width: 550px; display: block; margin: 0 auto;">
   <figcaption style="font-size: 0.95em; color: #555; margin-top: 0.4rem;">
     <strong>Figure 1:</strong> Milling process with an eccentric tool. (a) Tool eccentricity in milling process. (b) Tool eccentricity kinematics. (c) Trajectories of the tool center points in workpiece coordinate frame.
   </figcaption>
@@ -54,7 +54,7 @@ To cancel eccentricity, we generate a small **circular micro-trajectory** synchr
 <figure style="margin: 1.5rem 0; text-align: center;">
   <img src="/images/projects/tool-eccentricity-compensation/fig2_block_diagram.png"
        alt="Proposed strategy block diagram for eccentricity compensation"
-       style="width: 100%; height: auto; max-width: 800px; display: block; margin: 0 auto;">
+       style="width: 100%; height: auto; max-width: 700px; display: block; margin: 0 auto;">
   <figcaption style="font-size: 0.95em; color: #555; margin-top: 0.4rem;">
     <strong>Figure 2:</strong> Proposed strategy block diagram.
   </figcaption>
