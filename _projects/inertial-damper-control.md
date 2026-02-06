@@ -28,26 +28,19 @@ sitemap_include: true
   - Update the damper FF signal to reduce a vibration/error cost over iterations.
 
   <figure style="margin: 1.4rem 0; text-align: center;">
-    <img src="/images/projects/inertial-damper-control/fig1_overview.png"
-         alt="Inertial vibration problem and iteration-domain compensation concept"
-         style="width: 100%; height: auto; max-width: 450px; display: block; margin: 0 auto;">
-    <figcaption style="font-size: 0.95em; color: #555; margin-top: 0.4rem;">
-      <strong>Figure 1:</strong> Inertial vibration problem and iteration-domain feedforward compensation concept.
-    </figcaption>
-  </figure>
-
-- **Structured FF signal (implementation-friendly):**
-  - Parameterize the FF compensation using **filtered B-spline basis functions** (control points).
-  - Enforce **actuator stroke and force constraints** during optimization.
-
-  <figure style="margin: 1.4rem 0; text-align: center;">
     <img src="/images/projects/inertial-damper-control/fig2_model_bspline.png"
          alt="Dynamics with inertial damper, block diagram, and B-spline signal representation"
          style="width: 100%; height: auto; max-width: 350px; display: block; margin: 0 auto;">
     <figcaption style="font-size: 0.95em; color: #555; margin-top: 0.4rem;">
-      <strong>Figure 2:</strong> (a) Damper dynamics. (b) Block diagram. (c) B-spline-based FF signal representation.
+      <strong>Figure 2:</strong> Inertial vibration problem and iteration-domain feedforward compensation concept.
     </figcaption>
   </figure>
+  
+- **Structured FF signal (implementation-friendly):**
+  - Parameterize the FF compensation using **filtered B-spline basis functions** (control points).
+  - Enforce **actuator stroke and force constraints** during optimization.
+
+
 
 ---
 
@@ -91,6 +84,18 @@ We implemented the active inertial damper control on a precision feed-drive setu
   </figcaption>
 </figure>
 
+<figure style="margin: 1.4rem 0; text-align: center;">
+  <video controls playsinline preload="metadata"
+         poster="/images/projects/inertial-damper-control/DamperExperiment2_poster.jpg"
+         style="width: 100%; max-width: 520px; height: auto; display: block; margin: 0 auto; border-radius: 10px;">
+    <source src="/images/projects/inertial-damper-control/DamperExperiment2.mp4" type="video/mp4">
+    <source src="/images/projects/inertial-damper-control/DamperExperiment2.mov" type="video/quicktime">
+    Your browser does not support the video tag.
+  </video>
+  <figcaption style="font-size: 0.92em; color: #555; margin-top: 0.4rem;">
+    <strong>Video 1:</strong> Experimental demonstration of the active inertial damper during repeated point-to-point motion.
+  </figcaption>
+</figure>
 
 ## Related publications
 
