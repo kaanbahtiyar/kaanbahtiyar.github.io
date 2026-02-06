@@ -100,7 +100,7 @@ We implemented the chatter monitoring algorithms on a **3-axis CNC machine tool*
   <!-- wrapper defines the visible window -->
   <div style="
     width: 100%;
-    max-width: 300px;
+    max-width: 400px;
     margin: 0 auto;
     overflow: hidden;
     border-radius: 10px;
@@ -111,7 +111,7 @@ We implemented the chatter monitoring algorithms on a **3-axis CNC machine tool*
              width: 100%;
              height: auto;
              display: block;
-             transform: translateY(-30%);
+             transform: translateY(30%);
            ">
       <source src="/images/projects/chatter-detection/video_chatter.mp4" type="video/mp4">
       Your browser does not support the video tag.
