@@ -7,14 +7,142 @@ excerpt: "Data-driven feedforward and feedback strategies for active inertial da
 date: 2024-05-22
 sidebar: false
 sitemap_include: true
+description: "Learning-based feedforward control of active inertial dampers — 87% lower peak vibration within actuator stroke and force limits, validated on a feed-drive testbed."
+card_metric: "87%"
+card_metric_label: "↓ peak positioning error"
+card_blurb: "Learning-based feedforward control of an active inertial damper that suppresses transient vibration within actuator stroke and force limits — error from 12 µm to 1.6 µm."
+card_image: "/images/projects/inertial-damper-control/fig1_overview.png"
+card_tags:
+  - "CIRP Annals"
+  - "Dow Scholarship"
 ---
+
+
+<div class="kb-result">
+  <div class="kb-result-num">87%<small>↓</small></div>
+  <div class="kb-result-text"><strong>Peak positioning error cut from 12 µm to 1.6 µm in ~10 learning iterations</strong>, within tighter actuator stroke and force limits than conventional damping.</div>
+</div>
+
+<div class="kb-hw">
+  <span class="kb-hw-eyebrow">Built &amp; validated on real hardware</span>
+  <div class="kb-hw-chips">
+    <span>Feed-drive testbed</span>
+    <span>Voice-coil &amp; linear-motor dampers</span>
+    <span>Linear/rotary encoders</span>
+    <span>Displacement sensor</span>
+    <span>MATLAB/Simulink RTI</span>
+  </div>
+</div>
 
 ## Overview
 
+- **Problem:** Fast point-to-point motion excites structural modes of machine tools and industrial robots, causing **transient / residual vibrations** and overshoot that degrade positioning accuracy and throughput.
+- **Why it matters:** These inertial vibrations limit how aggressively you can move while still meeting precision requirements.
+- **Limitation of standard damping (feedback-only):** Feedback (e.g., direct velocity feedback) can reduce vibration but may have practical stability/actuator limits and can not fully eliminate the initial overshoot due to feedback nature.
+- **Our approach:** Generate a **task-specific, fully pre-scheduled feedforward (FF) compensation** signal for the inertial damper, and **tune it from measured vibration data** over repeated tasks.
 
+  <figure style="margin: 1.4rem 0; text-align: center;">
+    <img src="/images/projects/inertial-damper-control/fig1_overview.png"
+         alt="Dynamics with inertial damper, block diagram, and B-spline signal representation"
+         style="width: 100%; height: auto; max-width: 500px; display: block; margin: 0 auto;">
+    <figcaption style="font-size: 0.95em; color: #555; margin-top: 0.4rem;">
+      <strong>Figure 2:</strong> Active inertial damper architecture with feedback + pre-scheduled feedforward.
+    </figcaption>
+  </figure>
+  
+**Recognition:** This work received the **Thomas A. Dow Student Scholarship from American Society for Precision Engineering**.
+
+---
 
 ## Key methods
 
+- **Iteration-domain learning of FF compensation:**
+  - Repeat the same motion task.
+  - Measure vibration/position error around the critical region (e.g., reversal).
+  - Update the damper FF signal to reduce a vibration/error cost over iterations.
+
+  <figure style="margin: 1.4rem 0; text-align: center;">
+    <img src="/images/projects/inertial-damper-control/fig2_model_bspline.png"
+         alt="Dynamics with inertial damper, block diagram, and B-spline signal representation"
+         style="width: 100%; height: auto; max-width: 450px; display: block; margin: 0 auto;">
+    <figcaption style="font-size: 0.95em; color: #555; margin-top: 0.4rem;">
+      <strong>Figure 2:</strong> Inertial vibration problem and iteration-domain feedforward compensation concept.
+    </figcaption>
+  </figure>
+  
+- **Structured FF signal (implementation-friendly):**
+  - Parameterize the FF compensation using **filtered B-spline basis functions** (control points).
+  - Enforce **actuator stroke and force constraints** during optimization.
+
+
+---
+
+## Novelty / contributions
+
+- **Task-specific pre-scheduled FF for inertial dampers:** Rather than relying only on feedback, the damper applies a **timed FF action** tailored to the task to suppress overshoot and residual vibration. 
+- **Data-driven tuning from measured vibration:** The FF signal is tuned iteratively using recorded vibration/position error during repeated tasks.
+- **Efficient low-dimensional parameterization:** The feedforward signal is represented with **filtered B-spline basis functions**, reducing the number of decision variables (control points) and enabling fast, repeatable optimization with smooth signals.
+- **Constraint-aware optimization:** Stroke/force constraints are enforced while learning the FF signal.
+- **Practical integration:** The approach can be implemented without requiring tight integration/communication with the host NC (system-level practicality).
+
+---
+
+## Tools & implementation
+
+We implemented the active inertial damper control on a precision feed-drive setup with a **voice-coil actuated inertial damper** and a **linear motor actuated inertial damper**. We validated the method in repeated point-to-point motion tests. The experiment and learning stack includes:
+
+- **Test execution:** Repeated **point-to-point reference motions** (same task repeated across iterations) to evaluate residual vibration and convergence of the learned feedforward signal.
+- **Sensing (in-process):**
+  - **Linear/rotary encoders** for position feedbacks (stage and damper)
+  - **Displacement pickup sensor** for additional validation/measurement
+  - **Signal conditioning / amplifiers**
+- **Real-time data acquisition & computation:**
+  - **MATLAB/Simulink (RTI interface)** for real-time damper motion execution (applying feedback + pre-scheduled feedforward)
+  - Real-time logging of vibration/position signals during each iteration
+  - **MATLAB** for for offline optimization and feedforward generation and performance evaluation across iterations
+- **Post-processing:** MATLAB scripts for data analysis.
+
+---
+
+<figure style="margin: 1.4rem 0; text-align: center;">
+  <video controls playsinline preload="metadata"
+         poster="/images/projects/inertial-damper-control/DamperExperiment2_poster.jpg"
+         style="width: 100%; max-width: 520px; height: auto; display: block; margin: 0 auto; border-radius: 10px;">
+    <source src="/images/projects/inertial-damper-control/DamperExperiment2.mp4" type="video/mp4">
+    <source src="/images/projects/inertial-damper-control/DamperExperiment2.mov" type="video/quicktime">
+    Your browser does not support the video tag.
+  </video>
+  <figcaption style="font-size: 0.92em; color: #555; margin-top: 0.4rem;">
+    <strong>Video 1:</strong> Experimental demonstration of the active inertial damper using pre-scheduled feedforward during deceleration into the setpoint (point-to-point motion).
+  </figcaption>
+</figure>
+
+
+  
+## Results
+
+- The learned FF signal converges in ~**10 iterations** and reduces peak positioning error by **87%** (from **12 µm** down to **1.6 µm**) while respecting force/stroke constraints. 
+-	Conventional feedback-based active damper strategy cannot eliminate the initial overshoot of the structures, whereas the proposed pre-scheduled FF suppresses it and reaches the ±2 µm range immediately, which reduces the settle/wait time.
+
+<figure style="margin: 1.4rem 0; text-align: center;">
+  <img src="/images/projects/inertial-damper-control/r1.png"
+       alt="Feed drive table vibration: conventional vs proposed feedforward"
+       style="width: 100%; height: auto; max-width: 450px; display: block; margin: 0 auto;">
+  <figcaption style="font-size: 0.95em; color: #555; margin-top: 0.4rem;">
+    <strong>Figure 3:</strong> Feed-drive table vibration response (conventional feedback-only vs proposed pre-scheduled feedforward).
+  </figcaption>
+</figure>
+
+- Better performance is achieved while obeying stricter damper displacement and force limits than the conventional method, which **enables more compact damper hardware designs**.
+
+<figure style="margin: 1.4rem 0; text-align: center;">
+  <img src="/images/projects/inertial-damper-control/r2.png"
+       alt="Damper displacement and force: conventional vs proposed under constraints"
+       style="width: 100%; height: auto; max-width: 720px; display: block; margin: 0 auto;">
+  <figcaption style="font-size: 0.95em; color: #555; margin-top: 0.4rem;">
+    <strong>Figure 4:</strong> Actuator constraints during compensation: (a) damper displacement and (b) damper force.
+  </figcaption>
+</figure>
 
 
 ## Related publications

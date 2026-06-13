@@ -7,15 +7,172 @@ excerpt: "Model-free spindle speed control strategies for milling that adaptivel
 date: 2022-10-14
 sidebar: false
 sitemap_include: true
+description: "Model-free, real-time spindle-speed control that minimizes total milling vibration (forced + chatter) from in-process feedback — up to 90% lower vibration, no process model required."
+card_metric: "90%"
+card_metric_label: "↓ vibration vs. conventional"
+card_blurb: "Model-free optimal spindle-speed controller driven by real-time vibration feedback — no process model or stability-lobe map. RMS vibration cut from 72 to 9 m/s²."
+card_image: "/images/projects/spindle-speed-optimization/fig2_block_diagram.png"
+card_tags:
+  - "CIRP JMST"
+  - "ASME MSEC"
 ---
+
+
+<div class="kb-result">
+  <div class="kb-result-num">90%<small>↓</small></div>
+  <div class="kb-result-text"><strong>Up to 90% lower vibration than conventional chatter-focused control</strong> (RMS 72 → 9 m/s²), using a model-free controller driven by real-time vibration feedback.</div>
+</div>
+
+<div class="kb-hw">
+  <span class="kb-hw-eyebrow">Built &amp; validated on real hardware</span>
+  <div class="kb-hw-chips">
+    <span>3-axis CNC machine tool</span>
+    <span>Accelerometers</span>
+    <span>Spindle override via PLC</span>
+    <span>dSPACE real-time I/O</span>
+    <span>MATLAB/Simulink RTI</span>
+  </div>
+</div>
 
 ## Overview
 
+- **Problem:** Milling vibrations appear in two main forms:
+  - **Self-excited chatter** (unstable) caused by regenerative effects.
+  - **Periodic forced vibrations** (stable) driven by tooth passing and structural dynamics.
+- **Why it matters:** Both vibration types degrade surface finish, shorten tool life, and may damage machine components.
 
+<figure style="margin: 1.2rem 0; text-align: center;">
+  <iframe width="780" height="439"
+          src="https://www.youtube.com/embed/he1NYWVpoD8"
+          title="Milling chatter simulation"
+          frameborder="0"
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+          allowfullscreen
+          style="width: 100%; max-width: 780px;">
+  </iframe>
+  <figcaption style="font-size: 0.95em; color: #555; margin-top: 0.4rem;">
+    <strong>Video A:</strong> Example of vibration types in milling.
+  </figcaption>
+</figure>
+
+- **What you see in practice:**
+  - Chatter can create large-amplitude vibration and audible high-pitch noise, producing severe surface degradation.
+  - Even when cutting is stable (no chatter), **forced vibrations** still deteriorate surface quality and cause **surface location errors (SLE)**.
+
+<figure style="margin: 1.2rem 0; text-align: center;">
+  <div style="width: 100%; max-width: 600px; height: 450px; overflow: hidden; margin: 0 auto; border-radius: 10px;">
+    <iframe
+      src="https://www.youtube.com/embed/X2p1CaedEf8"
+      title="Milling chatter sound and surface impact"
+      frameborder="0"
+      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+      allowfullscreen
+      style="width: 100%; height: 650px; border: 0; transform: translateY(-130px); display:block;">
+    </iframe>
+  </div>
+  <figcaption style="font-size: 0.95em; color: #555; margin-top: 0.4rem;">
+    <strong>Video B:</strong> Real milling example showing the high-pitch chatter sound and surface degradation.
+  </figcaption>
+</figure>
+
+- **Limitations of current practice:**
+  - Model-based planning (e.g., stability lobes, SLE maps) requires extensive identification and may not transfer across machines/tools/setups.
+  - Chatter-only online speed regulation can suppress chatter but unintentionally increase forced vibrations near structural resonances.
+- **Our approach:** A **model-free adaptive spindle speed regulation** strategy that uses **in-process vibration feedback** to automatically update spindle speed and minimize **overall vibration** (forced + chatter) in real time.
+- 
+---
 
 ## Key methods
 
+- **Formulation:** Treat spindle speed regulation as an **online optimization** problem:
+  - Compute a vibration-based **cost** from accelerometer data.
+  - Update spindle speed to reduce the cost.
+- **Model-free search:** Use an **extremum seeking control (ESC)** framework where the search direction (gradient) is obtained from measured data rather than a detailed process model.
+- **Real-time variants:**
+  - **Dither-guided ESC:** inject a small sinusoidal perturbation on spindle speed and infer the gradient from the vibration response  
+    (see: [MSEC conference paper](/publication/brief-spindle-speed-msec2024/)).
+  - **Dither-free ESC:** estimate the gradient from buffered (speed, cost) data via least-squares fitting  
+    (see: [JMST journal article](/publication/SSO_CIRPJMST)).
 
+<figure style="margin: 1.4rem 0; text-align: center;">
+  <img src="/images/projects/spindle-speed-optimization/fig2_block_diagram.png"
+       alt="Adaptive spindle speed regulation block diagram: cost evaluation, gradient estimation, optimizer, and speed command"
+       style="width: 100%; height: auto; max-width: 420px; display: block; margin: 0 auto;">
+  <figcaption style="font-size: 0.95em; color: #555; margin-top: 0.4rem;">
+    <strong>Figure 2:</strong> Adaptive spindle speed regulation loop (vibration feedback → cost evaluation → gradient estimation → optimizer → speed command update).
+  </figcaption>
+</figure>
+
+---
+## Novelty / contributions
+
+- **Optimizes spindle speed for *total* vibration, not just chatter:** The controller targets a vibration-based cost that captures both **forced vibrations** and **self-excited chatter**, avoiding the common tradeoff where chatter suppression can amplify forced vibration near resonances in the conventional approach.
+- **Model-free, on-machine adaptation:** Spindle speed is updated online using only **in-process accelerometer measurements**, without requiring stability lobe identification or detailed cutting-force/dynamics models.
+- **Data-driven gradient estimation in real time:** The search direction is obtained directly from measured data, which enables implementation without model identification.
+
+---
+  
+## Tools & implementation
+
+We implemented the adaptive spindle speed controller on a **3-axis CNC machine tool** and validated it in milling tests. The experiment and real-time implementation includes:
+
+- **Test execution:** CNC milling trials (via G-code running) with controlled transitions into vibration/chatter conditions (spindle speed adaptation activated online during cutting).
+- **Actuation interface:** spindle speed updates applied using **spindle override digital input** channel and **PLC functions** of the machine tool.
+- **Sensing (in-process):**
+  - **Accelerometers** for vibration feedback (primary signal for the cost)
+  - **Signal conditioning / amplifiers** 
+- **Real-time data acquisition & computation:**
+  - **dSPACE/DAQ** for synchronized data acquisition and real-time I/O
+  - **MATLAB/Simulink (RTI interface)** for real-time cost evaluation, data-driven update, and logging
+- **Post-processing:** MATLAB scripts for data analysis.
+  
+
+<figure style="margin: 1.4rem 0; text-align: center;">
+  <img src="/images/projects/spindle-speed-optimization/fig4_data_communication.png"
+       alt="Real-time implementation architecture: CNC/PLC, DAQ, and PC"
+       style="width: 100%; height: auto; max-width: 650px; display: block; margin: 0 auto;">
+  <figcaption style="font-size: 0.95em; color: #555; margin-top: 0.4rem;">
+    <strong>Figure 4:</strong> Real-time implementation architecture: measurements to DAQ/PC and spindle speed override command applied via the CNC/PLC interface.
+  </figcaption>
+</figure>
+
+---
+
+## Results
+
+- The adaptive strategy updates spindle speed online using in-process acceleration feedback and **reduces the vibration level by 87% (RMS from 72 to 9 m/s²**).
+- It converges to a spindle speed that yields **90% lower vibration level compared to a conventional chatter-focused regulation approach** since conventinoal strategy sets the spindle speed near structural resonance and yields high forced vibrations.
+
+<figure style="margin: 1.4rem 0; text-align: center;">
+  <img src="/images/projects/spindle-speed-optimization/fig5_alg_conv.png"
+       alt="Experimental data showing real-time spindle speed adaptation and vibration mitigation"
+       style="width: 100%; height: auto; max-width: 600px; display: block; margin: 0 auto;">
+  <figcaption style="font-size: 0.95em; color: #555; margin-top: 0.4rem;">
+    <strong>Figure 5:</strong> Example showing real-time spindle speed adaptation and vibration mitigation starting from an initial chatter condition (time- and frequency-domain views).
+  </figcaption>
+</figure>
+
+<figure style="margin: 1.4rem 0; text-align: center;">
+  <img src="/images/projects/spindle-speed-optimization/fig6_alg_comp.png"
+       alt="Benchmark against conventional chatter mitigation strategy"
+       style="width: 100%; height: auto; max-width: 600px; display: block; margin: 0 auto;">
+  <figcaption style="font-size: 0.95em; color: #555; margin-top: 0.4rem;">
+    <strong>Figure 6:</strong> Benchmark comparison against a conventional chatter mitigation strategy (time- and frequency-domain).
+  </figcaption>
+</figure>
+
+<figure style="margin: 1.4rem 0; text-align: center;">
+  <video controls playsinline preload="metadata"
+         poster="/images/projects/spindle-speed-optimization/sso_demo_poster.jpg"
+         style="width: 100%; max-width: 420px; height: auto; display: block; margin: 0 auto; border-radius: 10px;">
+    <source src="/images/projects/spindle-speed-optimization/sso_demo.mp4" type="video/mp4">
+  </video>
+  <figcaption style="font-size: 0.92em; color: #555; margin-top: 0.4rem;">
+    <strong>Video 1:</strong> Real-time spindle speed adaptation during machining (controller is activated after chatter develops).
+  </figcaption>
+</figure>
+
+---
 
 ## Related publications
 

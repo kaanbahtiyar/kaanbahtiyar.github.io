@@ -7,15 +7,156 @@ excerpt: "Time- and frequency-domain chatter detection algorithms for milling, i
 date: 2021-11-01
 sidebar: false
 sitemap_include: true
+description: "Lightweight, robust time-domain and PCA-based chatter detection for milling — early, low-cost detection suited to real-time, embedded use."
+card_metric: "Real-time"
+card_metric_label: "low-cost early detection"
+card_blurb: "Lightweight time-domain and PCA-based algorithms that flag chatter early at low computational cost — the sensing layer behind the closed-loop spindle controller."
+card_image: "/images/projects/chatter-detection/fig3_experiment.png"
+card_tags:
+  - "Manufacturing Letters"
+  - "NAMRC50"
 ---
+
+
+<div class="kb-result">
+  <div class="kb-result-num">Real-time</div>
+  <div class="kb-result-text"><strong>Early, low-cost chatter detection</strong> from lightweight time-domain and PCA algorithms — light enough for embedded use and the sensing front-end for closed-loop spindle control.</div>
+</div>
+
+<div class="kb-hw">
+  <span class="kb-hw-eyebrow">Built &amp; validated on real hardware</span>
+  <div class="kb-hw-chips">
+    <span>3-axis CNC machine tool</span>
+    <span>Accelerometers</span>
+    <span>Dynamometer</span>
+    <span>dSPACE real-time I/O</span>
+    <span>MATLAB/Simulink RTI</span>
+    <span>Custom G-code</span>
+  </div>
+</div>
 
 ## Overview
 
+- **Problem:** **Chatter** is a self-excited (regenerative) instability that can quickly grow in amplitude during milling.
+- **Why it matters:** Chatter causes loud high-pitch vibration, severe surface degradation, tool wear, damage to machine equipment, and scrap of material. Therefore, **early and reliable detection** is critical.
 
+<figure style="margin: 1.2rem 0; text-align: center;">
+  <iframe width="780" height="439"
+          src="https://www.youtube.com/embed/he1NYWVpoD8"
+          title="Milling chatter simulation"
+          frameborder="0"
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+          allowfullscreen
+          style="width: 100%; max-width: 650px; aspect-ratio: 16 / 9; border-radius: 10px;">
+  </iframe>
+  <figcaption style="font-size: 0.95em; color: #555; margin-top: 0.4rem;">
+    <strong>Video A:</strong> Chatter mechanism / simulation example.
+  </figcaption>
+</figure>
+
+<figure style="margin: 1.2rem 0; text-align: center;">
+  <div style="width: 100%; max-width: 600px; height: 420px; overflow: hidden; margin: 0 auto; border-radius: 10px;">
+    <iframe
+      src="https://www.youtube.com/embed/X2p1CaedEf8"
+      title="Milling chatter sound and surface impact"
+      frameborder="0"
+      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+      allowfullscreen
+      style="width: 100%; height: 650px; border: 0; transform: translateY(-140px); display:block;">
+    </iframe>
+  </div>
+  <figcaption style="font-size: 0.95em; color: #555; margin-top: 0.4rem;">
+    <strong>Video B:</strong> Real milling example showing chatter sound and surface damage.
+  </figcaption>
+</figure>
+
+- **Limitation of simple thresholds:** Forced vibration (tooth passing harmonics) can mask chatter, and threshold tuning is not robust across tools/machines.
+- **Our approach:** Two complementary detection pipelines that use time/frequency features to isolate chatter growth more reliably.
+
+---
 
 ## Key methods
 
+### Method 1 — Moving-variance + moving-FFT (spectral power separation)
 
+- Use a moving window on the vibration signal.
+- Track:
+  - **Total power** via moving variance.
+  - **Forced vibration power** around tooth-passing harmonics via moving FFT bins.
+- Compute a **power ratio** that increases when broadband / non-harmonic chatter grows.
+
+
+### Method 2 — Principal component analysis (PCA) / subspace-based features (robust to operating changes)
+
+- Build a windowed data matrix (e.g., Hankel-style embedding) from the vibration signal.
+- Use **PCA** to extract dominant components and track a compact **power ratio** indicator.
+- Optionally smooth / track features over time (e.g., Kalman-style filtering) for stable detection.
+
+
+---
+
+## Novelty / contributions
+
+- **Separates chatter growth from forced harmonics:** Features are designed to reduce sensitivity to tooth-passing content (forced vibration) while remaining sensitive to chatter emergence.
+- **Early and robust detection:** Subspace/PCA features reduce dependence on a single hand-tuned threshold and help maintain robustness across changing conditions.
+
+---
+
+## Tools & implementation
+
+We implemented the chatter monitoring algorithms on a **3-axis CNC machine tool** and validated them in milling tests. The experiment and real-time monitoring includes:
+
+- **Test execution:** Custom **G-code** programs to generate stable and unstable cutting conditions (step changes in cutting parameters for controlled chatter onset).
+- **Sensing (in-process):**
+  - **Accelerometers** for vibration measurements (primary signal for detection)
+  - **Dynamometer** for cutting force measurements (used when force-based verification/comparison was needed)
+  - **Signal conditioning / amplifiers** 
+- **Real-time data acquisition & computation:**
+  - **dSPACE/DAQ** for synchronized data acquisition and real-time I/O
+  - **MATLAB/Simulink (RTI interface)** for online feature computation (e.g., moving variance / moving FFT, PCA-based indicators) and logging
+- **Post-processing:** MATLAB scripts for data analysis.
+
+---
+
+## Results
+
+- The tapered workpiece produces a controlled transition: the cut starts stable and becomes unstable as the depth of cut increases linearly along the taper. **Both detection methods** remain low during stable cutting and rise clearly once the cut becomes unstable, and **detects chatter**.
+
+<figure style="margin: 1.4rem 0; text-align: center;">
+  <!-- wrapper defines the visible window -->
+  <div style="
+    width: 100%;
+    max-width: 400px;
+    margin: 0 auto;
+    overflow: hidden;
+    border-radius: 10px;
+  ">
+    <!-- video is shifted up to hide bottom part -->
+    <video controls playsinline preload="metadata"
+           style="
+             width: 100%;
+             height: auto;
+             display: block;
+             transform: translateY(30%);
+           ">
+      <source src="/images/projects/chatter-detection/video_chatter.mp4" type="video/mp4">
+      Your browser does not support the video tag.
+    </video>
+  </div>
+
+  <figcaption style="font-size: 0.92em; color: #555; margin-top: 0.4rem;">
+    <strong>Video 1:</strong> Milling test on a tapered workpiece: depth of cut increases along the path, leading to chatter onset and growth.
+  </figcaption>
+</figure>
+<figure style="margin: 1.4rem 0; text-align: center;">
+  <img src="/images/projects/chatter-detection/fig3_experiment.png"
+       alt="Experimental example showing stable vs unstable cutting and indicator response"
+       style="width: 100%; height: auto; max-width: 600px; display: block; margin: 0 auto;">
+  <figcaption style="font-size: 0.95em; color: #555; margin-top: 0.4rem;">
+    <strong>Figure 3:</strong> The experimental results with both chatter detection methods.
+  </figcaption>
+</figure>
+---
 
 ## Related publications
 

@@ -1,0 +1,23 @@
+{% comment %}
+  kb-pub-entry.html — renders one publication list item.
+  Place at: _includes/kb-pub-entry.html
+  Expects a `pub` variable in scope (a member of site.publications).
+{% endcomment %}
+{% assign projlabel = "" %}
+{% case pub.project %}
+  {% when 'tool-eccentricity-compensation' %}{% assign projlabel = 'Tool eccentricity compensation' %}
+  {% when 'cross-coupling-vibrations' %}{% assign projlabel = 'Cross-coupled vibration compensation' %}
+  {% when 'inertial-damper-control' %}{% assign projlabel = 'Active inertial damper control' %}
+  {% when 'spindle-speed-optimization' %}{% assign projlabel = 'Spindle speed control' %}
+  {% when 'chatter-detection' %}{% assign projlabel = 'Chatter detection' %}
+{% endcase %}
+{% assign projurl = '/projects/' | append: pub.project | append: '/' | relative_url %}
+<li class="kb-pub">
+  <a class="kb-pub-title" href="{{ pub.url | relative_url }}">{{ pub.title | markdownify | strip_html | strip_newlines }}</a>
+  <div class="kb-pub-meta">{{ pub.venue }}{% if pub.date %} &middot; {{ pub.date | date: "%Y" }}{% endif %}</div>
+  {% if pub.excerpt %}<p class="kb-pub-summary">{{ pub.excerpt | markdownify | strip_html | strip_newlines }}</p>{% endif %}
+  <div class="kb-pub-foot">
+    {% if projlabel != "" %}<a class="kb-pub-proj" href="{{ projurl }}">{{ projlabel }}</a>{% endif %}
+    {% if pub.paperurl %}<a class="kb-pub-link" href="{{ pub.paperurl }}" target="_blank" rel="noopener">Publisher &#8599;</a>{% endif %}
+  </div>
+</li>

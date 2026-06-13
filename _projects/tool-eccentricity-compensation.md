@@ -3,19 +3,141 @@ title: "Tool eccentricity compensation in milling"
 collection: projects
 permalink: /projects/tool-eccentricity-compensation/
 project_id: tool-eccentricity-compensation
-excerpt: "On-machine tool eccentricity compensation strategies that use feed-drive micro-motions and force/vibration feedback to restore balanced cutting."
+excerpt: "On-machine tool eccentricity compensation strategies that use feed drive micro-motions and force/vibration feedback to restore balanced cutting."
 date: 2025-10-15
 sidebar: false
 sitemap_include: true
+description: "On-machine tool-eccentricity (runout) compensation that injects feed-drive micro-motions tuned from force/vibration feedback — 86% lower cutting-force variation on a 3-axis CNC. Patent pending."
+card_metric: "86%"
+card_metric_label: "↓ peak cutting-force variation"
+card_blurb: "On-machine compensation that injects feed-drive micro-motions, tuned online from force/vibration feedback — no added hardware. Converges in 2–3 spindle iterations."
+card_image: "/images/projects/tool-eccentricity-compensation/fig1_problem_overview.png"
+card_tags:
+  - "ASME JMSE"
+  - "MM Science"
+  - "Patent pending"
 ---
+
+
+<div class="kb-result">
+  <div class="kb-result-num">86%<small>↓</small></div>
+  <div class="kb-result-text"><strong>Peak cutting-force variation cut from 101 N to 14 N</strong> on a 3-axis CNC, converging in 2–3 spindle iterations from force feedback alone — no dedicated hardware.</div>
+</div>
+
+<div class="kb-hw">
+  <span class="kb-hw-eyebrow">Built &amp; validated on real hardware</span>
+  <div class="kb-hw-chips">
+    <span>3-axis CNC machine tool</span>
+    <span>Dynamometer</span>
+    <span>Accelerometers</span>
+    <span>Fiber-optic edge sensor</span>
+    <span>dSPACE real-time I/O</span>
+    <span>MATLAB/Simulink RTI</span>
+  </div>
+</div>
 
 ## Overview
 
+-	**Problem:** Tool eccentricity (radial runout) offsets the cutter geometric center from the spindle rotational axis, causing **tooth-to-tooth chip load imbalance**.
+-	**Why it matters:** Chip load imbalance causes variation in cutting force, degrading surface finish, accelerating tool wear, and reducing process consistency, especially **critical in finishing applications**.
+-	**Limitations of current practice**: Manual setup/tramming can reduce runout, but it is time-consuming and cannot adapt to in-process changes.
+-	**Our approach:** An on-machine scheme where the machine tool uses force/vibration feedback to monitor eccentricity-related errors and **automatically tunes a compensation motion** to mitigate them.
+-	**Key idea:** Eccentricity appears as a periodic tool-center motion in the workpiece frame at the spindle frequency. Figure 1 summarizes the eccentricity mechanism and tool-center trajectories motivating the strategy.
+  
+<figure style="margin: 1.5rem 0; text-align: center;">
+  <img src="/images/projects/tool-eccentricity-compensation/fig1_problem_overview.png"
+       alt="Milling process with an eccentric tool: eccentricity definition, kinematics, and tool-center trajectories"
+       style="width: 100%; height: auto; max-width: 550px; display: block; margin: 0 auto;">
+  <figcaption style="font-size: 0.95em; color: #555; margin-top: 0.4rem;">
+    <strong>Figure 1:</strong> Trajectories of the tool center points in workpiece coordinate frame in the milling process with an eccentric tool.
+  </figcaption>
+</figure>
 
+---
 
 ## Key methods
 
+### Spindle-synchronized feed drive micro-circular motion
 
+To cancel eccentricity, we generate a small **circular micro-trajectory** synchronized with the spindle rotation in the table/workpiece coordinates. The compensation signal is parameterized by its amplitude and phase, and it is applied through the existing feed drive position control loops.
+
+### Data-driven tuning using force/vibration feedback
+
+- **Why open-loop calibration is unreliable:**
+  - Feed-drive dynamics and structural compliance distort the injected motion (amplitude/phase mismatch).
+  - The effective phase between the eccentricity pattern and the workpiece frame can change with setup and initial conditions.
+
+- **How we tune it on-machine:**
+  - Use **force** or **vibration** measurements to track **spindle-synchronous harmonic components** linked to eccentricity.
+  - Define a spectral **cost function** from these components.
+  - Iteratively update the compensation motion **amplitude and phase** to minimize the cost.
+
+- **Strategy evolution during the project:**
+  - Early: **Extremum-seeking control (ESC)** for fully model-free, force/vibration feedback-only tuning.
+  - Final: a **convex optimization framework that uses a minimal eccentricity insight** (focusing on the relevant harmonics), enabling reliable tuning and faster convergence.
+ 
+    
+
+<figure style="margin: 1.5rem 0; text-align: center;">
+  <img src="/images/projects/tool-eccentricity-compensation/fig2_block_diagram.png"
+       alt="Proposed strategy block diagram for eccentricity compensation"
+       style="width: 100%; height: auto; max-width: 700px; display: block; margin: 0 auto;">
+  <figcaption style="font-size: 0.95em; color: #555; margin-top: 0.4rem;">
+    <strong>Figure 2:</strong> Proposed strategy block diagram.
+  </figcaption>
+</figure>
+
+---
+
+## Novelty / contributions
+
+- **Using existing feed drives:** Instead of dedicated hardware or offline tramming, eccentricity is mitigated by injecting a micro-motion through the machine’s built-in X–Y axes feed drives.
+- **On-machine, sensor-based tuning:** The method does not require direct runout measurement; it infers eccentricity-related errors from force/vibration feedback and tunes the compensation online.
+- **Fast data-driven optimization with minimal modeling:** A convex optimization framework leverages a simple eccentricity insight (relevant spindle-synchronous harmonics) to achieve reliable tuning and fast convergence.
+- **Practical integration:** Works with either force or vibration sensing and does not rely on a phase calibration (robust to setup/condition changes).
+
+## Tools & implementation
+
+We implemented the eccentricity compensation method on a **3-axis CNC machine tool** and validated it in milling tests. The experiment and real-time implementation includes:
+
+- **Test execution:** CNC milling trials with an eccentric tool to induce repeatable tooth-to-tooth force imbalance and evaluate convergence of the compensation across iterations.
+- **Sensing (in-process):**
+  - **Dynamometer** for cutting force feedback 
+  - **Accelerometers** for vibration feedback 
+  - **Fiber-optic edge detection sensor** for synchronization (can be replaced by a spindle encoder)
+  - **Signal conditioning / amplifiers** 
+- **Real-time data acquisition & computation:**
+  - **dSPACE/DAQ** for synchronized data acquisition and real-time I/O
+  - **MATLAB/Simulink (RTI interface)** for real-time cost computation and online compensation parameter updates (amplitude/phase)
+- **Post-processing:** MATLAB scripts for data analysis.
+  
+Figure 3 shows the experimental implementation used for validation.
+
+<figure style="margin: 1.5rem 0; text-align: center;">
+  <img src="/images/projects/tool-eccentricity-compensation/fig3_experimental_implementation.png"
+       alt="Experimental implementation for eccentricity compensation validation"
+       style="width: 100%; height: auto; max-width: 800px; display: block; margin: 0 auto;">
+  <figcaption style="font-size: 0.95em; color: #555; margin-top: 0.4rem;">
+    <strong>Figure 3:</strong> Experimental implementation.
+  </figcaption>
+</figure>
+
+---
+
+## Results
+
+Using force-feedback, the spindle-synchronized compensation converges in as fast as **2–3 iterations** (10-15 spindle revolutions) in experiments. Figure 4 shows a representative experimental result demonstrating the reduction of eccentricity-related components and the rapid convergence behavior. Using the proposed compensation, the **peak-to-peak normal-direction cutting force decreased from 101 N to 14 N, corresponding to an ~86% reduction (≈7.2× lower)**.
+
+<figure style="margin: 1.5rem 0; text-align: center;">
+  <img src="/images/projects/tool-eccentricity-compensation/fig4_experimental_result.png"
+       alt="Experimental result showing eccentricity compensation and convergence"
+       style="width: 100%; height: auto; max-width: 350px; display: block; margin: 0 auto;">
+  <figcaption style="font-size: 0.95em; color: #555; margin-top: 0.4rem;">
+    <strong>Figure 4:</strong> Experimental results of cutting a steel alloy using a 4-tooth, 30° helix tool at a spindle speed of 1200 rpm.
+  </figcaption>
+</figure>
+
+---
 
 ## Related publications
 
