@@ -16,22 +16,8 @@
 
 <!-- end custom head snippets -->
 
-/* ==========================================================================
-   kb-custom.scss — portfolio cards, result banners, hardware chips
-   --------------------------------------------------------------------------
-   HOW TO INSTALL (pick ONE):
-     A) SCSS partial (recommended)
-        1. Save this file as  _sass/_kb-custom.scss
-        2. Add this line at the END of  assets/css/main.scss :
-              @import "kb-custom";
-     B) No-SCSS option
-        Paste everything below into  _includes/head/custom.html
-        wrapped in <style> ... </style>. It is plain CSS and will work as-is.
-   --------------------------------------------------------------------------
-   Everything is namespaced .kb-* so it never touches Minimal Mistakes styles.
-   Retheme by changing --kb-accent.
-   ========================================================================== */
-
+<!-- Custom styling for projects cards, result banners, hardware chips -->
+<style>
 :root{
   --kb-ink:#0f172a;
   --kb-slate:#475569;
@@ -158,7 +144,7 @@
   border:1px solid #cffafe; border-radius:999px; padding:.2rem .6rem;
   text-decoration:none;
 }
-.kb-pub-proj::before{ content:"\2197\00a0"; font-weight:700; } /* up-right arrow */
+.kb-pub-proj::before{ content:"\2197\00a0"; font-weight:700; }
 .kb-pub-proj:hover{ text-decoration:underline; }
 .kb-pub-link{
   font-size:.74rem; font-weight:600; color:var(--kb-slate);
@@ -176,7 +162,6 @@
   .kb-card{ transition:none; }
   .kb-card:hover{ transform:none; }
 }
-
 
 /* ---------- Homepage intro: availability banner + CV button ---------- */
 .kb-intro{
@@ -202,3 +187,4 @@
   .kb-intro{ flex-direction:column; align-items:flex-start; }
   .kb-btn{ width:100%; text-align:center; }
 }
+</style>
