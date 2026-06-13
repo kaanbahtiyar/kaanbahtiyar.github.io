@@ -1,0 +1,17 @@
+# _data/navigation.yml
+
+main:
+  - title: "Publications"
+    url: /publications/
+
+  - title: "Projects"
+    url: /projects/
+
+  - title: "CV"
+    url: /cv/
+
+  # Add other items if you like, e.g.:
+  # - title: "Teaching"
+  #   url: /teaching/
+  # - title: "Blog"
+  #   url: /year-archive/

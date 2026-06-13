@@ -54,7 +54,7 @@ card_tags:
   </figcaption>
 </figure>
 
-**Recognition:** This work received the **ICPE 2024 Young Researcher Award**.
+**Recognition:** This work received the **ICPE 2024 Young Investigator Award**.
 
 ---
 

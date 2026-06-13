@@ -11,6 +11,8 @@
 @import
     "vendor/breakpoint/breakpoint",
 
+    "kb-vars",
+
     "themes",
     "theme/{{ site.site_theme | default: 'default' | append: '_light' }}",
     "theme/{{ site.site_theme | default: 'default' | append: '_dark' }}",

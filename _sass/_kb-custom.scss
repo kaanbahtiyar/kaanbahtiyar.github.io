@@ -158,3 +158,29 @@
   .kb-card{ transition:none; }
   .kb-card:hover{ transform:none; }
 }
+
+
+/* ---------- Homepage intro: availability banner + CV button ---------- */
+.kb-intro{
+  display:flex; flex-wrap:wrap; align-items:center; justify-content:space-between;
+  gap:.8rem; border:1px solid var(--kb-line); border-radius:10px;
+  background:var(--kb-accent-tint); padding:.8rem 1.1rem; margin:0 0 1.5rem;
+}
+.kb-avail{ font-size:.92rem; font-weight:600; color:var(--kb-ink);
+  display:flex; align-items:center; gap:.55rem; }
+.kb-avail::before{
+  content:""; flex:none; width:9px; height:9px; border-radius:50%;
+  background:#16a34a; box-shadow:0 0 0 3px rgba(22,163,74,.2);
+}
+.kb-avail .sub{ font-weight:500; color:var(--kb-slate); }
+.kb-btn{
+  flex:none; display:inline-block;
+  background:var(--kb-accent); color:#fff !important; text-decoration:none !important;
+  font-size:.9rem; font-weight:650; padding:.5rem .95rem;
+  border:1px solid var(--kb-accent); border-radius:8px; transition:background .15s ease;
+}
+.kb-btn:hover{ background:#0b5566; }
+@media (max-width:520px){
+  .kb-intro{ flex-direction:column; align-items:flex-start; }
+  .kb-btn{ width:100%; text-align:center; }
+}
