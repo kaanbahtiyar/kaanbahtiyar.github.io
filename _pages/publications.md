@@ -20,27 +20,27 @@ You can also find my articles on <a href="https://scholar.google.com/citations?u
 {% if journal.size > 0 %}
 <h2 class="kb-pubgroup">Journal Articles</h2>
 <ul class="kb-publist">
-{% for pub in journal %}{% include kb-pub-entry %}{% endfor %}
+{% for pub in journal %}{% include kb-pub-entry.html %}{% endfor %}
 </ul>
 {% endif %}
 
 {% if conf_proc.size > 0 %}
 <h2 class="kb-pubgroup">Conference Papers — Peer-reviewed (proceedings)</h2>
 <ul class="kb-publist">
-{% for pub in conf_proc %}{% include kb-pub-entry %}{% endfor %}
+{% for pub in conf_proc %}{% include kb-pub-entry.html %}{% endfor %}
 </ul>
 {% endif %}
 
 {% if conf_noproc.size > 0 %}
 <h2 class="kb-pubgroup">Conference Papers — Peer-reviewed (no proceedings)</h2>
 <ul class="kb-publist">
-{% for pub in conf_noproc %}{% include kb-pub-entry %}{% endfor %}
+{% for pub in conf_noproc %}{% include kb-pub-entry.html %}{% endfor %}
 </ul>
 {% endif %}
 
 {% if conf_abs.size > 0 %}
 <h2 class="kb-pubgroup">Conference Papers — Abstract-reviewed</h2>
 <ul class="kb-publist">
-{% for pub in conf_abs %}{% include kb-pub-entry %}{% endfor %}
+{% for pub in conf_abs %}{% include kb-pub-entry.html %}{% endfor %}
 </ul>
 {% endif %}
