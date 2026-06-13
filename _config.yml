@@ -8,7 +8,7 @@
 
 # Basic Site Settings
 locale                   : "en-US"
-# site_theme               : "default" # Currently available options are "default", "air"
+theme: jekyll-theme-minimal
 title                    : "Kaan Bahtiyar"
 title_separator          : "-"
 name                     : &name "Kaan Bahtiyar"
@@ -17,7 +17,7 @@ url                      : https://kaanbahtiyar.github.io # The base hostname & 
                                                            # or if you already have some other page hosted on Github then use "https://[your GitHub username].github.io/[Your Repo Name]"
 baseurl                  : "" # the subpath of your site, e.g. "/blog"
 repository               : # URL
-theme: jekyll-theme-minimal
+
 # Site Author - The following control what appear as part of the author content on the side bar.
 #               If a field is blank the icon and link will not appear, otherwise it will be shown.
 #               Additional customization can be done by editing /_includes/author-profile.html
