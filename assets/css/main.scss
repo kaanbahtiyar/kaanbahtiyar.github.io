@@ -8,6 +8,16 @@
    sorted by the dependencies. Also, the first two lines of the file are required by Jekyll.
  */
 
+/* --- Brand palette: set BEFORE the theme imports so Minimal Mistakes builds its
+       links / buttons / masthead from the same accent used by the cards.
+       (Baked in here on purpose so there is no separate partial file to lose.) --- */
+$primary-color: #0e7490;
+$link-color: $primary-color;
+$link-color-hover: mix(#000, $primary-color, 20%);
+$link-color-visited: $primary-color;
+$masthead-link-color: $primary-color;
+$masthead-link-color-hover: mix(#000, $primary-color, 25%);
+
 @import
     "vendor/breakpoint/breakpoint",
 
