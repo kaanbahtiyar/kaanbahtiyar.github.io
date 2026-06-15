@@ -8,7 +8,7 @@
 
 # Basic Site Settings
 locale                   : "en-US"
-site_theme               : "default" # Currently available options are "default", "air"
+theme: jekyll-theme-minimal
 title                    : "Kaan Bahtiyar"
 title_separator          : "-"
 name                     : &name "Kaan Bahtiyar"
@@ -241,7 +241,7 @@ defaults:
       path: ""
       type: posts
     values:
-      layout: single
+      layout: default
       author_profile: true
       read_time: true
       comments: true
@@ -252,14 +252,14 @@ defaults:
       path: ""
       type: pages
     values:
-      layout: single
+      layout: default
       author_profile: true
   # _teaching
   - scope:
       path: ""
       type: teaching
     values:
-      layout: single
+      layout: default
       author_profile: true
       share: true
       comments: true
@@ -268,7 +268,7 @@ defaults:
       path: ""
       type: publications
     values:
-      layout: single
+      layout: default
       author_profile: true
       share: true
       comments: true
@@ -277,7 +277,7 @@ defaults:
       path: ""
       type: portfolio
     values:
-      layout: single
+      layout: default
       author_profile: true
       share: true
       comment: true
@@ -286,7 +286,7 @@ defaults:
       path: ""
       type: talks
     values:
-      layout: talk
+      layout: default
       author_profile: true
       share: true
   # projects
@@ -294,15 +294,9 @@ defaults:
       path: ""
       type: projects
     values:
-      layout: single
+      layout: default
       author_profile: true
       sidebar: false
-
-
-# Sass/SCSS
-sass:
-  sass_dir: _sass
-  style: compressed # https://sass-lang.com/documentation/file.SASS_REFERENCE.html#output_style
 
 
 # Outputting
