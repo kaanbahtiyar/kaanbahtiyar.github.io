@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Spindle speed control for vibration mitigation in milling, Kaan Bahtiyar</title>
+<meta name="description" content="Model-free optimal spindle-speed controller driven by real-time vibration feedback, with no process model or stability-lobe map. RMS vibration cut from 72 to 9 m/s2.">
+<meta property="og:title" content="Spindle speed control for vibration mitigation in milling, Kaan Bahtiyar">
+<meta property="og:description" content="Model-free optimal spindle-speed controller driven by real-time vibration feedback, with no process model or stability-lobe map. RMS vibration cut from 72 to 9 m/s2.">
+<meta property="og:image" content="/images/profilekaan.png">
+<link rel="icon" type="image/svg+xml" href="/images/favicon.svg">
+<link rel="icon" href="/images/favicon.ico">
+<link rel="stylesheet" href="/assets/style.css">
+</head>
+<body>
+<nav class="nav"><div class="wrap nav-in">
+  <a class="brand" href="/index.html"><span class="dot"></span>Kaan Bahtiyar</a>
+  <div class="nav-links">
+    <a href="/index.html">Home</a>
+    <a href="/projects.html" class="active">Projects</a>
+    <a href="/publications.html">Publications</a>
+    <a href="/cv.html">CV</a>
+  </div>
+</div></nav>
+<main><div class="wrap">
+  <div class="crumb"><a href="/projects.html">Projects</a> / Spindle speed control for vibration mitigation in milling</div>
+  <h1 class="proj-title">Spindle speed control for vibration mitigation in milling</h1>
+  <div class="result"><div class="num">90%<small>&#8595;</small></div><div class="txt"><strong>Up to 90% lower vibration than conventional chatter-focused control</strong> (RMS 72 to 9 m/s2), using a model-free controller driven by real-time vibration feedback.</div></div>
+  <div class="hw"><span class="eyebrow2">Hardware &amp; instrumentation</span><div class="hw-chips"><span>3-axis CNC machine tool</span><span>Accelerometers</span><span>Spindle override via PLC</span><span>dSPACE real-time I/O</span><span>MATLAB/Simulink RTI</span></div></div>
+  <div class="prose">
+    <h2>Overview</h2><p>Milling vibration comes as self-excited chatter (unstable) and periodic forced vibration (stable). Both wreck surface finish, shorten tool life, and can damage the machine. Model-based planning (stability lobes, SLE maps) needs heavy identification and does not transfer across machines; chatter-only speed control can suppress chatter but amplify forced vibration near resonances.</p>
+    <h2>Approach</h2><p>Spindle-speed regulation is posed as an <strong>online optimization</strong>: compute a vibration cost from accelerometer data and update speed to reduce it.</p><p>An <strong>extremum-seeking control</strong> framework estimates the cost gradient from measured data, with no process model. A dither-guided variant injects a small speed perturbation; a dither-free variant fits the gradient from buffered speed and cost data via least squares.</p><p>It runs in real time, applying speed updates through the machine's spindle-override input and PLC.</p>
+    <h2>What is novel</h2><ul><li>Optimizes for <em>total</em> vibration (forced plus chatter), avoiding the usual chatter-versus-forced tradeoff.</li><li>Fully model-free and on-machine, with no stability-lobe identification.</li><li>Data-driven gradient estimation makes it deployable without modal testing.</li></ul>
+    <div class="videowrap"><video controls preload="metadata" playsinline poster="/assets/video/sso_demo.jpg"><source src="/assets/video/sso_demo.mp4" type="video/mp4"></video><div class="cap">Real-time spindle-speed adaptation during a milling test: the controller activates after chatter develops and drives the vibration down.</div></div>
+    <h2>Results</h2><p>The controller updates speed online from acceleration feedback and cuts vibration <strong>87% (RMS 72 to 9 m/s2)</strong>, converging to a speed with <strong>about 90% lower vibration than a conventional chatter-focused approach</strong> that parks speed near resonance.</p>
+    <h2>Related publications</h2><ul class="relpubs"><li><a href="https://www.sciencedirect.com/science/article/abs/pii/S1755581725001270">Model-free optimal spindle speed control for real-time vibration mitigation in milling</a><div class="v">CIRP Journal of Manufacturing Science and Technology &middot; 2025</div></li><li><a href="https://asmedigitalcollection.asme.org/MSEC/proceedings-abstract/MSEC2024/88117/1203242">Brief paper: Model-free adaptive spindle speed regulation for mitigation of machining vibrations</a><div class="v">ASME MSEC 2024 &middot; 2024</div></li><li>Adaptive spindle speed control for real-time machining vibration mitigation<div class="v">LEM21 (11th Int. Conf. on Leading Edge Manufacturing in 21st Century) &middot; 2025</div></li><li><a href="https://www.proceedings.com/66902.html">Extremum seeking control based real-time optimization of spindle speed in machining</a><div class="v">37th Annual Meeting of the ASPE &middot; 2022</div></li></ul>
+    <h2>Collaborators</h2><div class="collab"><span>Dr. Burak Sencer (advisor)</span></div>
+  </div>
+  <p style="margin:2.2rem 0;"><a href="/projects.html">&larr; All projects</a></p>
+</div></main>
+<footer><div class="wrap foot-in">
+  <div class="foot-links">
+    <a href="mailto:kaan.bahtiyar@outlook.com">Email</a>
+    <a href="https://scholar.google.com/citations?user=C0g9DXQAAAAJ&hl=en">Google Scholar</a>
+    <a href="https://orcid.org/0000-0002-5250-4468">ORCID</a>
+    <a href="https://www.linkedin.com/in/kaanbahtiyar">LinkedIn</a>
+    <a href="/cv.html">CV</a>
+  </div>
+  <div class="foot-note">&copy; 2026 Kaan Bahtiyar &middot; Corvallis, OR</div>
+</div></footer>
+</body></html>

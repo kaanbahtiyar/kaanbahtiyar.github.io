@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Kaan Bahtiyar, PhD Candidate in Robotics</title>
+<meta name="description" content="Kaan Bahtiyar, PhD candidate in Robotics at Oregon State University, working on precision motion control and real-time vibration mitigation for machine tools, validated on real CNC hardware.">
+<meta property="og:title" content="Kaan Bahtiyar, PhD Candidate in Robotics">
+<meta property="og:description" content="Kaan Bahtiyar, PhD candidate in Robotics at Oregon State University, working on precision motion control and real-time vibration mitigation for machine tools, validated on real CNC hardware.">
+<meta property="og:image" content="/images/profilekaan.png">
+<link rel="icon" type="image/svg+xml" href="/images/favicon.svg">
+<link rel="icon" href="/images/favicon.ico">
+<link rel="stylesheet" href="/assets/style.css">
+</head>
+<body>
+<nav class="nav"><div class="wrap nav-in">
+  <a class="brand" href="/index.html"><span class="dot"></span>Kaan Bahtiyar</a>
+  <div class="nav-links">
+    <a href="/index.html" class="active">Home</a>
+    <a href="/projects.html">Projects</a>
+    <a href="/publications.html">Publications</a>
+    <a href="/cv.html">CV</a>
+  </div>
+</div></nav>
+
+<header class="hero"><div class="wrap hero-grid">
+  <div>
+    <img class="avatar" src="/images/profilekaan.png" alt="Kaan Bahtiyar">
+    <h1>Kaan Bahtiyar</h1>
+    <p class="title">PhD Candidate in Robotics</p>
+    <p class="affil">Manufacturing Process Control Laboratory, Oregon State University</p>
+    <p class="lead">I work on precision motion control and real-time vibration mitigation for machine tools, building and validating control and automation on real CNC hardware, not only in simulation.</p>
+    <div class="social"><a href="mailto:kaan.bahtiyar@outlook.com">Email</a><a href="https://scholar.google.com/citations?user=C0g9DXQAAAAJ&hl=en">Google Scholar</a><a href="https://orcid.org/0000-0002-5250-4468">ORCID</a><a href="https://www.linkedin.com/in/kaanbahtiyar">LinkedIn</a></div>
+    <div class="cta-row"><a class="btn btn-primary" href="/cv.html">View CV</a><a class="btn btn-ghost" href="/projects.html">See projects</a></div>
+  </div>
+  <div class="hero-anim"><div class="frame">
+  <svg id="vibe" viewBox="0 0 480 312" role="img" aria-label="A robot arm runs a pick-and-place cycle with the same task performed twice. In the first (uncontrolled) run the end-effector shows a large, slowly decaying vibration when settling at the pick and place points, and the placing vibration is plotted against time. After a learning-based controller adjustment, the second (mitigated) run shows a much smaller, quickly damped vibration, drawn in the accent color over the faded uncontrolled trace.">
+  <defs>
+    <linearGradient id="gLink" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#aab3ba"/><stop offset="0.46" stop-color="#f4f7f8"/><stop offset="0.62" stop-color="#e6ebed"/><stop offset="1" stop-color="#8b949b"/></linearGradient>
+    <radialGradient id="gJoint" cx="0.36" cy="0.3" r="0.85"><stop offset="0" stop-color="#fcfdfe"/><stop offset="0.5" stop-color="#dde3e7"/><stop offset="1" stop-color="#a7afb6"/></radialGradient>
+    <linearGradient id="gBase" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#525960"/><stop offset="0.5" stop-color="#373c42"/><stop offset="1" stop-color="#23272b"/></linearGradient>
+    <linearGradient id="gPay" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#34b0cb"/><stop offset="0.5" stop-color="#0e7490"/><stop offset="1" stop-color="#08506a"/></linearGradient>
+    <linearGradient id="gBelt" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#d6dce0"/><stop offset="1" stop-color="#a7afb6"/></linearGradient>
+  </defs>
+  <text id="vtitle" class="v-title" x="240" y="20" text-anchor="middle" font-size="16">Uncontrolled vibration</text>
+  <rect x="42" y="166" width="144" height="16" rx="2" fill="url(#gBase)"/>
+  <rect x="44" y="162" width="140" height="6" rx="2" fill="url(#gBelt)" stroke="#9aa3aa" stroke-width="0.6"/>
+  <g id="lgrp">
+    <rect id="lb0" x="106.5" y="150" width="15" height="16" rx="1.5" fill="url(#gPay)" stroke="#08506a" stroke-width="0.8"/>
+    <rect id="lb1" x="76.5" y="150" width="15" height="16" rx="1.5" fill="url(#gPay)" stroke="#08506a" stroke-width="0.8"/>
+    <rect id="lb2" x="46.5" y="150" width="15" height="16" rx="1.5" fill="url(#gPay)" stroke="#08506a" stroke-width="0.8"/>
+  </g>
+  <rect x="298" y="166" width="118" height="16" rx="2" fill="url(#gBase)"/>
+  <rect x="300" y="162" width="114" height="6" rx="2" fill="url(#gBelt)" stroke="#9aa3aa" stroke-width="0.6"/>
+  <rect id="rb0" x="328.5" y="150" width="15" height="16" rx="1.5" fill="url(#gPay)" stroke="#08506a" stroke-width="0.8" opacity="0"/>
+  <rect id="rb1" x="328.5" y="150" width="15" height="16" rx="1.5" fill="url(#gPay)" stroke="#08506a" stroke-width="0.8" opacity="0"/>
+  <rect x="206" y="156" width="68" height="40" rx="3" fill="url(#gBase)"/>
+  <rect x="222" y="138" width="36" height="22" rx="3" fill="url(#gBase)"/>
+  <circle id="jsh" cx="240" cy="150" r="13" fill="url(#gJoint)" stroke="#6f777e" stroke-width="1.2"/><circle cx="240" cy="150" r="4.5" fill="#9aa3aa"/>
+  <rect id="l1" x="0" y="-8" width="0" height="16" rx="8" fill="url(#gLink)" stroke="#7c858c" stroke-width="0.8"/>
+  <circle id="jel" cx="240" cy="58" r="10" fill="url(#gJoint)" stroke="#6f777e" stroke-width="1"/>
+  <rect id="l2" x="0" y="-7" width="0" height="14" rx="7" fill="url(#gLink)" stroke="#7c858c" stroke-width="0.8"/>
+  <circle id="jwr" cx="240" cy="132" r="9.5" fill="url(#gJoint)" stroke="#6f777e" stroke-width="1"/>
+  <g id="grip"><rect x="-4" y="-9" width="17" height="18" rx="2.5" fill="#2c3136"/><rect x="13" y="-9" width="4" height="8" rx="1" fill="#2c3136"/><rect x="13" y="1" width="4" height="8" rx="1" fill="#2c3136"/></g>
+  <rect id="hblk" x="0" y="0" width="15" height="16" rx="1.5" fill="url(#gPay)" stroke="#08506a" stroke-width="0.8" opacity="0"/>
+  <text class="v-cap" x="240" y="216" text-anchor="middle" font-size="13.5">End-effector vibration during placing</text>
+  <line x1="72" y1="232" x2="72" y2="298" stroke="#15191d" stroke-width="1.2"/>
+  <path d="M72 232 l-3 5 l6 0 z" fill="#15191d"/>
+  <line x1="72" y1="265" x2="456" y2="265" stroke="#15191d" stroke-width="1.2"/>
+  <path d="M456 265 l-5 -3 l0 6 z" fill="#15191d"/>
+  <text class="v-cap" x="58" y="265" transform="rotate(-90 58 265)" text-anchor="middle" font-size="12.5">Vibration</text>
+  <text class="v-cap" x="426" y="282" font-size="12.5">Time</text>
+  <polyline id="pU" fill="none" stroke="#222831" stroke-width="1.8" points=""/>
+  <polyline id="pC" fill="none" stroke="#d62828" stroke-width="2" points=""/>
+  <g id="lblU" opacity="0"><text class="v-u" x="130" y="240" font-size="12">uncontrolled vibration</text><path d="M128 243 q -13 6 -24 13" fill="none" stroke="#222831" stroke-width="1.1"/><path d="M106 256 l6.5 -1.5 l-3.5 -5.5 z" fill="#222831"/></g>
+  <g id="lblC" opacity="0"><text class="v-c" x="260" y="295" font-size="12">controlled vibration</text><path d="M258 291 q -20 -8 -38 -19" fill="none" stroke="#d62828" stroke-width="1.1"/><path d="M220 272 l6.5 1.5 l-1 -6.5 z" fill="#d62828"/></g>
+  </svg>
+</div></div>
+</div></header>
+<main>
+<section><div class="wrap"><h2 class="sec-title">About</h2>
+  <div class="lead-block">
+    <p>I am a control systems engineer specializing in precision motion control, mechatronics, and machining process dynamics for advanced manufacturing. My work pairs first-principles modeling with data-driven methods to design high-performance mechatronic systems, and I translate modern control and optimization theory into <strong>experimentally validated</strong> solutions for industrial manufacturing and intelligent automation.</p>
+    <p>Over the past six years I have built, instrumented, and operated the experimental testbeds behind this research, and developed the real-time control and sensing that run on them. Hardware I have worked with includes CNC machine tools, feed-drive and voice-coil stages, dSPACE and NI myRIO real-time systems, and force, acceleration, and displacement sensing. I am advised by <a href="https://engineering.oregonstate.edu/people/burak-sencer">Dr. Burak Sencer</a>.</p>
+  </div></div></section>
+<section style="background:var(--bg-soft); border-top:1px solid var(--line); border-bottom:1px solid var(--line);"><div class="wrap"><h2 class="sec-title">Education</h2><div class="edu-item"><div><div class="d">Ph.D., Robotics</div><div class="s">Oregon State University &middot; Advisor: Prof. Burak Sencer</div></div><div class="y">2022-Present</div></div><div class="edu-item"><div><div class="d">M.Sc., Robotics</div><div class="s">Oregon State University</div></div><div class="y">2020-2023</div></div><div class="edu-item"><div><div class="d">B.Sc., Control &amp; Automation Engineering</div><div class="s">Istanbul Technical University</div></div><div class="y">2017-2020</div></div><div class="edu-item"><div><div class="d">B.Sc., Mechanical Engineering</div><div class="s">Istanbul Technical University</div></div><div class="y">2014-2019</div></div></div></section>
+<section><div class="wrap"><h2 class="sec-title">Research focus</h2><ul class="interests"><li>Precision motion control for high-performance stages and machine tools</li><li>Real-time vibration mitigation and active damping in mechatronic systems</li><li>Machining process modeling, monitoring, optimization, and control</li><li>System identification and physics-based / data-driven modeling</li><li>Intelligent manufacturing automation and equipment-level control</li></ul></div></section>
+<section style="background:var(--bg-soft); border-top:1px solid var(--line); border-bottom:1px solid var(--line);"><div class="wrap"><h2 class="sec-title">Projects</h2><div class="cards"><a class="card" href="/projects/tool-eccentricity-compensation.html">
+  <div class="body"><h3>Tool eccentricity compensation in milling</h3><p>On-machine compensation that injects feed-drive micro-motions, tuned online from force/vibration feedback, with no added hardware. Converges in 2-3 spindle iterations.</p><div class="tags"><span>ASME JMSE</span><span>MM Science</span><span>Patent pending</span></div></div>
+  <div class="result-line"><span class="rk">Result</span><span class="rnum">86%</span><span class="rdesc">lower peak cutting-force variation</span></div></a><a class="card" href="/projects/cross-coupling-vibrations.html">
+  <div class="body"><h3>Cross-coupled inertial vibration compensation</h3><p>Trajectory pre-filtering that cancels cross-axis coupling on a 3-axis machining center, driving residual Z motion from 6 um down to about 1.2 um.</p><div class="tags"><span>ICPE 2024</span><span>Young Research Award</span></div></div>
+  <div class="result-line"><span class="rk">Result</span><span class="rnum">80%</span><span class="rdesc">lower axis-coupled vibration (~1 um residual)</span></div></a><a class="card" href="/projects/inertial-damper-control.html">
+  <div class="body"><h3>Active inertial damper control for precision machine tools</h3><p>Learning-based feedforward control of an active inertial damper that suppresses transient vibration within actuator stroke and force limits, taking error from 12 um to 1.6 um.</p><div class="tags"><span>CIRP Annals</span><span>Dow Scholarship</span></div></div>
+  <div class="result-line"><span class="rk">Result</span><span class="rnum">87%</span><span class="rdesc">lower peak positioning error</span></div></a><a class="card" href="/projects/spindle-speed-optimization.html">
+  <div class="body"><h3>Spindle speed control for vibration mitigation in milling</h3><p>Model-free optimal spindle-speed controller driven by real-time vibration feedback, with no process model or stability-lobe map. RMS vibration cut from 72 to 9 m/s2.</p><div class="tags"><span>CIRP JMST</span><span>ASME MSEC</span></div></div>
+  <div class="result-line"><span class="rk">Result</span><span class="rnum">90%</span><span class="rdesc">lower vibration vs. conventional</span></div></a><a class="card" href="/projects/chatter-detection.html">
+  <div class="body"><h3>Chatter detection and monitoring in milling</h3><p>Lightweight time-domain and PCA-based algorithms that flag chatter early at low computational cost, the sensing layer behind the closed-loop spindle controller.</p><div class="tags"><span>Manufacturing Letters</span><span>NAMRC50</span></div></div>
+  <div class="result-line"><span class="rk">Result</span><span class="rnum">Real-time</span><span class="rdesc">low-cost early detection</span></div></a></div></div></section>
+<section><div class="wrap"><h2 class="sec-title">Recognition</h2><ul class="highlights"><li><svg class="medal" viewBox="0 0 24 24" aria-hidden="true"><polygon points="8,3 11,3 12.6,11 9.2,12" fill="#8fcdd9"/><polygon points="16,3 13,3 11.4,11 14.8,12" fill="#8fcdd9"/><circle cx="12" cy="15.5" r="6.2" fill="#0e7490"/><path d="M12 11.5 L12.999 14.125 L15.804 14.264 L13.617 16.025 L14.351 18.736 L12 17.2 L9.649 18.736 L10.383 16.025 L8.196 14.264 L11.001 14.125 Z" fill="#fff"/></svg><span><a href="https://aspe.net/2025-student-challenge/">1st place, ASPE Student Challenge (2025)</a></span></li><li><svg class="medal" viewBox="0 0 24 24" aria-hidden="true"><polygon points="8,3 11,3 12.6,11 9.2,12" fill="#8fcdd9"/><polygon points="16,3 13,3 11.4,11 14.8,12" fill="#8fcdd9"/><circle cx="12" cy="15.5" r="6.2" fill="#0e7490"/><path d="M12 11.5 L12.999 14.125 L15.804 14.264 L13.617 16.025 L14.351 18.736 L12 17.2 L9.649 18.736 L10.383 16.025 L8.196 14.264 L11.001 14.125 Z" fill="#fff"/></svg><span><a href="https://aspe.net/student-scholarships/">Thomas A. Dow Scholarship, ASPE (2024)</a></span></li><li><svg class="medal" viewBox="0 0 24 24" aria-hidden="true"><polygon points="8,3 11,3 12.6,11 9.2,12" fill="#8fcdd9"/><polygon points="16,3 13,3 11.4,11 14.8,12" fill="#8fcdd9"/><circle cx="12" cy="15.5" r="6.2" fill="#0e7490"/><path d="M12 11.5 L12.999 14.125 L15.804 14.264 L13.617 16.025 L14.351 18.736 L12 17.2 L9.649 18.736 L10.383 16.025 L8.196 14.264 L11.001 14.125 Z" fill="#fff"/></svg><span>Young Research Award, ICPE 2024, Japan</span></li><li><svg class="medal" viewBox="0 0 24 24" aria-hidden="true"><polygon points="8,3 11,3 12.6,11 9.2,12" fill="#8fcdd9"/><polygon points="16,3 13,3 11.4,11 14.8,12" fill="#8fcdd9"/><circle cx="12" cy="15.5" r="6.2" fill="#0e7490"/><path d="M12 11.5 L12.999 14.125 L15.804 14.264 L13.617 16.025 L14.351 18.736 L12 17.2 L9.649 18.736 L10.383 16.025 L8.196 14.264 L11.001 14.125 Z" fill="#fff"/></svg><span>Co-inventor on a pending patent for machine-tool control, filed with an industrial partner (2025)</span></li><li><svg class="medal" viewBox="0 0 24 24" aria-hidden="true"><polygon points="8,3 11,3 12.6,11 9.2,12" fill="#8fcdd9"/><polygon points="16,3 13,3 11.4,11 14.8,12" fill="#8fcdd9"/><circle cx="12" cy="15.5" r="6.2" fill="#0e7490"/><path d="M12 11.5 L12.999 14.125 L15.804 14.264 L13.617 16.025 L14.351 18.736 L12 17.2 L9.649 18.736 L10.383 16.025 L8.196 14.264 L11.001 14.125 Z" fill="#fff"/></svg><span>Publications in CIRP Annals, CIRP JMST, ASME JMSE, and Manufacturing Letters</span></li></ul><div class="awards"><figure><img src="/images/ASPE2024award.png" alt=""><figcaption>Thomas A. Dow Scholarship, ASPE 2024</figcaption></figure><figure><img src="/images/ICPE2024award.png" alt=""><figcaption>Young Research Award, ICPE 2024 (Sendai, Japan)</figcaption></figure><figure><img src="/images/Rank3rd.png" alt=""><figcaption>Ranked 3rd in department, Control &amp; Automation Eng., ITU</figcaption></figure></div></div></section>
+</main>
+
+<script>
+(function(){
+ var svg=document.getElementById('vibe'); if(!svg){return;}
+ var $=function(id){return document.getElementById(id);};
+ var l1=$('l1'),l2=$('l2'),jel=$('jel'),jwr=$('jwr'),grip=$('grip'),hblk=$('hblk');
+ var lgrp=$('lgrp'),lb=[$('lb0'),$('lb1'),$('lb2'),$('lb3')],rb0=$('rb0'),rb1=$('rb1');
+ var pU=$('pU'),pC=$('pC'),lblU=$('lblU'),lblC=$('lblC'),vtitle=$('vtitle');
+ var S={x:240,y:150}, L1=84, L2=74, D2R=Math.PI/180;
+ var T1=45, T2=30, SS=30, vibSec=2.0;
+ var Au=7.0,tcU=0.90,fU=3.6, Ac=1.40,tcC=0.22,fC=4.0, VK=0.95, TR=0.07;
+ var PXL=86,PXR=452,PY=265,PSC=2.6;
+ var segs=[['feed1',1100],['pvib1',1300],['move1',1100],['lvib1',2000],['adjust',3000],['return',1100],['pvib2',1000],['move2',1100],['lvib2',2000],['hold',900]];
+ var NM=segs.map(function(s){return s[0];});
+ var starts=[],total=0; for(var i=0;i<segs.length;i++){starts.push(total); total+=segs[i][1];}
+ function lerp(a,b,t){return a+(b-a)*t;}
+ function ease(t){return t<0.5?2*t*t:1-Math.pow(-2*t+2,2)/2;}
+ function fk(t1,t2){var ex=S.x+L1*Math.sin(t1*D2R),ey=S.y-L1*Math.cos(t1*D2R);return {el:{x:ex,y:ey},wr:{x:ex+L2*Math.sin(t2*D2R),y:ey+L2*Math.cos(t2*D2R)}};}
+ function U(t){return Au*Math.exp(-t/tcU)*Math.sin(2*Math.PI*fU*t)*Math.min(1,t/TR);}
+ function C(t){return Ac*Math.exp(-t/tcC)*Math.sin(2*Math.PI*fC*t)*Math.min(1,t/TR);}
+ function px(t){return PXL+(t/vibSec)*(PXR-PXL);}
+ function py(o){return PY-o*PSC;}
+ function curve(fn,tmax){var s='',st=vibSec/140;for(var t=0;t<=tmax+1e-6;t+=st){s+=px(t).toFixed(1)+','+py(fn(t)).toFixed(1)+' ';}return s;}
+ function setLink(el,A,Cp){var dx=Cp.x-A.x,dy=Cp.y-A.y;el.setAttribute('width',Math.hypot(dx,dy).toFixed(1));el.setAttribute('transform','translate('+A.x.toFixed(1)+' '+A.y.toFixed(1)+') rotate('+(Math.atan2(dy,dx)*180/Math.PI).toFixed(2)+')');}
+ function op(el,o){el.setAttribute('opacity',o);}
+ // draw planned-path (actual swept wrist trajectory)
+  function update(el){
+   var idx=segs.length-1; for(var i=0;i<segs.length;i++){ if(el<starts[i]+segs[i][1]){idx=i;break;} }
+   var nm=NM[idx], p=(el-starts[idx])/segs[idx][1]; if(p<0)p=0; if(p>1)p=1;
+   var t1,t2,carry=false,off=0,vplace=false,vmit=false;
+   if(nm==='feed1'){var s=1-ease(p);t1=lerp(-T1,T1,s);t2=lerp(-T2,T2,s);}
+   else if(nm==='pvib1'){off=-U(p*vibSec);t1=-T1;t2=-T2;carry=(p>0.92);}
+   else if(nm==='move1'){t1=lerp(-T1,T1,ease(p));t2=lerp(-T2,T2,ease(p));carry=true;}
+   else if(nm==='lvib1'){off=U(p*vibSec);t1=T1;t2=T2;carry=(p<0.9);vplace=true;}
+   else if(nm==='adjust'){t1=T1;t2=T2;}
+   else if(nm==='return'){var s=1-ease(p);t1=lerp(-T1,T1,s);t2=lerp(-T2,T2,s);}
+   else if(nm==='pvib2'){off=-C(p*vibSec);t1=-T1;t2=-T2;carry=(p>0.9);}
+   else if(nm==='move2'){t1=lerp(-T1,T1,ease(p));t2=lerp(-T2,T2,ease(p));carry=true;}
+   else if(nm==='lvib2'){off=C(p*vibSec);t1=T1;t2=T2;carry=(p<0.9);vplace=true;vmit=true;}
+   else {t1=T1;t2=T2;}
+   // title
+   var capT=(idx<=3)?'Uncontrolled vibration':(idx===4?'Learning-based controller adjustment':'Mitigated vibration');
+   if(vtitle.textContent!==capT) vtitle.textContent=capT;
+   // arm (forearm joint carries the vibration)
+   var k=fk(t1, t2 + VK*off);
+   setLink(l1,S,k.el); setLink(l2,k.el,k.wr);
+   jel.setAttribute('cx',k.el.x.toFixed(1)); jel.setAttribute('cy',k.el.y.toFixed(1));
+   jwr.setAttribute('cx',k.wr.x.toFixed(1)); jwr.setAttribute('cy',k.wr.y.toFixed(1));
+   var fA=Math.atan2(k.wr.y-k.el.y,k.wr.x-k.el.x);
+   grip.setAttribute('transform','translate('+k.wr.x.toFixed(1)+' '+k.wr.y.toFixed(1)+') rotate('+(fA*180/Math.PI).toFixed(1)+')');
+   if(carry){ op(hblk,1); hblk.setAttribute('x',(k.wr.x+11*Math.cos(fA)-7.5).toFixed(1)); hblk.setAttribute('y',(k.wr.y+11*Math.sin(fA)-8).toFixed(1)); } else op(hblk,0);
+   // left feed + blocks
+   var shift = (nm==='feed1')? SS*ease(p) : (idx<=4? SS : (nm==='return'? SS+SS*ease(p) : 2*SS));
+   lgrp.setAttribute('transform','translate('+shift.toFixed(1)+' 0)');
+   var b0gone = idx>1 || (nm==='pvib1' && p>0.92);
+   var b1gone = idx>6 || (nm==='pvib2' && p>0.9);
+   op(lb[0], b0gone?0:1); op(lb[1], b1gone?0:1); op(lb[2],1); op(lb[3],1);
+   // right conveyor: part 1 placed, then runs right to clear the drop before part 2
+   var rel1=starts[3]+segs[3][1]; // end of lvib1
+   var r0vis = el>=rel1 || (nm==='lvib1'&&p>=0.9);
+   op(rb0, r0vis?1:0);
+   var r0x = 336 + 0.013*Math.max(0, el-rel1); if(r0x>402)r0x=402;
+   rb0.setAttribute('x',(r0x-7.5).toFixed(1));
+   var rel2=starts[8]+segs[8][1];
+   op(rb1, (el>=rel2||(nm==='lvib2'&&p>=0.9))?1:0); rb1.setAttribute('x',(336-7.5).toFixed(1));
+   // plot (placing only)
+   if(idx<3){ pU.setAttribute('points',''); pC.setAttribute('points',''); op(lblU,0); op(lblC,0); pU.setAttribute('stroke','#222831'); }
+   else if(nm==='lvib1'){ pU.setAttribute('stroke','#222831'); pU.setAttribute('points',curve(U,p*vibSec)); pC.setAttribute('points',''); op(lblU,1); op(lblC,0); }
+   else if(idx<8){ pU.setAttribute('stroke','#222831'); pU.setAttribute('points',curve(U,vibSec)); pC.setAttribute('points',''); op(lblU,1); op(lblC,0); }
+   else if(nm==='lvib2'){ pU.setAttribute('stroke','#9aa3aa'); pU.setAttribute('points',curve(U,vibSec)); pC.setAttribute('points',curve(C,p*vibSec)); op(lblU,1); op(lblC,1); }
+   else { pU.setAttribute('stroke','#9aa3aa'); pU.setAttribute('points',curve(U,vibSec)); pC.setAttribute('points',curve(C,vibSec)); op(lblU,1); op(lblC,1); }
+ }
+ var t0=null, raf=(typeof requestAnimationFrame!=='undefined')?requestAnimationFrame:function(cb){return setTimeout(function(){cb(Date.now());},16);};
+ function loop(now){ if(t0===null)t0=now; update((now-t0)%total); raf(loop); }
+ raf(loop);
+})();
+</script>
+
+<footer><div class="wrap foot-in">
+  <div class="foot-links">
+    <a href="mailto:kaan.bahtiyar@outlook.com">Email</a>
+    <a href="https://scholar.google.com/citations?user=C0g9DXQAAAAJ&hl=en">Google Scholar</a>
+    <a href="https://orcid.org/0000-0002-5250-4468">ORCID</a>
+    <a href="https://www.linkedin.com/in/kaanbahtiyar">LinkedIn</a>
+    <a href="/cv.html">CV</a>
+  </div>
+  <div class="foot-note">&copy; 2026 Kaan Bahtiyar &middot; Corvallis, OR</div>
+</div></footer>
+</body></html>

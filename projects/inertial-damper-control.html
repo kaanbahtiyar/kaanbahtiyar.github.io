@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Active inertial damper control for precision machine tools, Kaan Bahtiyar</title>
+<meta name="description" content="Learning-based feedforward control of an active inertial damper that suppresses transient vibration within actuator stroke and force limits, taking error from 12 um to 1.6 um.">
+<meta property="og:title" content="Active inertial damper control for precision machine tools, Kaan Bahtiyar">
+<meta property="og:description" content="Learning-based feedforward control of an active inertial damper that suppresses transient vibration within actuator stroke and force limits, taking error from 12 um to 1.6 um.">
+<meta property="og:image" content="/images/profilekaan.png">
+<link rel="icon" type="image/svg+xml" href="/images/favicon.svg">
+<link rel="icon" href="/images/favicon.ico">
+<link rel="stylesheet" href="/assets/style.css">
+</head>
+<body>
+<nav class="nav"><div class="wrap nav-in">
+  <a class="brand" href="/index.html"><span class="dot"></span>Kaan Bahtiyar</a>
+  <div class="nav-links">
+    <a href="/index.html">Home</a>
+    <a href="/projects.html" class="active">Projects</a>
+    <a href="/publications.html">Publications</a>
+    <a href="/cv.html">CV</a>
+  </div>
+</div></nav>
+<main><div class="wrap">
+  <div class="crumb"><a href="/projects.html">Projects</a> / Active inertial damper control for precision machine tools</div>
+  <h1 class="proj-title">Active inertial damper control for precision machine tools</h1>
+  <div class="result"><div class="num">87%<small>&#8595;</small></div><div class="txt"><strong>Peak positioning error cut from 12 um to 1.6 um in about 10 learning iterations</strong>, within tighter actuator stroke and force limits than conventional damping.</div></div>
+  <div class="hw"><span class="eyebrow2">Hardware &amp; instrumentation</span><div class="hw-chips"><span>Feed-drive testbed</span><span>Voice-coil &amp; linear-motor dampers</span><span>Linear/rotary encoders</span><span>Displacement sensor</span><span>MATLAB/Simulink RTI</span></div></div>
+  <div class="prose">
+    <h2>Overview</h2><p>Fast point-to-point motion excites structural modes of machine tools and robots, producing transient and residual vibration and overshoot that limit how aggressively you can move while holding precision. Feedback-only damping cannot fully remove the initial overshoot.</p>
+    <h2>Approach</h2><p>The damper applies a <strong>task-specific, pre-scheduled feedforward</strong> signal, learned from measured vibration over repeated motions, on top of its feedback controller.</p><p>The feedforward is parameterized with <strong>filtered B-spline basis functions</strong>: few control points, smooth signals, fast optimization, with <strong>actuator stroke and force constraints</strong> enforced during learning.</p><p>It needs no tight integration with the host NC, which keeps it practical to deploy.</p>
+    <h2>What is novel</h2><ul><li>Pre-scheduled, task-specific feedforward eliminates overshoot a feedback-only damper leaves behind.</li><li>Low-dimensional B-spline parameterization makes tuning fast and repeatable.</li><li>Constraint-aware optimization enables more compact damper hardware.</li></ul>
+    
+    <h2>Results</h2><p>The learned feedforward converges in about <strong>10 iterations</strong> and reduces peak positioning error by <strong>87% (12 um to 1.6 um)</strong> while respecting force and stroke limits, reaching the plus/minus 2 um band immediately instead of waiting out a settle. Recognized with the Thomas A. Dow Student Scholarship (ASPE).</p>
+    <h2>Related publications</h2><ul class="relpubs"><li><a href="https://www.sciencedirect.com/science/article/abs/pii/S0007850624000210">Data-driven feedforward control of inertial dampers for accuracy improvement</a><div class="v">CIRP Annals &middot; 2024</div></li><li><a href="https://www.proceedings.com/79023.html">Data-driven feedforward control of active inertial dampers for high-performance vibration mitigation</a><div class="v">39th Annual Meeting of the ASPE &middot; 2024</div></li></ul>
+    <h2>Collaborators</h2><div class="collab"><span>Dr. Burak Sencer (advisor)</span><span>Dr. Xavier Beudaert</span></div>
+  </div>
+  <p style="margin:2.2rem 0;"><a href="/projects.html">&larr; All projects</a></p>
+</div></main>
+<footer><div class="wrap foot-in">
+  <div class="foot-links">
+    <a href="mailto:kaan.bahtiyar@outlook.com">Email</a>
+    <a href="https://scholar.google.com/citations?user=C0g9DXQAAAAJ&hl=en">Google Scholar</a>
+    <a href="https://orcid.org/0000-0002-5250-4468">ORCID</a>
+    <a href="https://www.linkedin.com/in/kaanbahtiyar">LinkedIn</a>
+    <a href="/cv.html">CV</a>
+  </div>
+  <div class="foot-note">&copy; 2026 Kaan Bahtiyar &middot; Corvallis, OR</div>
+</div></footer>
+</body></html>

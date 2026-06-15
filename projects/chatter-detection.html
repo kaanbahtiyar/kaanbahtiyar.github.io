@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Chatter detection and monitoring in milling, Kaan Bahtiyar</title>
+<meta name="description" content="Lightweight time-domain and PCA-based algorithms that flag chatter early at low computational cost, the sensing layer behind the closed-loop spindle controller.">
+<meta property="og:title" content="Chatter detection and monitoring in milling, Kaan Bahtiyar">
+<meta property="og:description" content="Lightweight time-domain and PCA-based algorithms that flag chatter early at low computational cost, the sensing layer behind the closed-loop spindle controller.">
+<meta property="og:image" content="/images/profilekaan.png">
+<link rel="icon" type="image/svg+xml" href="/images/favicon.svg">
+<link rel="icon" href="/images/favicon.ico">
+<link rel="stylesheet" href="/assets/style.css">
+</head>
+<body>
+<nav class="nav"><div class="wrap nav-in">
+  <a class="brand" href="/index.html"><span class="dot"></span>Kaan Bahtiyar</a>
+  <div class="nav-links">
+    <a href="/index.html">Home</a>
+    <a href="/projects.html" class="active">Projects</a>
+    <a href="/publications.html">Publications</a>
+    <a href="/cv.html">CV</a>
+  </div>
+</div></nav>
+<main><div class="wrap">
+  <div class="crumb"><a href="/projects.html">Projects</a> / Chatter detection and monitoring in milling</div>
+  <h1 class="proj-title">Chatter detection and monitoring in milling</h1>
+  <div class="result"><div class="num">Real-time</div><div class="txt"><strong>Early, low-cost chatter detection</strong> from lightweight time-domain and PCA algorithms, light enough for embedded use and the sensing front-end for closed-loop spindle control.</div></div>
+  <div class="hw"><span class="eyebrow2">Hardware &amp; instrumentation</span><div class="hw-chips"><span>3-axis CNC machine tool</span><span>Accelerometers</span><span>Dynamometer</span><span>dSPACE real-time I/O</span><span>MATLAB/Simulink RTI</span><span>Custom G-code</span></div></div>
+  <div class="prose">
+    <h2>Overview</h2><p>Chatter is a self-excited (regenerative) instability that grows fast in milling, causing loud vibration, surface damage, tool wear, and scrap. Simple amplitude thresholds are unreliable because forced (tooth-passing) vibration masks chatter and thresholds do not transfer across tools and machines. Early, robust detection is the prerequisite for any mitigation.</p>
+    <h2>Approach</h2><p><strong>Method 1, spectral-power separation:</strong> a moving window tracks total power (moving variance) and forced-vibration power (moving FFT at tooth-passing harmonics); their ratio rises when broadband chatter emerges.</p><p><strong>Method 2, PCA / subspace features:</strong> a windowed (Hankel-style) data matrix feeds a PCA that extracts dominant components into a compact power-ratio indicator, optionally smoothed over time, which is more robust across operating changes.</p><p>A power ratio above 0.5 flags chatter onset.</p>
+    <h2>What is novel</h2><ul><li>Separates chatter growth from forced harmonics rather than thresholding raw amplitude.</li><li>PCA features reduce dependence on a single hand-tuned threshold for robustness.</li><li>Computationally light enough for real-time, embedded monitoring.</li></ul>
+    <div class="videowrap"><video controls preload="metadata" playsinline poster="/assets/video/video_chatter.jpg"><source src="/assets/video/video_chatter.mp4" type="video/mp4"></video><div class="cap">Milling test on a tapered workpiece: as the depth of cut increases along the path, the cut goes from stable into chatter.</div></div>
+    <h2>Results</h2><p>On a tapered workpiece that transitions from stable to unstable cutting, both indicators stay low while cutting is stable and rise clearly at chatter onset. The efficient spectral method is fastest but can false-alarm on flexible parts; the PCA method is more robust.</p>
+    <h2>Related publications</h2><ul class="relpubs"><li><a href="https://www.sciencedirect.com/science/article/pii/S2213846322000803">Lightweight and robust chatter detection algorithms for milling</a><div class="v">Manufacturing Letters (NAMRC 50 Special Issue) &middot; 2022</div></li><li><a href="https://www.proceedings.com/62376.html">Time-domain based early detection of chatter vibrations</a><div class="v">36th Annual Meeting of the ASPE &middot; 2021</div></li></ul>
+    <h2>Collaborators</h2><div class="collab"><span>Dr. Burak Sencer (advisor)</span></div>
+  </div>
+  <p style="margin:2.2rem 0;"><a href="/projects.html">&larr; All projects</a></p>
+</div></main>
+<footer><div class="wrap foot-in">
+  <div class="foot-links">
+    <a href="mailto:kaan.bahtiyar@outlook.com">Email</a>
+    <a href="https://scholar.google.com/citations?user=C0g9DXQAAAAJ&hl=en">Google Scholar</a>
+    <a href="https://orcid.org/0000-0002-5250-4468">ORCID</a>
+    <a href="https://www.linkedin.com/in/kaanbahtiyar">LinkedIn</a>
+    <a href="/cv.html">CV</a>
+  </div>
+  <div class="foot-note">&copy; 2026 Kaan Bahtiyar &middot; Corvallis, OR</div>
+</div></footer>
+</body></html>

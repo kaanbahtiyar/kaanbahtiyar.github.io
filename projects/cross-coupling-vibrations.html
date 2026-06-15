@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Cross-coupled inertial vibration compensation, Kaan Bahtiyar</title>
+<meta name="description" content="Trajectory pre-filtering that cancels cross-axis coupling on a 3-axis machining center, driving residual Z motion from 6 um down to about 1.2 um.">
+<meta property="og:title" content="Cross-coupled inertial vibration compensation, Kaan Bahtiyar">
+<meta property="og:description" content="Trajectory pre-filtering that cancels cross-axis coupling on a 3-axis machining center, driving residual Z motion from 6 um down to about 1.2 um.">
+<meta property="og:image" content="/images/profilekaan.png">
+<link rel="icon" type="image/svg+xml" href="/images/favicon.svg">
+<link rel="icon" href="/images/favicon.ico">
+<link rel="stylesheet" href="/assets/style.css">
+</head>
+<body>
+<nav class="nav"><div class="wrap nav-in">
+  <a class="brand" href="/index.html"><span class="dot"></span>Kaan Bahtiyar</a>
+  <div class="nav-links">
+    <a href="/index.html">Home</a>
+    <a href="/projects.html" class="active">Projects</a>
+    <a href="/publications.html">Publications</a>
+    <a href="/cv.html">CV</a>
+  </div>
+</div></nav>
+<main><div class="wrap">
+  <div class="crumb"><a href="/projects.html">Projects</a> / Cross-coupled inertial vibration compensation</div>
+  <h1 class="proj-title">Cross-coupled inertial vibration compensation</h1>
+  <div class="result"><div class="num">80%<small>&#8595;</small></div><div class="txt"><strong>Axis-coupled Z vibration reduced from 6 um to about 1.2 um (5x lower)</strong> on a vertical machining center, while enabling more aggressive axis acceleration for higher throughput.</div></div>
+  <div class="hw"><span class="eyebrow2">Hardware &amp; instrumentation</span><div class="hw-chips"><span>3-axis vertical machining center</span><span>Accelerometers</span><span>Laser encoder</span><span>dSPACE real-time I/O</span><span>MATLAB/Simulink RTI</span></div></div>
+  <div class="prose">
+    <h2>Overview</h2><p>During high-acceleration feed moves, inertial loads excite structural modes and create axis-coupled vibration: motion in one axis (say Y) induces tool-tip vibration in another (Z). Even in non-cutting moves this degrades surface finish and limits how hard you can accelerate the axes, which directly caps productivity.</p>
+    <h2>Approach</h2><p>A <strong>cross-talk dynamics compensator (CTDC)</strong> generates a synchronized Z-axis command from the commanded X/Y motion, shaping it so the net Z tool-tip motion cancels the coupling.</p><p>Design is two-stage: a frequency-domain fit gives an initial compensator around the excited resonance, then an <strong>iterative learning</strong> pass refines it from measured data so performance does not depend on a perfect FRF.</p><p>It works as a trajectory-level pre-filter, so it drops in alongside the existing servo loops and CNC execution.</p>
+    <h2>What is novel</h2><ul><li>Cancels cross-axis coupling explicitly rather than just shaping a single axis.</li><li>Combines simple identification with machine-in-the-loop tuning for robustness to model error.</li><li>Lets the machine run more aggressive acceleration without sacrificing finish.</li></ul>
+    
+    <h2>Results</h2><p>Peak coupled Z-direction error fell from <strong>6 um to 1.2 um, about 80% (5x lower)</strong> under the tested Y-axis motion, while allowing shorter acceleration time constants for greater throughput. The work received the ICPE 2024 Young Research Award.</p>
+    <h2>Related publications</h2><ul class="relpubs"><li>Compensation of axis-coupled inertial forced vibrations using machine tool feed drives<div class="v">ICPE2024 (20th Int. Conf. on Precision Engineering) &middot; 2024</div></li></ul>
+    <h2>Collaborators</h2><div class="collab"><span>Dr. Burak Sencer (advisor)</span><span>Dr. Eiji Shamoto</span></div>
+  </div>
+  <p style="margin:2.2rem 0;"><a href="/projects.html">&larr; All projects</a></p>
+</div></main>
+<footer><div class="wrap foot-in">
+  <div class="foot-links">
+    <a href="mailto:kaan.bahtiyar@outlook.com">Email</a>
+    <a href="https://scholar.google.com/citations?user=C0g9DXQAAAAJ&hl=en">Google Scholar</a>
+    <a href="https://orcid.org/0000-0002-5250-4468">ORCID</a>
+    <a href="https://www.linkedin.com/in/kaanbahtiyar">LinkedIn</a>
+    <a href="/cv.html">CV</a>
+  </div>
+  <div class="foot-note">&copy; 2026 Kaan Bahtiyar &middot; Corvallis, OR</div>
+</div></footer>
+</body></html>
