@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Active inertial damper control, Kaan Bahtiyar</title>
+<meta name="description" content="Learning-based feedforward control of an active inertial damper that removes transient vibration within actuator stroke and force limits. Peak positioning error cut from 12 um to 1.6 um (87%) in about 10 learning iterations on a feed-drive testbed. Published in CIRP Annals.">
+<meta property="og:title" content="Active inertial damper control, Kaan Bahtiyar">
+<meta property="og:description" content="Learning-based feedforward control of an active inertial damper that removes transient vibration within actuator stroke and force limits. Peak positioning error cut from 12 um to 1.6 um (87%) in about 10 learning iterations on a feed-drive testbed. Published in CIRP Annals.">
+<meta property="og:image" content="/images/profilekaan.png">
+<link rel="icon" type="image/svg+xml" href="/images/favicon.svg">
+<link rel="icon" href="/images/favicon.ico">
+<link rel="stylesheet" href="/assets/style.css">
+</head>
+<body>
+<nav class="nav"><div class="wrap nav-in">
+  <a class="brand" href="/index.html"><span class="dot"></span>Kaan</a>
+  <div class="nav-links">
+    <a href="/index.html">Home</a>
+    <a href="/projects.html" class="active">Projects</a>
+    <a href="/publications.html">Publications</a>
+    <a href="/cv.html">CV</a>
+  </div>
+</div></nav>
+<main><div class="wrap">
+  <div class="crumb"><a href="/projects.html">Projects</a> / Active inertial damper control</div>
+  <h1 class="proj-title">Active inertial damper control</h1>
+  <div class="result"><div class="num">87%<small>&#8595;</small></div><div class="txt"><strong>Peak positioning error cut from 12&nbsp;&micro;m to 1.6&nbsp;&micro;m in about 10 learning iterations</strong>, within tighter actuator stroke and force limits than conventional damping.</div></div>
+  <div class="hw"><span class="eyebrow2"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="3"></circle><path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1 0 2.83 2 2 0 0 1-2.83 0l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-2 2 2 2 0 0 1-2-2v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83 0 2 2 0 0 1 0-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1-2-2 2 2 0 0 1 2-2h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 0-2.83 2 2 0 0 1 2.83 0l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 2-2 2 2 0 0 1 2 2v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 0 2 2 0 0 1 0 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 2 2 2 2 0 0 1-2 2h-.09a1.65 1.65 0 0 0-1.51 1z"></path></svg>Hardware &amp; instrumentation</span><div class="hw-chips"><span>Feed-drive testbed</span><span>Voice-coil &amp;amp; linear-motor dampers</span><span>Linear/rotary encoders</span><span>Displacement sensor</span><span>MATLAB/Simulink real-time</span></div></div>
+  <div class="prose">
+    <h2>Overview</h2>
+    <p>Fast point-to-point motion excites the structural modes of machine tools and industrial robots, producing overshoot and residual vibration that force a choice between speed and precision: either move slowly, or wait out the settling. Active inertial dampers (a reaction mass on a voice-coil or linear-motor actuator) help, but a feedback-only damper reacts <em>after</em> vibration appears &mdash; it can never remove the initial overshoot, and pushing its gains runs the compact actuator into stroke and force limits.</p>
+<figure class="fig mid" style="margin-left:auto;margin-right:auto;"><img src="/images/projects/damper_overview.png" alt="System concept: the motion structure carries an active inertial damper. A learned feedforward signal (blue) is added on top of the damper’s feedback controller to act before vibration develops." loading="lazy"><figcaption class="cap">System concept: the motion structure carries an active inertial damper. A learned feedforward signal (blue) is added on top of the damper’s feedback controller to act before vibration develops.</figcaption></figure>
+    <h2>Approach</h2>
+    <p>The damper applies a <strong>task-specific, pre-scheduled feedforward</strong> force profile &mdash; learned from measured vibration over repeated executions of the motion &mdash; on top of its feedback controller. Since production moves repeat, the learned profile can act at the exact instant the excitation occurs, eliminating vibration the feedback loop would only react to.</p>
+    <p>The feedforward is parameterized with <strong>filtered B-spline basis functions</strong>: a handful of control points give smooth actuator signals and a small, fast optimization, and <strong>actuator stroke and force constraints are enforced directly inside the learning problem</strong> &mdash; so the solution is always realizable by compact damper hardware. The scheme needs no tight integration with the host NC, which keeps deployment practical.</p>
+<figure class="fig mid" style="margin-left:auto;margin-right:auto;"><img src="/images/projects/damper_learning.png" alt="Learning loop: each execution’s measured vibration updates the feedforward compensation signal; over iterations the residual vibration shrinks toward the noise floor." loading="lazy"><figcaption class="cap">Learning loop: each execution’s measured vibration updates the feedforward compensation signal; over iterations the residual vibration shrinks toward the noise floor.</figcaption></figure>
+    <h2>What is novel</h2>
+    <ul>
+      <li>Pre-scheduled, task-specific feedforward removes the initial overshoot that feedback-only damping fundamentally cannot.</li>
+      <li>Low-dimensional B-spline parameterization makes learning fast, smooth, and repeatable.</li>
+      <li>Constraint-aware optimization keeps commands within stroke/force limits &mdash; enabling smaller, cheaper damper hardware for the same performance.</li>
+    </ul>
+    <h2>Results</h2>
+    <p>On a feed-drive testbed, the learned feedforward converged in about <strong>10 iterations</strong> and reduced peak positioning error by <strong>87% (12&nbsp;&micro;m to 1.6&nbsp;&micro;m)</strong>, reaching the &plusmn;2&nbsp;&micro;m tolerance band essentially immediately instead of waiting out a settling transient &mdash; while a conventional velocity-feedback damper repeatedly saturated its stroke and force limits on the same move. Recognized with the <strong>Thomas A. Dow Student Scholarship</strong> (ASPE, 2024).</p>
+<figure class="fig"><img src="/images/projects/damper_result.png" alt="Measured comparison: (a) the table settles immediately with the proposed method (blue) versus large decaying oscillation in open loop (gray) and with conventional velocity feedback (red); (b, c) the conventional method hits the damper’s stroke and force limits, while the learned feedforward stays within them." loading="lazy"><figcaption class="cap">Measured comparison: (a) the table settles immediately with the proposed method (blue) versus large decaying oscillation in open loop (gray) and with conventional velocity feedback (red); (b, c) the conventional method hits the damper’s stroke and force limits, while the learned feedforward stays within them.</figcaption></figure>
+    <h2>Related publications</h2><ul class="relpubs"><li><a href="https://www.sciencedirect.com/science/article/abs/pii/S0007850624000210">Data-driven feedforward control of inertial dampers for accuracy improvement</a><div class="v">CIRP Annals &middot; 2024</div></li><li><a href="https://www.proceedings.com/79023.html">Data-driven feedforward control of active inertial dampers for high-performance vibration mitigation</a><div class="v">39th Annual Meeting of the ASPE &middot; 2024</div></li></ul>
+    <h2>Collaborators</h2><div class="collab"><a href="https://scholar.google.com/citations?user=SGQqZeUAAAAJ&hl=en&oi=ao" target="_blank" rel="noopener">Dr. Burak Sencer (advisor)</a><a href="https://scholar.google.com/citations?user=9HPn3U8AAAAJ&hl=en&oi=ao" target="_blank" rel="noopener">Dr. Xavier Beudaert</a></div>
+  </div>
+  <p style="margin:2.2rem 0;"><a href="/projects.html">&larr; All projects</a></p>
+</div></main>
+<footer><div class="wrap foot-in">
+  <div class="foot-links">
+    <a href="mailto:kaan.bahtiyar@outlook.com">Email</a>
+    <a href="https://scholar.google.com/citations?user=C0g9DXQAAAAJ&hl=en">Google Scholar</a>
+    <a href="https://orcid.org/0000-0002-5250-4468">ORCID</a>
+    <a href="https://www.linkedin.com/in/kaanbahtiyar">LinkedIn</a>
+    <a href="/cv.html">CV</a>
+  </div>
+  <div class="foot-note">&copy; 2026 Kaan Bahtiyar &middot; Corvallis, OR</div>
+</div></footer>
+</body></html>

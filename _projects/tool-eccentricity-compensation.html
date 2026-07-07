@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Active runout control, Kaan Bahtiyar</title>
+<meta name="description" content="Adaptive compensation of milling tool runout/eccentricity using the machine&#x27;s own feed drives: a spindle-synchronized micro-circular trajectory is tuned on-machine from force or vibration feedback via convex optimization. Peak cutting-force variation cut from 101 N to 14 N (86%) in 2-3 iterations, with no added hardware. Patent pending.">
+<meta property="og:title" content="Active runout control, Kaan Bahtiyar">
+<meta property="og:description" content="Adaptive compensation of milling tool runout/eccentricity using the machine&#x27;s own feed drives: a spindle-synchronized micro-circular trajectory is tuned on-machine from force or vibration feedback via convex optimization. Peak cutting-force variation cut from 101 N to 14 N (86%) in 2-3 iterations, with no added hardware. Patent pending.">
+<meta property="og:image" content="/images/profilekaan.png">
+<link rel="icon" type="image/svg+xml" href="/images/favicon.svg">
+<link rel="icon" href="/images/favicon.ico">
+<link rel="stylesheet" href="/assets/style.css">
+</head>
+<body>
+<nav class="nav"><div class="wrap nav-in">
+  <a class="brand" href="/index.html"><span class="dot"></span>Kaan</a>
+  <div class="nav-links">
+    <a href="/index.html">Home</a>
+    <a href="/projects.html" class="active">Projects</a>
+    <a href="/publications.html">Publications</a>
+    <a href="/cv.html">CV</a>
+  </div>
+</div></nav>
+<main><div class="wrap">
+  <div class="crumb"><a href="/projects.html">Projects</a> / Active runout control</div>
+  <h1 class="proj-title">Active runout control</h1>
+  <div class="result"><div class="num">86%<small>&#8595;</small></div><div class="txt"><strong>Peak cutting-force variation cut from 101&nbsp;N to 14&nbsp;N</strong> on a 3-axis CNC, converging in 2&ndash;3 update iterations from force feedback alone &mdash; using the machine’s own feed drives, with no dedicated hardware.</div></div>
+  <div class="hw"><span class="eyebrow2"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="3"></circle><path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1 0 2.83 2 2 0 0 1-2.83 0l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-2 2 2 2 0 0 1-2-2v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83 0 2 2 0 0 1 0-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1-2-2 2 2 0 0 1 2-2h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 0-2.83 2 2 0 0 1 2.83 0l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 2-2 2 2 0 0 1 2 2v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 0 2 2 0 0 1 0 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 2 2 2 2 0 0 1-2 2h-.09a1.65 1.65 0 0 0-1.51 1z"></path></svg>Hardware &amp; instrumentation</span><div class="hw-chips"><span>3-axis CNC machine tool</span><span>Dynamometer</span><span>Accelerometers</span><span>Fiber-optic edge sensor</span><span>Servo position loop at 5 kHz</span><span>DAQ real-time I/O</span><span>MATLAB/Simulink real-time</span></div></div>
+  <div class="prose">
+    <h2>Overview</h2>
+    <p>Tool eccentricity and cutter runout offset the tool's geometric center from its axis of rotation, so each cutting edge removes a slightly different chip. That once-per-revolution force imbalance roughens the surface finish, concentrates wear on the most-loaded tooth, and leads to premature tool failure &mdash; a costly problem in finishing, and in low-speed cutting of hard alloys such as titanium and Inconel. The standard countermeasure, manual dial-gauge tramming during tool setup, is slow, depends on operator skill, and cannot react to thermal drift or wear once the cut starts.</p>
+    <h2>Approach</h2>
+    <p>Kinematically, eccentricity makes the tool center trace a small circle at the spindle rotation frequency. The method cancels it by commanding an equal-and-opposite <strong>micro-circular trajectory through the machine's existing X&ndash;Y feed drives</strong>, injected into the servo position loop at 5&nbsp;kHz on top of the nominal toolpath &mdash; no added actuators, no dedicated hardware.</p>
+<figure class="fig"><img src="/images/projects/ecc_block_diagram.png" alt="Control architecture: a micro-circular compensation trajectory is added to the reference toolpath; force/vibration measurements drive a once-per-revolution optimization that tunes its amplitude and phase." loading="lazy"><figcaption class="cap">Control architecture: a micro-circular compensation trajectory is added to the reference toolpath; force/vibration measurements drive a once-per-revolution optimization that tunes its amplitude and phase.</figcaption></figure>
+    <p>The catch is that feed-drive dynamics distort any injected motion, so an open-loop, pre-calibrated command is unreliable. Instead, the compensation amplitude and phase are tuned <strong>on-machine from force or accelerometer feedback</strong>, by minimizing the spindle-synchronous spectral content that eccentricity produces. The tuning evolved from a fully model-free extremum-seeking scheme to a <strong>convex optimization with Newton-type updates</strong>: the problem's Hessian is constant, so the optimum is unique and convergence is fast and repeatable. A single probing move identifies the drive response, after which the algorithm inherently compensates for feed-drive dynamics &mdash; the practical limit becomes servo torque, not tracking bandwidth, which makes the method portable across machine tools.</p>
+<figure class="fig"><img src="/images/projects/ecc_implementation.png" alt="On-machine implementation: cutting force / vibration feedback is acquired by a DAQ board, and the compensating feed-drive motion commands are generated in real time and sent back to the servo loops." loading="lazy"><figcaption class="cap">On-machine implementation: cutting force / vibration feedback is acquired by a DAQ board, and the compensating feed-drive motion commands are generated in real time and sent back to the servo loops.</figcaption></figure>
+    <h2>What is novel</h2>
+    <ul>
+      <li>Uses the machine's own feed drives &mdash; no dedicated compensation hardware and no offline tramming.</li>
+      <li>Senses eccentricity indirectly from force or vibration spectra; no direct runout measurement is required, and with force feedback the spindle-frequency harmonic alone is sufficient.</li>
+      <li>Convex formulation with a constant Hessian guarantees a unique optimum and converges in 2&ndash;3 updates, robust to setup and phase changes.</li>
+      <li>Designed to live inside the NC: updates are triggered once per revolution, which a spindle encoder already provides. Patent pending with an industrial partner.</li>
+    </ul>
+    <h2>Results</h2>
+    <p>In steel-alloy milling on a 3-axis CNC, force-based tuning converged in as few as <strong>2&ndash;3 iterations (10&ndash;15 spindle revolutions)</strong> and cut the peak cutting-force variation from <strong>101&nbsp;N to 14&nbsp;N &mdash; about 86%</strong>. The behavior was validated with 2-, 3-, and 4-tooth cutters and across spindle speeds; an accelerometer-only variant (no dynamometer on the machine) also converges by including higher harmonics in the cost, in roughly 10 iterations.</p>
+<figure class="fig mid" style="margin-left:auto;margin-right:auto;"><img src="/images/projects/ecc_result.png" alt="Measured cutting forces during a compensation run. Before the controller activates, the once-per-revolution imbalance is visible as uneven force peaks between teeth (left zoom). After convergence, every tooth carries the same chip load and the spindle-frequency force variation is eliminated (right zoom) &amp;mdash; the mechanism behind even tool wear, longer tool life, and better surface finish." loading="lazy"><figcaption class="cap">Measured cutting forces during a compensation run. Before the controller activates, the once-per-revolution imbalance is visible as uneven force peaks between teeth (left zoom). After convergence, every tooth carries the same chip load and the spindle-frequency force variation is eliminated (right zoom) &mdash; the mechanism behind even tool wear, longer tool life, and better surface finish.</figcaption></figure>
+    <p>Because the correction balances the chip load rather than just smoothing a signal, the payoff compounds over a production run: even flank wear across all teeth, fewer premature tool changes, and a finish that no longer carries the once-per-revolution eccentricity pattern.</p>
+    <h2>Related publications</h2><ul class="relpubs"><li><a href="https://asmedigitalcollection.asme.org/manufacturingscience/article/doi/10.1115/1.4071096/1230526/Data-driven-Adaptive-Compensation-of-Tool-Runout">Data-driven adaptive compensation of tool runout in milling via machine tool feed drives</a><div class="v">ASME Journal of Manufacturing Science and Engineering &middot; 2026</div></li><li><a href="https://www.mmscience.eu/journal/issues/december-2025/articles/hsm2025-44832-adaptive-tool-eccentricity-compensation-using-machine-tool-feed-drives">Adaptive tool eccentricity compensation using machine tool feed drives</a><div class="v">MM Science Journal (HSM2025 Special Issue) &middot; 2025</div></li></ul>
+    <h2>Collaborators</h2><div class="collab"><a href="https://scholar.google.com/citations?user=SGQqZeUAAAAJ&hl=en&oi=ao" target="_blank" rel="noopener">Dr. Burak Sencer (advisor)</a><span>Levent Bozcu</span><a href="https://scholar.google.com/citations?user=dtYC4jUAAAAJ&hl=en&oi=ao" target="_blank" rel="noopener">Seyed Mahmood Shantiaeezade</a><span>Ryosuke Ikeda (Mitsubishi Electric)</span><a href="https://scholar.google.com/citations?user=7N_i9RQAAAAJ&hl=en&oi=ao" target="_blank" rel="noopener">Dr. Norikazu Suzuki</a></div>
+  </div>
+  <p style="margin:2.2rem 0;"><a href="/projects.html">&larr; All projects</a></p>
+</div></main>
+<footer><div class="wrap foot-in">
+  <div class="foot-links">
+    <a href="mailto:kaan.bahtiyar@outlook.com">Email</a>
+    <a href="https://scholar.google.com/citations?user=C0g9DXQAAAAJ&hl=en">Google Scholar</a>
+    <a href="https://orcid.org/0000-0002-5250-4468">ORCID</a>
+    <a href="https://www.linkedin.com/in/kaanbahtiyar">LinkedIn</a>
+    <a href="/cv.html">CV</a>
+  </div>
+  <div class="foot-note">&copy; 2026 Kaan Bahtiyar &middot; Corvallis, OR</div>
+</div></footer>
+</body></html>

@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Cross-axis vibration control, Kaan Bahtiyar</title>
+<meta name="description" content="Trajectory pre-filtering that cancels cross-axis structural coupling on a vertical machining center, so Y-table acceleration no longer produces Z tool-tip vibration. Peak coupled Z motion reduced from 6 um to 1.2 um (80%), enabling more aggressive axis acceleration. ICPE 2024 Young Research Award.">
+<meta property="og:title" content="Cross-axis vibration control, Kaan Bahtiyar">
+<meta property="og:description" content="Trajectory pre-filtering that cancels cross-axis structural coupling on a vertical machining center, so Y-table acceleration no longer produces Z tool-tip vibration. Peak coupled Z motion reduced from 6 um to 1.2 um (80%), enabling more aggressive axis acceleration. ICPE 2024 Young Research Award.">
+<meta property="og:image" content="/images/profilekaan.png">
+<link rel="icon" type="image/svg+xml" href="/images/favicon.svg">
+<link rel="icon" href="/images/favicon.ico">
+<link rel="stylesheet" href="/assets/style.css">
+</head>
+<body>
+<nav class="nav"><div class="wrap nav-in">
+  <a class="brand" href="/index.html"><span class="dot"></span>Kaan</a>
+  <div class="nav-links">
+    <a href="/index.html">Home</a>
+    <a href="/projects.html" class="active">Projects</a>
+    <a href="/publications.html">Publications</a>
+    <a href="/cv.html">CV</a>
+  </div>
+</div></nav>
+<main><div class="wrap">
+  <div class="crumb"><a href="/projects.html">Projects</a> / Cross-axis vibration control</div>
+  <h1 class="proj-title">Cross-axis vibration control</h1>
+  <div class="result"><div class="num">80%<small>&#8595;</small></div><div class="txt"><strong>Axis-coupled Z tool-tip vibration reduced from 6&nbsp;&micro;m to about 1.2&nbsp;&micro;m (5&times; lower)</strong> on a vertical machining center, while enabling more aggressive axis acceleration for higher throughput.</div></div>
+  <div class="hw"><span class="eyebrow2"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="3"></circle><path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1 0 2.83 2 2 0 0 1-2.83 0l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-2 2 2 2 0 0 1-2-2v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83 0 2 2 0 0 1 0-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1-2-2 2 2 0 0 1 2-2h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 0-2.83 2 2 0 0 1 2.83 0l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 2-2 2 2 0 0 1 2 2v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 0 2 2 0 0 1 0 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 2 2 2 2 0 0 1-2 2h-.09a1.65 1.65 0 0 0-1.51 1z"></path></svg>Hardware &amp; instrumentation</span><div class="hw-chips"><span>3-axis vertical machining center</span><span>Accelerometers</span><span>Laser encoder</span><span>dSPACE real-time I/O</span><span>MATLAB/Simulink real-time</span></div></div>
+  <div class="prose">
+    <h2>Overview</h2>
+    <p>On a C-frame vertical machining center, a hard acceleration of the table in Y does not stay in Y: the inertial reaction rocks the column, and the rocking mode shows up as <strong>Z-direction vibration at the tool tip</strong> &mdash; even though the Z axis never received a command. The same coupling exists between X and Z. This cross-axis vibration degrades surface finish during cutting moves and forces conservative acceleration limits on non-cutting moves, which directly caps cycle time and throughput.</p>
+<figure class="fig mid" style="margin-left:auto;margin-right:auto;"><img src="/images/projects/crossaxis_animation.gif" alt="The coupling mechanism, animated: a point-to-point Y move of the table rocks the column and produces Z tool-tip vibration; with cross-talk compensation the same move leaves the tip nearly still." loading="lazy"><figcaption class="cap">The coupling mechanism, animated: a point-to-point Y move of the table rocks the column and produces Z tool-tip vibration; with cross-talk compensation the same move leaves the tip nearly still.</figcaption></figure>
+<figure class="fig mid" style="margin-left:auto;margin-right:auto;"><img src="/images/projects/crossaxis_setup.png" alt="Structural modes behind the coupling: the machine’s YZ and XZ rocking modes convert table acceleration in Y (or X) into resultant Z-tip motion." loading="lazy"><figcaption class="cap">Structural modes behind the coupling: the machine’s YZ and XZ rocking modes convert table acceleration in Y (or X) into resultant Z-tip motion.</figcaption></figure>
+    <h2>Approach</h2>
+    <p>A <strong>cross-talk dynamics compensator (CTDC)</strong> generates a small, synchronized Z-axis command from the commanded X/Y motion, shaped so that the commanded Z motion and the structurally induced Z motion cancel at the tool tip.</p>
+    <p>Design is two-stage. A frequency-domain fit around the excited rocking mode gives an initial compensator; a <strong>machine-in-the-loop iterative learning</strong> pass then refines it from measured vibration responses, so final performance does not depend on a perfect frequency-response model. Because the compensator acts as a trajectory-level pre-filter, it drops in ahead of the existing servo loops and CNC execution without touching them.</p>
+    <h2>What is novel</h2>
+    <ul>
+      <li>Cancels cross-axis coupling explicitly, rather than only shaping the commanded axis.</li>
+      <li>Combines a simple identification with machine-in-the-loop learning, making it robust to model error.</li>
+      <li>Lets the machine run shorter acceleration time constants &mdash; more throughput &mdash; without sacrificing finish.</li>
+    </ul>
+    <h2>Results</h2>
+    <p>On a 3-axis vertical machining center, peak coupled Z-direction tool-tip error during Y-axis moves fell from <strong>6&nbsp;&micro;m to about 1.2&nbsp;&micro;m &mdash; an 80% (5&times;) reduction</strong> &mdash; while permitting more aggressive axis acceleration. The work received the <strong>Young Research Award at ICPE 2024</strong> (JSPE, Sendai, Japan).</p>
+    <h2>Related publications</h2><ul class="relpubs"><li>Compensation of axis-coupled inertial forced vibrations using machine tool feed drives<div class="v">ICPE2024 (20th Int. Conf. on Precision Engineering) &middot; 2024</div></li></ul>
+    <h2>Collaborators</h2><div class="collab"><a href="https://scholar.google.com/citations?user=SGQqZeUAAAAJ&hl=en&oi=ao" target="_blank" rel="noopener">Dr. Burak Sencer (advisor)</a><a href="https://scholar.google.com/citations?user=gY8Zrt4AAAAJ&hl=en&oi=ao" target="_blank" rel="noopener">Dr. Eiji Shamoto</a></div>
+  </div>
+  <p style="margin:2.2rem 0;"><a href="/projects.html">&larr; All projects</a></p>
+</div></main>
+<footer><div class="wrap foot-in">
+  <div class="foot-links">
+    <a href="mailto:kaan.bahtiyar@outlook.com">Email</a>
+    <a href="https://scholar.google.com/citations?user=C0g9DXQAAAAJ&hl=en">Google Scholar</a>
+    <a href="https://orcid.org/0000-0002-5250-4468">ORCID</a>
+    <a href="https://www.linkedin.com/in/kaanbahtiyar">LinkedIn</a>
+    <a href="/cv.html">CV</a>
+  </div>
+  <div class="foot-note">&copy; 2026 Kaan Bahtiyar &middot; Corvallis, OR</div>
+</div></footer>
+</body></html>
