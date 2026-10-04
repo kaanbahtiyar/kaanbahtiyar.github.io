@@ -4,15 +4,16 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Projects, Kaan Bahtiyar</title>
-<meta name="description" content="Advanced-manufacturing controls projects: real-time chatter and vibration mitigation, active damping, and tool-runout compensation, each built and validated on production-class CNC hardware.">
+<meta name="description" content="Research projects in precision motion control and machining process control, each validated on real machine-tool hardware: active damper control, cross-axis vibration compensation, chatter detection and spindle speed control, and tool runout compensation.">
 <meta property="og:title" content="Projects, Kaan Bahtiyar">
-<meta property="og:description" content="Advanced-manufacturing controls projects: real-time chatter and vibration mitigation, active damping, and tool-runout compensation, each built and validated on production-class CNC hardware.">
+<meta property="og:description" content="Research projects in precision motion control and machining process control, each validated on real machine-tool hardware: active damper control, cross-axis vibration compensation, chatter detection and spindle speed control, and tool runout compensation.">
 <meta property="og:image" content="/images/profilekaan.png">
 <link rel="icon" type="image/svg+xml" href="/images/favicon.svg">
 <link rel="icon" href="/images/favicon.ico">
 <link rel="stylesheet" href="/assets/style.css">
 </head>
-<body>
+<body class="page-wide">
+
 <nav class="nav"><div class="wrap nav-in">
   <a class="brand" href="/index.html"><span class="dot"></span>Kaan</a>
   <div class="nav-links">
@@ -22,19 +23,162 @@
     <a href="/cv.html">CV</a>
   </div>
 </div></nav>
-<main><section><div class="wrap"><h1 class="sec-title" style="margin-top:1.6rem;">Research projects</h1>
-<p class="lead-block">Five lines of work in precision motion and machining-process control. Each was developed and validated on real machine-tool hardware; the result on every card is an experimentally measured outcome.</p>
-<div class="cards" style="margin-top:1.4rem;"><a class="card" href="/projects/tool-eccentricity-compensation.html">
-  <div class="body"><h3>Active runout control</h3><p>Adaptive feed-drive control that adds corrective motions on top of the nominal toolpath to compensate for tool runout so each tooth cuts evenly. The correction is tuned online using force/vibration feedback during milling. Peak cutting-force variation reduced from 101 N to 14 N in steel-alloy milling.</p><div class="tags"><span>ASME JMSE</span><span>MM Science</span><span>Patent pending</span></div></div>
-  <div class="result-line"><span class="rk">Result</span><span class="rnum">86%</span><span class="rdesc">lower peak cutting-force variation</span></div></a><a class="card" href="/projects/cross-coupling-vibrations.html">
-  <div class="body"><h3>Cross-axis vibration control</h3><p>Shapes the commanded motion to cancel cross-axis coupling dynamics so moving one axis no longer triggers other axis dynamics on a 3-axis machine tool. The shaping filter is fine tuned through machine-in-the-loop iterations using measured vibration responses. Peak undesired Z-axis motion during Y-axis moves fell from 6 µm to 1.2 µm.</p><div class="tags"><span>ICPE 2024</span><span>Young Research Award</span></div></div>
-  <div class="result-line"><span class="rk">Result</span><span class="rnum">80%</span><span class="rdesc">lower cross-axis vibration</span></div></a><a class="card" href="/projects/inertial-damper-control.html">
-  <div class="body"><h3>Active inertial damper control</h3><p>Feedforward control of an active inertial damper to suppress transient vibration under actuator force and stroke constraints. The control law is iteratively refined through hardware-in-the-loop experiments. Peak positioning error reduced from 12 µm to 1.6 µm.</p><div class="tags"><span>CIRP Annals</span><span>Dow Scholarship</span></div></div>
-  <div class="result-line"><span class="rk">Result</span><span class="rnum">87%</span><span class="rdesc">lower peak positioning error</span></div></a><a class="card" href="/projects/spindle-speed-optimization.html">
-  <div class="body"><h3>Spindle speed control for chatter mitigation</h3><p>Model-free adaptive spindle speed control that eliminates chatter and minimizes total vibration from real-time vibration feedback, deployed through the CNC’s standard spindle-override input. RMS vibration cut from 131 to 20 m/s² in milling tests.</p><div class="tags"><span>CIRP JMST</span><span>ASME MSEC</span></div></div>
-  <div class="result-line"><span class="rk">Result</span><span class="rnum">85%</span><span class="rdesc">lower RMS vibration</span></div></a><a class="card" href="/projects/chatter-detection.html">
-  <div class="body"><h3>Real-time chatter detection</h3><p>Computationally efficient, real-time chatter detection using time-domain and statistical features. The algorithms identify chatter onset and serve as the trigger input for the closed-loop spindle speed controller.</p><div class="tags"><span>Manufacturing Letters</span><span>NAMRC50</span></div></div>
-  <div class="result-line"><span class="rk">Result</span><span class="rnum">Real-time</span><span class="rdesc">low-cost early detection</span></div></a></div></div></section></main>
+
+<main><div class="wrap">
+
+  <h1 class="page-title">Projects</h1>
+
+  <p class="page-lede">Each project was developed and validated on real machine-tool hardware, and the results shown are experimentally measured. Select a card for the method, the results and the papers.</p>
+
+  <div class="theme">
+
+    <h3 class="theme-title">Precision Motion Control and Mechatronics</h3>
+
+    <div class="theme-cards">
+
+      <a class="card wide" href="/projects/inertial-damper-control.html">
+
+        <div class="card-media duo">
+          <video data-inview src="/assets/video/card_damper.mp4" poster="/assets/video/card_damper.jpg" loop muted playsinline preload="metadata" aria-label="Feed-drive testbed: the table carrying the active damper makes a fast point-to-point move."></video>
+          <img src="/images/projects/damper_fb_ff.png" alt="Measured table position after a move. Feedback plus feedforward settles into the plus or minus 2 micrometer band first, auto-tuned feedback second, conventional feedback tuning third, and open loop last." loading="lazy">
+        </div>
+
+        <h3 class="card-title">Active damper control</h3>
+
+        <div class="split">
+
+          <div class="half">
+            <div class="body">
+              <h4>Auto-tuned feedback</h4>
+              <p>The velocity-feedback law tunes itself online from measured vibration, by solving a band-selective constrained optimization at every time step.</p>
+              <div class="tags">
+                <span class="method">Constrained QP</span>
+                <span>In preparation</span>
+              </div>
+            </div>
+            <div class="result-line">
+              <span class="rnum">70%</span>
+              <span class="rdesc">less damper stroke</span>
+              <span class="rsub">up to 25% faster settling to 2 µm</span>
+            </div>
+          </div>
+
+          <div class="half">
+            <div class="body">
+              <h4>Learned feedforward</h4>
+              <p>Iterative learning adds a feedforward force that removes the initial overshoot feedback alone cannot, within stroke and force limits.</p>
+              <div class="tags">
+                <span class="method">Iterative learning</span>
+                <span>CIRP Annals</span>
+              </div>
+            </div>
+            <div class="result-line">
+              <span class="rnum">87%</span>
+              <span class="rdesc">lower peak error</span>
+              <span class="rsub">12 &rarr; 1.6 µm in about 10 iterations</span>
+            </div>
+          </div>
+
+        </div>
+      </a>
+
+      <a class="card" href="/projects/cross-coupling-vibrations.html">
+
+        <div class="card-media">
+          <video data-inview src="/assets/video/card_crossaxis.mp4" poster="/assets/video/card_crossaxis.jpg" loop muted playsinline preload="metadata" aria-label="Animation: Y-axis table moves rock the machine column and vibrate the tool tip in Z. When compensation switches on, the Z-axis feed drive moves the head against the rocking and the tool-tip vibration drops."></video>
+        </div>
+
+        <div class="body">
+          <h3>Cross-axis vibration compensation through the feed drives</h3>
+          <p>A trajectory pre-filter adds a small Z command that cancels the tool-tip vibration excited by fast Y-axis moves, refined by machine-in-the-loop learning.</p>
+          <div class="tags">
+            <span class="method">Trajectory pre-filtering</span>
+            <span>ICPE 2024</span>
+          </div>
+        </div>
+        <div class="result-line">
+          <span class="rnum">80%</span>
+          <span class="rdesc">lower vibration</span>
+          <span class="rsub">6 &rarr; 1.2 µm at the tool tip</span>
+        </div>
+      </a>
+
+    </div>
+  </div>
+
+  <div class="theme">
+
+    <h3 class="theme-title">Machining Process Control</h3>
+
+    <div class="theme-cards">
+
+      <a class="card" href="/projects/spindle-speed-optimization.html">
+
+        <div class="card-media">
+          <video data-inview src="/assets/video/card_sso.mp4" poster="/assets/video/card_sso.jpg" loop muted playsinline preload="metadata" aria-label="Milling test with adaptive spindle speed control: machine footage next to the measured acceleration, spindle speed and cost as chatter is suppressed."></video>
+        </div>
+
+        <div class="body">
+          <h3>Chatter detection and adaptive spindle speed control</h3>
+          <p>Lightweight algorithms detect chatter in real time. A separate model-free controller tunes the spindle speed from vibration feedback to remove chatter and minimize vibration.</p>
+          <div class="tags">
+            <span class="method">Extremum seeking</span>
+            <span>CIRP JMST</span>
+            <span>Manufacturing Letters</span>
+          </div>
+        </div>
+        <div class="result-line">
+          <span class="rnum">85%</span>
+          <span class="rdesc">lower RMS vibration</span>
+          <span class="rsub">with spindle speed control, 131 &rarr; 20 m/s²</span>
+        </div>
+      </a>
+
+      <a class="card" href="/projects/tool-eccentricity-compensation.html">
+
+        <div class="card-media">
+          <video data-inview src="/assets/video/card_runout.mp4" poster="/assets/video/card_runout.jpg" loop muted playsinline preload="metadata" aria-label="Animation of tool runout compensation: with compensation off the teeth cut unequal chips; with compensation on, the feed drives move the workpiece so every tooth cuts the same chip."></video>
+        </div>
+
+        <div class="body">
+          <h3>Tool runout compensation through the feed drives</h3>
+          <p>A micro-circular feed motion cancels tool runout so every tooth cuts the same chip, tuned on the machine from force feedback.</p>
+          <div class="tags">
+            <span class="method">Convex optimization</span>
+            <span>ASME JMSE</span>
+            <span>Patent pending</span>
+          </div>
+        </div>
+        <div class="result-line">
+          <span class="rnum">86%</span>
+          <span class="rdesc">lower force variation</span>
+          <span class="rsub">101 &rarr; 14 N</span>
+        </div>
+      </a>
+
+      <div class="card no-link">
+
+        <div class="card-media soon">
+          Video coming soon
+        </div>
+
+        <div class="body">
+          <h3>Spindle speed ripple compensation through the spindle drive</h3>
+          <p>Sinusoidal speed commands at the tooth-passing frequency and its harmonics cancel the speed ripple caused by cutting torque.</p>
+          <div class="tags">
+            <span>Manuscript in preparation</span>
+          </div>
+        </div>
+        <div class="result-line">
+          <span class="rdesc pending">Results coming soon</span>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+</div></main>
+
 <footer><div class="wrap foot-in">
   <div class="foot-links">
     <a href="mailto:kaan.bahtiyar@outlook.com">Email</a>
@@ -45,4 +189,8 @@
   </div>
   <div class="foot-note">&copy; 2026 Kaan Bahtiyar &middot; Corvallis, OR</div>
 </div></footer>
-</body></html>
+
+<script src="/assets/site.js" defer></script>
+
+</body>
+</html>
