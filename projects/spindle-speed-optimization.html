@@ -3,10 +3,10 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Chatter detection and adaptive spindle speed control, Kaan Bahtiyar</title>
-<meta name="description" content="Real-time chatter detection, and a model-free controller that tunes spindle speed from vibration feedback during milling. RMS vibration reduced by up to 85% (131 to 20 m/s2).">
-<meta property="og:title" content="Chatter detection and adaptive spindle speed control, Kaan Bahtiyar">
-<meta property="og:description" content="Real-time chatter detection, and a model-free controller that tunes spindle speed from vibration feedback during milling. RMS vibration reduced by up to 85% (131 to 20 m/s2).">
+<title>Adaptive spindle speed control, Kaan Bahtiyar</title>
+<meta name="description" content="A model-free controller that tunes spindle speed from vibration feedback during milling, to remove chatter and minimize vibration. RMS vibration reduced by up to 85% (131 to 20 m/s2).">
+<meta property="og:title" content="Adaptive spindle speed control, Kaan Bahtiyar">
+<meta property="og:description" content="A model-free controller that tunes spindle speed from vibration feedback during milling, to remove chatter and minimize vibration. RMS vibration reduced by up to 85% (131 to 20 m/s2).">
 <meta property="og:image" content="/images/profilekaan.png">
 <link rel="icon" type="image/svg+xml" href="/images/favicon.svg">
 <link rel="icon" href="/images/favicon.ico">
@@ -26,15 +26,15 @@
 
 <main><div class="wrap">
 
-  <p class="crumb"><a href="/projects.html">Projects</a> / Chatter detection and adaptive spindle speed control</p>
+  <p class="crumb"><a href="/projects.html">Projects</a> / Adaptive spindle speed control</p>
 
   <header class="proj-head">
-    <h1>Chatter detection and adaptive spindle speed control</h1>
-    <p class="proj-lede">Two separate methods for milling vibration: a model-free controller that tunes the spindle speed while the machine cuts, and lightweight algorithms that detect chatter in real time.</p>
+    <h1>Adaptive spindle speed control</h1>
+    <p class="proj-lede">Milling vibration comes as chatter, an instability that can scrap the part, and as forced vibration, which is stable but still degrades the surface. I tune the spindle speed while the machine cuts to remove the first and minimize the second, with no process model.</p>
     <div class="tags">
       <span class="method">Extremum seeking</span>
       <span>CIRP JMST</span>
-      <span>Manufacturing Letters</span>
+      <span>ASME MSEC</span>
     </div>
   </header>
 
@@ -46,9 +46,13 @@
   <div class="cols">
 
     <section class="proj-sec">
-      <h2>Adaptive spindle speed control</h2>
+      <h2>Method</h2>
       <p>Spindle speed selection runs as an online optimization during the cut. A vibration cost is computed from accelerometer data once per spindle revolution, and an extremum-seeking controller moves the speed in the direction that lowers it. It needs no process model, stability lobes or modal testing.</p>
       <p>The controller minimizes total vibration, forced plus chatter, and talks to a production CNC through the standard spindle-override input.</p>
+    </section>
+
+    <section class="proj-sec">
+      <h2>Results</h2>
       <div class="stats">
         <div class="stat">
           <span class="stat-num">85%</span>
@@ -62,7 +66,18 @@
         </div>
       </div>
       <p>Measured in steel-alloy milling on a 3-axis CNC. Starting from an already stable cut, the controller still halved RMS vibration (8 &rarr; 4 m/s²).</p>
-      <h3>Papers</h3>
+      <figure class="media w-520">
+        <img src="/images/projects/sso_surface.jpg" alt="Photos of the machined surface: heavy chatter marks before the controller starts, and a smooth, even finish after it converges." loading="lazy">
+        <figcaption>The machined surface before the controller starts and after it converges.</figcaption>
+      </figure>
+    </section>
+
+  </div>
+
+  <div class="cols">
+
+    <section class="proj-sec">
+      <h2>Papers</h2>
       <ul class="papers">
         <li>
           <a href="https://www.sciencedirect.com/science/article/abs/pii/S1755581725001270">Model-free optimal spindle speed control for real-time vibration mitigation in milling</a>
@@ -83,38 +98,9 @@
       </ul>
     </section>
 
-    <section class="proj-sec" id="chatter-detection">
-      <h2>Chatter detection</h2>
-      <p>Two indicators flag chatter onset from the vibration signal. The first compares total signal power with the power at the tooth-passing harmonics, and rises when broadband chatter energy appears between them. The second applies principal component analysis to a windowed data matrix, and is more robust to changes in tooling and cutting conditions.</p>
-      <p>Both are light enough to run in real time on embedded hardware. On a tapered workpiece, they stay low during stable cutting and rise clearly at chatter onset.</p>
-      <figure class="media w-240">
-        <video data-inview controls loop muted playsinline preload="metadata" src="/assets/video/video_chatter.mp4" poster="/assets/video/video_chatter.jpg" aria-label="Close-up of an end mill cutting a tapered workpiece as the cut goes from stable into chatter."></video>
-        <figcaption>Milling a tapered workpiece: the cut goes from stable into chatter as the depth increases.</figcaption>
-      </figure>
-      <h3>Papers</h3>
-      <ul class="papers">
-        <li>
-          <a href="https://www.sciencedirect.com/science/article/pii/S2213846322000803">Lightweight and robust chatter detection algorithms for milling</a>
-          <span>Manufacturing Letters (NAMRC 50 Special Issue), 2022</span>
-        </li>
-        <li>
-          <a href="https://www.proceedings.com/62376.html">Time-domain based early detection of chatter vibrations</a>
-          <span>36th Annual Meeting of the ASPE, 2021</span>
-        </li>
-      </ul>
-    </section>
-
-  </div>
-
-  <div class="cols">
-
     <section class="proj-sec">
-      <h2>Testbed</h2>
-      <p>3-axis CNC machine tool, accelerometers, dynamometer, spindle override via PLC, 10 kHz data acquisition, dSPACE real-time I/O, MATLAB/Simulink real-time.</p>
-    </section>
-
-    <section class="proj-sec">
-      <h2>Collaborators</h2>
+      <h2>Testbed and collaborators</h2>
+      <p>3-axis CNC machine tool, accelerometers, dynamometer, spindle override via PLC, 10 kHz data acquisition, MATLAB/Simulink real-time.</p>
       <div class="collab">
         <a href="https://scholar.google.com/citations?user=SGQqZeUAAAAJ&hl=en&oi=ao" target="_blank" rel="noopener">Dr. Burak Sencer (advisor)</a>
       </div>

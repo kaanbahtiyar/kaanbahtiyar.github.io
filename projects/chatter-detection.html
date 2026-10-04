@@ -3,17 +3,104 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Chatter detection, Kaan Bahtiyar</title>
-<meta http-equiv="refresh" content="0; url=/projects/spindle-speed-optimization.html#chatter-detection">
-<link rel="canonical" href="https://kaanbahtiyar.github.io/projects/spindle-speed-optimization.html">
+<title>Real-time chatter detection, Kaan Bahtiyar</title>
+<meta name="description" content="Lightweight time-domain and PCA algorithms that detect chatter onset in milling in real time, light enough for embedded process monitoring.">
+<meta property="og:title" content="Real-time chatter detection, Kaan Bahtiyar">
+<meta property="og:description" content="Lightweight time-domain and PCA algorithms that detect chatter onset in milling in real time, light enough for embedded process monitoring.">
+<meta property="og:image" content="/images/profilekaan.png">
+<link rel="icon" type="image/svg+xml" href="/images/favicon.svg">
+<link rel="icon" href="/images/favicon.ico">
 <link rel="stylesheet" href="/assets/style.css">
 </head>
-<body>
+<body class="page-wide">
+
+<nav class="nav"><div class="wrap nav-in">
+  <a class="brand" href="/index.html"><span class="dot"></span>Kaan</a>
+  <div class="nav-links">
+    <a href="/index.html">Home</a>
+    <a href="/projects.html" class="active">Projects</a>
+    <a href="/publications.html">Publications</a>
+    <a href="/cv.html">CV</a>
+  </div>
+</div></nav>
 
 <main><div class="wrap">
-  <p class="crumb">This project now shares a page with adaptive spindle speed control.</p>
-  <p><a href="/projects/spindle-speed-optimization.html#chatter-detection">Go to chatter detection</a></p>
+
+  <p class="crumb"><a href="/projects.html">Projects</a> / Real-time chatter detection</p>
+
+  <header class="proj-head">
+    <h1>Real-time chatter detection</h1>
+    <p class="proj-lede">Chatter is a self-excited instability that grows fast in milling, marks the part and wears the tool. Catching it early is the first step of any countermeasure. I developed two lightweight indicators that flag its onset in real time.</p>
+    <div class="tags">
+      <span class="method">Spectral and PCA indicators</span>
+      <span>Manufacturing Letters</span>
+      <span>NAMRC 50</span>
+    </div>
+  </header>
+
+  <figure class="media w-1130">
+    <video data-inview controls loop muted playsinline preload="metadata" src="/assets/video/chatter_detection.mp4" poster="/assets/video/chatter_detection.jpg" aria-label="Milling a tapered workpiece, with the measured workpiece acceleration and the two chatter indicators drawn in step with the footage. The status changes from stable cutting to chatter detected when the indicator crosses 50 percent."></video>
+    <figcaption>Milling a tapered workpiece, with the measured acceleration and both indicators in step with the footage. Chatter is flagged when the power ratio crosses 50%. Turn the sound on to hear the chatter start.</figcaption>
+  </figure>
+
+  <div class="cols">
+
+    <section class="proj-sec">
+      <h2>Method</h2>
+      <p>A simple amplitude threshold is unreliable, because forced vibration at the tooth-passing frequency masks the chatter component. Two indicators separate them instead.</p>
+      <p>The first compares total signal power with the power at the tooth-passing harmonics, and rises when broadband chatter energy appears between them. The second applies principal component analysis to a windowed data matrix, and is more robust to changes in tooling and cutting conditions.</p>
+    </section>
+
+    <section class="proj-sec">
+      <h2>Results</h2>
+      <p>On a tapered workpiece, where the depth of cut grows along the path, both indicators stay low during stable cutting and cross the 50% threshold as chatter sets in.</p>
+      <p>The spectral method is the fastest and cheapest to compute, and the PCA method trades a little computation for robustness. Both are light enough to run in real time on embedded hardware.</p>
+    </section>
+
+  </div>
+
+  <div class="cols">
+
+    <section class="proj-sec">
+      <h2>Papers</h2>
+      <ul class="papers">
+        <li>
+          <a href="https://www.sciencedirect.com/science/article/pii/S2213846322000803">Lightweight and robust chatter detection algorithms for milling</a>
+          <span>Manufacturing Letters (NAMRC 50 Special Issue), 2022</span>
+        </li>
+        <li>
+          <a href="https://www.proceedings.com/62376.html">Time-domain based early detection of chatter vibrations</a>
+          <span>36th Annual Meeting of the ASPE, 2021</span>
+        </li>
+      </ul>
+    </section>
+
+    <section class="proj-sec">
+      <h2>Testbed and collaborators</h2>
+      <p>3-axis CNC machine tool, accelerometers, dynamometer, dSPACE real-time I/O, MATLAB/Simulink real-time.</p>
+      <div class="collab">
+        <a href="https://scholar.google.com/citations?user=SGQqZeUAAAAJ&hl=en&oi=ao" target="_blank" rel="noopener">Dr. Burak Sencer (advisor)</a>
+      </div>
+    </section>
+
+  </div>
+
+  <p class="back"><a href="/projects.html">All projects</a></p>
+
 </div></main>
+
+<footer><div class="wrap foot-in">
+  <div class="foot-links">
+    <a href="mailto:kaan.bahtiyar@outlook.com">Email</a>
+    <a href="https://scholar.google.com/citations?user=C0g9DXQAAAAJ&hl=en">Google Scholar</a>
+    <a href="https://orcid.org/0000-0002-5250-4468">ORCID</a>
+    <a href="https://www.linkedin.com/in/kaanbahtiyar">LinkedIn</a>
+    <a href="/cv.html">CV</a>
+  </div>
+  <div class="foot-note">&copy; 2026 Kaan Bahtiyar &middot; Corvallis, OR</div>
+</div></footer>
+
+<script src="/assets/site.js" defer></script>
 
 </body>
 </html>
