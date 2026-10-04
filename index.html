@@ -1,18 +1,52 @@
 <!DOCTYPE html>
 <html lang="en">
+<!--
+  ============================================================================
+  HOMEPAGE (index.html)
+
+  HOW TO EDIT THE WRITING
+  - Every piece of text you may want to change sits on its own line, directly
+    under a comment that starts with "TEXT:".
+  - Press Ctrl+F (Cmd+F on Mac) and search for "TEXT:" to jump between them,
+    or search for a section name from the list below.
+  - Change only the words between the tags. Leave the <tags> themselves alone.
+  - "TODO:" comments mark placeholders that still need your input.
+
+  SECTIONS, IN PAGE ORDER
+    SECTION 1: HERO              name, title, lab, intro paragraph, links
+    SECTION 2: ABOUT + EDUCATION
+    SECTION 3: RESEARCH THEMES
+        THEME 1: Precision motion control and mechatronics
+            CARD 1.1  Active damper control (wide card: feedback | feedforward)
+            CARD 1.2  Cross-axis vibration compensation
+        THEME 2: Machining process control
+            CARD 2.1  Chatter detection and adaptive spindle speed control
+            CARD 2.2  Tool runout compensation
+            CARD 2.3  Spindle speed ripple compensation
+    SECTION 4: RECOGNITION
+    SECTION 5: FOOTER
+  ============================================================================
+-->
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
+<!-- TEXT: browser tab title -->
 <title>Kaan Bahtiyar, PhD Candidate in Robotics</title>
+<!-- TEXT: description shown by search engines and link previews (keep both lines identical) -->
 <meta name="description" content="Kaan Bahtiyar, PhD candidate in Robotics at Oregon State University, working on precision motion control and real-time vibration mitigation for machine tools, validated on real CNC hardware.">
-<meta property="og:title" content="Kaan Bahtiyar, PhD Candidate in Robotics">
 <meta property="og:description" content="Kaan Bahtiyar, PhD candidate in Robotics at Oregon State University, working on precision motion control and real-time vibration mitigation for machine tools, validated on real CNC hardware.">
+<meta property="og:title" content="Kaan Bahtiyar, PhD Candidate in Robotics">
 <meta property="og:image" content="/images/profilekaan.png">
 <link rel="icon" type="image/svg+xml" href="/images/favicon.svg">
 <link rel="icon" href="/images/favicon.ico">
 <link rel="stylesheet" href="/assets/style.css">
 </head>
 <body>
+
+<!-- Medal icon, defined once and reused by every row in SECTION 4. Nothing to edit here. -->
+<svg width="0" height="0" style="position:absolute" aria-hidden="true"><symbol id="medal" viewBox="0 0 24 24"><polygon points="8,3 11,3 12.6,11 9.2,12" fill="#8fcdd9"/><polygon points="16,3 13,3 11.4,11 14.8,12" fill="#8fcdd9"/><circle cx="12" cy="15.5" r="6.2" fill="#0e7490"/><path d="M12 11.5 L12.999 14.125 L15.804 14.264 L13.617 16.025 L14.351 18.736 L12 17.2 L9.649 18.736 L10.383 16.025 L8.196 14.264 L11.001 14.125 Z" fill="#fff"/></symbol></svg>
+
+<!-- ============================ TOP NAVIGATION ============================ -->
 <nav class="nav"><div class="wrap nav-in">
   <a class="brand" href="/index.html"><span class="dot"></span>Kaan</a>
   <div class="nav-links">
@@ -23,45 +57,467 @@
   </div>
 </div></nav>
 
+
+<!-- ============================================================================
+     SECTION 1: HERO
+     ============================================================================ -->
 <header class="hero"><div class="wrap hero-grid">
   <div>
     <img class="avatar" src="/images/profilekaan.png" alt="Kaan Bahtiyar">
+
+    <!-- TEXT: name -->
     <h1>Kaan Bahtiyar</h1>
+
+    <!-- TEXT: title -->
     <p class="title">PhD Candidate in Robotics</p>
+
+    <!-- TEXT: lab and university -->
     <p class="affil">Manufacturing Process Control Laboratory, Oregon State University</p>
-    <p class="lead">I work on precision motion control and real-time vibration mitigation for industrial mechatronic systems. I develop and experimentally validate optimization-driven and adaptive control frameworks, including Iterative Learning Control (ILC), Extremum-Seeking Control (ESC), and convex optimization, to actively suppress vibrations and counteract process-induced disturbances in multi-axis CNC machine tools, linear stages, and feed-drive mechanisms. </p>
-    <div class="social"><a href="mailto:kaan.bahtiyar@outlook.com">Email</a><a href="https://scholar.google.com/citations?user=C0g9DXQAAAAJ&hl=en">Google Scholar</a><a href="https://orcid.org/0000-0002-5250-4468">ORCID</a><a href="https://www.linkedin.com/in/kaanbahtiyar">LinkedIn</a></div>
-    <div class="cta-row"><a class="btn btn-primary" href="/cv.html">View CV</a><a class="btn btn-ghost" href="/projects.html">See projects</a></div>
-  </div>
-  <div class="hero-anim"><div class="frame">
-  <video src="/assets/video/hero.mp4" poster="/assets/video/hero.jpg" autoplay loop muted playsinline preload="auto" aria-label="Robot arm pick-and-place animation: an uncontrolled run shows large end-effector vibration when placing a part, plotted against time; after a learning-based controller adjustment, the mitigated run shows much smaller, quickly damped vibration." style="width:100%; height:auto; display:block; border-radius:6px;"></video>
-</div></div>
-</div></header>
-<main>
-<section><div class="wrap"><div class="about-edu">
-  <div class="ae-col"><h2 class="sec-title">About</h2>
-    <div class="lead-block">
-      <p>I am a control systems engineer specializing in precision motion control, mechatronics, and machining process dynamics for advanced manufacturing. My research bridges advanced control theory with process-induced mechanics to solve real-world manufacturing challenges using ILC-based convex optimization to compensate for tool runout and YZ cross-talk, adaptive strategies for spindle speed ripple in difficult-to-cut materials, and ESC to actively mitigate process induced forced and regenerative chatter vibrations in milling operations. I also design feedback and feedforward control strategies for active damper systems (tuned via ILC and Iterative Feedback Tuning (IFT)) for trajectory-induced vibrations in feed drives. Each framework I develop translates modern control and optimization theory into <strong>experimentally validated</strong> solutions for industrial automation.</p>
-      <p>Over the past six years I have built, instrumented, and operated the experimental testbeds behind my research, and developed the real-time control and measurement systems that run on them. The hardware I have worked with includes motion stages (linear motor driven, voice-coil actuated, feed drives, industrial CNC machine tools), dSPACE and NI myRIO real-time systems, and force, acceleration, and displacement sensors. I am advised by <a href="https://engineering.oregonstate.edu/people/burak-sencer">Dr. Burak Sencer</a>.</p>
+
+    <!-- TEXT: intro paragraph -->
+    <p class="lead">I work on precision motion control and real-time vibration mitigation for industrial mechatronic systems. I develop and experimentally validate optimization-driven and adaptive control frameworks, including Iterative Learning Control (ILC), Extremum-Seeking Control (ESC), and convex optimization, to actively suppress vibrations and counteract process-induced disturbances in multi-axis CNC machine tools, linear stages, and feed-drive mechanisms.</p>
+
+    <!-- Contact links -->
+    <div class="social">
+      <a href="mailto:kaan.bahtiyar@outlook.com">Email</a>
+      <a href="https://scholar.google.com/citations?user=C0g9DXQAAAAJ&hl=en">Google Scholar</a>
+      <a href="https://orcid.org/0000-0002-5250-4468">ORCID</a>
+      <a href="https://www.linkedin.com/in/kaanbahtiyar">LinkedIn</a>
+    </div>
+
+    <!-- TEXT: the two buttons -->
+    <div class="cta-row">
+      <a class="btn btn-primary" href="/cv.html">View CV</a>
+      <a class="btn btn-ghost" href="/projects.html">See projects</a>
     </div>
   </div>
-  <div class="ae-col"><h2 class="sec-title">Education</h2><div class="edu-item"><div><div class="d"><a href="https://engineering.oregonstate.edu/academics/programs/robotics" target="_blank" rel="noopener">Ph.D., Robotics</a></div><div class="s">Oregon State University</div></div><div class="y">2022-Present</div></div><div class="edu-item"><div><div class="d"><a href="https://engineering.oregonstate.edu/academics/programs/robotics" target="_blank" rel="noopener">M.Sc., Robotics</a></div><div class="s">Oregon State University</div></div><div class="y">2020-2023</div></div><div class="edu-item"><div><div class="d"><a href="https://kontrol.itu.edu.tr/en" target="_blank" rel="noopener">B.Sc., Control &amp; Automation Engineering</a></div><div class="s">Istanbul Technical University</div></div><div class="y">2017-2020</div></div><div class="edu-item"><div><div class="d"><a href="https://mkn.itu.edu.tr/en" target="_blank" rel="noopener">B.Sc., Mechanical Engineering</a></div><div class="s">Istanbul Technical University</div></div><div class="y">2014-2019</div></div></div>
+
+  <!-- Hero animation -->
+  <div class="hero-anim"><div class="frame">
+    <video src="/assets/video/hero.mp4" poster="/assets/video/hero.jpg" autoplay loop muted playsinline preload="auto" aria-label="Robot arm pick-and-place animation: an uncontrolled run shows large end-effector vibration when placing a part, plotted against time; after a learning-based controller adjustment, the mitigated run shows much smaller, quickly damped vibration." style="width:100%; height:auto; display:block; border-radius:6px;"></video>
+  </div></div>
+</div></header>
+
+<main>
+
+<!-- ============================================================================
+     SECTION 2: ABOUT + EDUCATION
+     ============================================================================ -->
+<section><div class="wrap"><div class="about-edu">
+
+  <!-- ---------- ABOUT ---------- -->
+  <div class="ae-col">
+    <h2 class="sec-title">About</h2>
+    <div class="lead-block">
+
+      <!-- TEXT: about, paragraph 1 -->
+      <p>I am a control systems engineer specializing in precision motion control, mechatronics, and machining process dynamics for advanced manufacturing. My research bridges advanced control theory with process-induced mechanics to solve real-world manufacturing challenges using ILC-based convex optimization to compensate for tool runout and YZ cross-talk, adaptive strategies for spindle speed ripple in difficult-to-cut materials, and ESC to actively mitigate process induced forced and regenerative chatter vibrations in milling operations. I also design feedback and feedforward control strategies for active damper systems (tuned via ILC and Iterative Feedback Tuning (IFT)) for trajectory-induced vibrations in feed drives. Each framework I develop translates modern control and optimization theory into <strong>experimentally validated</strong> solutions for industrial automation.</p>
+
+      <!-- TEXT: about, paragraph 2 -->
+      <p>Over the past six years I have built, instrumented, and operated the experimental testbeds behind my research, and developed the real-time control and measurement systems that run on them. The hardware I have worked with includes motion stages (linear motor driven, voice-coil actuated, feed drives, industrial CNC machine tools), dSPACE and NI myRIO real-time systems, and force, acceleration, and displacement sensors. I am advised by <a href="https://engineering.oregonstate.edu/people/burak-sencer">Dr. Burak Sencer</a>.</p>
+
+    </div>
+  </div>
+
+  <!-- ---------- EDUCATION ---------- -->
+  <div class="ae-col">
+    <h2 class="sec-title">Education</h2>
+
+    <!-- TEXT: degree 1 (degree, university, years) -->
+    <div class="edu-item">
+      <div>
+        <div class="d"><a href="https://engineering.oregonstate.edu/academics/programs/robotics" target="_blank" rel="noopener">Ph.D., Robotics</a></div>
+        <div class="s">Oregon State University</div>
+      </div>
+      <div class="y">2022-Present</div>
+    </div>
+
+    <!-- TEXT: degree 2 -->
+    <div class="edu-item">
+      <div>
+        <div class="d"><a href="https://engineering.oregonstate.edu/academics/programs/robotics" target="_blank" rel="noopener">M.Sc., Robotics</a></div>
+        <div class="s">Oregon State University</div>
+      </div>
+      <div class="y">2020-2023</div>
+    </div>
+
+    <!-- TEXT: degree 3 -->
+    <div class="edu-item">
+      <div>
+        <div class="d"><a href="https://kontrol.itu.edu.tr/en" target="_blank" rel="noopener">B.Sc., Control &amp; Automation Engineering</a></div>
+        <div class="s">Istanbul Technical University</div>
+      </div>
+      <div class="y">2017-2020</div>
+    </div>
+
+    <!-- TEXT: degree 4 -->
+    <div class="edu-item">
+      <div>
+        <div class="d"><a href="https://mkn.itu.edu.tr/en" target="_blank" rel="noopener">B.Sc., Mechanical Engineering</a></div>
+        <div class="s">Istanbul Technical University</div>
+      </div>
+      <div class="y">2014-2019</div>
+    </div>
+
+  </div>
 </div></div></section>
-<section style="background:var(--bg-soft); border-top:1px solid var(--line); border-bottom:1px solid var(--line);"><div class="wrap"><h2 class="sec-title">Research focus</h2><ul class="interests"><li>Precision motion control for high-performance stages and machine tools</li><li>Real-time vibration mitigation and active damping in mechatronic systems</li><li>Machining process modeling, monitoring and control</li><li>System identification and hybrid physics-based / data-driven modeling</li><li>Intelligent manufacturing automation and equipment-level control</li></ul></div></section>
-<section><div class="wrap"><h2 class="sec-title">Projects</h2><div class="cards"><a class="card" href="/projects/tool-eccentricity-compensation.html">
-  <div class="body"><h3>Active runout control</h3><p>Adaptive feed-drive control that adds corrective motions on top of the nominal toolpath to compensate for tool runout so each tooth cuts evenly. The correction is tuned online using force/vibration feedback during milling. Peak cutting-force variation reduced from 101 N to 14 N in steel-alloy milling.</p><div class="tags"><span>ASME JMSE</span><span>MM Science</span><span>Patent pending</span></div></div>
-  <div class="result-line"><span class="rk">Result</span><span class="rnum">86%</span><span class="rdesc">lower peak cutting-force variation</span></div></a><a class="card" href="/projects/cross-coupling-vibrations.html">
-  <div class="body"><h3>Cross-axis vibration control</h3><p>Shapes the commanded motion to cancel cross-axis coupling dynamics so moving one axis no longer triggers other axis dynamics on a 3-axis machine tool. The shaping filter is fine tuned through machine-in-the-loop iterations using measured vibration responses. Peak undesired Z-axis motion during Y-axis moves fell from 6 µm to 1.2 µm.</p><div class="tags"><span>ICPE 2024</span><span>Young Research Award</span></div></div>
-  <div class="result-line"><span class="rk">Result</span><span class="rnum">80%</span><span class="rdesc">lower cross-axis vibration</span></div></a><a class="card" href="/projects/inertial-damper-control.html">
-  <div class="body"><h3>Active inertial damper control</h3><p>Feedforward control of an active inertial damper to suppress transient vibration under actuator force and stroke constraints. The control law is iteratively refined through hardware-in-the-loop experiments. Peak positioning error reduced from 12 µm to 1.6 µm.</p><div class="tags"><span>CIRP Annals</span><span>Dow Scholarship</span></div></div>
-  <div class="result-line"><span class="rk">Result</span><span class="rnum">87%</span><span class="rdesc">lower peak positioning error</span></div></a><a class="card" href="/projects/spindle-speed-optimization.html">
-  <div class="body"><h3>Spindle speed control for chatter mitigation</h3><p>Model-free adaptive spindle speed control that eliminates chatter and minimizes total vibration from real-time vibration feedback, deployed through the CNC’s standard spindle-override input. RMS vibration cut from 131 to 20 m/s² in milling tests.</p><div class="tags"><span>CIRP JMST</span><span>ASME MSEC</span></div></div>
-  <div class="result-line"><span class="rk">Result</span><span class="rnum">85%</span><span class="rdesc">lower RMS vibration</span></div></a><a class="card" href="/projects/chatter-detection.html">
-  <div class="body"><h3>Real-time chatter detection</h3><p>Computationally efficient, real-time chatter detection using time-domain and statistical features. The algorithms identify chatter onset and serve as the trigger input for the closed-loop spindle speed controller.</p><div class="tags"><span>Manufacturing Letters</span><span>NAMRC50</span></div></div>
-  <div class="result-line"><span class="rk">Result</span><span class="rnum">Real-time</span><span class="rdesc">low-cost early detection</span></div></a></div></div></section>
-<section style="background:var(--bg-soft); border-top:1px solid var(--line); border-bottom:1px solid var(--line);"><div class="wrap"><h2 class="sec-title">Recognition</h2><p class="rec-hint">Items tagged <span class="rec-cue">view</span> open a photo or video when clicked.</p><div class="recog"><details class="rec"><summary><svg class="medal" viewBox="0 0 24 24" aria-hidden="true"><polygon points="8,3 11,3 12.6,11 9.2,12" fill="#8fcdd9"/><polygon points="16,3 13,3 11.4,11 14.8,12" fill="#8fcdd9"/><circle cx="12" cy="15.5" r="6.2" fill="#0e7490"/><path d="M12 11.5 L12.999 14.125 L15.804 14.264 L13.617 16.025 L14.351 18.736 L12 17.2 L9.649 18.736 L10.383 16.025 L8.196 14.264 L11.001 14.125 Z" fill="#fff"/></svg><span>1st place, ASPE Student Challenge (2025)</span><span class="rec-cue">view</span></summary><div class="rec-body"><iframe src="https://www.linkedin.com/embed/feed/update/urn:li:activity:7393730640225058816" frameborder="0" allowfullscreen title="ASPE Student Challenge on LinkedIn"></iframe><a class="rec-link" href="https://www.linkedin.com/feed/update/urn:li:activity:7393730640225058816/" target="_blank" rel="noopener">Watch on LinkedIn</a><a class="rec-link" href="https://aspe.net/2025-student-challenge/" target="_blank" rel="noopener">Visit the ASPE Student Challenge</a></div></details><details class="rec"><summary><svg class="medal" viewBox="0 0 24 24" aria-hidden="true"><polygon points="8,3 11,3 12.6,11 9.2,12" fill="#8fcdd9"/><polygon points="16,3 13,3 11.4,11 14.8,12" fill="#8fcdd9"/><circle cx="12" cy="15.5" r="6.2" fill="#0e7490"/><path d="M12 11.5 L12.999 14.125 L15.804 14.264 L13.617 16.025 L14.351 18.736 L12 17.2 L9.649 18.736 L10.383 16.025 L8.196 14.264 L11.001 14.125 Z" fill="#fff"/></svg><span>Thomas A. Dow Student Scholarship, ASPE (2024)</span><span class="rec-cue">view</span></summary><div class="rec-body"><img src="/images/ASPE2024award.png" alt="Thomas A. Dow Student Scholarship, ASPE (2024)" loading="lazy"><a class="rec-link" href="https://aspe.net/student-scholarships/" target="_blank" rel="noopener">Visit ASPE student scholarships</a></div></details><details class="rec"><summary><svg class="medal" viewBox="0 0 24 24" aria-hidden="true"><polygon points="8,3 11,3 12.6,11 9.2,12" fill="#8fcdd9"/><polygon points="16,3 13,3 11.4,11 14.8,12" fill="#8fcdd9"/><circle cx="12" cy="15.5" r="6.2" fill="#0e7490"/><path d="M12 11.5 L12.999 14.125 L15.804 14.264 L13.617 16.025 L14.351 18.736 L12 17.2 L9.649 18.736 L10.383 16.025 L8.196 14.264 L11.001 14.125 Z" fill="#fff"/></svg><span>Young Research Award, JSPE, ICPE 2024 (Sendai, Japan)</span><span class="rec-cue">view</span></summary><div class="rec-body"><img src="/images/ICPE2024award.png" alt="Young Research Award, JSPE, ICPE 2024 (Sendai, Japan)" loading="lazy"></div></details><details class="rec"><summary><svg class="medal" viewBox="0 0 24 24" aria-hidden="true"><polygon points="8,3 11,3 12.6,11 9.2,12" fill="#8fcdd9"/><polygon points="16,3 13,3 11.4,11 14.8,12" fill="#8fcdd9"/><circle cx="12" cy="15.5" r="6.2" fill="#0e7490"/><path d="M12 11.5 L12.999 14.125 L15.804 14.264 L13.617 16.025 L14.351 18.736 L12 17.2 L9.649 18.736 L10.383 16.025 L8.196 14.264 L11.001 14.125 Z" fill="#fff"/></svg><span>Ranked 3rd in department, Control &amp; Automation Eng., ITU (2020)</span><span class="rec-cue">view</span></summary><div class="rec-body"><img src="/images/Rank3rd.png" alt="Ranked 3rd in department, Control &amp; Automation Eng., ITU (2020)" loading="lazy"></div></details><div class="rec rec-static"><svg class="medal" viewBox="0 0 24 24" aria-hidden="true"><polygon points="8,3 11,3 12.6,11 9.2,12" fill="#8fcdd9"/><polygon points="16,3 13,3 11.4,11 14.8,12" fill="#8fcdd9"/><circle cx="12" cy="15.5" r="6.2" fill="#0e7490"/><path d="M12 11.5 L12.999 14.125 L15.804 14.264 L13.617 16.025 L14.351 18.736 L12 17.2 L9.649 18.736 L10.383 16.025 L8.196 14.264 L11.001 14.125 Z" fill="#fff"/></svg><span>Co-inventor on a pending patent for machine-tool control, filed with an industrial partner (2025)</span></div><div class="rec rec-static"><svg class="medal" viewBox="0 0 24 24" aria-hidden="true"><polygon points="8,3 11,3 12.6,11 9.2,12" fill="#8fcdd9"/><polygon points="16,3 13,3 11.4,11 14.8,12" fill="#8fcdd9"/><circle cx="12" cy="15.5" r="6.2" fill="#0e7490"/><path d="M12 11.5 L12.999 14.125 L15.804 14.264 L13.617 16.025 L14.351 18.736 L12 17.2 L9.649 18.736 L10.383 16.025 L8.196 14.264 L11.001 14.125 Z" fill="#fff"/></svg><span>NSF Travel Awards, MSEC 2024 and NAMRC 2022</span></div><div class="rec rec-static"><svg class="medal" viewBox="0 0 24 24" aria-hidden="true"><polygon points="8,3 11,3 12.6,11 9.2,12" fill="#8fcdd9"/><polygon points="16,3 13,3 11.4,11 14.8,12" fill="#8fcdd9"/><circle cx="12" cy="15.5" r="6.2" fill="#0e7490"/><path d="M12 11.5 L12.999 14.125 L15.804 14.264 L13.617 16.025 L14.351 18.736 L12 17.2 L9.649 18.736 L10.383 16.025 L8.196 14.264 L11.001 14.125 Z" fill="#fff"/></svg><span>Publications in CIRP Annals, CIRP JMST, ASME JMSE, and Manufacturing Letters</span></div></div></div></section>
+
+
+<!-- ============================================================================
+     SECTION 3: RESEARCH THEMES
+
+     How a card is built (same pattern for every card):
+       card-media   the image or video on top
+       h3           card title
+       p            one-sentence description
+       tags         first tag (class "method") is the control method,
+                    the others are the venue or status
+       result-line  rnum = big number, rdesc = what it measures,
+                    rsub = small line underneath (before and after values)
+     ============================================================================ -->
+<section class="band"><div class="wrap">
+
+  <!-- TEXT: section heading -->
+  <h2 class="sec-title">Research themes</h2>
+
+
+  <!-- ##########################################################################
+       THEME 1: PRECISION MOTION CONTROL AND MECHATRONICS
+       ########################################################################## -->
+  <div class="theme">
+
+    <!-- TEXT: theme 1 label -->
+    <p class="theme-label">Theme 1</p>
+
+    <!-- TEXT: theme 1 title -->
+    <h3 class="theme-title">Precision motion control and mechatronics</h3>
+
+    <!-- TEXT: theme 1 description -->
+    <p class="theme-desc">Rapid axis motion excites the structural dynamics of machine tools and other motion systems, leaving residual vibration after each move and cross-talk between axes. Both force longer dwell times and limit productivity. I model and identify the machine's dynamics, and develop data-driven feedback and feedforward controllers that suppress these trajectory-induced vibrations through active dampers and the machine's existing feed drives, for faster settling and higher accuracy.</p>
+
+    <div class="theme-cards">
+
+      <!-- ====================================================================
+           CARD 1.1: ACTIVE DAMPER CONTROL
+           Wide card. One image or video on top, then two halves:
+           LEFT = feedback, RIGHT = feedforward.
+           ==================================================================== -->
+      <a class="card wide" href="/projects/inertial-damper-control.html">
+
+        <!-- MEDIA for card 1.1
+             Left: clip of the feed-drive testbed. Right: measured table position.
+             To change either one, edit the file name after src= on its line.
+        -->
+        <div class="card-media duo">
+          <video data-inview src="/assets/video/card_damper.mp4" poster="/assets/video/card_damper.jpg" loop muted playsinline preload="metadata" aria-label="Feed-drive testbed: the table carrying the active damper makes a fast point-to-point move."></video>
+          <img src="/images/projects/damper_fb_ff.png" alt="Measured table position after a move. Feedback plus feedforward settles into the plus or minus 2 micrometer band first, auto-tuned feedback second, conventional feedback tuning third, and open loop last." loading="lazy">
+        </div>
+
+        <!-- TEXT: card 1.1 title -->
+        <h3 class="card-title">Active damper control</h3>
+
+        <div class="split">
+
+          <!-- ---------- LEFT HALF: FEEDBACK ---------- -->
+          <div class="half">
+            <div class="body">
+              <!-- TEXT: card 1.1 left, subtitle -->
+              <h4>Auto-tuned feedback</h4>
+              <!-- TEXT: card 1.1 left, description -->
+              <p>The velocity-feedback law tunes itself online from measured vibration, by solving a band-selective constrained optimization at every time step.</p>
+              <!-- TEXT: card 1.1 left, tags -->
+              <div class="tags">
+                <span class="method">Constrained QP</span>
+                <span>In preparation</span>
+              </div>
+            </div>
+            <!-- TEXT: card 1.1 left, result -->
+            <div class="result-line">
+              <span class="rnum">70%</span>
+              <span class="rdesc">less damper stroke</span>
+              <span class="rsub">up to 25% faster settling to 2 µm</span>
+            </div>
+          </div>
+
+          <!-- ---------- RIGHT HALF: FEEDFORWARD ---------- -->
+          <div class="half">
+            <div class="body">
+              <!-- TEXT: card 1.1 right, subtitle -->
+              <h4>Learned feedforward</h4>
+              <!-- TEXT: card 1.1 right, description -->
+              <p>Iterative learning adds a feedforward force that removes the initial overshoot feedback alone cannot, within stroke and force limits.</p>
+              <!-- TEXT: card 1.1 right, tags -->
+              <div class="tags">
+                <span class="method">Iterative learning</span>
+                <span>CIRP Annals</span>
+              </div>
+            </div>
+            <!-- TEXT: card 1.1 right, result -->
+            <div class="result-line">
+              <span class="rnum">87%</span>
+              <span class="rdesc">lower peak error</span>
+              <span class="rsub">12 &rarr; 1.6 µm in about 10 iterations</span>
+            </div>
+          </div>
+
+        </div>
+      </a>
+
+      <!-- ====================================================================
+           CARD 1.2: CROSS-AXIS VIBRATION COMPENSATION
+           ==================================================================== -->
+      <a class="card" href="/projects/cross-coupling-vibrations.html">
+
+        <!-- MEDIA for card 1.2 -->
+        <div class="card-media">
+          <img src="/images/projects/crossaxis_animation.gif" alt="Animation: a Y-axis table move rocks the machine column and vibrates the tool tip in Z. With cross-talk compensation the tool tip stays nearly still." loading="lazy">
+        </div>
+
+        <div class="body">
+          <!-- TEXT: card 1.2 title -->
+          <h3>Cross-axis vibration compensation through the feed drives</h3>
+          <!-- TEXT: card 1.2 description -->
+          <p>A trajectory pre-filter adds a small Z command that cancels the tool-tip vibration excited by fast Y-axis moves, refined by machine-in-the-loop learning.</p>
+          <!-- TEXT: card 1.2 tags -->
+          <div class="tags">
+            <span class="method">Trajectory pre-filtering</span>
+            <span>ICPE 2024</span>
+          </div>
+        </div>
+        <!-- TEXT: card 1.2 result -->
+        <div class="result-line">
+          <span class="rnum">80%</span>
+          <span class="rdesc">lower vibration</span>
+          <span class="rsub">6 &rarr; 1.2 µm at the tool tip</span>
+        </div>
+      </a>
+
+    </div>
+  </div>
+  <!-- ########################## END OF THEME 1 ########################## -->
+
+
+  <!-- ##########################################################################
+       THEME 2: MACHINING PROCESS CONTROL
+       ########################################################################## -->
+  <div class="theme">
+
+    <!-- TEXT: theme 2 label -->
+    <p class="theme-label">Theme 2</p>
+
+    <!-- TEXT: theme 2 title -->
+    <h3 class="theme-title">Machining process control</h3>
+
+    <!-- TEXT: theme 2 description -->
+    <p class="theme-desc">Milling disturbs the machine in several ways, such as forced and chatter vibration from the cutting forces, uneven tooth loads from tool runout, and spindle speed ripple from the cutting torque. I model the kinematics and dynamics of the process, and build adaptive controllers that suppress these process-induced disturbances through the spindle and feed drives, for higher accuracy and productivity.</p>
+
+    <div class="theme-cards">
+
+      <!-- ====================================================================
+           CARD 2.1: CHATTER DETECTION AND ADAPTIVE SPINDLE SPEED CONTROL
+           ==================================================================== -->
+      <a class="card" href="/projects/spindle-speed-optimization.html">
+
+        <!-- MEDIA for card 2.1 -->
+        <div class="card-media">
+          <video data-inview src="/assets/video/card_sso.mp4" poster="/assets/video/card_sso.jpg" loop muted playsinline preload="metadata" aria-label="Milling test with adaptive spindle speed control: machine footage next to the measured acceleration, spindle speed and cost as chatter is suppressed."></video>
+        </div>
+
+        <div class="body">
+          <!-- TEXT: card 2.1 title -->
+          <h3>Chatter detection and adaptive spindle speed control</h3>
+          <!-- TEXT: card 2.1 description -->
+          <p>Lightweight algorithms detect chatter in real time. A separate model-free controller tunes the spindle speed from vibration feedback to remove chatter and minimize vibration.</p>
+          <!-- TEXT: card 2.1 tags -->
+          <div class="tags">
+            <span class="method">Extremum seeking</span>
+            <span>CIRP JMST</span>
+            <span>Manufacturing Letters</span>
+          </div>
+        </div>
+        <!-- TEXT: card 2.1 result -->
+        <div class="result-line">
+          <span class="rnum">85%</span>
+          <span class="rdesc">lower RMS vibration</span>
+          <span class="rsub">with spindle speed control, 131 &rarr; 20 m/s²</span>
+        </div>
+      </a>
+
+      <!-- ====================================================================
+           CARD 2.2: TOOL RUNOUT COMPENSATION
+           ==================================================================== -->
+      <a class="card" href="/projects/tool-eccentricity-compensation.html">
+
+        <!-- MEDIA for card 2.2 -->
+        <div class="card-media">
+          <video data-inview src="/assets/video/card_runout.mp4" poster="/assets/video/card_runout.jpg" loop muted playsinline preload="metadata" aria-label="Animation of tool runout compensation: with compensation off the teeth cut unequal chips; with compensation on, the feed drives move the workpiece so every tooth cuts the same chip."></video>
+        </div>
+
+        <div class="body">
+          <!-- TEXT: card 2.2 title -->
+          <h3>Tool runout compensation through the feed drives</h3>
+          <!-- TEXT: card 2.2 description -->
+          <p>A micro-circular feed motion cancels tool runout so every tooth cuts the same chip, tuned on the machine from force feedback.</p>
+          <!-- TEXT: card 2.2 tags -->
+          <div class="tags">
+            <span class="method">Convex optimization</span>
+            <span>ASME JMSE</span>
+            <span>Patent pending</span>
+          </div>
+        </div>
+        <!-- TEXT: card 2.2 result -->
+        <div class="result-line">
+          <span class="rnum">86%</span>
+          <span class="rdesc">lower force variation</span>
+          <span class="rsub">101 &rarr; 14 N</span>
+        </div>
+      </a>
+
+      <!-- ====================================================================
+           CARD 2.3: SPINDLE SPEED RIPPLE COMPENSATION
+           This card has no project page yet, so it is a <div>, not a link.
+           When the page exists, change  <div class="card no-link">  to
+           <a class="card" href="/projects/YOUR-PAGE.html">  and the closing
+           </div> of the card to </a>.
+           ==================================================================== -->
+      <div class="card no-link">
+
+        <!-- MEDIA for card 2.3
+             TODO: no clip yet. When it is ready, replace the "Video coming soon" line with:
+             <video data-inview src="/assets/video/ripple.mp4" poster="/assets/video/ripple.jpg" loop muted playsinline preload="metadata"></video>
+             and remove the word "soon" from class="card-media soon".
+        -->
+        <div class="card-media soon">
+          Video coming soon
+        </div>
+
+        <div class="body">
+          <!-- TEXT: card 2.3 title -->
+          <h3>Spindle speed ripple compensation through the spindle drive</h3>
+          <!-- TEXT: card 2.3 description -->
+          <p>Sinusoidal speed commands at the tooth-passing frequency and its harmonics cancel the speed ripple caused by cutting torque.</p>
+          <!-- TEXT: card 2.3 tags
+               TODO: add your method tag as the first line, for example:
+               <span class="method">Your method</span>
+          -->
+          <div class="tags">
+            <span>Manuscript in preparation</span>
+          </div>
+        </div>
+        <!-- TEXT: card 2.3 result
+             TODO: when you have the number, replace the single line below with these three:
+             <span class="rnum">X%</span>
+             <span class="rdesc">lower speed ripple</span>
+             <span class="rsub">before &rarr; after value</span>
+        -->
+        <div class="result-line">
+          <span class="rdesc pending">Results coming soon</span>
+        </div>
+      </div>
+
+    </div>
+  </div>
+  <!-- ########################## END OF THEME 2 ########################## -->
+
+</div></section>
+
+
+<!-- ============================================================================
+     SECTION 4: RECOGNITION
+     Rows with a "view" tag open a photo or video when clicked.
+     ============================================================================ -->
+<section><div class="wrap">
+  <h2 class="sec-title">Recognition</h2>
+  <!-- TEXT: hint line -->
+  <p class="rec-hint">Items tagged <span class="rec-cue">view</span> open a photo or video when clicked.</p>
+
+  <div class="recog">
+
+    <!-- ---------- ROW 1 ---------- -->
+    <details class="rec">
+      <summary>
+        <svg class="medal" aria-hidden="true"><use href="#medal"/></svg>
+        <!-- TEXT: recognition row 1 -->
+        <span>1st place, ASPE Student Challenge (2025)</span>
+        <span class="rec-cue">view</span>
+      </summary>
+      <div class="rec-body">
+        <iframe src="https://www.linkedin.com/embed/feed/update/urn:li:activity:7393730640225058816" frameborder="0" allowfullscreen title="ASPE Student Challenge on LinkedIn"></iframe>
+        <a class="rec-link" href="https://www.linkedin.com/feed/update/urn:li:activity:7393730640225058816/" target="_blank" rel="noopener">Watch on LinkedIn</a>
+        <a class="rec-link" href="https://aspe.net/2025-student-challenge/" target="_blank" rel="noopener">Visit the ASPE Student Challenge</a>
+      </div>
+    </details>
+
+    <!-- ---------- ROW 2 ---------- -->
+    <details class="rec">
+      <summary>
+        <svg class="medal" aria-hidden="true"><use href="#medal"/></svg>
+        <!-- TEXT: recognition row 2 -->
+        <span>Thomas A. Dow Student Scholarship, ASPE (2024)</span>
+        <span class="rec-cue">view</span>
+      </summary>
+      <div class="rec-body">
+        <img src="/images/ASPE2024award.png" alt="Thomas A. Dow Student Scholarship, ASPE (2024)" loading="lazy">
+        <a class="rec-link" href="https://aspe.net/student-scholarships/" target="_blank" rel="noopener">Visit ASPE student scholarships</a>
+      </div>
+    </details>
+
+    <!-- ---------- ROW 3 ---------- -->
+    <details class="rec">
+      <summary>
+        <svg class="medal" aria-hidden="true"><use href="#medal"/></svg>
+        <!-- TEXT: recognition row 3 -->
+        <span>Young Research Award, JSPE, ICPE 2024 (Sendai, Japan)</span>
+        <span class="rec-cue">view</span>
+      </summary>
+      <div class="rec-body">
+        <img src="/images/ICPE2024award.png" alt="Young Research Award, JSPE, ICPE 2024 (Sendai, Japan)" loading="lazy">
+      </div>
+    </details>
+
+    <!-- ---------- ROW 4 ---------- -->
+    <details class="rec">
+      <summary>
+        <svg class="medal" aria-hidden="true"><use href="#medal"/></svg>
+        <!-- TEXT: recognition row 4 -->
+        <span>Ranked 3rd in department, Control &amp; Automation Eng., ITU (2020)</span>
+        <span class="rec-cue">view</span>
+      </summary>
+      <div class="rec-body">
+        <img src="/images/Rank3rd.png" alt="Ranked 3rd in department, Control &amp; Automation Eng., ITU (2020)" loading="lazy">
+      </div>
+    </details>
+
+    <!-- ---------- ROW 5 ---------- -->
+    <div class="rec rec-static">
+      <svg class="medal" aria-hidden="true"><use href="#medal"/></svg>
+      <!-- TEXT: recognition row 5 -->
+      <span>Co-inventor on a pending patent for machine-tool control, filed with an industrial partner (2025)</span>
+    </div>
+
+    <!-- ---------- ROW 6 ---------- -->
+    <div class="rec rec-static">
+      <svg class="medal" aria-hidden="true"><use href="#medal"/></svg>
+      <!-- TEXT: recognition row 6 -->
+      <span>NSF Travel Awards, MSEC 2024 and NAMRC 2022</span>
+    </div>
+
+    <!-- ---------- ROW 7 ---------- -->
+    <div class="rec rec-static">
+      <svg class="medal" aria-hidden="true"><use href="#medal"/></svg>
+      <!-- TEXT: recognition row 7 -->
+      <span>Publications in CIRP Annals, CIRP JMST, ASME JMSE, and Manufacturing Letters</span>
+    </div>
+
+  </div>
+</div></section>
+
 </main>
 
+
+<!-- ============================================================================
+     SECTION 5: FOOTER
+     ============================================================================ -->
 <footer><div class="wrap foot-in">
   <div class="foot-links">
     <a href="mailto:kaan.bahtiyar@outlook.com">Email</a>
@@ -70,6 +526,30 @@
     <a href="https://www.linkedin.com/in/kaanbahtiyar">LinkedIn</a>
     <a href="/cv.html">CV</a>
   </div>
+  <!-- TEXT: copyright line -->
   <div class="foot-note">&copy; 2026 Kaan Bahtiyar &middot; Corvallis, OR</div>
 </div></footer>
-</body></html>
+
+
+<!-- ============================================================================
+     VIDEO PLAYBACK. Nothing to edit here.
+     Any <video data-inview ...> plays only while it is on screen and pauses when
+     scrolled away, so the page never has several clips running at once.
+     Visitors who turned on "reduce motion" see the still poster image instead.
+     ============================================================================ -->
+<script>
+(function () {
+  var vids = Array.prototype.slice.call(document.querySelectorAll('video[data-inview]'));
+  if (!vids.length) return;
+  if (window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+  function play(v) { v.muted = true; var p = v.play(); if (p && p.catch) p.catch(function () {}); }
+  if (!('IntersectionObserver' in window)) { vids.forEach(play); return; }
+  var io = new IntersectionObserver(function (entries) {
+    entries.forEach(function (e) { if (e.isIntersecting) play(e.target); else e.target.pause(); });
+  }, { threshold: 0.35 });
+  vids.forEach(function (v) { io.observe(v); });
+})();
+</script>
+
+</body>
+</html>
