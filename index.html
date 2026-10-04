@@ -1,37 +1,9 @@
 <!DOCTYPE html>
 <html lang="en">
-<!--
-  ============================================================================
-  HOMEPAGE (index.html)
-
-  HOW TO EDIT THE WRITING
-  - Every piece of text you may want to change sits on its own line, directly
-    under a comment that starts with "TEXT:".
-  - Press Ctrl+F (Cmd+F on Mac) and search for "TEXT:" to jump between them,
-    or search for a section name from the list below.
-  - Change only the words between the tags. Leave the <tags> themselves alone.
-  - "TODO:" comments mark placeholders that still need your input.
-
-  SECTIONS, IN PAGE ORDER
-    SECTION 1: TOP               photo, name, short About, links  |  Education
-    SECTION 2: RESEARCH
-        AREA 1: Precision motion control and mechatronics
-            CARD 1.1  Active damper control (wide card: feedback | feedforward)
-            CARD 1.2  Cross-axis vibration compensation
-        AREA 2: Machining process control
-            CARD 2.1  Chatter detection and adaptive spindle speed control
-            CARD 2.2  Tool runout compensation
-            CARD 2.3  Spindle speed ripple compensation
-    SECTION 3: RECOGNITION
-    SECTION 4: FOOTER
-  ============================================================================
--->
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<!-- TEXT: browser tab title -->
 <title>Kaan Bahtiyar, PhD Candidate in Robotics</title>
-<!-- TEXT: description shown by search engines and link previews (keep both lines identical) -->
 <meta name="description" content="Kaan Bahtiyar, PhD candidate in Robotics at Oregon State University, working on precision motion control and real-time vibration mitigation for machine tools, validated on real CNC hardware.">
 <meta property="og:description" content="Kaan Bahtiyar, PhD candidate in Robotics at Oregon State University, working on precision motion control and real-time vibration mitigation for machine tools, validated on real CNC hardware.">
 <meta property="og:title" content="Kaan Bahtiyar, PhD Candidate in Robotics">
@@ -40,13 +12,10 @@
 <link rel="icon" href="/images/favicon.ico">
 <link rel="stylesheet" href="/assets/style.css">
 </head>
-<!-- class="home" makes this page wider than the others so the theme cards have room (see the end of style.css) -->
 <body class="home">
 
-<!-- Medal icon, defined once and reused by every row in SECTION 3. Nothing to edit here. -->
 <svg width="0" height="0" style="position:absolute" aria-hidden="true"><symbol id="medal" viewBox="0 0 24 24"><polygon points="8,3 11,3 12.6,11 9.2,12" fill="#8fcdd9"/><polygon points="16,3 13,3 11.4,11 14.8,12" fill="#8fcdd9"/><circle cx="12" cy="15.5" r="6.2" fill="#0e7490"/><path d="M12 11.5 L12.999 14.125 L15.804 14.264 L13.617 16.025 L14.351 18.736 L12 17.2 L9.649 18.736 L10.383 16.025 L8.196 14.264 L11.001 14.125 Z" fill="#fff"/></symbol></svg>
 
-<!-- ============================ TOP NAVIGATION ============================ -->
 <nav class="nav"><div class="wrap nav-in">
   <a class="brand" href="/index.html"><span class="dot"></span>Kaan</a>
   <div class="nav-links">
@@ -57,41 +26,28 @@
   </div>
 </div></nav>
 
-
-<!-- ============================================================================
-     SECTION 1: TOP
-     Left: photo, name, short About, buttons, links.   Right: Education.
-     ============================================================================ -->
 <header class="hero"><div class="wrap top">
 
-  <!-- ---------- LEFT: ABOUT ---------- -->
   <div class="top-about">
 
     <div class="who">
       <img class="avatar" src="/images/profilekaan.png" alt="Kaan Bahtiyar">
       <div>
-        <!-- TEXT: name -->
         <h1>Kaan Bahtiyar</h1>
-        <!-- TEXT: title -->
         <p class="title">PhD Candidate in Robotics</p>
-        <!-- TEXT: lab and university -->
-        <p class="affil">Manufacturing Process Control Laboratory, Oregon State University</p>
+        <p class="affil"><a href="https://research.engineering.oregonstate.edu/pmal" target="_blank" rel="noopener">Precision Manufacturing &amp; Automation Laboratory</a>, Oregon State University</p>
       </div>
     </div>
 
-    <!-- TEXT: short About -->
     <p class="lead">PhD candidate at Oregon State University, working on precision motion control and mechatronics. I develop learning-based and adaptive controllers that suppress vibration in machine tools and motion stages, and I validate them on real hardware that I build and instrument myself.</p>
 
-    <!-- TEXT: availability line -->
     <p class="avail"><span class="avail-dot"></span><strong>Open to work.</strong> Expected graduation June 2027.</p>
 
-    <!-- TEXT: the two buttons -->
     <div class="cta-row">
       <a class="btn btn-primary" href="/cv.html">View CV</a>
       <a class="btn btn-ghost" href="/projects.html">See projects</a>
     </div>
 
-    <!-- Contact links -->
     <div class="social">
       <a href="mailto:kaan.bahtiyar@outlook.com">Email</a>
       <a href="https://scholar.google.com/citations?user=C0g9DXQAAAAJ&hl=en">Google Scholar</a>
@@ -101,11 +57,9 @@
 
   </div>
 
-  <!-- ---------- RIGHT: EDUCATION ---------- -->
   <div class="top-edu">
     <h2 class="sec-title">Education</h2>
 
-    <!-- TEXT: education entry 1 (degree, university, years) -->
     <div class="edu-item">
       <div>
         <div class="d"><a href="https://engineering.oregonstate.edu/academics/programs/robotics" target="_blank" rel="noopener">Ph.D. and M.Sc., Robotics</a></div>
@@ -114,7 +68,6 @@
       <div class="y">2020-Present</div>
     </div>
 
-    <!-- TEXT: education entry 2 (two degrees, university, years) -->
     <div class="edu-item">
       <div>
         <div class="d"><a href="https://kontrol.itu.edu.tr/en" target="_blank" rel="noopener">B.Sc., Control &amp; Automation Engineering</a></div>
@@ -130,72 +83,38 @@
 
 <main>
 
-<!-- ============================================================================
-     SECTION 2: RESEARCH
-
-     How a card is built (same pattern for every card):
-       card-media   the image or video on top
-       h3           card title
-       p            one-sentence description
-       tags         first tag (class "method") is the control method,
-                    the others are the venue or status
-       result-line  rnum = big number, rdesc = what it measures,
-                    rsub = small line underneath (before and after values)
-     ============================================================================ -->
 <section class="band"><div class="wrap">
 
-  <!-- TEXT: section heading -->
   <h2 class="sec-title">Research</h2>
 
-
-  <!-- ##########################################################################
-       AREA 1: PRECISION MOTION CONTROL AND MECHATRONICS
-       ########################################################################## -->
   <div class="theme">
 
-    <!-- TEXT: area 1 title -->
     <h3 class="theme-title">Precision motion control and mechatronics</h3>
 
-    <!-- TEXT: area 1 description -->
     <p class="theme-desc">Rapid axis motion excites the structural dynamics of machine tools and other motion systems, leaving residual vibration after each move and cross-talk between axes. Both force longer dwell times and limit productivity. I model and identify the machine's dynamics, and develop data-driven feedback and feedforward controllers that suppress these trajectory-induced vibrations through active dampers and the machine's existing feed drives, for faster settling and higher accuracy.</p>
 
     <div class="theme-cards">
 
-      <!-- ====================================================================
-           CARD 1.1: ACTIVE DAMPER CONTROL
-           Wide card. One image or video on top, then two halves:
-           LEFT = feedback, RIGHT = feedforward.
-           ==================================================================== -->
       <a class="card wide" href="/projects/inertial-damper-control.html">
 
-        <!-- MEDIA for card 1.1
-             Left: clip of the feed-drive testbed. Right: measured table position.
-             To change either one, edit the file name after src= on its line.
-        -->
         <div class="card-media duo">
           <video data-inview src="/assets/video/card_damper.mp4" poster="/assets/video/card_damper.jpg" loop muted playsinline preload="metadata" aria-label="Feed-drive testbed: the table carrying the active damper makes a fast point-to-point move."></video>
           <img src="/images/projects/damper_fb_ff.png" alt="Measured table position after a move. Feedback plus feedforward settles into the plus or minus 2 micrometer band first, auto-tuned feedback second, conventional feedback tuning third, and open loop last." loading="lazy">
         </div>
 
-        <!-- TEXT: card 1.1 title -->
         <h3 class="card-title">Active damper control</h3>
 
         <div class="split">
 
-          <!-- ---------- LEFT HALF: FEEDBACK ---------- -->
           <div class="half">
             <div class="body">
-              <!-- TEXT: card 1.1 left, subtitle -->
               <h4>Auto-tuned feedback</h4>
-              <!-- TEXT: card 1.1 left, description -->
               <p>The velocity-feedback law tunes itself online from measured vibration, by solving a band-selective constrained optimization at every time step.</p>
-              <!-- TEXT: card 1.1 left, tags -->
               <div class="tags">
                 <span class="method">Constrained QP</span>
                 <span>In preparation</span>
               </div>
             </div>
-            <!-- TEXT: card 1.1 left, result -->
             <div class="result-line">
               <span class="rnum">70%</span>
               <span class="rdesc">less damper stroke</span>
@@ -203,20 +122,15 @@
             </div>
           </div>
 
-          <!-- ---------- RIGHT HALF: FEEDFORWARD ---------- -->
           <div class="half">
             <div class="body">
-              <!-- TEXT: card 1.1 right, subtitle -->
               <h4>Learned feedforward</h4>
-              <!-- TEXT: card 1.1 right, description -->
               <p>Iterative learning adds a feedforward force that removes the initial overshoot feedback alone cannot, within stroke and force limits.</p>
-              <!-- TEXT: card 1.1 right, tags -->
               <div class="tags">
                 <span class="method">Iterative learning</span>
                 <span>CIRP Annals</span>
               </div>
             </div>
-            <!-- TEXT: card 1.1 right, result -->
             <div class="result-line">
               <span class="rnum">87%</span>
               <span class="rdesc">lower peak error</span>
@@ -227,28 +141,20 @@
         </div>
       </a>
 
-      <!-- ====================================================================
-           CARD 1.2: CROSS-AXIS VIBRATION COMPENSATION
-           ==================================================================== -->
       <a class="card" href="/projects/cross-coupling-vibrations.html">
 
-        <!-- MEDIA for card 1.2 -->
         <div class="card-media">
           <img src="/images/projects/crossaxis_animation.gif" alt="Animation: a Y-axis table move rocks the machine column and vibrates the tool tip in Z. With cross-talk compensation the tool tip stays nearly still." loading="lazy">
         </div>
 
         <div class="body">
-          <!-- TEXT: card 1.2 title -->
           <h3>Cross-axis vibration compensation through the feed drives</h3>
-          <!-- TEXT: card 1.2 description -->
           <p>A trajectory pre-filter adds a small Z command that cancels the tool-tip vibration excited by fast Y-axis moves, refined by machine-in-the-loop learning.</p>
-          <!-- TEXT: card 1.2 tags -->
           <div class="tags">
             <span class="method">Trajectory pre-filtering</span>
             <span>ICPE 2024</span>
           </div>
         </div>
-        <!-- TEXT: card 1.2 result -->
         <div class="result-line">
           <span class="rnum">80%</span>
           <span class="rdesc">lower vibration</span>
@@ -258,45 +164,30 @@
 
     </div>
   </div>
-  <!-- ########################## END OF AREA 1 ########################## -->
 
-
-  <!-- ##########################################################################
-       AREA 2: MACHINING PROCESS CONTROL
-       ########################################################################## -->
   <div class="theme">
 
-    <!-- TEXT: area 2 title -->
     <h3 class="theme-title">Machining process control</h3>
 
-    <!-- TEXT: area 2 description -->
     <p class="theme-desc">Milling disturbs the machine in several ways, such as forced and chatter vibration from the cutting forces, uneven tooth loads from tool runout, and spindle speed ripple from the cutting torque. I model the kinematics and dynamics of the process, and build adaptive controllers that suppress these process-induced disturbances through the spindle and feed drives, for higher accuracy and productivity.</p>
 
     <div class="theme-cards">
 
-      <!-- ====================================================================
-           CARD 2.1: CHATTER DETECTION AND ADAPTIVE SPINDLE SPEED CONTROL
-           ==================================================================== -->
       <a class="card" href="/projects/spindle-speed-optimization.html">
 
-        <!-- MEDIA for card 2.1 -->
         <div class="card-media">
           <video data-inview src="/assets/video/card_sso.mp4" poster="/assets/video/card_sso.jpg" loop muted playsinline preload="metadata" aria-label="Milling test with adaptive spindle speed control: machine footage next to the measured acceleration, spindle speed and cost as chatter is suppressed."></video>
         </div>
 
         <div class="body">
-          <!-- TEXT: card 2.1 title -->
           <h3>Chatter detection and adaptive spindle speed control</h3>
-          <!-- TEXT: card 2.1 description -->
           <p>Lightweight algorithms detect chatter in real time. A separate model-free controller tunes the spindle speed from vibration feedback to remove chatter and minimize vibration.</p>
-          <!-- TEXT: card 2.1 tags -->
           <div class="tags">
             <span class="method">Extremum seeking</span>
             <span>CIRP JMST</span>
             <span>Manufacturing Letters</span>
           </div>
         </div>
-        <!-- TEXT: card 2.1 result -->
         <div class="result-line">
           <span class="rnum">85%</span>
           <span class="rdesc">lower RMS vibration</span>
@@ -304,29 +195,21 @@
         </div>
       </a>
 
-      <!-- ====================================================================
-           CARD 2.2: TOOL RUNOUT COMPENSATION
-           ==================================================================== -->
       <a class="card" href="/projects/tool-eccentricity-compensation.html">
 
-        <!-- MEDIA for card 2.2 -->
         <div class="card-media">
           <video data-inview src="/assets/video/card_runout.mp4" poster="/assets/video/card_runout.jpg" loop muted playsinline preload="metadata" aria-label="Animation of tool runout compensation: with compensation off the teeth cut unequal chips; with compensation on, the feed drives move the workpiece so every tooth cuts the same chip."></video>
         </div>
 
         <div class="body">
-          <!-- TEXT: card 2.2 title -->
           <h3>Tool runout compensation through the feed drives</h3>
-          <!-- TEXT: card 2.2 description -->
           <p>A micro-circular feed motion cancels tool runout so every tooth cuts the same chip, tuned on the machine from force feedback.</p>
-          <!-- TEXT: card 2.2 tags -->
           <div class="tags">
             <span class="method">Convex optimization</span>
             <span>ASME JMSE</span>
             <span>Patent pending</span>
           </div>
         </div>
-        <!-- TEXT: card 2.2 result -->
         <div class="result-line">
           <span class="rnum">86%</span>
           <span class="rdesc">lower force variation</span>
@@ -334,43 +217,19 @@
         </div>
       </a>
 
-      <!-- ====================================================================
-           CARD 2.3: SPINDLE SPEED RIPPLE COMPENSATION
-           This card has no project page yet, so it is a <div>, not a link.
-           When the page exists, change  <div class="card no-link">  to
-           <a class="card" href="/projects/YOUR-PAGE.html">  and the closing
-           </div> of the card to </a>.
-           ==================================================================== -->
       <div class="card no-link">
 
-        <!-- MEDIA for card 2.3
-             TODO: no clip yet. When it is ready, replace the "Video coming soon" line with:
-             <video data-inview src="/assets/video/ripple.mp4" poster="/assets/video/ripple.jpg" loop muted playsinline preload="metadata"></video>
-             and remove the word "soon" from class="card-media soon".
-        -->
         <div class="card-media soon">
           Video coming soon
         </div>
 
         <div class="body">
-          <!-- TEXT: card 2.3 title -->
           <h3>Spindle speed ripple compensation through the spindle drive</h3>
-          <!-- TEXT: card 2.3 description -->
           <p>Sinusoidal speed commands at the tooth-passing frequency and its harmonics cancel the speed ripple caused by cutting torque.</p>
-          <!-- TEXT: card 2.3 tags
-               TODO: add your method tag as the first line, for example:
-               <span class="method">Your method</span>
-          -->
           <div class="tags">
             <span>Manuscript in preparation</span>
           </div>
         </div>
-        <!-- TEXT: card 2.3 result
-             TODO: when you have the number, replace the single line below with these three:
-             <span class="rnum">X%</span>
-             <span class="rdesc">lower speed ripple</span>
-             <span class="rsub">before &rarr; after value</span>
-        -->
         <div class="result-line">
           <span class="rdesc pending">Results coming soon</span>
         </div>
@@ -378,27 +237,18 @@
 
     </div>
   </div>
-  <!-- ########################## END OF AREA 2 ########################## -->
 
 </div></section>
 
-
-<!-- ============================================================================
-     SECTION 3: RECOGNITION
-     Rows with a "view" tag open a photo or video when clicked.
-     ============================================================================ -->
 <section><div class="wrap">
   <h2 class="sec-title">Recognition</h2>
-  <!-- TEXT: hint line -->
   <p class="rec-hint">Items tagged <span class="rec-cue">view</span> open a photo or video when clicked.</p>
 
   <div class="recog">
 
-    <!-- ---------- ROW 1 ---------- -->
     <details class="rec">
       <summary>
         <svg class="medal" aria-hidden="true"><use href="#medal"/></svg>
-        <!-- TEXT: recognition row 1 -->
         <span>1st place, ASPE Student Challenge (2025)</span>
         <span class="rec-cue">view</span>
       </summary>
@@ -409,11 +259,9 @@
       </div>
     </details>
 
-    <!-- ---------- ROW 2 ---------- -->
     <details class="rec">
       <summary>
         <svg class="medal" aria-hidden="true"><use href="#medal"/></svg>
-        <!-- TEXT: recognition row 2 -->
         <span>Thomas A. Dow Student Scholarship, ASPE (2024)</span>
         <span class="rec-cue">view</span>
       </summary>
@@ -423,11 +271,9 @@
       </div>
     </details>
 
-    <!-- ---------- ROW 3 ---------- -->
     <details class="rec">
       <summary>
         <svg class="medal" aria-hidden="true"><use href="#medal"/></svg>
-        <!-- TEXT: recognition row 3 -->
         <span>Young Research Award, JSPE, ICPE 2024 (Sendai, Japan)</span>
         <span class="rec-cue">view</span>
       </summary>
@@ -436,11 +282,9 @@
       </div>
     </details>
 
-    <!-- ---------- ROW 4 ---------- -->
     <details class="rec">
       <summary>
         <svg class="medal" aria-hidden="true"><use href="#medal"/></svg>
-        <!-- TEXT: recognition row 4 -->
         <span>Ranked 3rd in department, Control &amp; Automation Eng., ITU (2020)</span>
         <span class="rec-cue">view</span>
       </summary>
@@ -449,24 +293,18 @@
       </div>
     </details>
 
-    <!-- ---------- ROW 5 ---------- -->
     <div class="rec rec-static">
       <svg class="medal" aria-hidden="true"><use href="#medal"/></svg>
-      <!-- TEXT: recognition row 5 -->
       <span>Co-inventor on a pending patent for machine-tool control, filed with an industrial partner (2025)</span>
     </div>
 
-    <!-- ---------- ROW 6 ---------- -->
     <div class="rec rec-static">
       <svg class="medal" aria-hidden="true"><use href="#medal"/></svg>
-      <!-- TEXT: recognition row 6 -->
       <span>NSF Travel Awards, MSEC 2024 and NAMRC 2022</span>
     </div>
 
-    <!-- ---------- ROW 7 ---------- -->
     <div class="rec rec-static">
       <svg class="medal" aria-hidden="true"><use href="#medal"/></svg>
-      <!-- TEXT: recognition row 7 -->
       <span>Publications in CIRP Annals, CIRP JMST, ASME JMSE, and Manufacturing Letters</span>
     </div>
 
@@ -475,10 +313,6 @@
 
 </main>
 
-
-<!-- ============================================================================
-     SECTION 4: FOOTER
-     ============================================================================ -->
 <footer><div class="wrap foot-in">
   <div class="foot-links">
     <a href="mailto:kaan.bahtiyar@outlook.com">Email</a>
@@ -487,17 +321,9 @@
     <a href="https://www.linkedin.com/in/kaanbahtiyar">LinkedIn</a>
     <a href="/cv.html">CV</a>
   </div>
-  <!-- TEXT: copyright line -->
   <div class="foot-note">&copy; 2026 Kaan Bahtiyar &middot; Corvallis, OR</div>
 </div></footer>
 
-
-<!-- ============================================================================
-     VIDEO PLAYBACK. Nothing to edit here.
-     Any <video data-inview ...> plays only while it is on screen and pauses when
-     scrolled away, so the page never has several clips running at once.
-     Visitors who turned on "reduce motion" see the still poster image instead.
-     ============================================================================ -->
 <script>
 (function () {
   var vids = Array.prototype.slice.call(document.querySelectorAll('video[data-inview]'));
