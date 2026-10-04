@@ -148,6 +148,7 @@ section{padding:2.6rem 0;}
 .prose li::marker{color:var(--accent);}
 .fig{margin:1.7rem 0;}
 .fig img{display:block; width:100%; border:1px solid var(--line); border-radius:10px; background:#fff; padding:.6rem;}
+.fig video{display:block; width:100%; height:auto; border:1px solid var(--line); border-radius:10px; background:#fff;}
 .fig .cap{font-size:.87rem; color:var(--slate); margin-top:.55rem; line-height:1.5;}
 .fig.mid{max-width:660px;}
 .fig-grid{display:grid; grid-template-columns:1fr 1fr; gap:1.3rem; margin:1.7rem 0;}
