@@ -211,7 +211,28 @@ footer{border-top:1px solid var(--line); background:var(--bg-soft); margin-top:1
    Make the cards bigger or smaller by changing this one number. */
 .home{--wrap:1360px;}
 
-/* grey band behind the whole themes section */
+/* TOP OF THE HOMEPAGE: About on the left, Education on the right */
+.top{display:grid; grid-template-columns:minmax(0,1.5fr) minmax(0,1fr); gap:4rem; align-items:start; padding-top:2.6rem; padding-bottom:2.6rem;}
+.who{display:flex; align-items:center; gap:1.2rem; margin:0 0 1.2rem;}
+.who .avatar{width:96px; height:96px; margin:0; flex:none;}
+.who h1{margin:0 0 .2rem;}
+.who .title{margin:0 0 .1rem;}
+.who .affil{margin:0;}
+.hero .top p.lead{max-width:64ch; margin:0 0 .9rem;}
+/* availability line with a green dot */
+.avail{display:flex; align-items:center; gap:.55rem; margin:0 0 1.3rem; color:var(--ink);}
+.avail-dot{width:9px; height:9px; border-radius:50%; background:#2e9e5b; flex:none;}
+.top .social{margin:1.1rem 0 0;}
+.top-edu .sec-title{margin:0 0 .3rem;}
+.top-edu .edu-item .d + .d{margin-top:.15rem;}
+@media (max-width:860px){
+  .top{grid-template-columns:1fr; gap:1.8rem; padding-top:2rem; padding-bottom:2rem;}
+}
+
+/* footer keeps the same side padding as the rest of the page (it touched the screen edge on phones) */
+.foot-in{padding-left:1.5rem; padding-right:1.5rem;}
+
+/* grey band behind the whole research section */
 .band{background:var(--bg-soft); border-top:1px solid var(--line); border-bottom:1px solid var(--line);}
 
 /* one theme = label + title + description + a row of cards */
