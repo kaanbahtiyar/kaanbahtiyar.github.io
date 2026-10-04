@@ -13,18 +13,17 @@
   - "TODO:" comments mark placeholders that still need your input.
 
   SECTIONS, IN PAGE ORDER
-    SECTION 1: HERO              name, title, lab, intro paragraph, links
-    SECTION 2: ABOUT + EDUCATION
-    SECTION 3: RESEARCH THEMES
-        THEME 1: Precision motion control and mechatronics
+    SECTION 1: TOP               photo, name, short About, links  |  Education
+    SECTION 2: RESEARCH
+        AREA 1: Precision motion control and mechatronics
             CARD 1.1  Active damper control (wide card: feedback | feedforward)
             CARD 1.2  Cross-axis vibration compensation
-        THEME 2: Machining process control
+        AREA 2: Machining process control
             CARD 2.1  Chatter detection and adaptive spindle speed control
             CARD 2.2  Tool runout compensation
             CARD 2.3  Spindle speed ripple compensation
-    SECTION 4: RECOGNITION
-    SECTION 5: FOOTER
+    SECTION 3: RECOGNITION
+    SECTION 4: FOOTER
   ============================================================================
 -->
 <head>
@@ -44,7 +43,7 @@
 <!-- class="home" makes this page wider than the others so the theme cards have room (see the end of style.css) -->
 <body class="home">
 
-<!-- Medal icon, defined once and reused by every row in SECTION 4. Nothing to edit here. -->
+<!-- Medal icon, defined once and reused by every row in SECTION 3. Nothing to edit here. -->
 <svg width="0" height="0" style="position:absolute" aria-hidden="true"><symbol id="medal" viewBox="0 0 24 24"><polygon points="8,3 11,3 12.6,11 9.2,12" fill="#8fcdd9"/><polygon points="16,3 13,3 11.4,11 14.8,12" fill="#8fcdd9"/><circle cx="12" cy="15.5" r="6.2" fill="#0e7490"/><path d="M12 11.5 L12.999 14.125 L15.804 14.264 L13.617 16.025 L14.351 18.736 L12 17.2 L9.649 18.736 L10.383 16.025 L8.196 14.264 L11.001 14.125 Z" fill="#fff"/></symbol></svg>
 
 <!-- ============================ TOP NAVIGATION ============================ -->
@@ -60,23 +59,37 @@
 
 
 <!-- ============================================================================
-     SECTION 1: HERO
+     SECTION 1: TOP
+     Left: photo, name, short About, buttons, links.   Right: Education.
      ============================================================================ -->
-<header class="hero"><div class="wrap hero-grid">
-  <div>
-    <img class="avatar" src="/images/profilekaan.png" alt="Kaan Bahtiyar">
+<header class="hero"><div class="wrap top">
 
-    <!-- TEXT: name -->
-    <h1>Kaan Bahtiyar</h1>
+  <!-- ---------- LEFT: ABOUT ---------- -->
+  <div class="top-about">
 
-    <!-- TEXT: title -->
-    <p class="title">PhD Candidate in Robotics</p>
+    <div class="who">
+      <img class="avatar" src="/images/profilekaan.png" alt="Kaan Bahtiyar">
+      <div>
+        <!-- TEXT: name -->
+        <h1>Kaan Bahtiyar</h1>
+        <!-- TEXT: title -->
+        <p class="title">PhD Candidate in Robotics</p>
+        <!-- TEXT: lab and university -->
+        <p class="affil">Manufacturing Process Control Laboratory, Oregon State University</p>
+      </div>
+    </div>
 
-    <!-- TEXT: lab and university -->
-    <p class="affil">Manufacturing Process Control Laboratory, Oregon State University</p>
+    <!-- TEXT: short About -->
+    <p class="lead">PhD candidate at Oregon State University, working on precision motion control and mechatronics. I develop learning-based and adaptive controllers that suppress vibration in machine tools and motion stages, and I validate them on real hardware that I build and instrument myself.</p>
 
-    <!-- TEXT: intro paragraph -->
-    <p class="lead">I work on precision motion control and real-time vibration mitigation for industrial mechatronic systems. I develop and experimentally validate optimization-driven and adaptive control frameworks, including Iterative Learning Control (ILC), Extremum-Seeking Control (ESC), and convex optimization, to actively suppress vibrations and counteract process-induced disturbances in multi-axis CNC machine tools, linear stages, and feed-drive mechanisms.</p>
+    <!-- TEXT: availability line -->
+    <p class="avail"><span class="avail-dot"></span><strong>Open to work.</strong> Expected graduation June 2027.</p>
+
+    <!-- TEXT: the two buttons -->
+    <div class="cta-row">
+      <a class="btn btn-primary" href="/cv.html">View CV</a>
+      <a class="btn btn-ghost" href="/projects.html">See projects</a>
+    </div>
 
     <!-- Contact links -->
     <div class="social">
@@ -86,86 +99,39 @@
       <a href="https://www.linkedin.com/in/kaanbahtiyar">LinkedIn</a>
     </div>
 
-    <!-- TEXT: the two buttons -->
-    <div class="cta-row">
-      <a class="btn btn-primary" href="/cv.html">View CV</a>
-      <a class="btn btn-ghost" href="/projects.html">See projects</a>
-    </div>
   </div>
 
-  <!-- Hero animation -->
-  <div class="hero-anim"><div class="frame">
-    <video src="/assets/video/hero.mp4" poster="/assets/video/hero.jpg" autoplay loop muted playsinline preload="auto" aria-label="Robot arm pick-and-place animation: an uncontrolled run shows large end-effector vibration when placing a part, plotted against time; after a learning-based controller adjustment, the mitigated run shows much smaller, quickly damped vibration." style="width:100%; height:auto; display:block; border-radius:6px;"></video>
-  </div></div>
+  <!-- ---------- RIGHT: EDUCATION ---------- -->
+  <div class="top-edu">
+    <h2 class="sec-title">Education</h2>
+
+    <!-- TEXT: education entry 1 (degree, university, years) -->
+    <div class="edu-item">
+      <div>
+        <div class="d"><a href="https://engineering.oregonstate.edu/academics/programs/robotics" target="_blank" rel="noopener">Ph.D. and M.Sc., Robotics</a></div>
+        <div class="s">Oregon State University, Ph.D. expected June 2027</div>
+      </div>
+      <div class="y">2020-Present</div>
+    </div>
+
+    <!-- TEXT: education entry 2 (two degrees, university, years) -->
+    <div class="edu-item">
+      <div>
+        <div class="d"><a href="https://kontrol.itu.edu.tr/en" target="_blank" rel="noopener">B.Sc., Control &amp; Automation Engineering</a></div>
+        <div class="d"><a href="https://mkn.itu.edu.tr/en" target="_blank" rel="noopener">B.Sc., Mechanical Engineering</a></div>
+        <div class="s">Istanbul Technical University</div>
+      </div>
+      <div class="y">2014-2020</div>
+    </div>
+
+  </div>
+
 </div></header>
 
 <main>
 
 <!-- ============================================================================
-     SECTION 2: ABOUT + EDUCATION
-     ============================================================================ -->
-<section><div class="wrap"><div class="about-edu">
-
-  <!-- ---------- ABOUT ---------- -->
-  <div class="ae-col">
-    <h2 class="sec-title">About</h2>
-    <div class="lead-block">
-
-      <!-- TEXT: about, paragraph 1 -->
-      <p>I am a control systems engineer specializing in precision motion control, mechatronics, and machining process dynamics for advanced manufacturing. My research bridges advanced control theory with process-induced mechanics to solve real-world manufacturing challenges using ILC-based convex optimization to compensate for tool runout and YZ cross-talk, adaptive strategies for spindle speed ripple in difficult-to-cut materials, and ESC to actively mitigate process induced forced and regenerative chatter vibrations in milling operations. I also design feedback and feedforward control strategies for active damper systems (tuned via ILC and Iterative Feedback Tuning (IFT)) for trajectory-induced vibrations in feed drives. Each framework I develop translates modern control and optimization theory into <strong>experimentally validated</strong> solutions for industrial automation.</p>
-
-      <!-- TEXT: about, paragraph 2 -->
-      <p>Over the past six years I have built, instrumented, and operated the experimental testbeds behind my research, and developed the real-time control and measurement systems that run on them. The hardware I have worked with includes motion stages (linear motor driven, voice-coil actuated, feed drives, industrial CNC machine tools), dSPACE and NI myRIO real-time systems, and force, acceleration, and displacement sensors. I am advised by <a href="https://engineering.oregonstate.edu/people/burak-sencer">Dr. Burak Sencer</a>.</p>
-
-    </div>
-  </div>
-
-  <!-- ---------- EDUCATION ---------- -->
-  <div class="ae-col">
-    <h2 class="sec-title">Education</h2>
-
-    <!-- TEXT: degree 1 (degree, university, years) -->
-    <div class="edu-item">
-      <div>
-        <div class="d"><a href="https://engineering.oregonstate.edu/academics/programs/robotics" target="_blank" rel="noopener">Ph.D., Robotics</a></div>
-        <div class="s">Oregon State University</div>
-      </div>
-      <div class="y">2022-Present</div>
-    </div>
-
-    <!-- TEXT: degree 2 -->
-    <div class="edu-item">
-      <div>
-        <div class="d"><a href="https://engineering.oregonstate.edu/academics/programs/robotics" target="_blank" rel="noopener">M.Sc., Robotics</a></div>
-        <div class="s">Oregon State University</div>
-      </div>
-      <div class="y">2020-2023</div>
-    </div>
-
-    <!-- TEXT: degree 3 -->
-    <div class="edu-item">
-      <div>
-        <div class="d"><a href="https://kontrol.itu.edu.tr/en" target="_blank" rel="noopener">B.Sc., Control &amp; Automation Engineering</a></div>
-        <div class="s">Istanbul Technical University</div>
-      </div>
-      <div class="y">2017-2020</div>
-    </div>
-
-    <!-- TEXT: degree 4 -->
-    <div class="edu-item">
-      <div>
-        <div class="d"><a href="https://mkn.itu.edu.tr/en" target="_blank" rel="noopener">B.Sc., Mechanical Engineering</a></div>
-        <div class="s">Istanbul Technical University</div>
-      </div>
-      <div class="y">2014-2019</div>
-    </div>
-
-  </div>
-</div></div></section>
-
-
-<!-- ============================================================================
-     SECTION 3: RESEARCH THEMES
+     SECTION 2: RESEARCH
 
      How a card is built (same pattern for every card):
        card-media   the image or video on top
@@ -179,21 +145,18 @@
 <section class="band"><div class="wrap">
 
   <!-- TEXT: section heading -->
-  <h2 class="sec-title">Research themes</h2>
+  <h2 class="sec-title">Research</h2>
 
 
   <!-- ##########################################################################
-       THEME 1: PRECISION MOTION CONTROL AND MECHATRONICS
+       AREA 1: PRECISION MOTION CONTROL AND MECHATRONICS
        ########################################################################## -->
   <div class="theme">
 
-    <!-- TEXT: theme 1 label -->
-    <p class="theme-label">Theme 1</p>
-
-    <!-- TEXT: theme 1 title -->
+    <!-- TEXT: area 1 title -->
     <h3 class="theme-title">Precision motion control and mechatronics</h3>
 
-    <!-- TEXT: theme 1 description -->
+    <!-- TEXT: area 1 description -->
     <p class="theme-desc">Rapid axis motion excites the structural dynamics of machine tools and other motion systems, leaving residual vibration after each move and cross-talk between axes. Both force longer dwell times and limit productivity. I model and identify the machine's dynamics, and develop data-driven feedback and feedforward controllers that suppress these trajectory-induced vibrations through active dampers and the machine's existing feed drives, for faster settling and higher accuracy.</p>
 
     <div class="theme-cards">
@@ -295,21 +258,18 @@
 
     </div>
   </div>
-  <!-- ########################## END OF THEME 1 ########################## -->
+  <!-- ########################## END OF AREA 1 ########################## -->
 
 
   <!-- ##########################################################################
-       THEME 2: MACHINING PROCESS CONTROL
+       AREA 2: MACHINING PROCESS CONTROL
        ########################################################################## -->
   <div class="theme">
 
-    <!-- TEXT: theme 2 label -->
-    <p class="theme-label">Theme 2</p>
-
-    <!-- TEXT: theme 2 title -->
+    <!-- TEXT: area 2 title -->
     <h3 class="theme-title">Machining process control</h3>
 
-    <!-- TEXT: theme 2 description -->
+    <!-- TEXT: area 2 description -->
     <p class="theme-desc">Milling disturbs the machine in several ways, such as forced and chatter vibration from the cutting forces, uneven tooth loads from tool runout, and spindle speed ripple from the cutting torque. I model the kinematics and dynamics of the process, and build adaptive controllers that suppress these process-induced disturbances through the spindle and feed drives, for higher accuracy and productivity.</p>
 
     <div class="theme-cards">
@@ -418,13 +378,13 @@
 
     </div>
   </div>
-  <!-- ########################## END OF THEME 2 ########################## -->
+  <!-- ########################## END OF AREA 2 ########################## -->
 
 </div></section>
 
 
 <!-- ============================================================================
-     SECTION 4: RECOGNITION
+     SECTION 3: RECOGNITION
      Rows with a "view" tag open a photo or video when clicked.
      ============================================================================ -->
 <section><div class="wrap">
@@ -517,7 +477,7 @@
 
 
 <!-- ============================================================================
-     SECTION 5: FOOTER
+     SECTION 4: FOOTER
      ============================================================================ -->
 <footer><div class="wrap foot-in">
   <div class="foot-links">
