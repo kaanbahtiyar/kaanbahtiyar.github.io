@@ -214,8 +214,8 @@ footer{border-top:1px solid var(--line); background:var(--bg-soft); margin-top:1
 .who .affil a:hover{color:var(--accent); border-bottom-color:var(--accent); text-decoration:none;}
 .hero .top p.lead{max-width:64ch; margin:0 0 .9rem;}
 
-.avail{display:flex; align-items:center; gap:.55rem; margin:0 0 1.3rem; color:var(--ink);}
-.avail-dot{width:9px; height:9px; border-radius:50%; background:#2e9e5b; flex:none;}
+.avail{display:flex; align-items:flex-start; gap:.55rem; margin:0 0 1.3rem; color:var(--ink);}
+.avail-dot{width:9px; height:9px; border-radius:50%; background:#2e9e5b; flex:none; margin-top:.55em;}
 .top .social{margin:1.1rem 0 0;}
 .top-edu .sec-title{margin:0 0 .3rem;}
 .top-edu .edu-item .d + .d{margin-top:.15rem;}
@@ -227,6 +227,7 @@ footer{border-top:1px solid var(--line); background:var(--bg-soft); margin-top:1
 
 .band{background:var(--bg-soft); border-top:1px solid var(--line); border-bottom:1px solid var(--line);}
 
+.home main .sec-title{font-size:1.7rem; text-transform:uppercase; letter-spacing:.05em; margin:0 0 1.4rem;}
 .theme + .theme{margin-top:2.6rem; padding-top:2.4rem; border-top:1px solid var(--line);}
 .theme-label{font-size:.86rem; color:var(--slate); margin:0 0 .1rem;}
 .theme-title{font-size:1.35rem; margin:0 0 .55rem;}
