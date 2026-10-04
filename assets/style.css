@@ -4,7 +4,6 @@
   --accent:#16304f; --accent-2:#0d1f36; --tint:#eef2f8; --tint-2:#f7f9fc;
   --bg:#ffffff; --bg-soft:#f7f9fb; --surface:#ffffff; --red:#b3322c;
   --font-body:-apple-system,BlinkMacSystemFont,"Roboto","Segoe UI","Helvetica Neue","Lucida Grande",Arial,sans-serif;
-  --font-mono:Monaco,Consolas,"Lucida Console",monospace;
   --wrap:1060px;
 }
 *{box-sizing:border-box;}
@@ -49,7 +48,7 @@ h3{font-size:1.1rem;}
 .hero-anim{width:100%;}
 .hero-anim .frame{border:1px solid var(--line); border-radius:10px; background:var(--bg-soft); padding:.7rem .8rem .4rem;}
 .hero-anim svg{width:100%; height:auto; display:block;}
-.hero-anim .cap{font-family:var(--font-mono); font-size:.8rem; color:var(--slate); text-align:center; margin:.5rem 0 .35rem; min-height:1.1em;}
+.hero-anim .cap{font-size:.8rem; color:var(--slate); text-align:center; margin:.5rem 0 .35rem; min-height:1.1em;}
 .rb-base{fill:#3a4046; stroke:#272c30; stroke-width:1.4;}
 .rb-link{fill:none; stroke:#cfd6da; stroke-width:15; stroke-linecap:round;}
 .rb-link2{fill:none; stroke:#cfd6da; stroke-width:14; stroke-linecap:round;}
@@ -166,8 +165,8 @@ section{padding:2.6rem 0;}
 .collab a::after{content:" \2197"; font-size:.78em;}
 .collab a:hover{background:var(--accent); color:#fff; border-color:var(--accent); text-decoration:none;}
 
-.pubgroup{font-weight:700; margin:2rem 0 .3rem; padding-bottom:.35rem; border-bottom:2px solid var(--line);}
-.publist{list-style:none; padding:0; margin:1rem 0 1.6rem;}
+.pubgroup{max-width:1012px; font-weight:700; margin:2rem 0 .3rem; padding-bottom:.35rem; border-bottom:2px solid var(--line);}
+.publist{max-width:1012px; list-style:none; padding:0; margin:1rem 0 1.6rem;}
 .pub{border:1px solid var(--line); border-left:4px solid var(--accent); border-radius:0 11px 11px 0; background:var(--surface); padding:1rem 1.2rem; margin:0 0 .9rem;}
 .pub .t{display:inline-block; font-size:1.03rem; font-weight:700; color:var(--ink); line-height:1.35;}
 .pub a.t{text-decoration:none;}
@@ -179,13 +178,23 @@ section{padding:2.6rem 0;}
 .pub .proj:hover{background:var(--accent); color:#fff; border-color:var(--accent); text-decoration:none;}
 .pub .proj::before{content:"\2197\00a0"; font-weight:700;}
 
-.cv-head{display:flex; flex-wrap:wrap; justify-content:space-between; gap:1rem; align-items:flex-end; border-bottom:1px solid var(--line); padding-bottom:1.2rem;}
-.cv-contact{font-family:var(--font-mono); font-size:.82rem; color:var(--slate); line-height:1.8;}
+.cv-head{display:flex; flex-wrap:wrap; justify-content:space-between; gap:1.5rem; align-items:flex-end; border-bottom:1px solid var(--line); padding-bottom:1.3rem;}
+.cv-name{font-size:1.7rem; font-weight:700; line-height:1.25; margin:0 0 .2rem;}
+.cv-title{margin:0; color:var(--slate);}
+.cv-title a{color:inherit; text-decoration:none; border-bottom:1px dashed #c2cbd9;}
+.cv-title a:hover{color:var(--accent); border-bottom-color:var(--accent);}
+.cv-head .avail{margin:.7rem 0 0;}
+.cv-side{text-align:right;}
+.cv-summary{max-width:96ch; color:#3b4655; margin:0;}
+.cv-cols{display:grid; grid-template-columns:minmax(0,1.2fr) minmax(0,1fr); gap:3.2rem; align-items:start; margin-bottom:2.8rem;}
+.cv .recog{max-width:none; margin-top:.8rem;}
+.cv-contact{font-size:.92rem; color:var(--slate); line-height:1.7; margin:0 0 .8rem;}
+.cv-contact a{color:inherit;}
 .cv h2{color:var(--ink); margin:2rem 0 .5rem; padding-bottom:.3rem; border-bottom:1px solid var(--line);}
-.cv .entry{margin:0 0 1rem;}
-.cv .entry .top{display:flex; justify-content:space-between; gap:1rem; flex-wrap:wrap;}
+.cv .entry{margin:0 0 1.1rem;}
+.cv .entry-head{display:flex; justify-content:space-between; align-items:baseline; gap:.2rem 1rem; flex-wrap:wrap;}
 .cv .entry .where{font-weight:700;}
-.cv .entry .when{font-family:var(--font-mono); font-size:.82rem; color:var(--slate); white-space:nowrap;}
+.cv .entry .when{font-size:.9rem; color:var(--slate); white-space:nowrap;}
 .cv .entry .what{color:var(--slate); font-size:.95rem;}
 .cv ul{padding-left:1.1rem; margin:.4rem 0;}
 .cv li{color:#3b4655; font-size:.95rem; margin:.25rem 0;}
@@ -337,4 +346,9 @@ footer{border-top:1px solid var(--line); background:var(--bg-soft); margin-top:1
   .cols{grid-template-columns:1fr; gap:2rem;}
   .media-row{grid-template-columns:1fr;}
   .proj-head h1{font-size:1.7rem;}
+}
+
+@media (max-width:900px){
+  .cv-cols{grid-template-columns:1fr; gap:0;}
+  .cv-side{text-align:left;}
 }
