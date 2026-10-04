@@ -207,22 +207,27 @@ footer{border-top:1px solid var(--line); background:var(--bg-soft); margin-top:1
    Added for the two theme blocks. Everything above this line is unchanged.
    ============================================================================ */
 
+/* PAGE WIDTH of the homepage. The other pages stay at 1060px.
+   Make the cards bigger or smaller by changing this one number. */
+.home{--wrap:1360px;}
+
 /* grey band behind the whole themes section */
 .band{background:var(--bg-soft); border-top:1px solid var(--line); border-bottom:1px solid var(--line);}
 
 /* one theme = label + title + description + a row of cards */
 .theme + .theme{margin-top:2.6rem; padding-top:2.4rem; border-top:1px solid var(--line);}
 .theme-label{font-size:.86rem; color:var(--slate); margin:0 0 .1rem;}
-.theme-title{font-size:1.25rem; margin:0 0 .55rem;}
-.theme-desc{max-width:78ch; margin:0 0 1.4rem; font-size:.98rem; color:#3b4655;}
+.theme-title{font-size:1.35rem; margin:0 0 .55rem;}
+.theme-desc{max-width:84ch; margin:0 0 1.5rem; font-size:1rem; color:#3b4655;}
 
 /* card row: three equal columns, a "wide" card takes two of them */
-.theme-cards{display:grid; grid-template-columns:repeat(3,minmax(0,1fr)); gap:1.2rem;}
+.theme-cards{display:grid; grid-template-columns:repeat(3,minmax(0,1fr)); gap:1.4rem;}
 .card.wide{grid-column:span 2;}
 .card.no-link:hover{border-color:var(--line); transform:none; box-shadow:none;}
 
 /* image or video on top of a card */
-.card-media{height:200px; background:#fff; border-bottom:1px solid var(--line); overflow:hidden; display:flex; align-items:center; justify-content:center;}
+/* MEDIA HEIGHT: grows with the screen, between 190px and 265px */
+.card-media{height:clamp(190px,19.5vw,265px); background:#fff; border-bottom:1px solid var(--line); overflow:hidden; display:flex; align-items:center; justify-content:center;}
 .card-media img,.card-media video{display:block; width:100%; height:100%; object-fit:contain;}
 .card-media.cover img,.card-media.cover video{object-fit:cover;}          /* fill the slot, crop the edges */
 .card-media.top img,.card-media.top video{object-position:top;}           /* when cropping, keep the top */
@@ -234,22 +239,31 @@ footer{border-top:1px solid var(--line); background:var(--bg-soft); margin-top:1
 .card-media.soon{background:var(--tint-2); color:var(--faint); font-size:.9rem;}   /* empty slot */
 
 /* wide card: title, then two halves with a vertical line between them */
-.card-title{font-size:1.08rem; line-height:1.3; margin:0; padding:1rem 1.1rem 0;}
+.card-title{font-size:1.2rem; line-height:1.3; margin:0; padding:1.1rem 1.25rem 0;}
 .split{display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); flex:1;}
 .half{display:flex; flex-direction:column; min-width:0;}
 .half + .half{border-left:1px solid var(--line);}
-.half .body{padding-top:.7rem;}
-.half h4{font-size:.97rem; font-weight:700; margin:0; color:var(--ink);}
+.half h4{font-size:1.04rem; font-weight:700; margin:0; color:var(--ink);}
+
+/* CARD TEXT SIZE inside the theme cards */
+.theme-cards .card .body{padding:1.15rem 1.25rem 1.1rem; gap:.55rem;}
+.theme-cards .card .body h3{font-size:1.2rem;}
+.theme-cards .card .body p{font-size:.98rem; line-height:1.55;}
+.theme-cards .card .tags span{font-size:.8rem; padding:.22rem .6rem;}
+.theme-cards .half .body{padding-top:.7rem;}
+.theme-cards .result-line{padding:.85rem 1.25rem;}
+.theme-cards .result-line .rnum{font-size:1.7rem;}
+.theme-cards .result-line .rdesc{font-size:1rem;}
 
 /* tags: the first one (class "method") is the control method */
 .card .tags span.method{background:var(--tint); color:var(--accent); border-color:#d5dfec; font-weight:600;}
 
 /* result line: small second line, and the "coming soon" state */
-.result-line .rsub{display:block; margin-top:.25rem; font-size:.84rem; color:var(--slate);}
+.result-line .rsub{display:block; margin-top:.25rem; font-size:.9rem; color:var(--slate);}
 .result-line .rdesc.pending{margin-left:0; color:var(--slate);}
 
 /* tablets and phones: one card per row */
-@media (max-width:860px){
+@media (max-width:1000px){
   .theme-cards{grid-template-columns:1fr;}
   .card.wide{grid-column:auto;}
   .card-media{height:auto; aspect-ratio:16/9;}
