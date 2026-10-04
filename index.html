@@ -91,7 +91,7 @@
 
     <h3 class="theme-title">Precision Motion Control and Mechatronics</h3>
 
-    <p class="theme-desc">Rapid axis motion excites the structural dynamics of machine tools and other motion delivery systems, leaving residual vibration after each move and cross-talk between axes. Both cause longer dwell times and limit productivity. I model and identify the machine's dynamics, and develop data-driven feedback and feedforward controllers that suppress these trajectory-induced vibrations through active dampers and the machine's existing feed drives, for faster settling and higher accuracy.</p>
+    <p class="theme-desc">Rapid axis motion excites the structural dynamics of machine tools and other motion systems, leaving residual vibration after each move and cross-talk between axes. Both force longer dwell times and limit productivity. I model and identify the machine's dynamics, and develop data-driven feedback and feedforward controllers that suppress these trajectory-induced vibrations through active dampers and the machine's existing feed drives, for faster settling and higher accuracy.</p>
 
     <div class="theme-cards">
 
@@ -109,32 +109,32 @@
           <div class="half">
             <div class="body">
               <h4>Auto-tuned feedback</h4>
-              <p>The feedback controller tunes itself online from measured vibration, by solving a constrained sequential quadratic program subject to damper's stroke and force limits.</p>
+              <p>The velocity-feedback law tunes itself online from measured vibration, by solving a band-selective constrained optimization at every time step.</p>
               <div class="tags">
-                <span class="method">Iterative feedback tuning</span>
+                <span class="method">Constrained QP</span>
                 <span>In preparation</span>
               </div>
             </div>
             <div class="result-line">
               <span class="rnum">70%</span>
               <span class="rdesc">less damper stroke</span>
-              <span class="rsub">up to 28% faster settling to 2 µm</span>
+              <span class="rsub">up to 25% faster settling to 2 µm</span>
             </div>
           </div>
 
           <div class="half">
             <div class="body">
               <h4>Learned feedforward</h4>
-              <p>Iterative learning adds a feedforward force that removes the initial overshoot that feedback alone cannot mitigate, within stroke and force limits.</p>
+              <p>Iterative learning adds a feedforward force that removes the initial overshoot feedback alone cannot, within stroke and force limits.</p>
               <div class="tags">
-                <span class="method">Iterative learning control</span>
+                <span class="method">Iterative learning</span>
                 <span>CIRP Annals</span>
               </div>
             </div>
             <div class="result-line">
-              <span class="rnum">90%</span>
+              <span class="rnum">87%</span>
               <span class="rdesc">lower peak error</span>
-              <span class="rsub">up to 98% faster settling to 2 µm</span>
+              <span class="rsub">12 &rarr; 1.6 µm in about 10 iterations</span>
             </div>
           </div>
 
@@ -144,12 +144,12 @@
       <a class="card" href="/projects/cross-coupling-vibrations.html">
 
         <div class="card-media">
-          <img src="/images/projects/crossaxis_animation.gif" alt="Animation: a Y-axis table move rocks the machine column and vibrates the tool tip in Z. With cross-talk compensation the tool tip stays nearly still." loading="lazy">
+          <video data-inview src="/assets/video/card_crossaxis.mp4" poster="/assets/video/card_crossaxis.jpg" loop muted playsinline preload="metadata" aria-label="Animation: Y-axis table moves rock the machine column and vibrate the tool tip in Z. When compensation switches on, the Z-axis feed drive moves the head against the rocking and the tool-tip vibration drops."></video>
         </div>
 
         <div class="body">
           <h3>Cross-axis vibration compensation through the feed drives</h3>
-          <p>A trajectory pre-filter adds a small Z command that cancels the tool-tip vibration excited by rapid Y-axis motion, fine-tuned by machine-in-the-loop iterations</p>
+          <p>A trajectory pre-filter adds a small Z command that cancels the tool-tip vibration excited by fast Y-axis moves, refined by machine-in-the-loop learning.</p>
           <div class="tags">
             <span class="method">Trajectory pre-filtering</span>
             <span>ICPE 2024</span>
@@ -169,7 +169,7 @@
 
     <h3 class="theme-title">Machining Process Control</h3>
 
-    <p class="theme-desc">Machining disturbs the machine in several ways, such as forced and chatter vibration from the cutting forces, uneven tooth loads from tool runout, and spindle speed ripple from the cutting torque. I model the kinematics and dynamics of the process, and build adaptive controllers that suppress these process-induced disturbances through the spindle and feed drives, for higher accuracy and productivity.</p>
+    <p class="theme-desc">Milling disturbs the machine in several ways, such as forced and chatter vibration from the cutting forces, uneven tooth loads from tool runout, and spindle speed ripple from the cutting torque. I model the kinematics and dynamics of the process, and build adaptive controllers that suppress these process-induced disturbances through the spindle and feed drives, for higher accuracy and productivity.</p>
 
     <div class="theme-cards">
 
@@ -180,11 +180,12 @@
         </div>
 
         <div class="body">
-          <h3>Adaptive spindle speed control for chatter avoidance</h3>
-          <p>A model-free extremum-seeking controller tunes the spindle speed in real time from acceleration feedback to suppress chatter and forced vibration.</p>
+          <h3>Chatter detection and adaptive spindle speed control</h3>
+          <p>Lightweight algorithms detect chatter in real time. A separate model-free controller tunes the spindle speed from vibration feedback to remove chatter and minimize vibration.</p>
           <div class="tags">
-            <span class="method">Extremum-seeking control</span>
+            <span class="method">Extremum seeking</span>
             <span>CIRP JMST</span>
+            <span>Manufacturing Letters</span>
           </div>
         </div>
         <div class="result-line">
@@ -201,8 +202,8 @@
         </div>
 
         <div class="body">
-          <h3>Adaptive tool runout compensation through the feed drives</h3>
-          <p>A micro-circular feed motion cancels tool runout so every tooth cuts the same amount of chip, tuned on the machine from force/acceleration feedback.</p>
+          <h3>Tool runout compensation through the feed drives</h3>
+          <p>A micro-circular feed motion cancels tool runout so every tooth cuts the same chip, tuned on the machine from force feedback.</p>
           <div class="tags">
             <span class="method">Convex optimization</span>
             <span>ASME JMSE</span>
