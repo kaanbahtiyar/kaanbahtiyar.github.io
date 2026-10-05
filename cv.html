@@ -13,8 +13,14 @@
 <link rel="stylesheet" href="/assets/style.css">
 <style>
 /* CV-only additions. Move these to /assets/style.css if you prefer. */
-.cv .stats{margin:.9rem 0 0;}
-.cv .stat{flex:1 1 180px;}
+.cv .res-groups{display:flex; flex-wrap:wrap; gap:1rem 1.8rem; margin:.9rem 0 0;}
+.cv .res-group{min-width:0;}
+.cv .res-3{flex:3 1 520px;}
+.cv .res-2{flex:2 1 340px;}
+.cv .res-title{font-size:.95rem; font-weight:700; color:var(--accent); margin:0 0 .45rem;}
+.cv .res-title span{font-weight:400; color:var(--slate);}
+.cv .res-group .stats{margin:0;}
+.cv .stat{flex:1 1 170px;}
 .cv .cv-sub{font-size:.95rem; font-weight:700; color:var(--accent); margin:1rem 0 .1rem;}
 .cv li strong{color:var(--ink);}
 .cv ul.papers{padding-left:0; margin:.2rem 0 .7rem;}
@@ -66,32 +72,45 @@
   <p class="cv-summary">I design, tune and implement controllers that make precision machines settle faster and move more accurately: learned feedforward, auto-tuned feedback, active damping and disturbance compensation. I work from dynamic modeling and system identification through to real-time implementation, and I validate every method on real hardware, within the actuator's stroke and force limits. First author of eleven papers, including three journal articles (CIRP Annals, CIRP JMST, ASME JMSE), co-inventor on a pending patent with an industrial partner, and first place in the 2025 ASPE Student Challenge.</p>
 
   <h2>Selected results</h2>
-  <div class="stats">
-    <div class="stat">
-      <span class="stat-num">98%</span>
-      <span class="stat-desc">faster settling to ±2 µm</span>
-      <span class="stat-sub">29.7 &rarr; 0.6 ms, learned feedforward</span>
+  <div class="res-groups">
+
+    <div class="res-group res-3">
+      <p class="res-title">Active inertial damper control <span>on a feed-drive testbed</span></p>
+      <div class="stats">
+        <div class="stat">
+          <span class="stat-num">98%</span>
+          <span class="stat-desc">faster settling to ±2 µm</span>
+          <span class="stat-sub">29.7 &rarr; 0.6 ms, learned feedforward vs. feedback only</span>
+        </div>
+        <div class="stat">
+          <span class="stat-num">90%</span>
+          <span class="stat-desc">lower peak-to-peak error</span>
+          <span class="stat-sub">35 &rarr; 3.5 µm, learned feedforward vs. feedback only</span>
+        </div>
+        <div class="stat">
+          <span class="stat-num">70%</span>
+          <span class="stat-desc">less actuator stroke</span>
+          <span class="stat-sub">auto-tuned feedback vs. conventional tuning</span>
+        </div>
+      </div>
     </div>
-    <div class="stat">
-      <span class="stat-num">90%</span>
-      <span class="stat-desc">lower peak-to-peak position error</span>
-      <span class="stat-sub">35 &rarr; 3.5 µm, learned feedforward</span>
+
+    <div class="res-group res-2">
+      <p class="res-title">Feed-drive compensation <span>on 3-axis machine tools</span></p>
+      <div class="stats">
+        <div class="stat">
+          <span class="stat-num">77%</span>
+          <span class="stat-desc">lower cross-axis vibration</span>
+          <span class="stat-sub">5.5 &rarr; 1.3 µm at the tool tip, trajectory pre-filter</span>
+        </div>
+        <div class="stat">
+          <span class="stat-num">86%</span>
+          <span class="stat-desc">lower cutting-force variation</span>
+          <span class="stat-sub">101 &rarr; 14 N, tool runout compensation</span>
+        </div>
+      </div>
     </div>
-    <div class="stat">
-      <span class="stat-num">70%</span>
-      <span class="stat-desc">less actuator stroke</span>
-      <span class="stat-sub">auto-tuned active damping</span>
-    </div>
-    <div class="stat">
-      <span class="stat-num">77%</span>
-      <span class="stat-desc">lower cross-axis vibration</span>
-      <span class="stat-sub">5.5 &rarr; 1.3 µm, trajectory pre-filter</span>
-    </div>
-    <div class="stat">
-      <span class="stat-num">86%</span>
-      <span class="stat-desc">lower cutting-force variation</span>
-      <span class="stat-sub">101 &rarr; 14 N, runout compensation</span>
-    </div>
+
   </div>
 
   <div class="cv-cols">
