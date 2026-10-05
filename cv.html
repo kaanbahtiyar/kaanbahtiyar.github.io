@@ -23,6 +23,7 @@
 .cv .stat{flex:1 1 170px;}
 .cv .cv-sub{font-size:.95rem; font-weight:700; color:var(--accent); margin:1rem 0 .1rem;}
 .cv li strong{color:var(--ink);}
+.cv li ul{margin:.3rem 0 .1rem;}
 .cv ul.papers{padding-left:0; margin:.2rem 0 .7rem;}
 .cv ul.papers li{margin:0;}
 .cv .cv-note{color:var(--slate); font-size:.95rem; margin:.4rem 0 0;}
@@ -128,8 +129,12 @@
 
         <p class="cv-sub">Precision motion control and mechatronics</p>
         <ul>
-          <li><a href="/projects/inertial-damper-control.html"><strong>Learned feedforward for point-to-point settling.</strong></a> Cut the settling time to ±2 µm after rapid moves by 98% (29.7 to 0.6 ms) and the peak-to-peak error by 90% (35 to 3.5 µm), compared with feedback-only control. An iterative learning controller learns a feedforward force profile for an active inertial damper in about 10 runs, on a sparse B-spline basis, and enforces the actuator's stroke and force limits in every update. First published in CIRP Annals (2024).</li>
-          <li><a href="/projects/inertial-damper-control.html"><strong>Auto-tuned active damping.</strong></a> Formulated the tuning of the damper's velocity-feedback law as a constrained quadratic program, solved from vibration measured over repeated moves. It selects the filter passband and gain automatically, uses 70% less actuator stroke than conventional tuning and settles up to 28% faster, and the tuned controller carries over to other moves.</li>
+          <li><a href="/projects/inertial-damper-control.html"><strong>Active inertial damper control (feed-drive testbed).</strong></a> Designed feedback and feedforward controllers that suppress residual vibration after rapid moves, each tuned from measured data within the stroke and force limits.
+            <ul>
+              <li><strong>Learned feedforward.</strong> Cut the settling time to ±2 µm by 98% (29.7 to 0.6 ms) and the peak-to-peak error by 90% (35 to 3.5 µm), compared with feedback-only control. An iterative learning controller learns the feedforward force profile in about 10 runs, on a sparse B-spline basis. First published in CIRP Annals (2024).</li>
+              <li><strong>Auto-tuned feedback.</strong> Formulated the tuning of the velocity-feedback law as a constrained quadratic program, solved from vibration measured over repeated moves. It selects the filter passband and gain automatically, uses 70% less actuator stroke than conventional tuning, settles up to 28% faster, and carries over to other moves.</li>
+            </ul>
+          </li>
           <li><a href="/projects/cross-coupling-vibrations.html"><strong>Cross-axis vibration compensation.</strong></a> Identified the coupling on a 3-axis vertical machining center, where Y-axis acceleration rocks the column and vibrates the tool tip in Z, and designed a trajectory pre-filter that cancels it through the Z-axis feed drive without changing the servo loops. A frequency-domain fit gives the initial design and machine-in-the-loop iterations refine it: up to 77% lower tool-tip vibration (5.5 to 1.3 µm), verified with a laser encoder. Young Research Award, ICPE 2024.</li>
         </ul>
 
