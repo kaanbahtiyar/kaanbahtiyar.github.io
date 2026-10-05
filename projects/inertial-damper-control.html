@@ -30,12 +30,13 @@
 
   <header class="proj-head">
     <h1>Active damper control</h1>
-    <p class="proj-lede">Fast point-to-point moves excite a machine's structural modes and leave the table ringing. An active inertial damper on the structure suppresses that vibration. I control it with auto-tuned feedback and a learned feedforward force, within the actuator's stroke and force limits.</p>
+    <p class="proj-lede">Rapid point-to-point motions excite a machine's structural resonances, and the resulting vibration delays settling. In this project, I used an active inertial damper to suppress it. I designed data-driven feedback and feedforward controllers for the damper that tune themselves automatically within the damper's stroke and force limits. </p>
     <div class="tags">
-      <span class="method">Constrained QP</span>
-      <span class="method">Iterative learning</span>
+      <span class="method">Constrained Quadratic Programming (QP)</span>
+      <span class="method">Model-based Iterative Feedback Tuning (IFT)</span>
+      <span class="method">Iterative Learning Control (ILC)</span>
       <span>CIRP Annals</span>
-      <span>Dow Scholarship</span>
+      <span>Thomas A. Dow Scholarship (ASPE)</span>
     </div>
   </header>
 
@@ -57,30 +58,38 @@
 
     <section class="proj-sec">
       <h2>Auto-tuned feedback</h2>
-      <p>Direct velocity feedback (DVF) damps the vibration after it appears, and its tuning decides how much stroke the damper spends doing it. Here the feedback law tunes itself online: at every time step it solves a band-selective constrained optimization from the measured vibration.</p>
+      <p>I considered direct velocity feedback (DVF) control for the damper. For trajectory-induced vibrations, the choice of its band-pass filter and gain is critical, as it directly determines the damper's stroke and force usage, and manual tuning becomes cumbersome when more than one mode is present. I therefore reformulated the tuning of the DVF as a constrained quadratic program. This program is solved iteratively using the vibration of the host structure measured over repetitions of a task, and it automatically selects the passband and gain subject to the damper's stroke and force limits. Once tuned, the controller can also be used for other tasks. Compared with conventional DVF on the feed-drive testbed, auto-tuning yields:</p>
       <div class="stats">
         <div class="stat">
           <span class="stat-num">70%</span>
           <span class="stat-desc">less damper stroke</span>
         </div>
         <div class="stat">
-          <span class="stat-num">Up to 25%</span>
+          <span class="stat-num">Up to 28%</span>
           <span class="stat-desc">faster settling to ±2 µm</span>
         </div>
+        <div class="stat">
+          <span class="stat-num">About 10</span>
+          <span class="stat-desc">learning iterations</span>
+        </div>
       </div>
-      <p>Compared with conventional DVF that uses a single band-pass filter, on the feed-drive testbed.</p>
       <h3>Paper</h3>
       <p>Manuscript in preparation.</p>
     </section>
 
     <section class="proj-sec">
       <h2>Learned feedforward</h2>
-      <p>Feedback reacts only after vibration appears, so it cannot remove the initial overshoot. Because production moves repeat, a feedforward force profile is learned from the measured vibration over repeated runs and applied at the instant the excitation occurs. The profile is built from filtered B-splines, and the stroke and force limits are enforced inside the learning problem.</p>
+      <p>Feedback (FB) reacts only after vibration appears, and its gain is limited by the damper's stroke and force, so it cannot fully remove the initial overshoot. For cases where feedback alone is not sufficient, I developed a complementary feedforward (FF) controller for repeating tasks, such as repetitive machining, welding, and material handling. The FF force profile is learned for the specific task by iterative learning control, using the vibration measured over repeated runs, and it counteracts the residual vibration that the FB controller cannot remove. The profile is built from filtered B-splines, of which only an automatically selected sparse set is kept so that the method scales to long tasks, and the damper's stroke and force limits are enforced in each learning update. Compared to FB-only control, it yields:</p>
       <div class="stats">
         <div class="stat">
-          <span class="stat-num">87%</span>
-          <span class="stat-desc">lower peak positioning error</span>
-          <span class="stat-sub">12 &rarr; 1.6 µm</span>
+          <span class="stat-num">90%</span>
+          <span class="stat-desc">lower peak-to-peak error</span>
+          <span class="stat-sub">35 &rarr; 3.5 µm</span>
+        </div>
+        <div class="stat">
+          <span class="stat-num">98%</span>
+          <span class="stat-desc">faster settling to ±2 µm</span>
+          <span class="stat-sub">29.7 &rarr; 0.6 ms</span>
         </div>
         <div class="stat">
           <span class="stat-num">About 10</span>
@@ -106,7 +115,7 @@
 
     <section class="proj-sec">
       <h2>Testbed</h2>
-      <p>Feed-drive testbed, voice-coil and linear-motor dampers, linear and rotary encoders, displacement sensor, MATLAB/Simulink real-time.</p>
+      <p>Feed-drive testbed, voice-coil and permanent-magnet linear-motor dampers, linear and rotary encoders, accelerometers, capacitive displacement sensors, MATLAB/Simulink real-time control.</p>
     </section>
 
     <section class="proj-sec">
