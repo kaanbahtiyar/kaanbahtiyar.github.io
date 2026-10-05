@@ -61,12 +61,10 @@
       <p>I considered direct velocity feedback (DVF) control for the damper. For trajectory-induced vibrations, the choice of its band-pass filter and gain is critical, as it directly determines the damper's stroke and force usage, and manual tuning becomes cumbersome when more than one mode is present. I therefore reformulated the tuning of the DVF as a constrained quadratic program. This program is solved iteratively using the vibration of the host structure measured over repetitions of a task, and it automatically selects the passband and gain subject to the damper's stroke and force limits. Once tuned, the controller can also be used for other tasks. Compared with conventional DVF on the feed-drive testbed, auto-tuning yields:</p>
       <div class="stats">
         <div class="stat">
-          <span class="stat-num">70%</span>
-          <span class="stat-desc">less damper stroke</span>
+          <span class="stat-num">70% less<br>damper stroke</span>
         </div>
         <div class="stat">
-          <span class="stat-num">Up to 28%</span>
-          <span class="stat-desc">faster settling to ±2 µm</span>
+          <span class="stat-num">Up to 28%<br>faster settling to ±2 µm</span>
         </div>
         <div class="stat">
           <span class="stat-num">About 10</span>
@@ -82,14 +80,12 @@
       <p>Feedback (FB) reacts only after vibration appears, and its gain is limited by the damper's stroke and force, so it cannot fully remove the initial overshoot. For cases where feedback alone is not sufficient, I developed a complementary feedforward (FF) controller for repeating tasks, such as repetitive machining, welding, and material handling. The FF force profile is learned for the specific task by iterative learning control, using the vibration measured over repeated runs, and it counteracts the residual vibration that the FB controller cannot remove. The profile is built from filtered B-splines, of which only an automatically selected sparse set is kept so that the method scales to long tasks, and the damper's stroke and force limits are enforced in each learning update. Compared to FB-only control, it yields:</p>
       <div class="stats">
         <div class="stat">
-          <span class="stat-num">90%</span>
-          <span class="stat-desc">lower peak-to-peak error</span>
-          <span class="stat-sub">35 &rarr; 3.5 µm</span>
+          <span class="stat-num">90% lower<br>peak-to-peak error</span>
+          <span class="stat-desc">35 &rarr; 3.5 µm</span>
         </div>
         <div class="stat">
-          <span class="stat-num">98%</span>
-          <span class="stat-desc">faster settling to ±2 µm</span>
-          <span class="stat-sub">29.7 &rarr; 0.6 ms</span>
+          <span class="stat-num">98% faster<br>settling to ±2 µm</span>
+          <span class="stat-desc">29.7 &rarr; 0.6 ms</span>
         </div>
         <div class="stat">
           <span class="stat-num">About 10</span>
