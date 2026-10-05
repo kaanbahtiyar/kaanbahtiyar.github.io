@@ -48,7 +48,7 @@
     <section class="proj-sec">
       <h2>Method</h2>
       <p>A cross-talk dynamics compensator generates a small Z-axis command from the commanded X and Y motion, shaped so that the commanded and the structurally induced Z motion cancel at the tool tip.</p>
-      <p>The design has two stages. A frequency-domain fit around the excited rocking mode gives an initial compensator, and a machine-in-the-loop iterative learning pass refines it from measured vibration, so performance does not depend on a perfect model. It acts as a trajectory pre-filter ahead of the existing servo loops, which stay untouched.</p>
+      <p>The design has two stages. A frequency-domain fit around the excited rocking mode gives an initial compensator, and a machine-in-the-loop iterative learning pass refines it from measured acceleration, so performance does not depend on a perfect model. It acts as a trajectory pre-filter ahead of the existing servo loops, which stay untouched.</p>
     </section>
 
     <section class="proj-sec">
@@ -68,7 +68,7 @@
 
   <figure class="media w-1130">
     <img src="/images/projects/crossaxis_results.png" alt="Measured results. The Y-axis reference trajectory with its acceleration and deceleration sections, the tuning objective over machine-in-the-loop iterations, and the Z tool-tip displacement and its frequency spectrum in each section, without the pre-filter and with the proposed compensator." loading="lazy">
-    <figcaption>Measured on the machine with a laser encoder at the tool tip. (a) The Y-axis move and the two sections analysed. (b) The compensator improves over machine-in-the-loop iterations. (c, e) Z tool-tip displacement in each section, without the pre-filter and with the proposed compensator. (d, f) The same sections in the frequency domain.</figcaption>
+    <figcaption>Measured on the machine with a laser encoder at the tool tip. Tuning is performed using an accelerometer (laser encoder is for verification). (a) The Y-axis move and the two sections analysed. (b) The compensator improves over machine-in-the-loop iterations. (c, e) Z tool-tip displacement in each section, without the pre-filter and with the proposed compensator. (d, f) The same sections in the frequency domain.</figcaption>
   </figure>
 
   <div class="cols">
