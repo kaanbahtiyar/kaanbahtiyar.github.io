@@ -30,7 +30,7 @@
 
   <header class="proj-head">
     <h1>Adaptive spindle speed control</h1>
-    <p class="proj-lede">Milling vibration comes as chatter, an instability that can scrap the part, and as forced vibration, which is stable but still degrades the surface. I tune the spindle speed while the machine cuts to remove the first and minimize the second, with no process model.</p>
+    <p class="proj-lede">Vibration in milling appears in two forms: chatter, an instability that can scrap the part and damage the tool, and forced vibration, which is stable but still degrades surface quality. I developed a real-time spindle speed controller based on extremum-seeking control that suppresses both during machining, without a process model.</p>
     <div class="tags">
       <span class="method">Extremum seeking</span>
       <span>CIRP JMST</span>
@@ -40,7 +40,7 @@
 
   <figure class="media w-1130">
     <video data-inview controls loop muted playsinline preload="metadata" src="/assets/video/spindle_speed_control.mp4" poster="/assets/video/spindle_speed_control.jpg" aria-label="Milling test with adaptive spindle speed control: machine footage next to the measured acceleration, spindle speed and cost as chatter is suppressed."></video>
-    <figcaption>Milling test with measured data. The controller raises the spindle speed from 6,000 rpm and the chatter disappears. Turn the sound on to hear it.</figcaption>
+    <figcaption>Milling test with measured data. The controller tunes the spindle speed on the fly and the chatter disappears. Turn the sound on to hear it.</figcaption>
   </figure>
 
   <div class="cols">
@@ -48,7 +48,7 @@
     <section class="proj-sec">
       <h2>Method</h2>
       <p>Spindle speed selection runs as an online optimization during the cut. A vibration cost is computed from accelerometer data once per spindle revolution, and an extremum-seeking controller moves the speed in the direction that lowers it. It needs no process model, stability lobes or modal testing.</p>
-      <p>The controller minimizes total vibration, forced plus chatter, and talks to a production CNC through the standard spindle-override input.</p>
+      <p>The controller minimizes total vibration, forced and chatter, and adjusts the spindle speed through the CNC's standard spindle-override input via its PLC.</p>
     </section>
 
     <section class="proj-sec">
@@ -62,13 +62,14 @@
         <div class="stat">
           <span class="stat-num">57 to 66%</span>
           <span class="stat-desc">lower than the conventional</span>
-          <span class="stat-sub">chatter-frequency strategy</span>
+          <span class="stat-sub">chatter mitigation strategy</span>
         </div>
       </div>
-      <p>Measured in steel-alloy milling on a 3-axis CNC. Starting from an already stable cut, the controller still halved RMS vibration (8 &rarr; 4 m/s²).</p>
+      <p>Measured in steel-alloy milling on a 3-axis CNC: Starting from an already stable cut, the controller still halved RMS vibration (8 &rarr; 4 m/s²).</p>
+      <p>The machined aluminum alloy surface before the controller starts and after it converges:</p>
       <figure class="media w-520">
         <img src="/images/projects/sso_surface.jpg" alt="Photos of the machined surface: heavy chatter marks before the controller starts, and a smooth, even finish after it converges." loading="lazy">
-        <figcaption>The machined surface before the controller starts and after it converges.</figcaption>
+        <figcaption>Surface finish comparison on aluminum alloy.</figcaption>
       </figure>
     </section>
 
@@ -100,7 +101,7 @@
 
     <section class="proj-sec">
       <h2>Testbed and collaborators</h2>
-      <p>3-axis CNC machine tool, accelerometers, dynamometer, spindle override via PLC, 10 kHz data acquisition, MATLAB/Simulink real-time.</p>
+      <p>3-axis CNC machine tool, accelerometers, dynamometer, spindle override via PLC, MATLAB/Simulink real-time, dSPACE real-time I/O</p>
       <div class="collab">
         <a href="https://scholar.google.com/citations?user=SGQqZeUAAAAJ&hl=en&oi=ao" target="_blank" rel="noopener">Dr. Burak Sencer (advisor)</a>
       </div>
