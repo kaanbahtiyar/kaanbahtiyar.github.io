@@ -30,7 +30,7 @@
 
   <header class="proj-head">
     <h1>Tool runout compensation</h1>
-    <p class="proj-lede">Tool runout offsets the cutter's center from its axis of rotation, so each tooth cuts a different chip. That uneven load roughens the surface and wears the most-loaded tooth first. I cancel it with the machine's own feed drives, with no added hardware.</p>
+    <p class="proj-lede">Tool runout is an offset between the cutter's center and its axis of rotation, so each tooth cuts a different amount of chip. This uneven load roughens the surface and wears the most heavily loaded tooth first. I developed an adaptive strategy that compensates for the runout using the machine's own feed drives, with no additional hardware.</p>
     <div class="tags">
       <span class="method">Convex optimization</span>
       <span>ASME JMSE</span>
@@ -41,15 +41,15 @@
 
   <figure class="media">
     <video data-inview controls loop muted playsinline preload="metadata" src="/assets/video/runout_compensation.mp4" poster="/assets/video/runout_compensation.jpg" aria-label="Animation of tool runout compensation: with compensation off the teeth cut unequal chips; with compensation on, the feed drives move the workpiece so every tooth cuts the same chip."></video>
-    <figcaption>Working principle, normalized. With compensation on, the feed drives move the workpiece on the tool's runout circle, and every tooth cuts the same chip.</figcaption>
+    <figcaption>Working principle (normalized). With compensation on, the feed drives move the workpiece along the tool's runout circle, synchronized with the spindle rotation, so every tooth cuts the same amount of chip.</figcaption>
   </figure>
 
   <div class="cols">
 
     <section class="proj-sec">
       <h2>Method</h2>
-      <p>Runout makes the tool center trace a small circle at the spindle frequency. The compensation commands the opposite micro-circular trajectory through the X and Y feed drives, injected into the 5 kHz servo position loop on top of the nominal toolpath.</p>
-      <p>Feed-drive dynamics distort the injected motion, so its amplitude and phase are tuned on the machine from force or accelerometer feedback, by minimizing the spindle-synchronous content that runout produces. The tuning is a convex optimization with Newton-type updates, so the optimum is unique and convergence is fast and repeatable.</p>
+      <p>Runout makes the tool center trace a small circle around the spindle axis at the spindle frequency. The proposed compensation adds a counteracting micro-circular trajectory to the nominal toolpath, commanded through the X and Y feed drives in the 5 kHz position loop.</p>
+      <p>The feed-drive dynamics distort the injected motion, and the runout itself (its magnitude and its angular position on the spindle) is unknown. The amplitude and phase of the compensation are therefore tuned on the machine, using force or accelerometer measurements, by minimizing the spindle-frequency component that runout produces. The tuning problem is convex and is solved with Newton-type updates, so it has a single optimum and converges quickly and repeatably.</p>
     </section>
 
     <section class="proj-sec">
@@ -66,7 +66,7 @@
           <span class="stat-sub">10 to 15 spindle revolutions</span>
         </div>
       </div>
-      <p>Measured in steel-alloy milling on a 3-axis CNC, and validated with 2-, 3- and 4-tooth cutters across spindle speeds. An accelerometer-only variant also converges, in about 10 iterations.</p>
+      <p>Measured in steel-alloy milling on a 3-axis CNC, and validated with 2-, 3- and 4-tooth cutters across spindle speeds.</p>
       <figure class="media w-420">
         <img src="/images/projects/ecc_result.png" alt="Measured cutting force during milling: the force variation drops when the compensation is switched on." loading="lazy">
         <figcaption>Measured cutting force. The variation drops when compensation switches on.</figcaption>
@@ -78,7 +78,7 @@
   <div class="cols">
 
     <section class="proj-sec">
-      <h2>Papers</h2>
+      <h2>Publications</h2>
       <ul class="papers">
         <li>
           <a href="https://asmedigitalcollection.asme.org/manufacturingscience/article/doi/10.1115/1.4071096/1230526/Data-driven-Adaptive-Compensation-of-Tool-Runout">Data-driven adaptive compensation of tool runout in milling via machine tool feed drives</a>
@@ -94,7 +94,7 @@
 
     <section class="proj-sec">
       <h2>Testbed and collaborators</h2>
-      <p>3-axis CNC machine tool, dynamometer, accelerometers, fiber-optic edge sensor, 5 kHz servo position loop, MATLAB/Simulink real-time.</p>
+      <p>3-axis CNC machine tool, dynamometer, accelerometers, fiber-optic sensor, 5 kHz servo position loop, dSPACE real-time I/O, MATLAB/Simulink real-time.</p>
       <div class="collab">
         <a href="https://scholar.google.com/citations?user=SGQqZeUAAAAJ&hl=en&oi=ao" target="_blank" rel="noopener">Dr. Burak Sencer (advisor)</a>
         <span>Levent Bozcu</span>
