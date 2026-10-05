@@ -4,13 +4,23 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>CV, Kaan Bahtiyar</title>
-<meta name="description" content="Curriculum vitae of Kaan Bahtiyar, PhD candidate in Robotics working on precision motion control and machining process control, with patent-pending and awarded research.">
+<meta name="description" content="Curriculum vitae of Kaan Bahtiyar, PhD candidate in Robotics at Oregon State University. Precision motion control and mechatronics: learned feedforward, auto-tuned feedback, active damping and disturbance compensation, validated on real hardware.">
 <meta property="og:title" content="CV, Kaan Bahtiyar">
-<meta property="og:description" content="Curriculum vitae of Kaan Bahtiyar, PhD candidate in Robotics working on precision motion control and machining process control, with patent-pending and awarded research.">
+<meta property="og:description" content="Curriculum vitae of Kaan Bahtiyar, PhD candidate in Robotics at Oregon State University. Precision motion control and mechatronics: learned feedforward, auto-tuned feedback, active damping and disturbance compensation, validated on real hardware.">
 <meta property="og:image" content="/images/profilekaan.png">
 <link rel="icon" type="image/svg+xml" href="/images/favicon.svg">
 <link rel="icon" href="/images/favicon.ico">
 <link rel="stylesheet" href="/assets/style.css">
+<style>
+/* CV-only additions. Move these to /assets/style.css if you prefer. */
+.cv .stats{margin:.9rem 0 0;}
+.cv .stat{flex:1 1 180px;}
+.cv .cv-sub{font-size:.95rem; font-weight:700; color:var(--accent); margin:1rem 0 .1rem;}
+.cv li strong{color:var(--ink);}
+.cv ul.papers{padding-left:0; margin:.2rem 0 .7rem;}
+.cv ul.papers li{margin:0;}
+.cv .cv-note{color:var(--slate); font-size:.95rem; margin:.4rem 0 0;}
+</style>
 </head>
 <body class="page-wide">
 
@@ -34,9 +44,9 @@
 
     <div>
       <p class="cv-name">Kaan Bahtiyar</p>
-      <p class="cv-title">PhD Candidate in Robotics, precision motion control and mechatronics</p>
+      <p class="cv-title">PhD Candidate in Robotics | Precision Motion Control and Mechatronics</p>
       <p class="cv-title"><a href="https://research.engineering.oregonstate.edu/pmal" target="_blank" rel="noopener">Precision Manufacturing &amp; Automation Laboratory</a>, Oregon State University</p>
-      <p class="avail"><span class="avail-dot"></span><span><strong>Open to work.</strong> Expected graduation June 2027.</span></p>
+      <p class="avail"><span class="avail-dot"></span><span><strong>Open to work.</strong> Seeking roles in precision motion control and mechatronics. Expected graduation June 2027.</span></p>
     </div>
 
     <div class="cv-side">
@@ -44,7 +54,8 @@
         Corvallis, OR<br>
         +1 (541) 908-6086<br>
         <a href="mailto:kaan.bahtiyar@outlook.com">kaan.bahtiyar@outlook.com</a><br>
-        <a href="https://orcid.org/0000-0002-5250-4468">ORCID 0000-0002-5250-4468</a>
+        <a href="https://www.linkedin.com/in/kaanbahtiyar">linkedin.com/in/kaanbahtiyar</a><br>
+        <a href="https://scholar.google.com/citations?user=C0g9DXQAAAAJ&hl=en">Google Scholar</a>
       </p>
       <a class="btn btn-primary" href="/assets/Kaan_Bahtiyar_CV.pdf" download>Download PDF</a>
     </div>
@@ -52,7 +63,36 @@
   </div>
 
   <h2>Summary</h2>
-  <p class="cv-summary">I combine dynamic modeling, system identification and real-time optimization to develop learning-based and adaptive controllers that suppress trajectory-induced vibrations and process-induced disturbances in machine tools and motion stages, and I validate them on real hardware. Author of publications in CIRP and ASME journals, presenter at ASME and ASPE meetings, and co-inventor on a pending patent.</p>
+  <p class="cv-summary">I design, tune and implement controllers that make precision machines settle faster and move more accurately: learned feedforward, auto-tuned feedback, active damping and disturbance compensation. I work from dynamic modeling and system identification through to real-time implementation, and I validate every method on real hardware, within the actuator's stroke and force limits. First author of eleven papers, including three journal articles (CIRP Annals, CIRP JMST, ASME JMSE), co-inventor on a pending patent with an industrial partner, and first place in the 2025 ASPE Student Challenge.</p>
+
+  <h2>Selected results</h2>
+  <div class="stats">
+    <div class="stat">
+      <span class="stat-num">98%</span>
+      <span class="stat-desc">faster settling to ±2 µm</span>
+      <span class="stat-sub">29.7 &rarr; 0.6 ms, learned feedforward</span>
+    </div>
+    <div class="stat">
+      <span class="stat-num">90%</span>
+      <span class="stat-desc">lower peak-to-peak position error</span>
+      <span class="stat-sub">35 &rarr; 3.5 µm, learned feedforward</span>
+    </div>
+    <div class="stat">
+      <span class="stat-num">70%</span>
+      <span class="stat-desc">less actuator stroke</span>
+      <span class="stat-sub">auto-tuned active damping</span>
+    </div>
+    <div class="stat">
+      <span class="stat-num">77%</span>
+      <span class="stat-desc">lower cross-axis vibration</span>
+      <span class="stat-sub">5.5 &rarr; 1.3 µm, trajectory pre-filter</span>
+    </div>
+    <div class="stat">
+      <span class="stat-num">86%</span>
+      <span class="stat-desc">lower cutting-force variation</span>
+      <span class="stat-sub">101 &rarr; 14 N, runout compensation</span>
+    </div>
+  </div>
 
   <div class="cv-cols">
 
@@ -65,13 +105,25 @@
           <span class="where">Graduate Research Assistant, Oregon State University</span>
           <span class="when">2020-Present</span>
         </div>
+        <div class="what">Precision Manufacturing &amp; Automation Laboratory. Advisor: Prof. Burak Sencer.</div>
+
+        <p class="cv-sub">Precision motion control and mechatronics</p>
         <ul>
-          <li>Developed learning-based feedforward control for an active inertial damper, reducing peak positioning error 87% (12 to 1.6 µm) on a feed-drive testbed within actuator stroke and force limits. An auto-tuned feedback law cut damper stroke 70% against conventional tuning.</li>
-          <li>Characterized cross-axis coupling on a 3-axis machine tool and built trajectory pre-filtering that cut axis-coupled Z vibration 80% (6 to 1.2 µm).</li>
-          <li>Developed a model-free adaptive spindle speed controller driven by real-time vibration feedback, eliminating chatter with up to 85% lower RMS vibration and 57 to 66% lower vibration than conventional chatter-frequency control.</li>
-          <li>Developed adaptive tool runout compensation through the feed drives, cutting peak cutting-force variation 86% (101 to 14 N) and supporting a pending patent.</li>
-          <li>Developed lightweight, data-driven algorithms that detect chatter onset in real time.</li>
-          <li>Trained and mentored graduate and undergraduate students; guided two M.Sc. theses.</li>
+          <li><a href="/projects/inertial-damper-control.html"><strong>Learned feedforward for point-to-point settling.</strong></a> Cut the settling time to ±2 µm after rapid moves by 98% (29.7 to 0.6 ms) and the peak-to-peak error by 90% (35 to 3.5 µm), compared with feedback-only control. An iterative learning controller learns a feedforward force profile for an active inertial damper in about 10 runs, on a sparse B-spline basis, and enforces the actuator's stroke and force limits in every update. First published in CIRP Annals (2024).</li>
+          <li><a href="/projects/inertial-damper-control.html"><strong>Auto-tuned active damping.</strong></a> Formulated the tuning of the damper's velocity-feedback law as a constrained quadratic program, solved from vibration measured over repeated moves. It selects the filter passband and gain automatically, uses 70% less actuator stroke than conventional tuning and settles up to 28% faster, and the tuned controller carries over to other moves.</li>
+          <li><a href="/projects/cross-coupling-vibrations.html"><strong>Cross-axis vibration compensation.</strong></a> Identified the coupling on a 3-axis vertical machining center, where Y-axis acceleration rocks the column and vibrates the tool tip in Z, and designed a trajectory pre-filter that cancels it through the Z-axis feed drive without changing the servo loops. A frequency-domain fit gives the initial design and machine-in-the-loop iterations refine it: up to 77% lower tool-tip vibration (5.5 to 1.3 µm), verified with a laser encoder. Young Research Award, ICPE 2024.</li>
+        </ul>
+
+        <p class="cv-sub">Machining process control</p>
+        <ul>
+          <li><a href="/projects/tool-eccentricity-compensation.html"><strong>Spindle-synchronous disturbance compensation.</strong></a> Cancelled the effect of tool runout by adding a micro-circular trajectory, synchronized with the spindle, to the X and Y feed drives in the 5 kHz position loop. Its amplitude and phase are tuned online by convex optimization from force or acceleration feedback and converge in 2 to 3 updates: 86% lower cutting-force variation (101 to 14 N). ASME JMSE (2026), patent pending with an industrial partner.</li>
+          <li><a href="/projects/spindle-speed-optimization.html"><strong>Real-time spindle speed optimization.</strong></a> Built a model-free extremum-seeking controller that optimizes the spindle speed during the cut from accelerometer feedback, integrated through the CNC's standard spindle-override input via the PLC. It lowered RMS vibration by 85% (131 to 20 m/s²), and by 57 to 66% compared with a conventional chatter mitigation strategy. CIRP JMST (2025).</li>
+          <li><a href="/projects/chatter-detection.html"><strong>Real-time chatter detection.</strong></a> Developed two lightweight detectors, based on a spectral power ratio and on recursive principal component analysis, that separate chatter from forced vibration and flag its onset in real time with a single threshold. Manufacturing Letters (2022).</li>
+        </ul>
+
+        <p class="cv-sub">Mentoring</p>
+        <ul>
+          <li>Trained graduate and undergraduate students in system identification, controller design and data analysis, and guided two M.Sc. theses.</li>
         </ul>
       </div>
 
@@ -80,25 +132,40 @@
           <span class="where">Graduate Teaching Assistant, Oregon State University</span>
           <span class="when">2020-Present</span>
         </div>
-        <div class="what">Computer Control of Manufacturing Processes (senior); Precision Motion Generation (graduate); Digital Control of Mechatronic Systems.</div>
+        <div class="what">Led lab sessions and review lectures for Computer Control of Manufacturing Processes (senior level), ran lab sessions for Precision Motion Generation (graduate level), and contributed course material for Digital Control of Mechatronic Systems.</div>
       </div>
 
       <div class="entry">
         <div class="entry-head">
-          <span class="where">R&amp;D Senior Design Project, Arcelik, Istanbul</span>
+          <span class="where">R&amp;D Senior Design Project, Arçelik, Istanbul</span>
           <span class="when">2018-2019</span>
         </div>
-        <div class="what">University-industry cooperation project. Built parametric 3D CAD of a washing-machine platform in Siemens NX and used NX Journaling to link MATLAB, Excel, and NX into a fully automated particle-swarm multi-objective optimization loop for weight and structural performance exploration.</div>
+        <div class="what">University-industry project. Built parametric 3D CAD models of a washing-machine platform in Siemens NX, and linked NX, MATLAB and Excel into a fully automated particle-swarm optimization loop for weight and structural performance.</div>
       </div>
+
+      <h2>Publications</h2>
+      <p class="cv-note">Three journal articles and eight conference papers, all as first author.</p>
+      <ul class="papers">
+        <li>
+          <a href="https://asmedigitalcollection.asme.org/manufacturingscience/article/doi/10.1115/1.4071096/1230526/Data-driven-Adaptive-Compensation-of-Tool-Runout" target="_blank" rel="noopener">Data-driven adaptive compensation of tool runout in milling via machine tool feed drives</a>
+          <span>ASME Journal of Manufacturing Science and Engineering, 2026</span>
+        </li>
+        <li>
+          <a href="https://www.sciencedirect.com/science/article/abs/pii/S1755581725001270" target="_blank" rel="noopener">Model-free optimal spindle speed control for real-time vibration mitigation in milling</a>
+          <span>CIRP Journal of Manufacturing Science and Technology, 2025</span>
+        </li>
+        <li>
+          <a href="https://www.sciencedirect.com/science/article/abs/pii/S0007850624000210" target="_blank" rel="noopener">Data-driven feedforward control of inertial dampers for accuracy improvement</a>
+          <span>CIRP Annals, 2024</span>
+        </li>
+      </ul>
+      <p class="cv-note"><a href="/publications.html">See the full list with summaries.</a></p>
 
       <h2>Patents &amp; Service</h2>
       <ul>
         <li>Control Device, Machine Tool System, and Method for Controlling Machine Tool. Sencer, Bahtiyar, Bozcu. Patent application pending (2025).</li>
         <li>Journal reviewer for the ASME Journal of Manufacturing Science and Engineering and <a href="https://www.sciencedirect.com/journal/measurement" target="_blank" rel="noopener">Measurement</a> (Elsevier).</li>
       </ul>
-
-      <h2>Publications</h2>
-      <p class="cv-summary">Three journal articles (CIRP Annals, CIRP JMST, ASME JMSE) and eight conference papers. <a href="/publications.html">See the full list with summaries.</a></p>
 
     </div>
 
@@ -111,7 +178,7 @@
           <span class="where">Oregon State University, Ph.D., Robotics</span>
           <span class="when">2022-Present</span>
         </div>
-        <div class="what">Expected June 2027. Advisor: Prof. Burak Sencer</div>
+        <div class="what">Expected June 2027. Advisor: Prof. Burak Sencer. GPA 3.83/4.00.</div>
       </div>
 
       <div class="entry">
@@ -119,7 +186,7 @@
           <span class="where">Oregon State University, M.Sc., Robotics</span>
           <span class="when">2020-2023</span>
         </div>
-        <div class="what">Thesis: detection of chatter vibrations and adaptive spindle-speed optimization in milling</div>
+        <div class="what">Thesis: Detection of chatter vibrations and adaptive spindle speed optimization in milling. GPA 3.77/4.00.</div>
       </div>
 
       <div class="entry">
@@ -127,7 +194,7 @@
           <span class="where">Istanbul Technical University, B.Sc., Control &amp; Automation Engineering</span>
           <span class="when">2017-2020</span>
         </div>
-        <div class="what">Ranked 3rd in department</div>
+        <div class="what">Ranked 3rd in department.</div>
       </div>
 
       <div class="entry">
@@ -137,14 +204,30 @@
         </div>
       </div>
 
+      <div class="entry">
+        <div class="what"><strong>Relevant coursework.</strong> Kinematics, Dynamics and Control; Mechanical Vibrations; Estimation, Filtering and Detection; Convex Optimization; Learning-Based Control; Control System Design; Servo Motors.</div>
+      </div>
+
       <h2>Technical Skills</h2>
 
       <div class="entry">
-        <div class="what"><strong>Control, dynamics &amp; modeling.</strong> Precision motion control; feedforward/feedback, iterative-learning, extremum-seeking and adaptive control; active damping and vibration suppression; chatter detection and control; trajectory generation; first-principles and data-driven modeling of feed drives and machine-tool structures; FRF-based modal analysis; system identification; numerical and convex optimization.</div>
+        <div class="what"><strong>Control design.</strong> Feedback and feedforward motion control; iterative learning control; iterative feedback tuning; extremum-seeking and adaptive control; active damping and vibration suppression; trajectory generation and pre-filtering.</div>
       </div>
 
       <div class="entry">
-        <div class="what"><strong>Hardware &amp; software.</strong> CNC machine tools; linear-motor XY stages; feed-drive and voice-coil stages; dSPACE and NI myRIO real-time control; accelerometers, encoders, force sensors; MATLAB/Simulink, LabVIEW, Python, NX.</div>
+        <div class="what"><strong>Modeling and identification.</strong> First-principles and data-driven modeling of feed drives and machine structures; system identification; FRF-based modal analysis; stability analysis.</div>
+      </div>
+
+      <div class="entry">
+        <div class="what"><strong>Optimization and signal processing.</strong> Convex and numerical optimization; constrained quadratic programming; least squares; spectral analysis; principal component analysis; Kalman filtering.</div>
+      </div>
+
+      <div class="entry">
+        <div class="what"><strong>Hardware.</strong> Linear-motor XY stages; feed-drive and voice-coil stages; voice-coil and linear-motor inertial actuators; CNC machine tools; linear and rotary encoders, laser encoder, capacitive displacement sensors, accelerometers, dynamometers.</div>
+      </div>
+
+      <div class="entry">
+        <div class="what"><strong>Real-time and software.</strong> dSPACE and NI myRIO real-time control, with servo loops at 5 kHz; CNC and PLC interfacing; MATLAB/Simulink, LabVIEW, Python, Siemens NX.</div>
       </div>
 
       <h2>Honors</h2>
@@ -154,7 +237,7 @@
         <details class="rec">
           <summary>
             <svg class="medal" aria-hidden="true"><use href="#medal"/></svg>
-            <span>1st place, ASPE Student Challenge (2025)</span>
+            <span>1st place of 9 teams, ASPE Student Challenge (2025)</span>
             <span class="rec-cue">view</span>
           </summary>
           <div class="rec-body">
