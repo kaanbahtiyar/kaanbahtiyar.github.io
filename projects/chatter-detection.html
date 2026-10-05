@@ -30,9 +30,10 @@
 
   <header class="proj-head">
     <h1>Real-time chatter detection</h1>
-    <p class="proj-lede">Chatter is a self-excited instability that grows fast in milling, marks the part and wears the tool. Catching it early is the first step of any countermeasure. I developed two lightweight indicators that flag its onset in real time.</p>
+    <p class="proj-lede">Chatter is a self-excited instability that grows fast in milling, marks the part and damage the equipment. Detecting it early is the first step of any countermeasure. I developed two lightweight indicators that flag its onset in real time.</p>
     <div class="tags">
-      <span class="method">Spectral and PCA indicators</span>
+<span class="method">Spectral Analysis</span>
+<span class="method">Principal Component Analysis (PCA)</span>
       <span>Manufacturing Letters</span>
       <span>NAMRC 50</span>
     </div>
@@ -40,21 +41,21 @@
 
   <figure class="media w-1130">
     <video data-inview controls loop muted playsinline preload="metadata" src="/assets/video/chatter_detection.mp4" poster="/assets/video/chatter_detection.jpg" aria-label="Milling a tapered workpiece, with the measured workpiece acceleration and the two chatter indicators drawn in step with the footage. The status changes from stable cutting to chatter detected when the indicator crosses 50 percent."></video>
-    <figcaption>Milling a tapered workpiece, with the measured acceleration and both indicators in step with the footage. Chatter is flagged when the power ratio crosses 50%. Turn the sound on to hear the chatter start.</figcaption>
+    <figcaption>Milling a tapered workpiece, with the measured acceleration and both indicators. Chatter is flagged when the power ratio crosses 50%. Turn the sound on to hear the chatter start.</figcaption>
   </figure>
 
   <div class="cols">
 
     <section class="proj-sec">
       <h2>Method</h2>
-      <p>A simple amplitude threshold is unreliable, because forced vibration at the tooth-passing frequency masks the chatter component. Two indicators separate them instead.</p>
-      <p>The first compares total signal power with the power at the tooth-passing harmonics, and rises when broadband chatter energy appears between them. The second applies principal component analysis to a windowed data matrix, and is more robust to changes in tooling and cutting conditions.</p>
+      <p>A simple amplitude threshold is unreliable: forced vibration at the tooth-passing frequency masks the chatter component, and the threshold must be readjusted for each cutting condition. I developed indicators that separate chatter from forced vibration, so a single ratio-based threshold works across cutting conditions.</p>
+      <p>The first compares the total signal power with the power at the tooth-passing harmonics in the frequency domain, and it rises when chatter energy appears. The second applies principal component analysis to a sliding window of vibration data and is more robust to changes in tooling and cutting conditions. When implemented recursively, both detect chatter in real time.</p>
     </section>
 
     <section class="proj-sec">
       <h2>Results</h2>
-      <p>On a tapered workpiece, where the depth of cut grows along the path, both indicators stay low during stable cutting and cross the 50% threshold as chatter sets in.</p>
-      <p>The spectral method is the fastest and cheapest to compute, and the PCA method trades a little computation for robustness. Both are light enough to run in real time on embedded hardware.</p>
+      <p>On a tapered workpiece, the depth of cut grows along the path, so the cut starts stable, with forced vibration only, and turns into chatter partway through. Both indicators stay low during the stable part and cross the 50% threshold as chatter sets in.</p>
+      <p>The spectral method is the cheapest to compute, and the PCA method trades a little computation for robustness.</p>
     </section>
 
   </div>
