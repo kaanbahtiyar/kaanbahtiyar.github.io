@@ -50,32 +50,32 @@
           <div class="half">
             <div class="body">
               <h4>Auto-tuned feedback</h4>
-              <p>The velocity-feedback law tunes itself online from measured vibration, by solving a band-selective constrained optimization at every time step.</p>
+              <p>The velocity-feedback law tunes itself from the measured vibration response, by solving a constrained quadratic program each time the machine repeats a task.</p>
               <div class="tags">
-                <span class="method">Constrained QP</span>
+                <span class="method">Iterative feedback tuning (IFT)</span>
                 <span>In preparation</span>
               </div>
             </div>
             <div class="result-line">
               <span class="rnum">70%</span>
               <span class="rdesc">less damper stroke</span>
-              <span class="rsub">up to 25% faster settling to 2 µm</span>
+              <span class="rsub">up to 28% faster settling to 2 µm</span>
             </div>
           </div>
 
           <div class="half">
             <div class="body">
               <h4>Learned feedforward</h4>
-              <p>Iterative learning adds a feedforward force that removes the initial overshoot feedback alone cannot, within stroke and force limits.</p>
+              <p>The feedforward control signal is tuned iteratively to suppress the residual vibration that feedback alone cannot remove.</p>
               <div class="tags">
-                <span class="method">Iterative learning</span>
+                <span class="method">Iterative learning control (ILC)</span>
                 <span>CIRP Annals</span>
               </div>
             </div>
             <div class="result-line">
-              <span class="rnum">87%</span>
-              <span class="rdesc">lower peak error</span>
-              <span class="rsub">12 &rarr; 1.6 µm in about 10 iterations</span>
+              <span class="rnum">90%</span>
+              <span class="rdesc">lower peak-to-peak error</span>
+              <span class="rsub">35 &rarr; 3.5 µm, and 98% faster settling to 2 µm (29.7 &rarr; 0.6 ms)</span>
             </div>
           </div>
 
@@ -90,7 +90,7 @@
 
         <div class="body">
           <h3>Cross-axis vibration compensation through the feed drives</h3>
-          <p>A trajectory pre-filter adds a small Z command that cancels the tool-tip vibration excited by fast Y-axis moves, refined by machine-in-the-loop learning.</p>
+          <p>A trajectory pre-filter adds a small Z-axis command that cancels the tool-tip vibration excited by rapid Y-axis motion, and is fine-tuned through machine-in-the-loop iterations.</p>
           <div class="tags">
             <span class="method">Trajectory pre-filtering</span>
             <span>ICPE 2024</span>
@@ -120,9 +120,9 @@
 
         <div class="body">
           <h3>Adaptive spindle speed control</h3>
-          <p>A model-free controller tunes the spindle speed from vibration feedback during the cut, to remove chatter and minimize vibration.</p>
+          <p>A model-free extremum-seeking controller tunes the spindle speed from vibration feedback during milling, to suppress chatter and forced vibrations.</p>
           <div class="tags">
-            <span class="method">Extremum seeking</span>
+            <span class="method">Extremum-seeking control (ESC)</span>
             <span>CIRP JMST</span>
             <span>ASME MSEC</span>
           </div>
@@ -141,8 +141,8 @@
         </div>
 
         <div class="body">
-          <h3>Tool runout compensation through the feed drives</h3>
-          <p>A micro-circular feed motion cancels tool runout so every tooth cuts the same chip, tuned on the machine from force feedback.</p>
+          <h3>Adaptive tool runout compensation through the feed drives</h3>
+          <p>A micro-circular feed motion cancels the effect of tool runout so that every tooth cuts the same chip, and is tuned online from force or acceleration feedback.</p>
           <div class="tags">
             <span class="method">Convex optimization</span>
             <span>ASME JMSE</span>
