@@ -321,7 +321,7 @@ footer{border-top:1px solid var(--line); background:var(--bg-soft); margin-top:1
 .media-row .media{margin:0;}
 
 .cols{display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:3.2rem; margin:0 0 1.6rem; align-items:start;}
-.cols + .cols{padding-top:1.7rem; border-top:1px solid var(--line);}
+.cols + .cols,.media + .cols{padding-top:1.7rem; border-top:1px solid var(--line);}
 .proj-sec h2{font-size:1.3rem; margin:0 0 .6rem;}
 .proj-sec h3{font-size:1.12rem; margin:1.5rem 0 .4rem;}
 .proj-sec h3:first-child{margin-top:0;}
