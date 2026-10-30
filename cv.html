@@ -77,17 +77,17 @@
   <div class="res-groups">
 
     <div class="res-group res-3">
-      <p class="res-title">Active inertial damper control <span>on a feed-drive testbed</span></p>
+      <p class="res-title">Active vibration damping <span>inertial damper on a feed-drive testbed</span></p>
       <div class="stats">
         <div class="stat">
           <span class="stat-num">98%</span>
           <span class="stat-desc">faster settling to ±2 µm</span>
-          <span class="stat-sub">29.7 &rarr; 0.6 ms, learned feedforward vs. feedback only</span>
+          <span class="stat-sub">29.7 &rarr; 0.6 ms, with learned feedforward</span>
         </div>
         <div class="stat">
           <span class="stat-num">90%</span>
-          <span class="stat-desc">lower peak-to-peak error</span>
-          <span class="stat-sub">35 &rarr; 3.5 µm, learned feedforward vs. feedback only</span>
+          <span class="stat-desc">lower overshoot error</span>
+          <span class="stat-sub">35 &rarr; 3.5 µm, with learned feedforward</span>
         </div>
         <div class="stat">
           <span class="stat-num">70%</span>
@@ -98,17 +98,17 @@
     </div>
 
     <div class="res-group res-2">
-      <p class="res-title">Machine tool feed drive control <span>on 3-axis CNC machines</span></p>
+      <p class="res-title">Feedforward and disturbance rejection <span>on 3-axis CNC machines</span></p>
       <div class="stats">
         <div class="stat">
           <span class="stat-num">77%</span>
-          <span class="stat-desc">lower cross-axis vibration</span>
-          <span class="stat-sub">5.5 &rarr; 1.3 µm at the tool tip, trajectory pre-filter</span>
+          <span class="stat-desc">lower peak Z tool-tip vibration</span>
+          <span class="stat-sub">5.5 &rarr; 1.3 µm, feedforward decoupling</span>
         </div>
         <div class="stat">
           <span class="stat-num">86%</span>
-          <span class="stat-desc">lower cutting-force variation</span>
-          <span class="stat-sub">101 &rarr; 14 N, tool runout compensation</span>
+          <span class="stat-desc">lower peak cutting-force variation</span>
+          <span class="stat-sub">101 &rarr; 14 N, eccentricity cancellation</span>
         </div>
       </div>
     </div>
@@ -130,20 +130,20 @@
 
         <p class="cv-sub">Precision motion control and mechatronics</p>
         <ul>
-          <li><a href="/projects/inertial-damper-control.html"><strong>Active inertial damper control:</strong></a> Designed feedback and feedforward controllers that suppress residual vibration after rapid moves on a feed-drive testbed, each tuned from measured data within the stroke and force limits.
+          <li><a href="/projects/inertial-damper-control.html"><strong>Active vibration damping for fast positioning:</strong></a> Designed feedback and feedforward controllers that suppress residual vibration after rapid moves on a feed-drive testbed, each tuned from measured data within the stroke and force limits.
             <ul>
-              <li><strong>Learned feedforward:</strong> Cut the settling time to ±2 µm by 98% (29.7 to 0.6 ms) and the peak-to-peak error by 90% (35 to 3.5 µm) versus feedback only, by using iterative learning control over about 10 runs.</li>
+              <li><strong>Learned feedforward:</strong> Cut the settling time to ±2 µm by 98% (29.7 to 0.6 ms) and the overshoot error by 90% (35 to 3.5 µm) versus the auto-tuned feedback alone, by adding a feedforward force learned with iterative learning control over about 10 runs.</li>
               <li><strong>Auto-tuned feedback:</strong> Formulated the tuning of direct velocity feedback control as a constrained quadratic program that selects the passband and gain across frequencies automatically: 70% less actuator stroke and up to 28% faster settling than conventional feedback control.</li>
             </ul>
           </li>
-          <li><a href="/projects/cross-coupling-vibrations.html"><strong>Cross-axis vibration compensation:</strong></a> Designed a trajectory pre-filter that cancels Z tool-tip vibration excited by Y-axis motion on a 3-axis machining center, through the Z-axis feed drive, leaving the servo loops unchanged. Machine-in-the-loop tuning gives up to 77% lower vibration (5.5 to 1.3 µm).</li>
+          <li><a href="/projects/cross-coupling-vibrations.html"><strong>Feedforward decoupling of cross-axis vibration:</strong></a> Designed a trajectory pre-filter that cancels Z tool-tip vibration excited by Y-axis motion on a 3-axis machining center, through the Z-axis feed drive, leaving the servo loops unchanged. Machine-in-the-loop tuning gives up to 77% lower peak vibration (5.5 to 1.3 µm).</li>
         </ul>
 
-        <p class="cv-sub">Machining process control <span>on a 3-axis CNC machine tool</span></p>
+        <p class="cv-sub">Disturbance rejection and optimization in machining <span>on a 3-axis CNC machine tool</span></p>
         <ul>
-          <li><a href="/projects/tool-eccentricity-compensation.html"><strong>Spindle-synchronous disturbance compensation:</strong></a> Cancelled the effect of tool runout with a micro-circular trajectory, synchronized with the spindle, in the 5 kHz position loop of the X and Y feed drives, tuned online by convex optimization in 2 to 3 updates (10 to 15 spindle revolutions): 86% lower cutting-force variation (101 to 14 N). Patent pending.</li>
-          <li><a href="/projects/spindle-speed-optimization.html"><strong>Real-time spindle speed optimization:</strong></a> Built a model-free extremum-seeking controller that optimizes the spindle speed from accelerometer feedback through the CNC's spindle-override input: 85% lower RMS vibration (131 to 20 m/s²), and 57 to 66% lower than a conventional chatter mitigation strategy.</li>
-          <li><a href="/projects/chatter-detection.html"><strong>Real-time chatter detection:</strong></a> Developed two lightweight detectors (spectral power ratio and recursive PCA) that separate chatter from forced vibration and flag its onset with a single threshold.</li>
+          <li><a href="/projects/tool-eccentricity-compensation.html"><strong>Spindle-synchronous disturbance rejection (tool eccentricity cancellation):</strong></a> Cancelled the effect of tool runout with a micro-circular trajectory, synchronized with the spindle, in the 5 kHz position loop of the X and Y feed drives, tuned online by convex optimization in 2 to 3 updates (10 to 15 spindle revolutions): 86% lower peak cutting-force variation (101 to 14 N). Patent pending.</li>
+          <li><a href="/projects/spindle-speed-optimization.html"><strong>Adaptive spindle speed control for process stabilization (spindle speed optimization for chatter mitigation):</strong></a> Built a model-free extremum-seeking controller that optimizes the spindle speed from accelerometer feedback through the CNC's spindle-override input: 85% lower RMS vibration (131 to 20 m/s²), and 57 to 66% lower than a conventional chatter mitigation strategy.</li>
+          <li><a href="/projects/chatter-detection.html"><strong>Real-time instability detection (chatter detection):</strong></a> Developed two lightweight detectors (spectral power ratio and recursive PCA) that separate chatter from forced vibration and flag its onset with a single threshold.</li>
         </ul>
 
         <p class="cv-sub">Mentoring</p>
