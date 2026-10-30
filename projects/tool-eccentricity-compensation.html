@@ -3,9 +3,9 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Tool runout compensation, Kaan Bahtiyar</title>
+<title>Spindle-synchronous disturbance rejection, Kaan Bahtiyar</title>
 <meta name="description" content="Adaptive compensation of tool runout in milling using the machine tool feed drives, tuned on the machine by convex optimization. Peak cutting-force variation reduced from 101 N to 14 N (86%) in 2 to 3 updates.">
-<meta property="og:title" content="Tool runout compensation, Kaan Bahtiyar">
+<meta property="og:title" content="Spindle-synchronous disturbance rejection, Kaan Bahtiyar">
 <meta property="og:description" content="Adaptive compensation of tool runout in milling using the machine tool feed drives, tuned on the machine by convex optimization. Peak cutting-force variation reduced from 101 N to 14 N (86%) in 2 to 3 updates.">
 <meta property="og:image" content="/images/profilekaan.png">
 <link rel="icon" type="image/svg+xml" href="/images/favicon.svg">
@@ -26,12 +26,14 @@
 
 <main><div class="wrap">
 
-  <p class="crumb"><a href="/projects.html">Projects</a> / Tool runout compensation</p>
+  <p class="crumb"><a href="/projects.html">Projects</a> / Spindle-synchronous disturbance rejection</p>
 
   <header class="proj-head">
-    <h1>Tool runout compensation</h1>
-    <p class="proj-lede">Tool runout is an offset between the cutter's center and its axis of rotation, so each tooth cuts a different amount of chip. This uneven load roughens the surface and wears the most heavily loaded tooth first. I developed an adaptive strategy that compensates for the runout using the machine's own feed drives, with no additional hardware.</p>
+    <h1>Spindle-synchronous disturbance rejection</h1>
+    <p class="kicker">Tool eccentricity (runout) cancellation through the feed drives</p>
+    <p class="proj-lede">Tool eccentricity (runout) is an offset between the cutter's center and its axis of rotation. It acts as a periodic disturbance locked to the spindle angle: each tooth cuts a different amount of chip, the cutting force pulses once per revolution, and the most heavily loaded tooth wears first. I developed an adaptive compensator that rejects this disturbance through the machine's own X and Y feed drives, with no additional hardware, and keeps working above the bandwidth of the position loop.</p>
     <div class="tags">
+      <span class="method">Periodic disturbance rejection</span>
       <span class="method">Convex optimization</span>
       <span>ASME JMSE</span>
       <span>MM Science</span>

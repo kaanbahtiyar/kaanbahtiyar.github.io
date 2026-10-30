@@ -3,10 +3,10 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Active damper control, Kaan Bahtiyar</title>
-<meta name="description" content="Auto-tuned feedback and learned feedforward control of an active inertial damper. 70% less damper stroke with feedback auto-tuning, and peak positioning error cut from 12 um to 1.6 um with learned feedforward, on a feed-drive testbed.">
-<meta property="og:title" content="Active damper control, Kaan Bahtiyar">
-<meta property="og:description" content="Auto-tuned feedback and learned feedforward control of an active inertial damper. 70% less damper stroke with feedback auto-tuning, and peak positioning error cut from 12 um to 1.6 um with learned feedforward, on a feed-drive testbed.">
+<title>Active vibration damping for fast positioning, Kaan Bahtiyar</title>
+<meta name="description" content="Auto-tuned feedback and learned feedforward control of an active inertial damper. 70% less damper stroke with feedback auto-tuning, and overshoot cut from 35 um to 3.5 um and settling to 2 um made 98% faster with learned feedforward, on a ball-screw feed-drive testbed.">
+<meta property="og:title" content="Active vibration damping for fast positioning, Kaan Bahtiyar">
+<meta property="og:description" content="Auto-tuned feedback and learned feedforward control of an active inertial damper. 70% less damper stroke with feedback auto-tuning, and overshoot cut from 35 um to 3.5 um and settling to 2 um made 98% faster with learned feedforward, on a ball-screw feed-drive testbed.">
 <meta property="og:image" content="/images/profilekaan.png">
 <link rel="icon" type="image/svg+xml" href="/images/favicon.svg">
 <link rel="icon" href="/images/favicon.ico">
@@ -26,11 +26,12 @@
 
 <main><div class="wrap">
 
-  <p class="crumb"><a href="/projects.html">Projects</a> / Active damper control</p>
+  <p class="crumb"><a href="/projects.html">Projects</a> / Active vibration damping for fast positioning</p>
 
   <header class="proj-head">
-    <h1>Active damper control</h1>
-    <p class="proj-lede">Rapid point-to-point motions excite a machine's structural resonances, and the resulting vibration delays settling. In this project, I used an active inertial damper to suppress it. I designed data-driven feedback and feedforward controllers for the damper that tune themselves automatically within the damper's stroke and force limits. </p>
+    <h1>Active vibration damping for fast positioning</h1>
+    <p class="kicker">Iterative auto-tuning of feedback and feedforward control for an inertial damper on a ball-screw feed drive</p>
+    <p class="proj-lede">Rapid point-to-point motions excite a machine's structural resonances, and the residual vibration delays settling (move-and-settle time). An active inertial damper mounted on the moving table suppresses this vibration. I developed data-driven feedback and feedforward controllers for the damper that tune themselves from measured data within its stroke and force limits, without access to the machine's controller.</p>
     <div class="tags">
       <span class="method">Constrained Quadratic Programming (QP)</span>
       <span class="method">Model-based Iterative Feedback Tuning (IFT)</span>
@@ -79,11 +80,11 @@
 
     <section class="proj-sec">
       <h2>Learned feedforward</h2>
-      <p>Feedback (FB) reacts only after vibration appears, and its gain is limited by the damper's stroke and force, so it cannot fully remove the initial overshoot. For cases where feedback alone is not sufficient, I developed a complementary feedforward (FF) controller for repeating tasks, such as repetitive machining, welding, and material handling. The FF force profile is learned for the specific task by iterative learning control, using the vibration measured over repeated runs, and it counteracts the residual vibration that the FB controller cannot remove. The profile is built from filtered B-splines, of which only an automatically selected sparse set is kept so that the method scales to long tasks, and the damper's stroke and force limits are enforced in each learning update. Compared to FB-only control, it yields:</p>
+      <p>Feedback (FB) reacts only after vibration appears, and its gain is limited by the damper's stroke and force, so it cannot fully remove the initial overshoot. For cases where feedback alone is not sufficient, I developed a complementary feedforward (FF) controller for repeating tasks, such as repetitive machining, welding, and material handling. The FF force profile is learned for the specific task by iterative learning control, using the vibration measured over repeated runs, and it counteracts the residual vibration that the FB controller cannot remove. The profile is built from filtered B-splines, of which only an automatically selected sparse set is kept so that the method scales to long tasks, and the damper's stroke and force limits are enforced in each learning update. Combined with the auto-tuned FB and compared to FB-only control, it yields:</p>
       <div class="stats">
         <div class="stat">
           <span class="stat-num">90%</span>
-          <span class="stat-desc">lower peak-to-peak error</span>
+          <span class="stat-desc">lower overshoot error</span>
           <span class="stat-sub">35 &rarr; 3.5 µm</span>
         </div>
         <div class="stat">
@@ -96,6 +97,7 @@
           <span class="stat-desc">learning iterations</span>
         </div>
       </div>
+      <p>In the CIRP Annals study, where the learned feedforward ran without feedback, the peak positioning error at the motion reversal dropped by 87% (12 &rarr; 1.6 µm) after about 10 iterations.</p>
       <p>For this work, I received the <a href="/index.html#adow-scholarship">Thomas A. Dow Student Scholarship</a> at the 39th ASPE Annual Meeting (2024).</p>
       <h3>Publications</h3>
       <ul class="papers">

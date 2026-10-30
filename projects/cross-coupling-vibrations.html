@@ -3,10 +3,10 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Cross-axis vibration compensation, Kaan Bahtiyar</title>
-<meta name="description" content="A trajectory pre-filter that commands the Z axis to cancel vibration coupled from X and Y moves on a vertical machining center. Z tool-tip vibration reduced from 5.5 um to 1.3 um (77%).">
-<meta property="og:title" content="Cross-axis vibration compensation, Kaan Bahtiyar">
-<meta property="og:description" content="A trajectory pre-filter that commands the Z axis to cancel vibration coupled from X and Y moves on a vertical machining center. Z tool-tip vibration reduced from 5.5 um to 1.3 um (77%).">
+<title>Feedforward decoupling of cross-axis vibration, Kaan Bahtiyar</title>
+<meta name="description" content="A trajectory pre-filter that commands the Z axis to cancel vibration coupled from rapid Y-axis moves on a vertical machining center. Z tool-tip vibration reduced from 5.5 um to 1.3 um (77%).">
+<meta property="og:title" content="Feedforward decoupling of cross-axis vibration, Kaan Bahtiyar">
+<meta property="og:description" content="A trajectory pre-filter that commands the Z axis to cancel vibration coupled from rapid Y-axis moves on a vertical machining center. Z tool-tip vibration reduced from 5.5 um to 1.3 um (77%).">
 <meta property="og:image" content="/images/profilekaan.png">
 <link rel="icon" type="image/svg+xml" href="/images/favicon.svg">
 <link rel="icon" href="/images/favicon.ico">
@@ -26,11 +26,12 @@
 
 <main><div class="wrap">
 
-  <p class="crumb"><a href="/projects.html">Projects</a> / Cross-axis vibration compensation</p>
+  <p class="crumb"><a href="/projects.html">Projects</a> / Feedforward decoupling of cross-axis vibration</p>
 
   <header class="proj-head">
-    <h1>Cross-axis vibration compensation</h1>
-    <p class="proj-lede">On a C-frame machining center, a hard acceleration of the table in Y rocks the column, and the rocking shows up as Z vibration at the tool tip even though the Z axis received no command. I cancel it with a small, synchronized Z-axis command through the machine's existing feed drives.</p>
+    <h1>Feedforward decoupling of cross-axis vibration</h1>
+    <p class="kicker">Trajectory pre-filter through the feed drives of a machining center</p>
+    <p class="proj-lede">On a C-frame machining center, a hard acceleration of the table in Y rocks the column, and the rocking shows up as Z vibration at the tool tip even though the Z axis received no command. This is cross-axis coupling, and I cancel it with feedforward decoupling: a small Z-axis command, synchronized with the Y motion, sent through the machine's existing feed drives.</p>
     <div class="tags">
       <span class="method">Trajectory pre-filtering</span>
       <span>ICPE 2024</span>
@@ -56,7 +57,7 @@
       <div class="stats">
         <div class="stat">
           <span class="stat-num">Up to 77%</span>
-          <span class="stat-desc">lower Z tool-tip vibration</span>
+          <span class="stat-desc">lower peak Z tool-tip vibration</span>
           <span class="stat-sub">5.5 &rarr; 1.3 µm</span>
         </div>
       </div>

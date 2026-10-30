@@ -3,10 +3,10 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Adaptive spindle speed control, Kaan Bahtiyar</title>
-<meta name="description" content="A model-free controller that tunes spindle speed from vibration feedback during milling, to remove chatter and minimize vibration. RMS vibration reduced by up to 85% (131 to 20 m/s2).">
-<meta property="og:title" content="Adaptive spindle speed control, Kaan Bahtiyar">
-<meta property="og:description" content="A model-free controller that tunes spindle speed from vibration feedback during milling, to remove chatter and minimize vibration. RMS vibration reduced by up to 85% (131 to 20 m/s2).">
+<title>Adaptive spindle speed control for process stabilization, Kaan Bahtiyar</title>
+<meta name="description" content="A model-free controller that tunes spindle speed from vibration feedback during milling, to remove chatter and minimize vibration. RMS vibration reduced by 85% (131 to 20 m/s2).">
+<meta property="og:title" content="Adaptive spindle speed control for process stabilization, Kaan Bahtiyar">
+<meta property="og:description" content="A model-free controller that tunes spindle speed from vibration feedback during milling, to remove chatter and minimize vibration. RMS vibration reduced by 85% (131 to 20 m/s2).">
 <meta property="og:image" content="/images/profilekaan.png">
 <link rel="icon" type="image/svg+xml" href="/images/favicon.svg">
 <link rel="icon" href="/images/favicon.ico">
@@ -26,13 +26,15 @@
 
 <main><div class="wrap">
 
-  <p class="crumb"><a href="/projects.html">Projects</a> / Adaptive spindle speed control</p>
+  <p class="crumb"><a href="/projects.html">Projects</a> / Adaptive spindle speed control for process stabilization</p>
 
   <header class="proj-head">
-    <h1>Adaptive spindle speed control</h1>
-    <p class="proj-lede">Vibration in milling appears in two forms: chatter, an instability that can scrap the part and damage the tool, and forced vibration, which is stable but still degrades surface quality. I developed a real-time spindle speed controller based on extremum-seeking control that suppresses both during machining, without a process model.</p>
+    <h1>Adaptive spindle speed control for process stabilization</h1>
+    <p class="kicker">Model-free extremum-seeking control of spindle speed for chatter mitigation</p>
+    <p class="proj-lede">Vibration in milling appears in two forms: chatter, an instability that can scrap the part and damage the tool, and forced vibration, which is stable but still degrades surface quality. I developed a real-time spindle speed controller based on extremum-seeking control, a model-free online optimizer that suppresses both during machining. It plugs into a standard CNC through the spindle-override input, so the machine itself is not modified.</p>
     <div class="tags">
       <span class="method">Extremum seeking</span>
+      <span class="method">Model-free online optimization</span>
       <span>CIRP JMST</span>
       <span>ASME MSEC</span>
     </div>
