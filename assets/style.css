@@ -353,3 +353,10 @@ footer{border-top:1px solid var(--line); background:var(--bg-soft); margin-top:1
   .cv-cols{grid-template-columns:1fr; gap:0;}
   .cv-side{text-align:left;}
 }
+
+/* subtitle line under project titles: the machine-tool name of each project */
+.kicker{font-size:.9rem; font-weight:600; color:var(--accent); margin:0; line-height:1.4;}
+.card .body p.kicker{font-size:.9rem; color:var(--accent); margin:-.2rem 0 .1rem;}
+.theme-cards .card .body p.kicker{font-size:.92rem;}
+.card-kicker{padding:.3rem 1.25rem 0;}
+.proj-head .kicker{font-size:1rem; margin:-.3rem 0 .7rem;}
