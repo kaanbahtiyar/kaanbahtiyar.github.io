@@ -360,6 +360,3 @@ footer{border-top:1px solid var(--line); background:var(--bg-soft); margin-top:1
 .theme-cards .card .body p.kicker{font-size:.92rem;}
 .card-kicker{padding:.35rem 1.25rem 0; font-size:.95rem;}
 .proj-head .kicker{font-size:1rem; margin:-.3rem 0 .7rem;}
-
-/* show videos at standard (SDR) brightness, so HDR phone footage matches the page */
-video{dynamic-range-limit:standard;}
